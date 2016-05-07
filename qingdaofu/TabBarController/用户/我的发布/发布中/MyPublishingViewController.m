@@ -70,6 +70,10 @@
 
 
 
+
+
+
+
 - (BidCellView *)sec1
 {
     if (!_sec1) {
