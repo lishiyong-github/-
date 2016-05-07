@@ -65,6 +65,11 @@
     return _sec0;
 }
 
+
+
+
+
+
 - (BidCellView *)sec1
 {
     if (!_sec1) {
