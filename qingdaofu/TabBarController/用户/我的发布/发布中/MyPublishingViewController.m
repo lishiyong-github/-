@@ -7,6 +7,8 @@
 //
 
 #import "MyPublishingViewController.h"
+
+
 #import "AuthenBaseView.h"
 #import "BidCellView.h"
 #import "BidSingleView.h"
@@ -65,15 +67,16 @@
     return _sec0;
 }
 
-
-
-
-
-
 - (BidCellView *)sec1
 {
     if (!_sec1) {
         _sec1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
+        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_fixed_icon",@"conserve_rights_icon"];
+
+        [_sec1.cellView2.imageView1 setImage:[UIImage imageNamed:secImageArray[0]]];
+        [_sec1.cellView3.imageView1 setImage:[UIImage imageNamed:secImageArray[1]]];
+        [_sec1.cellView4.imageView1 setImage:[UIImage imageNamed:secImageArray[2]]];
+        [_sec1.cellView5.imageView1 setImage:[UIImage imageNamed:secImageArray[3]]];
     }
     return _sec1;
 }

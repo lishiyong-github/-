@@ -11,6 +11,8 @@
 #import "SuggestionViewController.h"  //意见反馈
 #import "ContactUsViewController.h"  //联系我们
 #import "AboutViewController.h"  //关于清道夫
+#import "ModifyPassWordViewController.h"  //修改密码
+#import "MessageRemindViewController.h"   //消息提醒
 
 @interface MySettingsViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -113,9 +115,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0) {//修改密码
+        ModifyPassWordViewController *modifyPassWordVC = [[ModifyPassWordViewController alloc] init];
+        [self.navigationController pushViewController:modifyPassWordVC animated:YES];
         
-    }else if(indexPath.section == 1){
+    }else if(indexPath.section == 1){//消息提醒
+        MessageRemindViewController *messageRemindVC = [[MessageRemindViewController alloc] init];
+        [self.navigationController pushViewController:messageRemindVC animated:YES];
         
     }else if (indexPath.section == 2){
         switch (indexPath.row) {

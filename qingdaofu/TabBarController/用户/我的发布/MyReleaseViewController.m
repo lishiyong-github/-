@@ -74,8 +74,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyPublishingViewController *myPublishingVC = [[MyPublishingViewController alloc] init];
-    [self.navigationController pushViewController:myPublishingVC animated:YES];
+//    MyPublishingViewController *myPublishingVC = [[MyPublishingViewController alloc] init];
+//    [self.navigationController pushViewController:myPublishingVC animated:YES];
+    
+    MyDealingViewController *myDealingVC = [[MyDealingViewController alloc] init];
+    [self.navigationController pushViewController:myDealingVC animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {

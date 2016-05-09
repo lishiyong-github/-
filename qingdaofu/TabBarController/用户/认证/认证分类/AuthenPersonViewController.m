@@ -131,7 +131,7 @@
 - (AuthenBaseView *)baseView6
 {
     if (!_baseView6) {
-        _baseView6 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, _baseView6.aH)];
+        _baseView6 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
        _baseView6.label.text = @"邮箱";
         _baseView6.textField.placeholder = @"请输入您的常用邮箱";
     }

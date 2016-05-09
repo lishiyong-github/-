@@ -231,7 +231,8 @@
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     cell.imageView.image = [UIImage imageNamed:@"list_icon_setting"];
     cell.textLabel.text = @"设置";
  

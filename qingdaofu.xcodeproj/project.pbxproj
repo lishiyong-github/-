@@ -67,6 +67,9 @@
 		A192B4D21CDB52A40053FC4C /* list_icon_product@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A192B4CE1CDB52A40053FC4C /* list_icon_product@3x.png */; };
 		A192B4D31CDB52A40053FC4C /* list_icon_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A192B4CF1CDB52A40053FC4C /* list_icon_user@2x.png */; };
 		A192B4D41CDB52A40053FC4C /* list_icon_user@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A192B4D01CDB52A40053FC4C /* list_icon_user@3x.png */; };
+		A19985151CE02B7A0055A572 /* ModifyPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19985141CE02B7A0055A572 /* ModifyPassWordViewController.m */; };
+		A19985191CE02BFC0055A572 /* ModifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A19985181CE02BFC0055A572 /* ModifyView.m */; };
+		A199851D1CE0360B0055A572 /* MessageRemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A199851C1CE0360B0055A572 /* MessageRemindViewController.m */; };
 		A19B8E221CCF42E300F8EBF2 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19B8E1A1CCF42E300F8EBF2 /* ALView+PureLayout.m */; };
 		A19B8E231CCF42E300F8EBF2 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19B8E1C1CCF42E300F8EBF2 /* NSArray+PureLayout.m */; };
 		A19B8E241CCF42E300F8EBF2 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19B8E1E1CCF42E300F8EBF2 /* NSLayoutConstraint+PureLayout.m */; };
@@ -176,6 +179,10 @@
 		A1A97E791CDCA2C700EDE320 /* conserve_fixed_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A97E771CDCA2C700EDE320 /* conserve_fixed_icon@3x.png */; };
 		A1A97E7C1CDCA2CF00EDE320 /* conserve_rights_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A97E7A1CDCA2CF00EDE320 /* conserve_rights_icon@2x.png */; };
 		A1A97E7D1CDCA2CF00EDE320 /* conserve_rights_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A97E7B1CDCA2CF00EDE320 /* conserve_rights_icon@3x.png */; };
+		A1B3D5281CDDC4F300F08AE8 /* conserve_interest_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B3D5261CDDC4F300F08AE8 /* conserve_interest_icon@2x.png */; };
+		A1B3D5291CDDC4F300F08AE8 /* conserve_interest_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B3D5271CDDC4F300F08AE8 /* conserve_interest_icon@3x.png */; };
+		A1B3D52C1CDDC4FD00F08AE8 /* conserve_rebate_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B3D52A1CDDC4FD00F08AE8 /* conserve_rebate_icon@2x.png */; };
+		A1B3D52D1CDDC4FD00F08AE8 /* conserve_rebate_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B3D52B1CDDC4FD00F08AE8 /* conserve_rebate_icon@3x.png */; };
 		A1E4AFAB1CD0B0A2001A5E9E /* NewPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4AFAA1CD0B0A2001A5E9E /* NewPublishView.m */; };
 		A1E4AFB71CD0C674001A5E9E /* SingleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4AFB61CD0C674001A5E9E /* SingleButton.m */; };
 /* End PBXBuildFile section */
@@ -306,6 +313,12 @@
 		A192B4CE1CDB52A40053FC4C /* list_icon_product@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_icon_product@3x.png"; sourceTree = "<group>"; };
 		A192B4CF1CDB52A40053FC4C /* list_icon_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_icon_user@2x.png"; sourceTree = "<group>"; };
 		A192B4D01CDB52A40053FC4C /* list_icon_user@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_icon_user@3x.png"; sourceTree = "<group>"; };
+		A19985131CE02B7A0055A572 /* ModifyPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyPassWordViewController.h; sourceTree = "<group>"; };
+		A19985141CE02B7A0055A572 /* ModifyPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyPassWordViewController.m; sourceTree = "<group>"; };
+		A19985171CE02BFC0055A572 /* ModifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyView.h; sourceTree = "<group>"; };
+		A19985181CE02BFC0055A572 /* ModifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyView.m; sourceTree = "<group>"; };
+		A199851B1CE0360B0055A572 /* MessageRemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageRemindViewController.h; sourceTree = "<group>"; };
+		A199851C1CE0360B0055A572 /* MessageRemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageRemindViewController.m; sourceTree = "<group>"; };
 		A19B8E191CCF42E300F8EBF2 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
 		A19B8E1A1CCF42E300F8EBF2 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
 		A19B8E1B1CCF42E300F8EBF2 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
@@ -484,6 +497,10 @@
 		A1A97E771CDCA2C700EDE320 /* conserve_fixed_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_fixed_icon@3x.png"; sourceTree = "<group>"; };
 		A1A97E7A1CDCA2CF00EDE320 /* conserve_rights_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_rights_icon@2x.png"; sourceTree = "<group>"; };
 		A1A97E7B1CDCA2CF00EDE320 /* conserve_rights_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_rights_icon@3x.png"; sourceTree = "<group>"; };
+		A1B3D5261CDDC4F300F08AE8 /* conserve_interest_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_interest_icon@2x.png"; sourceTree = "<group>"; };
+		A1B3D5271CDDC4F300F08AE8 /* conserve_interest_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_interest_icon@3x.png"; sourceTree = "<group>"; };
+		A1B3D52A1CDDC4FD00F08AE8 /* conserve_rebate_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_rebate_icon@2x.png"; sourceTree = "<group>"; };
+		A1B3D52B1CDDC4FD00F08AE8 /* conserve_rebate_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_rebate_icon@3x.png"; sourceTree = "<group>"; };
 		A1E4AFA91CD0B0A2001A5E9E /* NewPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPublishView.h; sourceTree = "<group>"; };
 		A1E4AFAA1CD0B0A2001A5E9E /* NewPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPublishView.m; sourceTree = "<group>"; };
 		A1E4AFB51CD0C674001A5E9E /* SingleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleButton.h; sourceTree = "<group>"; };
@@ -748,6 +765,10 @@
 		A192B4BC1CDB45EB0053FC4C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A1B3D52A1CDDC4FD00F08AE8 /* conserve_rebate_icon@2x.png */,
+				A1B3D52B1CDDC4FD00F08AE8 /* conserve_rebate_icon@3x.png */,
+				A1B3D5261CDDC4F300F08AE8 /* conserve_interest_icon@2x.png */,
+				A1B3D5271CDDC4F300F08AE8 /* conserve_interest_icon@3x.png */,
 				A1A97E7A1CDCA2CF00EDE320 /* conserve_rights_icon@2x.png */,
 				A1A97E7B1CDCA2CF00EDE320 /* conserve_rights_icon@3x.png */,
 				A1A97E761CDCA2C700EDE320 /* conserve_fixed_icon@2x.png */,
@@ -796,6 +817,34 @@
 				A192B4BE1CDB46020053FC4C /* list_more@3x.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		A19985121CE02B530055A572 /* 修改密码 */ = {
+			isa = PBXGroup;
+			children = (
+				A19985161CE02BE50055A572 /* view */,
+				A19985131CE02B7A0055A572 /* ModifyPassWordViewController.h */,
+				A19985141CE02B7A0055A572 /* ModifyPassWordViewController.m */,
+			);
+			path = "修改密码";
+			sourceTree = "<group>";
+		};
+		A19985161CE02BE50055A572 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A19985171CE02BFC0055A572 /* ModifyView.h */,
+				A19985181CE02BFC0055A572 /* ModifyView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A199851A1CE035D30055A572 /* 消息提醒 */ = {
+			isa = PBXGroup;
+			children = (
+				A199851B1CE0360B0055A572 /* MessageRemindViewController.h */,
+				A199851C1CE0360B0055A572 /* MessageRemindViewController.m */,
+			);
+			path = "消息提醒";
 			sourceTree = "<group>";
 		};
 		A19B8E181CCF42E300F8EBF2 /* PureLayout */ = {
@@ -1017,6 +1066,8 @@
 		A19D29671CD2087F00DAAEA7 /* 设置 */ = {
 			isa = PBXGroup;
 			children = (
+				A199851A1CE035D30055A572 /* 消息提醒 */,
+				A19985121CE02B530055A572 /* 修改密码 */,
 				A17EE38E1CD8780600ECC631 /* 意见反馈 */,
 				A17EE38A1CD86FA100ECC631 /* 联系我们 */,
 				A17EE3861CD86B2100ECC631 /* 关于清道夫 */,
@@ -1450,6 +1501,7 @@
 			files = (
 				A192B4D11CDB52A40053FC4C /* list_icon_product@2x.png in Resources */,
 				A1A97E421CDC666400EDE320 /* news_order_icon@2x.png in Resources */,
+				A1B3D5281CDDC4F300F08AE8 /* conserve_interest_icon@2x.png in Resources */,
 				A1A97E741CDCA2BF00EDE320 /* conserve_loan_icon@2x.png in Resources */,
 				A192B4C81CDB492B0053FC4C /* list_icon_preservation@3x.png in Resources */,
 				A1A97E411CDC666400EDE320 /* news_evaluate_icon@3x.png in Resources */,
@@ -1464,10 +1516,12 @@
 				A1A97E751CDCA2BF00EDE320 /* conserve_loan_icon@3x.png in Resources */,
 				A1A97E1B1CDC388E00EDE320 /* information_nav_remind@3x.png in Resources */,
 				A1A016B21C5A0C0300027134 /* LaunchScreen.storyboard in Resources */,
+				A1B3D5291CDDC4F300F08AE8 /* conserve_interest_icon@3x.png in Resources */,
 				A1A97E161CDC26A200EDE320 /* publish_list_authentication@2x.png in Resources */,
 				A1A97E401CDC666400EDE320 /* news_evaluate_icon@2x.png in Resources */,
 				A1A97E371CDC631A00EDE320 /* btn_camera@3x.png in Resources */,
 				A1A97E311CDC5C3A00EDE320 /* list_icon_firm@3x.png in Resources */,
+				A1B3D52C1CDDC4FD00F08AE8 /* conserve_rebate_icon@2x.png in Resources */,
 				A1A97E731CDCA2BF00EDE320 /* conserve_investment_icon@3x.png in Resources */,
 				A1A97E431CDC666400EDE320 /* news_order_icon@3x.png in Resources */,
 				A1A97E441CDC666400EDE320 /* news_publish_icon@2x.png in Resources */,
@@ -1477,6 +1531,7 @@
 				A1A97E461CDC666400EDE320 /* news_system_icon@2x.png in Resources */,
 				A192B4BF1CDB46020053FC4C /* list_more@2x.png in Resources */,
 				A192B4D21CDB52A40053FC4C /* list_icon_product@3x.png in Resources */,
+				A1B3D52D1CDDC4FD00F08AE8 /* conserve_rebate_icon@3x.png in Resources */,
 				A1A97E451CDC666400EDE320 /* news_publish_icon@3x.png in Resources */,
 				A1A97E1E1CDC3F8000EDE320 /* nav_tip@2x.png in Resources */,
 				A1A97E781CDCA2C700EDE320 /* conserve_fixed_icon@2x.png in Resources */,
@@ -1526,6 +1581,7 @@
 				A17691461CD9E42A004289DD /* AdditionalEvaluateViewController.m in Sources */,
 				A1A97E6A1CDC989200EDE320 /* MyPublishingViewController.m in Sources */,
 				A1A97E621CDC950100EDE320 /* EvaBaseView.m in Sources */,
+				A199851D1CE0360B0055A572 /* MessageRemindViewController.m in Sources */,
 				A192B4B41CDB2CAF0053FC4C /* AdditionMessageViewController.m in Sources */,
 				A17EE3851CD8559D00ECC631 /* MySettingsViewController.m in Sources */,
 				A1E4AFB71CD0C674001A5E9E /* SingleButton.m in Sources */,
@@ -1557,6 +1613,7 @@
 				A176914A1CD9E744004289DD /* StarView.m in Sources */,
 				A17EE3821CD8518600ECC631 /* BaseCommitButton.m in Sources */,
 				A17964F11CD350A800B6AD47 /* CompletePictureView.m in Sources */,
+				A19985151CE02B7A0055A572 /* ModifyPassWordViewController.m in Sources */,
 				A17EE3791CD82F4800ECC631 /* MyDetailSaveViewController.m in Sources */,
 				A1A016AA1C5A0C0300027134 /* ViewController.m in Sources */,
 				A1A0174F1C5B696A00027134 /* MJExtensionConst.m in Sources */,
@@ -1603,6 +1660,7 @@
 				A1A97E571CDC671000EDE320 /* SystemMessagesViewController.m in Sources */,
 				A176913C1CD9C911004289DD /* RequestTextView.m in Sources */,
 				A1A017351C5B67D400027134 /* MBProgressHUD.m in Sources */,
+				A19985191CE02BFC0055A572 /* ModifyView.m in Sources */,
 				A1A017571C5B696A00027134 /* NSObject+MJProperty.m in Sources */,
 				A19D295B1CD2022900DAAEA7 /* MineView.m in Sources */,
 				A17964D81CD3053200B6AD47 /* TakePictureView.m in Sources */,
