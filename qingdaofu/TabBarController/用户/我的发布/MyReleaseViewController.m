@@ -13,9 +13,11 @@
 #import "AdditionMessageViewController.h"  //补充信息
 
 #import "AnotherHomeCell.h"
+#import "AllProSegView.h"
 
 @interface MyReleaseViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,strong) AllProSegView *releaseProView;
 @property (nonatomic,strong) UITableView *myReleaseTableView;
 
 @end
@@ -27,13 +29,23 @@
     self.navigationItem.title = @"所有产品";
     self.navigationItem.leftBarButtonItem = self.leftItem;
 
+    [self.view addSubview:self.releaseProView];
     [self.view addSubview:self.myReleaseTableView];
+}
+
+- (AllProSegView *)releaseProView
+{
+    if (!_releaseProView) {
+        _releaseProView = [[AllProSegView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
+        _releaseProView.backgroundColor = kBlueColor;
+    }
+    return _releaseProView;
 }
 
 - (UITableView *)myReleaseTableView
 {
     if (!_myReleaseTableView) {
-        _myReleaseTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStylePlain];
+        _myReleaseTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.releaseProView.bottom, kScreenWidth, kScreenHeight-kNavHeight-self.releaseProView.height) style:UITableViewStylePlain];
         _myReleaseTableView.delegate = self;
         _myReleaseTableView.dataSource = self;
         _myReleaseTableView.backgroundColor = kBackColor;
@@ -56,15 +68,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AnotherHomeCell *cell = [AnotherHomeCell cellWithTableView:tableView];
+    static NSString *identifier = @"myRelease";
+    AnotherHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[AnotherHomeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.cellView.typeLabel.text = @"发布中";
     cell.cellView.typeLabel.textColor = kBlueColor;
-    cell.actionView.label.text = @"您有新的申请记录";
-    [cell.actionView.button setTitle:@"  处理进度  " forState:0];
+    
+    [cell.actionView.firstButton setTitle:@"您有新的申请记录" forState:0];
+    [cell.actionView.secondButton setTitle:@"补充信息" forState:0];
+    [cell.actionView.thirdButton setTitle:@"查看申请" forState:0];
     
     QDFWeakSelf;
-    [cell.actionView.button addAction:^(UIButton *btn) {
+    [cell.actionView.secondButton addAction:^(UIButton *btn) {
         AdditionMessageViewController *addtionMessageVC = [[AdditionMessageViewController alloc] init];
         [weakself.navigationController pushViewController:addtionMessageVC animated:YES];
     }];
@@ -74,8 +93,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    MyPublishingViewController *myPublishingVC = [[MyPublishingViewController alloc] init];
-//    [self.navigationController pushViewController:myPublishingVC animated:YES];
+    //MyPublishingViewController *myPublishingVC = [[MyPublishingViewController alloc] init];
+    //[self.navigationController pushViewController:myPublishingVC animated:YES];
     
     MyDealingViewController *myDealingVC = [[MyDealingViewController alloc] init];
     [self.navigationController pushViewController:myDealingVC animated:YES];

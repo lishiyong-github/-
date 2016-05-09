@@ -64,6 +64,12 @@
 {
     if (!_secView1) {
         _secView1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
+        
+        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_interest_icon",@"conserve_rebate_icon"];
+        _secView1.cellView2.imageView1.image = [UIImage imageNamed:secImageArray[0]];
+        _secView1.cellView3.imageView1.image = [UIImage imageNamed:secImageArray[1]];
+        _secView1.cellView4.imageView1.image = [UIImage imageNamed:secImageArray[2]];
+        _secView1.cellView5.imageView1.image = [UIImage imageNamed:secImageArray[3]];
     }
     return _secView1;
 }

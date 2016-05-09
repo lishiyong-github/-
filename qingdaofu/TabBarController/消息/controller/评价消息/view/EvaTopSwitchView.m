@@ -10,9 +10,6 @@
 
 @interface EvaTopSwitchView ()
 
-@property (nonatomic,strong) UILabel *shortLineLabel;
-@property (nonatomic,strong) UILabel *longLineLabel;
-
 @end
 
 @implementation EvaTopSwitchView
@@ -69,7 +66,7 @@
         _getbutton = [UIButton newAutoLayoutView];
         [_getbutton setTitle:@"收到的评价" forState:0];
         [_getbutton setTitleColor:[UIColor blackColor] forState:0];
-        _getbutton.titleLabel.font = kFirstFont;
+        _getbutton.titleLabel.font = kBigFont;
         
         QDFWeakSelf;
         [_getbutton addAction:^(UIButton *btn) {
@@ -87,7 +84,7 @@
         _sendButton = [UIButton newAutoLayoutView];
         [_sendButton setTitle:@"发出的评价" forState:0];
         [_sendButton setTitleColor:[UIColor blackColor] forState:0];
-        _sendButton.titleLabel.font = kFirstFont;
+        _sendButton.titleLabel.font = kBigFont;
         
         QDFWeakSelf;
         [_sendButton addAction:^(UIButton *btn) {

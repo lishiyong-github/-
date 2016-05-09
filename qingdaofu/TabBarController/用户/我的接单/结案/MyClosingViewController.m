@@ -10,6 +10,7 @@
 
 #import "CheckDetailPublishViewController.h"  //查看发布方
 #import "AdditionalEvaluateViewController.h"  //追加评价
+#import "AdditionMessageViewController.h"     //补充信息
 
 @interface MyClosingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -81,6 +82,11 @@
 {
     if (!_secView1) {
         _secView1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
+        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_interest_icon",@"conserve_rebate_icon"];
+        _secView1.cellView2.imageView1.image = [UIImage imageNamed:secImageArray[0]];
+        _secView1.cellView3.imageView1.image = [UIImage imageNamed:secImageArray[1]];
+        _secView1.cellView4.imageView1.image = [UIImage imageNamed:secImageArray[2]];
+        _secView1.cellView5.imageView1.image = [UIImage imageNamed:secImageArray[3]];
     }
     return _secView1;
 }
@@ -89,6 +95,11 @@
 {
     if (!_secView2) {
         _secView2 = [[BidSingleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 135+2*kCellHeight+1)];
+        
+        QDFWeakSelf;
+        [_secView2.cellView8 addAction:^(UIButton *btn) {
+            
+        }];
     }
     return _secView2;
 }

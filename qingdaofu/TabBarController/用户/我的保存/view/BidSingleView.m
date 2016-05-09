@@ -27,7 +27,7 @@
 {
     if (!_cellView6) {
         _cellView6 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _cellView6.label.text = @"| 基本信息";
+        _cellView6.label.text = @"|  基本信息";
         _cellView6.label.textColor = kBlueColor;
         _cellView6.textField.placeholder = @"";
         _cellView6.textField.userInteractionEnabled = NO;
@@ -64,7 +64,7 @@
         _cellView8 = [UIButton buttonWithType:0];
         _cellView8.frame = CGRectMake(0, self.lineLabel7.bottom, kScreenWidth, kCellHeight);
         _cellView8.backgroundColor = kNavColor;
-        [_cellView8 setTitle:@"查看补充信息" forState:0];
+        [_cellView8 setTitle:@"查看补充信息 >" forState:0];
         [_cellView8 setTitleColor:kBlueColor forState:0];
         _cellView8.titleLabel.font = kBigFont;
     }

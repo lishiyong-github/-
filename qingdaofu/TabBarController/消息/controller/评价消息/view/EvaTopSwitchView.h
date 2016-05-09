@@ -17,6 +17,9 @@
 @property (nonatomic,strong) UIButton *getbutton;
 @property (nonatomic,strong) UIButton *sendButton;
 @property (nonatomic,strong) UILabel *blueLabel;
+@property (nonatomic,strong) UILabel *shortLineLabel;
+@property (nonatomic,strong) UILabel *longLineLabel;
 
+@property (nonatomic,strong) NSLayoutConstraint *getBtnHeight;
 
 @end

@@ -17,8 +17,8 @@
 @interface MyEndingViewController : BaseViewController
 
 @property (nonatomic,strong) AuthenBaseView *secView0;
-@property (nonatomic,strong) BidCellView *secView1;
-@property (nonatomic,strong) BidSingleView *secView2;
+@property (nonatomic,strong) BidCellView *secVieww1;
+@property (nonatomic,strong) BidSingleView *secVieww2;
 @property (nonatomic,strong) MyOrderDetailView *secView3;
 
 @end

@@ -62,31 +62,40 @@
     if (!_secView0) {
         _secView0 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         _secView0.backgroundColor = kBlueColor;
-        _secView0.label.text = @"产品编号:";
+        _secView0.label.text = @"产品编号：RZ201605030001";
         _secView0.label.textColor = kNavColor;
-        _secView0.textField.text = @"RZ201605030001";
+        
+//        _secView0.textField.text = @"RZ201605030001";
         _secView0.textField.userInteractionEnabled = NO;
-        _secView0.textField.textColor = kNavColor;
+//        _secView0.textField.textColor = kNavColor;
+        
         [_secView0.button setTitle:@"已终止" forState:0];
         [_secView0.button setTitleColor:kNavColor forState:0];
+        _secView0.button.titleLabel.font = kBigFont;
     }
     return _secView0;
 }
 
-- (BidCellView *)secView1
+- (BidCellView *)secVieww1
 {
-    if (!_secView1) {
-        _secView1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
+    if (!_secVieww1) {
+        _secVieww1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
+        
+        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_interest_icon",@"conserve_rebate_icon"];
+        _secVieww1.cellView2.imageView1.image = [UIImage imageNamed:secImageArray[0]];
+        _secVieww1.cellView3.imageView1.image = [UIImage imageNamed:secImageArray[1]];
+        _secVieww1.cellView4.imageView1.image = [UIImage imageNamed:secImageArray[2]];
+        _secVieww1.cellView5.imageView1.image = [UIImage imageNamed:secImageArray[3]];
     }
-    return _secView1;
+    return _secVieww1;
 }
 
-- (BidSingleView *)secView2
+- (BidSingleView *)secVieww2
 {
-    if (!_secView2) {
-        _secView2 = [[BidSingleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 135+2*kCellHeight+1)];
+    if (!_secVieww2) {
+        _secVieww2 = [[BidSingleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 135+2*kCellHeight+1)];
     }
-    return _secView2;
+    return _secVieww2;
 }
 - (MyOrderDetailView *)secView3
 {
@@ -139,10 +148,10 @@
     if (indexPath.section == 0) {
         [cell addSubview:self.secView0];
     }else if (indexPath.section == 1){
-        [cell addSubview:self.secView1];
+        [cell addSubview:self.secVieww1];
         
     }else if(indexPath.section == 2){
-        [cell addSubview:self.secView2];
+        [cell addSubview:self.secVieww2];
     }else{
         [cell addSubview:self.secView3];
     }
@@ -156,7 +165,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return kSmallPadding;
+    return kBigPadding;
 }
 
 - (void)didReceiveMemoryWarning {

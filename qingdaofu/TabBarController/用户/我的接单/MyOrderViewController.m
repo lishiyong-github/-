@@ -12,14 +12,15 @@
 #import "MyEndingViewController.h"      //终止
 #import "MyClosingViewController.h"     //结案
 
+#import "MyScheduleViewController.h"   //填写进度
+#import "AdditionalEvaluateViewController.h"  //去评价
 
-#import "HomeCell.h"
 #import "AnotherHomeCell.h"
-
+#import "AllProSegView.h"
 
 @interface MyOrderViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic,strong) UIView *headView;
+@property (nonatomic,strong) AllProSegView *orderHeadView;
 @property (nonatomic,strong) UITableView *myOrderTableView;
 
 @end
@@ -31,23 +32,23 @@
     self.navigationItem.title = @"我的接单";
     self.navigationItem.leftBarButtonItem = self.leftItem;
     
-    [self.view addSubview:self.headView];
+    [self.view addSubview:self.orderHeadView];
     [self.view addSubview:self.myOrderTableView];
 }
 
-- (UIView *)headView
+- (AllProSegView *)orderHeadView
 {
-    if (!_headView) {
-        _headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
-        _headView.backgroundColor = kRedColor;
+    if (!_orderHeadView) {
+        _orderHeadView = [[AllProSegView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
+        _orderHeadView.backgroundColor = kRedColor;
     }
-    return _headView;
+    return _orderHeadView;
 }
 
 - (UITableView *)myOrderTableView
 {
     if (!_myOrderTableView) {
-        _myOrderTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.headView.bottom, kScreenWidth, kScreenHeight-kNavHeight-40) style:UITableViewStylePlain];
+        _myOrderTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.orderHeadView.bottom, kScreenWidth, kScreenHeight-kNavHeight-self.orderHeadView.height) style:UITableViewStylePlain];
         _myOrderTableView.delegate = self;
         _myOrderTableView.dataSource = self;
         _myOrderTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
@@ -69,12 +70,26 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    AnotherHomeCell *cell = [AnotherHomeCell cellWithTableView:tableView];
+{    
+    static NSString *identifier = @"myOrderList";
+    AnotherHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[AnotherHomeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.cellView.typeLabel.text = @"申请中";
-    cell.actionView.label.text = @"截止日期：2016-01-01";
-    [cell.actionView.button setTitle:@"   处理中   " forState:0];
+    [cell.actionView.firstButton setTitle:@"截止日期：2016-01-01" forState:0];
+    [cell.actionView.secondButton setHidden:YES];
+    [cell.actionView.thirdButton setTitle:@"去评价" forState:0];
+    QDFWeakSelf;
+    [cell.actionView.thirdButton addAction:^(UIButton *btn) {
+//        MyScheduleViewController *myScheduleVC = [[MyScheduleViewController alloc] init];
+//        [weakself.navigationController pushViewController:myScheduleVC animated:YES];
+        
+        AdditionalEvaluateViewController *addtionalEvaluateVC = [[AdditionalEvaluateViewController alloc] init];
+        [weakself.navigationController pushViewController:addtionalEvaluateVC animated:YES];
+    }];
     
     return cell;
 }
@@ -84,11 +99,11 @@
 //    MyApplyingViewController *myApplyingVC = [[MyApplyingViewController alloc] init];
 //    [self.navigationController pushViewController:myApplyingVC animated:YES];
     
-//    MyProcessingViewController *myProcessingVC = [[MyProcessingViewController alloc] init];
-//    [self.navigationController pushViewController:myProcessingVC animated:YES];
+    MyProcessingViewController *myProcessingVC = [[MyProcessingViewController alloc] init];
+    [self.navigationController pushViewController:myProcessingVC animated:YES];
     
-    MyEndingViewController *myEndingVC = [[MyEndingViewController alloc] init];
-    [self.navigationController pushViewController:myEndingVC animated:YES];
+//    MyEndingViewController *myEndingVC = [[MyEndingViewController alloc] init];
+//    [self.navigationController pushViewController:myEndingVC animated:YES];
     
 //    MyClosingViewController *myClosingVC = [[MyClosingViewController alloc] init];
 //    [self.navigationController pushViewController:myClosingVC animated:YES];

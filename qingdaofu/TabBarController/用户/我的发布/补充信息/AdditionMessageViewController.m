@@ -8,6 +8,7 @@
 
 #import "AdditionMessageViewController.h"
 #import "BaseLabel.h"
+#import "AuthenBaseView.h"
 
 @interface AdditionMessageViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -15,7 +16,7 @@
 @property (nonatomic,strong) BaseLabel *mCell0;
 @property (nonatomic,strong) BaseLabel *mCell1;
 @property (nonatomic,strong) BaseLabel *mCell2;
-@property (nonatomic,strong) BaseLabel *mCell3;
+@property (nonatomic,strong) AuthenBaseView *mCell3;
 @property (nonatomic,strong) BaseLabel *mCell4;
 
 @end
@@ -56,7 +57,7 @@
     if (!_mCell0) {
         _mCell0 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         _mCell0.nameLabel.text = @"抵押物类型";
-        [_mCell0.tButton setTitle:@"住宅 >" forState:0];
+        [_mCell0.tButton setTitle:@"住宅" forState:0];
     }
     return _mCell0;
 }
@@ -66,7 +67,7 @@
     if (!_mCell1) {
         _mCell1 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         _mCell1.nameLabel.text = @"状态";
-        [_mCell1.tButton setTitle:@"自住 >" forState:0];
+        [_mCell1.tButton setTitle:@"自住" forState:0];
     }
     return _mCell1;
 }
@@ -76,17 +77,18 @@
     if (!_mCell2) {
         _mCell2 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         _mCell2.nameLabel.text = @"抵押状况";
-        [_mCell2.tButton setTitle:@"清房 >" forState:0];
+        [_mCell2.tButton setTitle:@"清房" forState:0];
     }
     return _mCell2;
 }
 
-- (BaseLabel *)mCell3
+- (AuthenBaseView *)mCell3
 {
     if (!_mCell3) {
-        _mCell3 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _mCell3.nameLabel.text = @"借款人年龄";
-        [_mCell3.tButton setTitle:@"30" forState:0];
+        _mCell3 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
+        _mCell3.label.text = @"借款人年龄";
+        _mCell3.textField.userInteractionEnabled = NO;
+        [_mCell3.button setTitle:@"30" forState:0];
     }
     return _mCell3;
 }
@@ -96,7 +98,7 @@
     if (!_mCell4) {
         _mCell4 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         _mCell4.nameLabel.text = @"权利人年龄";
-        [_mCell4.tButton setTitle:@"65岁以下 >" forState:0];
+        [_mCell4.tButton setTitle:@"65岁以下" forState:0];
     }
     return _mCell4;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "MyPublishingViewController.h"
+#import "AdditionMessageViewController.h"  //补充信息
 
 
 #import "AuthenBaseView.h"
@@ -85,6 +86,13 @@
 {
     if (!_sec2) {
         _sec2 = [[BidSingleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 135+2*kCellHeight+1)];
+        
+        
+        QDFWeakSelf;
+        [_sec2.cellView8 addAction:^(UIButton *btn) {
+            AdditionMessageViewController *addtionMessageVC = [[AdditionMessageViewController alloc] init];
+            [weakself.navigationController pushViewController:addtionMessageVC animated:YES];
+        }];
     }
     return _sec2;
 }

@@ -15,11 +15,11 @@
 
 @interface MyProcessingViewController : BaseViewController
 
-@property (nonatomic,strong) AuthenBaseView *secView0;
-@property (nonatomic,strong) BidCellView *secView1;
-@property (nonatomic,strong) BidSingleView *secView2;
-@property (nonatomic,strong) AuthenBaseView *secView3;
-@property (nonatomic,strong) MyOrderDetailView *secView4;
-@property (nonatomic,strong) AuthenBaseView *secView5;
+@property (nonatomic,strong) AuthenBaseView *secVie0;
+@property (nonatomic,strong) BidCellView *secVie1;
+@property (nonatomic,strong) BidSingleView *secVie2;
+@property (nonatomic,strong) AuthenBaseView *secVie3;
+@property (nonatomic,strong) MyOrderDetailView *secVie4;
+@property (nonatomic,strong) AuthenBaseView *secVie5;
 
 @end

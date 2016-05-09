@@ -49,7 +49,7 @@
         _additionalTableView.dataSource = self;
         _additionalTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         _additionalTableView.tableFooterView.backgroundColor = kBackColor;
-        
+        _additionalTableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     }
     return _additionalTableView;
 }
@@ -101,7 +101,7 @@
         _cellVi4 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         _cellVi4.nameLabel.text = @"";
         [_cellVi4.tButton setTitle:@"匿名评价 " forState:0];
-        [_cellVi4.goButton setBackgroundColor:kRedColor];
+//        [_cellVi4.goButton setBackgroundColor:kRedColor];
     }
     return _cellVi4;
 }

@@ -55,74 +55,79 @@
     }
     return _footerButton;
 }
-- (AuthenBaseView *)secView0
+- (AuthenBaseView *)secVie0
 {
-    if (!_secView0) {
-        _secView0 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _secView0.backgroundColor = kBlueColor;
-        _secView0.label.text = @"产品编号:";
-        _secView0.label.textColor = kNavColor;
-        _secView0.textField.text = @"RZ201605030001";
-        _secView0.textField.userInteractionEnabled = NO;
-        _secView0.textField.textColor = kNavColor;
-        [_secView0.button setTitle:@"已终止" forState:0];
-        [_secView0.button setTitleColor:kNavColor forState:0];
+    if (!_secVie0) {
+        _secVie0 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
+        _secVie0.backgroundColor = kBlueColor;
+        _secVie0.label.text = @"产品编号:";
+        _secVie0.label.textColor = kNavColor;
+        _secVie0.textField.text = @"RZ201605030001";
+        _secVie0.textField.userInteractionEnabled = NO;
+        _secVie0.textField.textColor = kNavColor;
+        [_secVie0.button setTitle:@"已终止" forState:0];
+        [_secVie0.button setTitleColor:kNavColor forState:0];
     }
-    return _secView0;
+    return _secVie0;
 }
 
-- (BidCellView *)secView1
+- (BidCellView *)secVie1
 {
-    if (!_secView1) {
-        _secView1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
+    if (!_secVie1) {
+        _secVie1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
+        
+        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_risk_icon",@"conserve_rights_icon"];
+        _secVie1.cellView2.imageView1.image = [UIImage imageNamed:secImageArray[0]];
+        _secVie1.cellView3.imageView1.image = [UIImage imageNamed:secImageArray[1]];
+        _secVie1.cellView4.imageView1.image = [UIImage imageNamed:secImageArray[2]];
+        _secVie1.cellView5.imageView1.image = [UIImage imageNamed:secImageArray[3]];
     }
-    return _secView1;
+    return _secVie1;
 }
 
-- (BidSingleView *)secView2
+- (BidSingleView *)secVie2
 {
-    if (!_secView2) {
-        _secView2 = [[BidSingleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 135+2*kCellHeight+1)];
+    if (!_secVie2) {
+        _secVie2 = [[BidSingleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 135+2*kCellHeight+1)];
     }
-    return _secView2;
+    return _secVie2;
 }
-- (AuthenBaseView *)secView3
+- (AuthenBaseView *)secVie3
 {
-    if (!_secView3) {
-        _secView3 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _secView3.backgroundColor = kNavColor;
-        _secView3.label.text = @"| 服务协议";
-        _secView3.label.textColor = kBlueColor;
-        _secView3.textField.userInteractionEnabled = NO;
-        _secView3.textField.placeholder = @"";
-        [_secView3.button setTitle:@"点击查看 >" forState:0];
-        _secView3.button.titleLabel.font = kSecondFont;
-        [_secView3.button setTitleColor:kLightGrayColor forState:0];
+    if (!_secVie3) {
+        _secVie3 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
+        _secVie3.backgroundColor = kNavColor;
+        _secVie3.label.text = @"|  服务协议";
+        _secVie3.label.textColor = kBlueColor;
+        _secVie3.textField.userInteractionEnabled = NO;
+        _secVie3.textField.placeholder = @"";
+        [_secVie3.button setTitle:@"点击查看 >" forState:0];
+        _secVie3.button.titleLabel.font = kSecondFont;
+        [_secVie3.button setTitleColor:kLightGrayColor forState:0];
     }
-    return _secView3;
+    return _secVie3;
 }
-- (MyOrderDetailView *)secView4
+- (MyOrderDetailView *)secVie4
 {
-    if (!_secView4) {
-        _secView4 = [[MyOrderDetailView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight*2+120)];
+    if (!_secVie4) {
+        _secVie4 = [[MyOrderDetailView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight*2+120)];
     }
-    return _secView4;
+    return _secVie4;
 }
 
-- (AuthenBaseView *)secView5
+- (AuthenBaseView *)secVie5
 {
-    if (!_secView5) {
-        _secView5 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _secView5.backgroundColor = kNavColor;
-        _secView5.label.text = @"| 申请延期";
-        _secView5.label.textColor = kBlueColor;
-        _secView5.textField.userInteractionEnabled = NO;
-        _secView5.textField.placeholder = @"";
-        [_secView5.button setTitle:@"立即申请 >" forState:0];
-        [_secView5.button setTitleColor:kLightGrayColor forState:0];
-        _secView5.button.titleLabel.font = kSecondFont;
+    if (!_secVie5) {
+        _secVie5 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
+        _secVie5.backgroundColor = kNavColor;
+        _secVie5.label.text = @"|  申请延期";
+        _secVie5.label.textColor = kBlueColor;
+        _secVie5.textField.userInteractionEnabled = NO;
+        [_secVie5.button setTitle:@"立即申请 >" forState:0];
+        [_secVie5.button setTitleColor:kLightGrayColor forState:0];
+        _secVie5.button.titleLabel.font = kSecondFont;
     }
-    return _secView5;
+    return _secVie5;
 }
 
 #pragma mark - 
@@ -148,7 +153,60 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"myProcessing";
+    static NSString *identifier;
+    if (indexPath.section == 0) {
+        identifier = @"s0";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell addSubview:self.secVie0];
+        return cell;
+    }else if (indexPath.section == 1){
+        identifier = @"s1";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell addSubview:self.secVie1];
+        return cell;
+    }else if (indexPath.section == 2){
+        identifier = @"s2";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell addSubview:self.secVie2];
+        return cell;
+    }else if (indexPath.section == 3){
+        identifier = @"s3";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell addSubview:self.secVie3];
+        return cell;
+    }else if (indexPath.section == 4){
+        identifier = @"s4";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell addSubview:self.secVie4];
+        return cell;
+    }
+    
+    identifier = @"s5";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
@@ -156,20 +214,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    if (indexPath.section == 0) {
-        [cell addSubview:self.secView0];
-    }else if (indexPath.section == 1){
-        [cell addSubview:self.secView1];
-    }else if(indexPath.section == 2){
-        [cell addSubview:self.secView2];
-    }else if(indexPath.section == 3){
-        [cell addSubview:self.secView3];
-    }else if (indexPath.section == 4){
-        [cell addSubview:self.secView4];
-    }else{
-        [cell addSubview:self.secView5];
-    }
+    [cell addSubview:self.secVie5];
     return cell;
 }
 

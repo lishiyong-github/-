@@ -10,18 +10,6 @@
 
 @implementation AnotherHomeCell
 
-+ (instancetype)cellWithTableView:(UITableView *)tableView
-{
-    static NSString *identifier = @"product";
-    
-    AnotherHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[AnotherHomeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
-}
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -91,23 +79,10 @@
     return _lineLabel2;
 }
 
-- (AuthenBaseView *)actionView
+- (AnotherView *)actionView
 {
     if (!_actionView) {
-        _actionView = [AuthenBaseView newAutoLayoutView];
-        
-        _actionView.label.text = @"截止日期：2016-01-01";
-        _actionView.label.font = kSecondFont;
-        _actionView.label.textColor = kLightGrayColor;
-        
-        _actionView.textField.placeholder = @"";
-        _actionView.textField.userInteractionEnabled = NO;
-        
-        _actionView.button.layer.borderWidth = 1;
-        _actionView.button.layer.borderColor = kBlueColor.CGColor;
-        _actionView.button.layer.cornerRadius = corner;
-        _actionView.button.layer.masksToBounds = YES;
-        _actionView.button.titleLabel.font = kSecondFont;
+        _actionView = [AnotherView newAutoLayoutView];
     }
     return _actionView;
 }

@@ -83,7 +83,7 @@
     if (!_cellV1) {
         _cellV1 = [AuthenBaseView newAutoLayoutView];
         _cellV1.label.textColor = kBlueColor;
-        _cellV1.label.text = @"| 申请人信息";
+        _cellV1.label.text = @"|  申请人信息";
         _cellV1.textField.userInteractionEnabled = NO;
         [_cellV1.button autoSetDimensionsToSize:CGSizeMake(24, 24)];
         [_cellV1.button setImage:[UIImage imageNamed:@"publish_list_authentication"] forState:0];

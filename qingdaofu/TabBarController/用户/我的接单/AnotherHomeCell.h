@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NewProView.h"
 #import "AuthenBaseView.h"
+#import "AnotherView.h"
 
 @interface AnotherHomeCell : UITableViewCell
 
@@ -16,8 +17,6 @@
 @property (nonatomic,strong) UILabel *lineLabel;
 @property (nonatomic,strong) NewProView *cellView;
 @property (nonatomic,strong) UILabel *lineLabel2;
-@property (nonatomic,strong) AuthenBaseView *actionView;
-
-+(instancetype)cellWithTableView:(UITableView *)tableView;
+@property (nonatomic,strong) AnotherView *actionView;
 
 @end

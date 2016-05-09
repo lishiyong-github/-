@@ -69,10 +69,12 @@
     if (!_starBtn1) {
         _starBtn1 = [UIButton newAutoLayoutView];
         _starBtn1.tag = 11;
-        [_starBtn1 setTitle:@"星" forState:0];
-        [_starBtn1 setTitleColor:kLightGrayColor forState:0];
-        [_starBtn1 setTitleColor:kRedColor forState:UIControlStateSelected];
-        _starBtn1.titleLabel.font = kBigFont;
+//        [_starBtn1 setTitle:@"星" forState:0];
+//        [_starBtn1 setTitleColor:kLightGrayColor forState:0];
+//        [_starBtn1 setTitleColor:kRedColor forState:UIControlStateSelected];
+//        _starBtn1.titleLabel.font = kBigFont;
+        [_starBtn1 setImage:[UIImage imageNamed:@"publish_star_s"] forState:UIControlStateSelected];
+        [_starBtn1 setImage:[UIImage imageNamed:@"publish_star"] forState:0];
         [_starBtn1 addTarget:self action:@selector(starResult:) forControlEvents:UIControlEventTouchUpInside];
 
     }
@@ -84,10 +86,9 @@
     if (!_starBtn2) {
         _starBtn2 = [UIButton newAutoLayoutView];
         _starBtn2.tag = 12;
-        [_starBtn2 setTitle:@"星" forState:0];
-        [_starBtn2 setTitleColor:kLightGrayColor forState:0];
-        [_starBtn2 setTitleColor:kRedColor forState:UIControlStateSelected];
-        _starBtn2.titleLabel.font = kBigFont;
+        [_starBtn2 setImage:[UIImage imageNamed:@"publish_star_s"] forState:UIControlStateSelected];
+        [_starBtn2 setImage:[UIImage imageNamed:@"publish_star"] forState:0];
+//        _starBtn2.titleLabel.font = kBigFont;
         [_starBtn2 addTarget:self action:@selector(starResult:) forControlEvents:UIControlEventTouchUpInside];
 
     }
@@ -99,10 +100,9 @@
     if (!_starBtn3) {
         _starBtn3 = [UIButton newAutoLayoutView];
         _starBtn3.tag = 13;
-        [_starBtn3 setTitle:@"星" forState:0];
-        [_starBtn3 setTitleColor:kLightGrayColor forState:0];
-        [_starBtn3 setTitleColor:kRedColor forState:UIControlStateSelected];
-        _starBtn3.titleLabel.font = kBigFont;
+        [_starBtn3 setImage:[UIImage imageNamed:@"publish_star_s"] forState:UIControlStateSelected];
+        [_starBtn3 setImage:[UIImage imageNamed:@"publish_star"] forState:0];
+//        _starBtn3.titleLabel.font = kBigFont;
         [_starBtn3 addTarget:self action:@selector(starResult:) forControlEvents:UIControlEventTouchUpInside];
 
     }
@@ -114,10 +114,9 @@
     if (!_starBtn4) {
         _starBtn4 = [UIButton newAutoLayoutView];
         _starBtn4.tag = 14;
-        [_starBtn4 setTitle:@"星" forState:0];
-        [_starBtn4 setTitleColor:kLightGrayColor forState:0];
-        [_starBtn4 setTitleColor:kRedColor forState:UIControlStateSelected];
-        _starBtn4.titleLabel.font = kBigFont;
+        [_starBtn4 setImage:[UIImage imageNamed:@"publish_star_s"] forState:UIControlStateSelected];
+        [_starBtn4 setImage:[UIImage imageNamed:@"publish_star"] forState:0];
+//        _starBtn4.titleLabel.font = kBigFont;
         [_starBtn4 addTarget:self action:@selector(starResult:) forControlEvents:UIControlEventTouchUpInside];
 
     }
@@ -129,10 +128,9 @@
     if (!_starBtn5) {
         _starBtn5 = [UIButton newAutoLayoutView];
         _starBtn5.tag = 15;
-        [_starBtn5 setTitle:@"星" forState:0];
-        [_starBtn5 setTitleColor:kLightGrayColor forState:0];
-        [_starBtn5 setTitleColor:kRedColor forState:UIControlStateSelected];
-        _starBtn5.titleLabel.font = kBigFont;
+        [_starBtn5 setImage:[UIImage imageNamed:@"publish_star_s"] forState:UIControlStateSelected];
+        [_starBtn5 setImage:[UIImage imageNamed:@"publish_star"] forState:0];
+//        _starBtn5.titleLabel.font = kBigFont;
         [_starBtn5 addTarget:self action:@selector(starResult:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _starBtn5;

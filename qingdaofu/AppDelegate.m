@@ -17,6 +17,8 @@
 #import "MessageViewController.h"
 #import "MineViewController.h"
 
+#import "ReportFinanceViewController.h"  //融资
+
 #import "MoneyView.h"
 
 #import "APIKey.h"
@@ -66,8 +68,8 @@
     CGFloat tabBarHeight = CGRectGetHeight(tabBar.frame);
     CGFloat publishItemWidth = (kScreenWidth / 4);
 
-    TabBarItem *newProductItem = [self tabBarItemWithFram:CGRectMake(0, 0, normalButtonWidth, tabBarHeight) title:@"推荐" normalImageName:@"" selectedImageName:@"" tabBarItemType:TabBarItemTypeNormal];
-    TabBarItem *productsItem = [self tabBarItemWithFram:CGRectMake(normalButtonWidth, 0, normalButtonWidth, tabBarHeight) title:@"产品" normalImageName:@"" selectedImageName:@"" tabBarItemType:TabBarItemTypeNormal];
+    TabBarItem *newProductItem = [self tabBarItemWithFram:CGRectMake(0, 0, normalButtonWidth, tabBarHeight) title:@"推荐" normalImageName:@"tab_recommend" selectedImageName:@"tab_recommend_s" tabBarItemType:TabBarItemTypeNormal];
+    TabBarItem *productsItem = [self tabBarItemWithFram:CGRectMake(normalButtonWidth, 0, normalButtonWidth, tabBarHeight) title:@"产品" normalImageName:@"tab_product" selectedImageName:@"tab_product_s" tabBarItemType:TabBarItemTypeNormal];
     TabBarItem *publishItem = [self tabBarItemWithFram:CGRectMake(normalButtonWidth * 2, 0, normalButtonWidth, tabBarHeight) title:@"" normalImageName:@"" selectedImageName:@"" tabBarItemType:TabBarItemTypeRise];
     publishItem.backgroundColor = kBlueColor;
     
@@ -109,8 +111,34 @@
 #pragma mark - tabBar delegate
 - (void)tabBarDidSelectedRiseButton
 {
-//    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-//    UIViewController *viewController = tabBarController.selectedViewController;
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UIViewController *viewController = tabBarController.selectedViewController;
+    
+    UIAlertController *tabAlertController = [UIAlertController alertControllerWithTitle:@"测试" message:@"发布催收融资" preferredStyle:UIAlertControllerStyleActionSheet];
+
+    UIAlertAction *act1 = [UIAlertAction actionWithTitle:@"诉讼" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    UIAlertAction *act2 = [UIAlertAction actionWithTitle:@"催收" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    UIAlertAction *act3 = [UIAlertAction actionWithTitle:@"融资" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        ReportFinanceViewController *reportFinanceVC = [[ReportFinanceViewController alloc] init];
+    [viewController presentViewController:reportFinanceVC animated:YES completion:nil];
+    }];
+    
+    UIAlertAction *act0 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [tabAlertController addAction:act1];
+    [tabAlertController addAction:act2];
+    [tabAlertController addAction:act3];
+    [tabAlertController addAction:act0];
+    
+    [viewController presentViewController:tabAlertController animated:YES completion:nil];
     
 //    UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
     

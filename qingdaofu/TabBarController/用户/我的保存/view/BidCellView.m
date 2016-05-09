@@ -35,10 +35,9 @@
 {
     if (!_cellView1) {
         _cellView1 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _cellView1.label.text = @"| 展示信息";
+        _cellView1.label.text = @"|  展示信息";
         _cellView1.label.textColor = kBlueColor;
         
-        _cellView1.textField.placeholder = @"";
         _cellView1.textField.userInteractionEnabled = NO;
     }
     return _cellView1;
