@@ -43,7 +43,7 @@
         [self.label autoPinEdgeToSuperviewEdge:ALEdgeRight];
         
         [self.textField autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.label];
-        [self.textField autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:90];
+        [self.textField autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:105];
         
         [self.button autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.label];
         [self.button autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:15];

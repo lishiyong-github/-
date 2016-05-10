@@ -15,7 +15,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        [self addSubview:self.textView];
+//        [self addSubview:self.textView];
+        self.delegate = self;
         [self addSubview:self.remindLabel];
         
         [self setNeedsUpdateConstraints];
@@ -27,28 +28,30 @@
 {
     if (!self.didSetupConstraits) {
         
-        [self.textView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(kBigPadding, kBigPadding, kBigPadding, kBigPadding)];
+//        [self.textView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(kBigPadding, kBigPadding, kBigPadding, kBigPadding)];
         
 //        [self.remindLabel autoPinEdgesToSuperviewMarginsExcludingEdge:ALEdgeBottom];
         
-        [self.remindLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.textView];
-        [self.remindLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.textView];
+//        [self.remindLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.textView];
+//        [self.remindLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.textView];
+        
+        [self.remindLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(kSmallPadding, 5, kSmallPadding, kBigPadding)];
         
         self.didSetupConstraits = YES;
     }
     [super updateConstraints];
 }
 
-- (UITextView *)textView
-{
-    if (!_textView) {
-        _textView = [UITextView newAutoLayoutView];
-        _textView.textColor= kBlueColor;
-        _textView.font = kSecondFont;
-        _textView.delegate = self;
-    }
-    return _textView;
-}
+//- (UITextView *)textView
+//{
+//    if (!_textView) {
+//        _textView = [UITextView newAutoLayoutView];
+//        _textView.textColor= kBlueColor;
+//        _textView.font = kSecondFont;
+//        _textView.delegate = self;
+//    }
+//    return _textView;
+//}
 
 - (UILabel *)remindLabel
 {

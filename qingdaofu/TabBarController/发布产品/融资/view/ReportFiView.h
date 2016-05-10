@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseLabel.h"
 #import "AuthenBaseView.h"
 #import "LineLabel.h"
 #import "RequestTextView.h"

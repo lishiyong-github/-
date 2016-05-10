@@ -31,6 +31,8 @@
     
     //设置导航栏颜色
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 -(UIBarButtonItem *)leftItem

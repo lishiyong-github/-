@@ -126,7 +126,7 @@
     
     UIAlertAction *act3 = [UIAlertAction actionWithTitle:@"融资" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         ReportFinanceViewController *reportFinanceVC = [[ReportFinanceViewController alloc] init];
-    [viewController presentViewController:reportFinanceVC animated:YES completion:nil];
+        [viewController presentViewController:reportFinanceVC animated:YES completion:nil];
     }];
     
     UIAlertAction *act0 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -139,10 +139,6 @@
     [tabAlertController addAction:act0];
     
     [viewController presentViewController:tabAlertController animated:YES completion:nil];
-    
-//    UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
-    
-//    [viewController.view addSubview:self.singleButton2];
     
     NSLog(@"发布");
     

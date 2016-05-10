@@ -34,11 +34,56 @@
 - (void)updateConstraints
 {
     if (!self.didSetupConstarints) {
-        NSArray *views = @[self.reCell0,self.reCell1,self.reCell2,self.reCell3,self.reCell4,self.reCell5];
+        NSArray *views = @[self.reCell0,self.reCell1,self.reCell2,self.reCell3,self.reCell4];
+        [views autoSetViewsDimensionsToSize:CGSizeMake(kScreenWidth, kCellHeight)];
+        [views autoAlignViewsToAxis:ALAxisVertical];
+        
+        NSArray *views2 = @[self.reLine0,self.reLine1,self.reLine2,self.reLine3,self.reLine4];
+        [views2 autoSetViewsDimension:ALDimensionHeight toSize:kLineWidth];
+        
+        NSArray *views3 = @[self.reLine1,self.reLine2,self.reLine3,self.reLine4];
+        [views3 autoAlignViewsToAxis:ALAxisVertical];
         
         
-        [self.reCell0 autoPinEdgesToSuperviewMarginsExcludingEdge:ALEdgeBottom];
+        [self.reCell0 autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        [self.reCell0 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         
+        [self.reLine0 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.reCell0];
+        [self.reLine0 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        [self.reLine0 autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        
+        [self.reCell1 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.reLine0];
+        [self.reCell1 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        
+        [self.reLine1 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.reCell1];
+        [self.reLine1 autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
+        [self.reLine1 autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        
+        [self.reCell2 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.reLine1];
+        [self.reCell2 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        
+        [self.reLine2 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.reCell2];
+        [self.reLine2 autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
+        [self.reLine2 autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        
+        [self.reCell3 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.reLine2];
+        [self.reCell3 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        
+        [self.reLine3 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.reCell3];
+        [self.reLine3 autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
+        [self.reLine3 autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        
+        [self.reCell4 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.reLine3];
+        [self.reCell4 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        
+        [self.reLine4 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.reCell4];
+        [self.reLine4 autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
+        [self.reLine4 autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        
+        [self.reCell5 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.reLine4];
+        [self.reCell5 autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:100];
+        [self.reCell5 autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
+        [self.reCell5 autoSetDimension:ALDimensionHeight toSize:62];
         
         self.didSetupConstarints = YES;
     }
@@ -50,6 +95,7 @@
     if (!_reCell0) {
         _reCell0 = [AuthenBaseView newAutoLayoutView];
         _reCell0.label.text = @"|  基本信息";
+        _reCell0.label.textColor = kBlueColor;
         _reCell0.textField.userInteractionEnabled = NO;
     }
     return _reCell0;
@@ -67,9 +113,12 @@
 {
     if (!_reCell1) {
         _reCell1 = [AuthenBaseView newAutoLayoutView];
-        
         _reCell1.label.text = @"借款本金";
-        _reCell1.textField.placeholder = @"填写您希望融资的金额";
+        
+        NSMutableAttributedString *sttString = [[NSMutableAttributedString alloc] initWithString:@"填写您希望融资的金额"];
+        [sttString setAttributes:@{NSFontAttributeName:kSecondFont,NSForegroundColorAttributeName:kLightGrayColor} range:NSMakeRange(0, sttString.length)];
+        [_reCell1.textField setAttributedPlaceholder:sttString];
+        
         [_reCell1.button setTitle:@"万元" forState:0];
         _reCell1.button.titleLabel.font = kSecondFont;
     }
@@ -89,7 +138,10 @@
     if (!_reCell2) {
         _reCell2 = [AuthenBaseView newAutoLayoutView];
         _reCell2.label.text = @"返点(%)";
-        _reCell2.textField.placeholder = @"能够给到中介的返点，如没有请输入0";
+        
+        NSMutableAttributedString *sttString = [[NSMutableAttributedString alloc] initWithString:@"能够给到中介的返点，如没有请输入0"];
+        [sttString setAttributes:@{NSFontAttributeName:kSecondFont,NSForegroundColorAttributeName:kLightGrayColor} range:NSMakeRange(0, sttString.length)];
+        [_reCell2.textField setAttributedPlaceholder:sttString];
     }
     return _reCell2;
 }
@@ -107,7 +159,11 @@
     if (!_reCell3) {
         _reCell3 = [AuthenBaseView newAutoLayoutView];
         _reCell3.label.text = @"借款利率(%)";
-        _reCell3.textField.placeholder = @"能够给到融资方的利息";
+        
+        NSMutableAttributedString *sttString = [[NSMutableAttributedString alloc] initWithString:@"能够给到融资方的利息"];
+        [sttString setAttributes:@{NSFontAttributeName:kSecondFont,NSForegroundColorAttributeName:kLightGrayColor} range:NSMakeRange(0, sttString.length)];
+        [_reCell3.textField setAttributedPlaceholder:sttString];
+        
         [_reCell3.button setTitle:@">" forState:0];
         [_reCell3.button setTitleColor:kBlueColor forState:0];
     }
@@ -127,7 +183,9 @@
     if (!_reCell4) {
         _reCell4 = [AuthenBaseView newAutoLayoutView];
         _reCell4.label.text = @"抵押物地址";
-        _reCell4.textField.placeholder = @"小区/写字楼/商铺等";
+        NSMutableAttributedString *sttString = [[NSMutableAttributedString alloc] initWithString:@"小区/写字楼/商铺等"];
+        [sttString setAttributes:@{NSFontAttributeName:kSecondFont,NSForegroundColorAttributeName:kLightGrayColor} range:NSMakeRange(0, sttString.length)];
+        [_reCell4.textField setAttributedPlaceholder:sttString];
     }
     return _reCell4;
 }

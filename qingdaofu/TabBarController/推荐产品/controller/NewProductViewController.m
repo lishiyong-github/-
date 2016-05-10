@@ -28,32 +28,16 @@
     self.navigationItem.title = @"清道夫债管家";
     
     [self.view addSubview:self.mainTableView];
-    
-    [self.view setNeedsUpdateConstraints];
-}
-
-- (void)updateViewConstraints
-{
-    if (!self.didSetupConstraints) {
-        
-        [self.mainTableView autoPinEdgeToSuperviewMargin:ALEdgeTop];
-        [self.mainTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
-        
-        self.didSetupConstraints = YES;
-    }
-    [super updateViewConstraints];
 }
 
 - (UITableView *)mainTableView
 {
     if (!_mainTableView) {
-        _mainTableView = [UITableView newAutoLayoutView];
+        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight-kTabBarHeight) style:UITableViewStyleGrouped];
         _mainTableView.backgroundColor = kBackColor;
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
-        _mainTableView.tableFooterView = [[UIView alloc] init];
-        _mainTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kSmallPadding)];
-        _mainTableView.tableFooterView.backgroundColor = kBackColor;
+        _mainTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
     }
     return _mainTableView;
 }

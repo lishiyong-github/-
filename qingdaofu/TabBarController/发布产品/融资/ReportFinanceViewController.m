@@ -7,62 +7,62 @@
 //
 
 #import "ReportFinanceViewController.h"
-#import "BidCellView.h"
-#import "BaseCommitButton.h"
+#import "ReportFiSucViewController.h"   //发布成功
+
+#import "ReportFiView.h"
+#import "ReportAddView.h"
+#import "ReportFootView.h"
+#import "EvaTopSwitchView.h"
 
 @interface ReportFinanceViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *reportFinanceTableView;
-@property (nonatomic,strong) BidCellView *secc0;
-@property (nonatomic,strong) UIView *secc1;
-
-@property (nonatomic,strong) BaseCommitButton *openFooterView;
-
+@property (nonatomic,strong) ReportFiView *secc0;
+@property (nonatomic,strong) ReportAddView *secc1;
+@property (nonatomic,strong) ReportFootView *openFooterView;
+@property (nonatomic,strong) EvaTopSwitchView *repFiSwitchView;
 @property (nonatomic,strong) NSMutableArray *dataList;
 
 @end
 
 @implementation ReportFinanceViewController
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    self.navigationController.navigationBarHidden = NO;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.navigationItem.title = @"发布融资";
     self.navigationItem.leftBarButtonItem = self.leftItem;
     
     [self.view addSubview:self.reportFinanceTableView];
+    [self.view addSubview:self.repFiSwitchView];
 }
 
 - (UITableView *)reportFinanceTableView
 {
     if (!_reportFinanceTableView) {
-        _reportFinanceTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
+        _reportFinanceTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavHeight, kScreenWidth, kScreenHeight-kNavHeight-kTabBarHeight) style:UITableViewStylePlain];
         _reportFinanceTableView.delegate = self;
         _reportFinanceTableView.dataSource = self;
         _reportFinanceTableView.backgroundColor = kBackColor;
         _reportFinanceTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
         [_reportFinanceTableView.tableFooterView addSubview:self.openFooterView];
-        _reportFinanceTableView.tableFooterView.backgroundColor = kBackColor;
+        _reportFinanceTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kSmallPadding)];
     }
     return _reportFinanceTableView;
 }
 
-- (BidCellView *)secc0
+- (ReportFiView *)secc0
 {
     if (!_secc0) {
-        _secc0 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+5*kLineWidth+60)];
+        _secc0 = [[ReportFiView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+5*kLineWidth+62)];
     }
     return _secc0;
 }
 
-- (UIView *)secc1
+- (ReportAddView *)secc1
 {
     if (!_secc1) {
-        _secc1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
-        _secc1.backgroundColor = kRedColor;
+        _secc1 = [[ReportAddView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight*7+kLineWidth*6)];
     }
     return _secc1;
 }
@@ -75,31 +75,38 @@
     return _dataList;
 }
 
-- (BaseCommitButton *)openFooterView
+- (ReportFootView *)openFooterView
 {
     if (!_openFooterView) {
-        _openFooterView = [[BaseCommitButton alloc] initWithFrame:CGRectMake(kBigPadding, kBigPadding, kScreenWidth-kBigPadding*2, 60)];
+        _openFooterView = [[ReportFootView alloc] initWithFrame:CGRectMake(kBigPadding, kBigPadding, kScreenWidth-kBigPadding*2, 70)];
         _openFooterView.backgroundColor = kBlueColor;
-        [_openFooterView setTitle:@"点击展开" forState:0];
-        [_openFooterView setTitle:@"点击收起" forState:UIControlStateSelected];
-        
-        QDFWeakSelf;
-        [_openFooterView addAction:^(UIButton *btn) {
-            btn.selected = !btn.selected;
-            if (btn.selected) {
-                [weakself.dataList insertObject:@"大喊大叫" atIndex:1];
-                NSIndexSet *set = [[NSIndexSet alloc] initWithIndex:1];
-                [weakself.reportFinanceTableView insertSections:set withRowAnimation:UITableViewRowAnimationFade];
-            }else{
-                [weakself.dataList removeObjectAtIndex:1];
-                NSIndexSet *set = [[NSIndexSet alloc] initWithIndex:1];
-                [weakself.reportFinanceTableView deleteSections:set withRowAnimation:UITableViewRowAnimationFade];
-            }
-            
-            [weakself.reportFinanceTableView reloadData];
-        }];
+//        [_openFooterView addTarget:self action:@selector(openAndClose:) forControlEvents:UIControlEventTouchUpInside];
+        [_openFooterView.footButton addTarget:self action:@selector(openAndClose:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _openFooterView;
+}
+
+- (EvaTopSwitchView *)repFiSwitchView
+{
+    if (!_repFiSwitchView) {
+        _repFiSwitchView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight, kScreenWidth, kTabBarHeight)];
+        _repFiSwitchView.backgroundColor = kNavColor;
+        [_repFiSwitchView.getbutton setTitle:@"  保存" forState:0];
+        [_repFiSwitchView.getbutton setImage:[UIImage imageNamed:@"save"] forState:0];
+        [_repFiSwitchView.getbutton setTitleColor:kBlueColor forState:0];
+        
+        
+        [_repFiSwitchView.sendButton setTitle:@"  立即发布" forState:0];
+        [_repFiSwitchView.sendButton setImage:[UIImage imageNamed:@"publish"] forState:0];
+        [_repFiSwitchView.sendButton setTitleColor:kBlueColor forState:0];
+        
+        QDFWeakSelf;
+        [_repFiSwitchView.sendButton addAction:^(UIButton *btn) {
+            ReportFiSucViewController *reportFiSucVC = [[ReportFiSucViewController alloc] init];
+            [weakself presentViewController:reportFiSucVC animated:YES completion:nil];
+        }];
+    }
+    return _repFiSwitchView;
 }
 
 #pragma mark - 
@@ -116,9 +123,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        return 5*kCellHeight+5*kLineWidth+60;
+        return 5*kCellHeight+5*kLineWidth+62;
     }
-    return 200.f;
+    return kCellHeight*7+kLineWidth*6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -134,6 +141,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (indexPath.section == 0) {
         [cell addSubview:self.secc0];
@@ -142,6 +150,41 @@
     }
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 0.1f;
+    }
+    return kBigPadding;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 1) {
+        UIView *view = [[UIView alloc] init];
+        view.backgroundColor = kBackColor;
+        return view;
+    }
+    
+    return nil;
+}
+
+- (void)openAndClose:(UIButton *)btn
+{
+    btn.selected = !btn.selected;
+    if (btn.selected) {
+        [self.dataList insertObject:@"大喊大叫" atIndex:1];
+        NSIndexSet *set = [[NSIndexSet alloc] initWithIndex:1];
+        [self.reportFinanceTableView insertSections:set withRowAnimation:UITableViewRowAnimationFade];
+    }else{
+        [self.dataList removeObjectAtIndex:1];
+        NSIndexSet *set = [[NSIndexSet alloc] initWithIndex:1];
+        [self.reportFinanceTableView deleteSections:set withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
+    [self.reportFinanceTableView reloadData];
 }
 
 

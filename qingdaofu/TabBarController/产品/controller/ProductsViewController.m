@@ -43,7 +43,6 @@
         [self.productsTableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [self.productsTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:49];
         
-        
         self.didSetupConstraints = YES;
     }
     [super updateViewConstraints];
