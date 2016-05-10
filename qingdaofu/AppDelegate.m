@@ -81,8 +81,8 @@
     tabBar.delegate = self;
     [tabBarController.tabBar addSubview:tabBar];
     
-    tabBarController.selectedIndex = 3;
-    tabBarController.selectedViewController = newproductNav;
+//    tabBarController.selectedIndex = 3;
+//    tabBarController.selectedViewController = newproductNav;
 //    tabBarController.tabBarItem.badgeValue = @"2";
     
     self.window.rootViewController = tabBarController;
@@ -112,14 +112,21 @@
 #pragma mark - tabBar delegate
 - (void)tabBarDidSelectedRiseButton
 {
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    UIViewController *viewController = tabBarController.selectedViewController;
     
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *viewController = tabBarController.selectedViewController;
+    UIView *showView = [UIView newAutoLayoutView];
+//
+//    [showView setBackgroundColor:kBackColor];
+//    [self.window addSubview:showView];
+//    [showView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+//    return;
     UIAlertController *tabAlertController = [UIAlertController alertControllerWithTitle:@"测试" message:@"发布催收融资" preferredStyle:UIAlertControllerStyleActionSheet];
 
     UIAlertAction *act1 = [UIAlertAction actionWithTitle:@"诉讼" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         ReportSuitViewController *reportSuitVC = [[ReportSuitViewController alloc] init];
-        [viewController presentViewController:reportSuitVC animated:YES completion:nil];
+        [reportSuitVC setHidesBottomBarWhenPushed:YES];
+        [viewController pushViewController:reportSuitVC animated:YES];
     }];
     
     UIAlertAction *act2 = [UIAlertAction actionWithTitle:@"催收" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -128,7 +135,8 @@
     
     UIAlertAction *act3 = [UIAlertAction actionWithTitle:@"融资" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         ReportFinanceViewController *reportFinanceVC = [[ReportFinanceViewController alloc] init];
-        [viewController presentViewController:reportFinanceVC animated:YES completion:nil];
+        [reportFinanceVC setHidesBottomBarWhenPushed:YES];
+        [viewController pushViewController:reportFinanceVC animated:YES];
     }];
     
     UIAlertAction *act0 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {

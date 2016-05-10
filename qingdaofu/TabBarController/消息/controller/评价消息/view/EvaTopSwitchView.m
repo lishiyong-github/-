@@ -26,6 +26,8 @@
         [self addSubview:self.blueLabel];
         [self addSubview:self.longLineLabel];
         
+        self.heightConstraint = [self.getbutton autoSetDimension:ALDimensionHeight toSize:40];
+        
         [self setNeedsUpdateConstraints];
     }
     return self;
@@ -34,13 +36,12 @@
 - (void)updateConstraints
 {
     if (!self.didSetupConstraints) {
-        
         NSArray *views = @[self.getbutton,self.shortLineLabel,self.sendButton];
         [views autoAlignViewsToAxis:ALAxisHorizontal];
         
         [self.getbutton autoPinEdgeToSuperviewEdge:ALEdgeTop];
         [self.getbutton autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-        [self.getbutton autoSetDimensionsToSize:CGSizeMake(kScreenWidth/2, 40)];
+        [self.getbutton autoSetDimension:ALDimensionWidth toSize:kScreenWidth/2];
         
         [self.sendButton autoPinEdgeToSuperviewEdge:ALEdgeTop];
         [self.sendButton autoPinEdgeToSuperviewEdge:ALEdgeRight];

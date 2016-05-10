@@ -40,7 +40,7 @@
 - (UITableView *)reportFinanceTableView
 {
     if (!_reportFinanceTableView) {
-        _reportFinanceTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavHeight, kScreenWidth, kScreenHeight-kNavHeight-kTabBarHeight) style:UITableViewStylePlain];
+        _reportFinanceTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTabBarHeight-kNavHeight) style:UITableViewStylePlain];
         _reportFinanceTableView.delegate = self;
         _reportFinanceTableView.dataSource = self;
         _reportFinanceTableView.backgroundColor = kBackColor;
@@ -89,10 +89,12 @@
 - (EvaTopSwitchView *)repFiSwitchView
 {
     if (!_repFiSwitchView) {
-        _repFiSwitchView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight, kScreenWidth, kTabBarHeight)];
+        _repFiSwitchView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight-kNavHeight, kScreenWidth, kTabBarHeight)];
+        _repFiSwitchView.heightConstraint.constant = kTabBarHeight;
         _repFiSwitchView.backgroundColor = kNavColor;
         [_repFiSwitchView.getbutton setTitle:@"  保存" forState:0];
         [_repFiSwitchView.getbutton setImage:[UIImage imageNamed:@"save"] forState:0];
+       
         [_repFiSwitchView.getbutton setTitleColor:kBlueColor forState:0];
         
         
@@ -103,7 +105,8 @@
         QDFWeakSelf;
         [_repFiSwitchView.sendButton addAction:^(UIButton *btn) {
             ReportFiSucViewController *reportFiSucVC = [[ReportFiSucViewController alloc] init];
-            [weakself presentViewController:reportFiSucVC animated:YES completion:nil];
+            [weakself.navigationController pushViewController:reportFiSucVC animated:YES];
+//            [weakself presentViewController:reportFiSucVC animated:YES completion:nil];
         }];
     }
     return _repFiSwitchView;

@@ -22,4 +22,6 @@
 
 @property (nonatomic,strong) NSLayoutConstraint *getBtnHeight;
 
+@property (nonatomic,strong) NSLayoutConstraint *heightConstraint;
+- (void)MyupdateConstraints;
 @end

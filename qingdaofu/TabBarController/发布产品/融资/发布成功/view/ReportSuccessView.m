@@ -44,7 +44,7 @@
         [self.stLineLabel autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [self.stLineLabel autoSetDimension:ALDimensionHeight toSize:kLineWidth];
 
-        [self.toButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
+        [self.toButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kSmallPadding];
         [self.toButton autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.stLineLabel withOffset:kSmallPadding];
         
         self.didSetupConstraints = YES;

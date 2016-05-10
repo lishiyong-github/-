@@ -25,7 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = NO;
     self.navigationItem.title = @"发布成功";
+    self.navigationItem.leftBarButtonItem = self.leftItem;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(finishReport)];
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:kBigFont,NSForegroundColorAttributeName:kBlueColor} forState:0];
     
@@ -35,23 +37,15 @@
 
 - (void)finishReport
 {
-//    UINavigationController *nav = self.navigationController;
-//    [nav popViewControllerAnimated:YES];
-//    [nav popViewControllerAnimated:YES];
-    
-//    UIViewController *VC = self.parentViewController;
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    UIViewController *VC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    [VC dismissViewControllerAnimated:NO completion:nil];
-    [VC dismissViewControllerAnimated:NO completion:nil];
+    UINavigationController *nav = self.navigationController;
+    [nav popViewControllerAnimated:NO];
+    [nav popViewControllerAnimated:NO];
 }
 
 - (UITableView *)reportSucTableView
 {
     if (!_reportSucTableView) {
-        _reportSucTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavHeight, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStylePlain];
+        _reportSucTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTabBarHeight-kNavHeight) style:UITableViewStylePlain];
         _reportSucTableView.backgroundColor = kBackColor;
         _reportSucTableView.delegate = self;
         _reportSucTableView.dataSource = self;
@@ -87,6 +81,7 @@
     if (!_reportSucFootView) {
         _reportSucFootView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight, kScreenWidth, kTabBarHeight)];
         _reportSucFootView.backgroundColor = kNavColor;
+        _reportSucFootView.heightConstraint.constant = kTabBarHeight;
         
         [_reportSucFootView.getbutton setTitle:@"  回主页" forState:0];
         [_reportSucFootView.getbutton setImage:[UIImage imageNamed:@"back"] forState:0];

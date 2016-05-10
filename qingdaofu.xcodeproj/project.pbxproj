@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CEA216B1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
+		9CEA216C1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
 		A1039F0C1C72C55400771747 /* RefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1039F0B1C72C55400771747 /* RefreshViewController.m */; };
 		A154B8D31CE184CF00884CA4 /* ReportAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8D21CE184CF00884CA4 /* ReportAddView.m */; };
 		A154B8D61CE18E7F00884CA4 /* ReportFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8D51CE18E7F00884CA4 /* ReportFootView.m */; };
@@ -243,6 +245,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9CEA21691CE2140C002C5BA7 /* UIButton+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Addition.h"; sourceTree = "<group>"; };
+		9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Addition.m"; sourceTree = "<group>"; };
 		A1039F0A1C72C55400771747 /* RefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshViewController.h; sourceTree = "<group>"; };
 		A1039F0B1C72C55400771747 /* RefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshViewController.m; sourceTree = "<group>"; };
 		A154B8D11CE184CF00884CA4 /* ReportAddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportAddView.h; sourceTree = "<group>"; };
@@ -1422,6 +1426,8 @@
 				A1A0172F1C5B607300027134 /* UIImage+Color.m */,
 				A18C675A1CD06C2E00C7B070 /* UIButton+Block.h */,
 				A18C675B1CD06C2E00C7B070 /* UIButton+Block.m */,
+				9CEA21691CE2140C002C5BA7 /* UIButton+Addition.h */,
+				9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */,
 				A18C675D1CD087C500C7B070 /* UIView+Fram.h */,
 				A18C675E1CD087C500C7B070 /* UIView+Fram.m */,
 				A19D293C1CD1A32D00DAAEA7 /* NSString+Fram.h */,
@@ -1910,6 +1916,7 @@
 				A1A97E511CDC66E900EDE320 /* ReceiveMessagesViewController.m in Sources */,
 				A19D296A1CD208E900DAAEA7 /* AuthentyViewController.m in Sources */,
 				A19B8E4A1CCF530900F8EBF2 /* MineViewController.m in Sources */,
+				9CEA216B1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */,
 				A18C675F1CD087C500C7B070 /* UIView+Fram.m in Sources */,
 				A1A017511C5B696A00027134 /* MJProperty.m in Sources */,
 				A19B8E221CCF42E300F8EBF2 /* ALView+PureLayout.m in Sources */,
@@ -1934,6 +1941,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1A016BD1C5A0C0300027134 /* qingdaofuTests.m in Sources */,
+				9CEA216C1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

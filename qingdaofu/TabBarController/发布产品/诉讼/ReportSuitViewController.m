@@ -40,7 +40,7 @@
 - (UITableView *)repSuitTableView
 {
     if (!_repSuitTableView) {
-        _repSuitTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavHeight, kScreenWidth, kScreenHeight-kNavHeight-kTabBarHeight) style:UITableViewStyleGrouped];
+        _repSuitTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTabBarHeight-kNavHeight) style:UITableViewStyleGrouped];
         _repSuitTableView.backgroundColor = kBackColor;
         _repSuitTableView.delegate = self;
         _repSuitTableView.dataSource = self;
@@ -71,6 +71,7 @@
 {
     if (!_repSuitSwitchView) {
         _repSuitSwitchView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight, kScreenWidth, kTabBarHeight)];
+        _repSuitSwitchView.heightConstraint.constant = kTabBarHeight;
         _repSuitSwitchView.backgroundColor = kNavColor;
         [_repSuitSwitchView.getbutton setTitle:@"  保存" forState:0];
         [_repSuitSwitchView.getbutton setImage:[UIImage imageNamed:@"save"] forState:0];
@@ -85,7 +86,7 @@
             ReportFiSucViewController *reportSuccessVC = [[ReportFiSucViewController alloc] init];
 //            UIViewController *VC = [UIApplication sharedApplication].keyWindow.rootViewController;
 //            [VC.navigationController pushViewController:reportSuccessVC animated:YES];
-            [weakself presentViewController:reportSuccessVC animated:YES completion:nil];
+            [weakself.navigationController pushViewController:reportSuccessVC animated:YES];
             
         }];
     }
