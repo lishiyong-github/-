@@ -79,16 +79,17 @@
 - (EvaTopSwitchView *)reportSucFootView
 {
     if (!_reportSucFootView) {
-        _reportSucFootView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight, kScreenWidth, kTabBarHeight)];
+        _reportSucFootView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight-kNavHeight, kScreenWidth, kTabBarHeight)];
         _reportSucFootView.backgroundColor = kNavColor;
         _reportSucFootView.heightConstraint.constant = kTabBarHeight;
+        [_reportSucFootView.blueLabel setHidden:YES];
         
-        [_reportSucFootView.getbutton setTitle:@"  回主页" forState:0];
+        [_reportSucFootView.getbutton setTitle:@"回主页  " forState:0];
         [_reportSucFootView.getbutton setImage:[UIImage imageNamed:@"back"] forState:0];
         [_reportSucFootView.getbutton setTitleColor:kBlueColor forState:0];
         [_reportSucFootView.getbutton addTarget:self action:@selector(finishReport) forControlEvents:UIControlEventTouchUpInside];
         
-        [_reportSucFootView.sendButton setTitle:@"  继续发布" forState:0];
+        [_reportSucFootView.sendButton setTitle:@"继续发布  " forState:0];
         [_reportSucFootView.sendButton setImage:[UIImage imageNamed:@"add"] forState:0];
         [_reportSucFootView.sendButton setTitleColor:kBlueColor forState:0];
     }

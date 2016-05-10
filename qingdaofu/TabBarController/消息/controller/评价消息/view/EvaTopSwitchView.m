@@ -7,6 +7,7 @@
 //
 
 #import "EvaTopSwitchView.h"
+#import "UIButton+Addition.h"
 
 @interface EvaTopSwitchView ()
 
@@ -49,7 +50,11 @@
         [self.sendButton autoMatchDimension:ALDimensionHeight toDimension:ALDimensionHeight ofView:self.getbutton];
         
         [self.shortLineLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.getbutton];
-        [self.shortLineLabel autoSetDimensionsToSize:CGSizeMake(1, 25)];
+        [self.shortLineLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:kSmallPadding];
+        [self.shortLineLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kSmallPadding];
+        [self.shortLineLabel autoSetDimension:ALDimensionWidth toSize:1];
+        
+//        [self.shortLineLabel autoSetDimensionsToSize:CGSizeMake(1, 25)];
         
         [self.longLineLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.getbutton];
         [self.longLineLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft];
@@ -68,6 +73,7 @@
         [_getbutton setTitle:@"收到的评价" forState:0];
         [_getbutton setTitleColor:[UIColor blackColor] forState:0];
         _getbutton.titleLabel.font = kBigFont;
+        [_getbutton swapImage];
         
         QDFWeakSelf;
         [_getbutton addAction:^(UIButton *btn) {
@@ -86,6 +92,7 @@
         [_sendButton setTitle:@"发出的评价" forState:0];
         [_sendButton setTitleColor:[UIColor blackColor] forState:0];
         _sendButton.titleLabel.font = kBigFont;
+        [_sendButton swapImage];
         
         QDFWeakSelf;
         [_sendButton addAction:^(UIButton *btn) {

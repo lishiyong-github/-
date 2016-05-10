@@ -92,13 +92,13 @@
         _repFiSwitchView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight-kNavHeight, kScreenWidth, kTabBarHeight)];
         _repFiSwitchView.heightConstraint.constant = kTabBarHeight;
         _repFiSwitchView.backgroundColor = kNavColor;
-        [_repFiSwitchView.getbutton setTitle:@"  保存" forState:0];
+        [_repFiSwitchView.blueLabel setHidden:YES];
+        
+        [_repFiSwitchView.getbutton setTitle:@"保存  " forState:0];
         [_repFiSwitchView.getbutton setImage:[UIImage imageNamed:@"save"] forState:0];
-       
         [_repFiSwitchView.getbutton setTitleColor:kBlueColor forState:0];
         
-        
-        [_repFiSwitchView.sendButton setTitle:@"  立即发布" forState:0];
+        [_repFiSwitchView.sendButton setTitle:@"立即发布  " forState:0];
         [_repFiSwitchView.sendButton setImage:[UIImage imageNamed:@"publish"] forState:0];
         [_repFiSwitchView.sendButton setTitleColor:kBlueColor forState:0];
         
