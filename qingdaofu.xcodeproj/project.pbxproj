@@ -23,6 +23,11 @@
 		A154B8F01CE1B71D00884CA4 /* add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8EC1CE1B71D00884CA4 /* add@3x.png */; };
 		A154B8F11CE1B71D00884CA4 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8ED1CE1B71D00884CA4 /* back@2x.png */; };
 		A154B8F21CE1B71D00884CA4 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8EE1CE1B71D00884CA4 /* back@3x.png */; };
+		A154B8F51CE1C14100884CA4 /* ReportSuitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8F41CE1C14100884CA4 /* ReportSuitViewController.m */; };
+		A154B8F91CE1C4B100884CA4 /* ReportSuitView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8F81CE1C4B100884CA4 /* ReportSuitView.m */; };
+		A154B8FC1CE1C57000884CA4 /* SuitBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8FB1CE1C57000884CA4 /* SuitBaseView.m */; };
+		A154B8FF1CE1CA4700884CA4 /* ReportSuitSeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8FE1CE1CA4700884CA4 /* ReportSuitSeView.m */; };
+		A154B9031CE1E06300884CA4 /* ReportSuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B9021CE1E06300884CA4 /* ReportSuccessView.m */; };
 		A17691171CD97E30004289DD /* MyApplyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17691161CD97E30004289DD /* MyApplyingViewController.m */; };
 		A176911B1CD9822A004289DD /* MyProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A176911A1CD9822A004289DD /* MyProcessingViewController.m */; };
 		A176911F1CD98404004289DD /* MyEndingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A176911E1CD98404004289DD /* MyEndingViewController.m */; };
@@ -258,6 +263,16 @@
 		A154B8EC1CE1B71D00884CA4 /* add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@3x.png"; sourceTree = "<group>"; };
 		A154B8ED1CE1B71D00884CA4 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		A154B8EE1CE1B71D00884CA4 /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
+		A154B8F31CE1C14100884CA4 /* ReportSuitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuitViewController.h; sourceTree = "<group>"; };
+		A154B8F41CE1C14100884CA4 /* ReportSuitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuitViewController.m; sourceTree = "<group>"; };
+		A154B8F71CE1C4B100884CA4 /* ReportSuitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuitView.h; sourceTree = "<group>"; };
+		A154B8F81CE1C4B100884CA4 /* ReportSuitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuitView.m; sourceTree = "<group>"; };
+		A154B8FA1CE1C57000884CA4 /* SuitBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuitBaseView.h; sourceTree = "<group>"; };
+		A154B8FB1CE1C57000884CA4 /* SuitBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuitBaseView.m; sourceTree = "<group>"; };
+		A154B8FD1CE1CA4700884CA4 /* ReportSuitSeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuitSeView.h; sourceTree = "<group>"; };
+		A154B8FE1CE1CA4700884CA4 /* ReportSuitSeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuitSeView.m; sourceTree = "<group>"; };
+		A154B9011CE1E06300884CA4 /* ReportSuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuccessView.h; sourceTree = "<group>"; };
+		A154B9021CE1E06300884CA4 /* ReportSuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuccessView.m; sourceTree = "<group>"; };
 		A17691151CD97E30004289DD /* MyApplyingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplyingViewController.h; sourceTree = "<group>"; };
 		A17691161CD97E30004289DD /* MyApplyingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplyingViewController.m; sourceTree = "<group>"; };
 		A17691191CD9822A004289DD /* MyProcessingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProcessingViewController.h; sourceTree = "<group>"; };
@@ -621,10 +636,33 @@
 		A154B8E71CE1B45900884CA4 /* 发布成功 */ = {
 			isa = PBXGroup;
 			children = (
+				A154B9001CE1E03F00884CA4 /* view */,
 				A154B8E81CE1B47B00884CA4 /* ReportFiSucViewController.h */,
 				A154B8E91CE1B47B00884CA4 /* ReportFiSucViewController.m */,
 			);
 			path = "发布成功";
+			sourceTree = "<group>";
+		};
+		A154B8F61CE1C49500884CA4 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A154B8F71CE1C4B100884CA4 /* ReportSuitView.h */,
+				A154B8F81CE1C4B100884CA4 /* ReportSuitView.m */,
+				A154B8FA1CE1C57000884CA4 /* SuitBaseView.h */,
+				A154B8FB1CE1C57000884CA4 /* SuitBaseView.m */,
+				A154B8FD1CE1CA4700884CA4 /* ReportSuitSeView.h */,
+				A154B8FE1CE1CA4700884CA4 /* ReportSuitSeView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A154B9001CE1E03F00884CA4 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A154B9011CE1E06300884CA4 /* ReportSuccessView.h */,
+				A154B9021CE1E06300884CA4 /* ReportSuccessView.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		A17691181CD981FC004289DD /* 处理中 */ = {
@@ -986,6 +1024,9 @@
 		A19985441CE07FD10055A572 /* 诉讼 */ = {
 			isa = PBXGroup;
 			children = (
+				A154B8F61CE1C49500884CA4 /* view */,
+				A154B8F31CE1C14100884CA4 /* ReportSuitViewController.h */,
+				A154B8F41CE1C14100884CA4 /* ReportSuitViewController.m */,
 			);
 			path = "诉讼";
 			sourceTree = "<group>";
@@ -1786,6 +1827,7 @@
 				A18C67661CD08DA800C7B070 /* LoginView.m in Sources */,
 				A19B8E231CCF42E300F8EBF2 /* NSArray+PureLayout.m in Sources */,
 				A17964FA1CD3656800B6AD47 /* MyStoreViewController.m in Sources */,
+				A154B8F51CE1C14100884CA4 /* ReportSuitViewController.m in Sources */,
 				A19B8E531CCF533B00F8EBF2 /* ProductsViewController.m in Sources */,
 				A17691321CD9A029004289DD /* CheckDetailUserView.m in Sources */,
 				A1A97E6D1CDC98EB00EDE320 /* MyDealingViewController.m in Sources */,
@@ -1818,9 +1860,11 @@
 				A176912E1CD99E1E004289DD /* CheckDetailPublishViewController.m in Sources */,
 				A1A016A71C5A0C0300027134 /* AppDelegate.m in Sources */,
 				A1A017581C5B696A00027134 /* NSString+MJExtension.m in Sources */,
+				A154B8F91CE1C4B100884CA4 /* ReportSuitView.m in Sources */,
 				A17691261CD986BA004289DD /* LineLabel.m in Sources */,
 				A1A017301C5B607300027134 /* UIImage+Color.m in Sources */,
 				A1A017911C5B8A2100027134 /* AFHTTPSessionManager.m in Sources */,
+				A154B8FC1CE1C57000884CA4 /* SuitBaseView.m in Sources */,
 				A1A016A41C5A0C0300027134 /* main.m in Sources */,
 				A19B8E501CCF532B00F8EBF2 /* NewProductViewController.m in Sources */,
 				A1A017521C5B696A00027134 /* MJPropertyKey.m in Sources */,
@@ -1850,11 +1894,13 @@
 				A1A97E571CDC671000EDE320 /* SystemMessagesViewController.m in Sources */,
 				A176913C1CD9C911004289DD /* RequestTextView.m in Sources */,
 				A1A017351C5B67D400027134 /* MBProgressHUD.m in Sources */,
+				A154B8FF1CE1CA4700884CA4 /* ReportSuitSeView.m in Sources */,
 				A19985191CE02BFC0055A572 /* ModifyView.m in Sources */,
 				A1A017571C5B696A00027134 /* NSObject+MJProperty.m in Sources */,
 				A19D295B1CD2022900DAAEA7 /* MineView.m in Sources */,
 				A17964D81CD3053200B6AD47 /* TakePictureView.m in Sources */,
 				A19985471CE0802A0055A572 /* ReportFinanceViewController.m in Sources */,
+				A154B9031CE1E06300884CA4 /* ReportSuccessView.m in Sources */,
 				A19985231CE069630055A572 /* AllProSegView.m in Sources */,
 				A1A0174E1C5B696A00027134 /* MJDictionaryCache.m in Sources */,
 				A17691171CD97E30004289DD /* MyApplyingViewController.m in Sources */,

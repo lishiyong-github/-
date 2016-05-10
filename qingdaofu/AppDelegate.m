@@ -18,6 +18,7 @@
 #import "MineViewController.h"
 
 #import "ReportFinanceViewController.h"  //融资
+#import "ReportSuitViewController.h"     //诉讼
 
 #import "MoneyView.h"
 
@@ -117,7 +118,8 @@
     UIAlertController *tabAlertController = [UIAlertController alertControllerWithTitle:@"测试" message:@"发布催收融资" preferredStyle:UIAlertControllerStyleActionSheet];
 
     UIAlertAction *act1 = [UIAlertAction actionWithTitle:@"诉讼" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+        ReportSuitViewController *reportSuitVC = [[ReportSuitViewController alloc] init];
+        [viewController presentViewController:reportSuitVC animated:YES completion:nil];
     }];
     
     UIAlertAction *act2 = [UIAlertAction actionWithTitle:@"催收" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

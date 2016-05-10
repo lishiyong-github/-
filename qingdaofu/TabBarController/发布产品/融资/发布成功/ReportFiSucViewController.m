@@ -8,12 +8,15 @@
 
 #import "ReportFiSucViewController.h"
 
+#import "ReportSuccessView.h"
 #import "EvaTopSwitchView.h"
 
 @interface ReportFiSucViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *reportSucTableView;
 @property (nonatomic,strong) UIView *headerView;
+@property (nonatomic,strong) ReportSuccessView *sucSec0;
+
 @property (nonatomic,strong) EvaTopSwitchView *reportSucFootView;
 
 @end
@@ -68,6 +71,17 @@
     return _headerView;
 }
 
+- (ReportSuccessView *)sucSec0
+{
+    if (!_sucSec0) {
+        _sucSec0 = [[ReportSuccessView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 130)];
+        _sucSec0.tiLabel.text = @"发布时间：2016-05-10 17:40";
+        _sucSec0.tyLabel.text = @"产品类型：融资";
+        _sucSec0.stLabel.text = @"产品状态：已发布";
+    }
+    return _sucSec0;
+}
+
 - (EvaTopSwitchView *)reportSucFootView
 {
     if (!_reportSucFootView) {
@@ -95,7 +109,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 130;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -105,8 +119,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    
-    cell.backgroundColor = kNavColor;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell addSubview:self.sucSec0];
     
     return cell;
 }
