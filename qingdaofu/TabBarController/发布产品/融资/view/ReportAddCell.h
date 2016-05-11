@@ -1,5 +1,5 @@
 //
-//  UserButton.h
+//  ReportAddCell.h
 //  qingdaofu
 //
 //  Created by zhixiang on 16/5/11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserButton : UIButton
+@interface ReportAddCell : UITableViewCell
 
 @end

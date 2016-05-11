@@ -1,5 +1,5 @@
 //
-//  UserButton.h
+//  LoginCell.h
 //  qingdaofu
 //
 //  Created by zhixiang on 16/5/11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserButton : UIButton
+@interface LoginCell : UITableViewCell
 
 @end

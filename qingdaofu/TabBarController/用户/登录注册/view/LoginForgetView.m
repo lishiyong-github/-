@@ -1,14 +1,14 @@
 //
-//  UserButton.m
+//  LoginForgetView.m
 //  qingdaofu
 //
 //  Created by zhixiang on 16/5/11.
 //  Copyright © 2016年 zhixiang. All rights reserved.
 //
 
-#import "UserButton.h"
+#import "LoginForgetView.h"
 
-@implementation UserButton
+@implementation LoginForgetView
 
 /*
 // Only override drawRect: if you perform custom drawing.
