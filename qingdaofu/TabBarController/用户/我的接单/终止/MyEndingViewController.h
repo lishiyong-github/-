@@ -9,16 +9,6 @@
 
 #import "BaseViewController.h"
 
-#import "AuthenBaseView.h"
-#import "BidSingleView.h"
-#import "BidCellView.h"
-#import "MyOrderDetailView.h"
-
 @interface MyEndingViewController : BaseViewController
-
-@property (nonatomic,strong) AuthenBaseView *secView0;
-@property (nonatomic,strong) BidCellView *secVieww1;
-@property (nonatomic,strong) BidSingleView *secVieww2;
-@property (nonatomic,strong) MyOrderDetailView *secView3;
 
 @end

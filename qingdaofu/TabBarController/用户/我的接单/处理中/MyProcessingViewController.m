@@ -12,6 +12,11 @@
 
 #import "BaseCommitButton.h"
 
+#import "BidZeroCell.h"
+#import "BidCell.h"
+#import "BidSingleCell.h"
+#import "MyOrderDetailCell.h"
+
 @interface MyProcessingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *myProcessingTableView;
@@ -55,80 +60,6 @@
     }
     return _footerButton;
 }
-- (AuthenBaseView *)secVie0
-{
-    if (!_secVie0) {
-        _secVie0 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _secVie0.backgroundColor = kBlueColor;
-        _secVie0.label.text = @"产品编号:";
-        _secVie0.label.textColor = kNavColor;
-        _secVie0.textField.text = @"RZ201605030001";
-        _secVie0.textField.userInteractionEnabled = NO;
-        _secVie0.textField.textColor = kNavColor;
-        [_secVie0.button setTitle:@"已终止" forState:0];
-        [_secVie0.button setTitleColor:kNavColor forState:0];
-    }
-    return _secVie0;
-}
-
-- (BidCellView *)secVie1
-{
-    if (!_secVie1) {
-        _secVie1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
-        
-        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_risk_icon",@"conserve_rights_icon"];
-        _secVie1.cellView2.imageView1.image = [UIImage imageNamed:secImageArray[0]];
-        _secVie1.cellView3.imageView1.image = [UIImage imageNamed:secImageArray[1]];
-        _secVie1.cellView4.imageView1.image = [UIImage imageNamed:secImageArray[2]];
-        _secVie1.cellView5.imageView1.image = [UIImage imageNamed:secImageArray[3]];
-    }
-    return _secVie1;
-}
-
-- (BidSingleView *)secVie2
-{
-    if (!_secVie2) {
-        _secVie2 = [[BidSingleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 135+2*kCellHeight+1)];
-    }
-    return _secVie2;
-}
-- (AuthenBaseView *)secVie3
-{
-    if (!_secVie3) {
-        _secVie3 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _secVie3.backgroundColor = kNavColor;
-        _secVie3.label.text = @"|  服务协议";
-        _secVie3.label.textColor = kBlueColor;
-        _secVie3.textField.userInteractionEnabled = NO;
-        _secVie3.textField.placeholder = @"";
-        [_secVie3.button setTitle:@"点击查看 >" forState:0];
-        _secVie3.button.titleLabel.font = kSecondFont;
-        [_secVie3.button setTitleColor:kLightGrayColor forState:0];
-    }
-    return _secVie3;
-}
-- (MyOrderDetailView *)secVie4
-{
-    if (!_secVie4) {
-        _secVie4 = [[MyOrderDetailView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight*2+120)];
-    }
-    return _secVie4;
-}
-
-- (AuthenBaseView *)secVie5
-{
-    if (!_secVie5) {
-        _secVie5 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _secVie5.backgroundColor = kNavColor;
-        _secVie5.label.text = @"|  申请延期";
-        _secVie5.label.textColor = kBlueColor;
-        _secVie5.textField.userInteractionEnabled = NO;
-        [_secVie5.button setTitle:@"立即申请 >" forState:0];
-        [_secVie5.button setTitleColor:kLightGrayColor forState:0];
-        _secVie5.button.titleLabel.font = kSecondFont;
-    }
-    return _secVie5;
-}
 
 #pragma mark - 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -156,65 +87,100 @@
     static NSString *identifier;
     if (indexPath.section == 0) {
         identifier = @"s0";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        BidZeroCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[BidZeroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell addSubview:self.secVie0];
+
+        cell.bigProView.backgroundColor = kBlueColor;
+        cell.bigProView.label.text = @"产品编号:";
+        cell.bigProView.label.textColor = kNavColor;
+        cell.bigProView.textField.text = @"RZ201605030001";
+        cell.bigProView.textField.userInteractionEnabled = NO;
+        cell.bigProView.textField.textColor = kNavColor;
+        [cell.bigProView.button setTitle:@"已终止" forState:0];
+        [cell.bigProView.button setTitleColor:kNavColor forState:0];
+        
         return cell;
+        
     }else if (indexPath.section == 1){
         identifier = @"s1";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        BidCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[BidCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell addSubview:self.secVie1];
+
+        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_risk_icon",@"conserve_rights_icon"];
+        cell.cellView2.imageView1.image = [UIImage imageNamed:secImageArray[0]];
+        cell.cellView3.imageView1.image = [UIImage imageNamed:secImageArray[1]];
+        cell.cellView4.imageView1.image = [UIImage imageNamed:secImageArray[2]];
+        cell.cellView5.imageView1.image = [UIImage imageNamed:secImageArray[3]];
+        
         return cell;
     }else if (indexPath.section == 2){
         identifier = @"s2";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        BidSingleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[BidSingleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell addSubview:self.secVie2];
+        
         return cell;
+        
     }else if (indexPath.section == 3){
-        identifier = @"s3";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        identifier = @"s0";
+        BidZeroCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[BidZeroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell addSubview:self.secVie3];
+
+        cell.backgroundColor = kNavColor;
+        cell.bigProView.label.text = @"|  服务协议";
+        cell.bigProView.label.textColor = kBlueColor;
+        cell.bigProView.textField.userInteractionEnabled = NO;
+        cell.bigProView.textField.placeholder = @"";
+        [cell.bigProView.button setTitle:@"点击查看 >" forState:0];
+        cell.bigProView.button.titleLabel.font = kSecondFont;
+        [cell.bigProView.button setTitleColor:kLightGrayColor forState:0];
+        
         return cell;
+        
     }else if (indexPath.section == 4){
         identifier = @"s4";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        MyOrderDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[MyOrderDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell addSubview:self.secVie4];
+        
         return cell;
     }
     
-    identifier = @"s5";
+    identifier = @"s0";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    BidZeroCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[BidZeroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell addSubview:self.secVie5];
+
+    cell.bigProView.backgroundColor = kNavColor;
+    cell.bigProView.label.text = @"|  申请延期";
+    cell.bigProView.label.textColor = kBlueColor;
+    cell.bigProView.textField.userInteractionEnabled = NO;
+    [cell.bigProView.button setTitle:@"立即申请 >" forState:0];
+    [cell.bigProView.button setTitleColor:kLightGrayColor forState:0];
+    cell.bigProView.button.titleLabel.font = kSecondFont;
+
     return cell;
 }
 

@@ -14,7 +14,6 @@
 
 @property (nonatomic,strong) UILabel *nameLabel;
 @property (nonatomic,strong) UIImageView *tagImageView;
-@property (nonatomic,strong) UIButton *tButton;
 @property (nonatomic,strong) UIButton *goButton;
 
 @property (nonatomic,assign) CGFloat aH;

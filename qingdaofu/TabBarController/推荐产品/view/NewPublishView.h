@@ -10,6 +10,4 @@
 
 @interface NewPublishView : UIView
 
-@property (nonatomic,assign) CGFloat tH;
-
 @end

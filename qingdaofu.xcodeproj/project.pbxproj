@@ -10,7 +10,6 @@
 		9CEA216B1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
 		9CEA216C1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
 		A1039F0C1C72C55400771747 /* RefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1039F0B1C72C55400771747 /* RefreshViewController.m */; };
-		A154B8D31CE184CF00884CA4 /* ReportAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8D21CE184CF00884CA4 /* ReportAddView.m */; };
 		A154B8D61CE18E7F00884CA4 /* ReportFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8D51CE18E7F00884CA4 /* ReportFootView.m */; };
 		A154B8D91CE1912800884CA4 /* open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8D71CE1912800884CA4 /* open@2x.png */; };
 		A154B8DA1CE1912800884CA4 /* open@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8D81CE1912800884CA4 /* open@3x.png */; };
@@ -26,14 +25,11 @@
 		A154B8F11CE1B71D00884CA4 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8ED1CE1B71D00884CA4 /* back@2x.png */; };
 		A154B8F21CE1B71D00884CA4 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8EE1CE1B71D00884CA4 /* back@3x.png */; };
 		A154B8F51CE1C14100884CA4 /* ReportSuitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8F41CE1C14100884CA4 /* ReportSuitViewController.m */; };
-		A154B8F91CE1C4B100884CA4 /* ReportSuitView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8F81CE1C4B100884CA4 /* ReportSuitView.m */; };
 		A154B8FC1CE1C57000884CA4 /* SuitBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8FB1CE1C57000884CA4 /* SuitBaseView.m */; };
-		A154B8FF1CE1CA4700884CA4 /* ReportSuitSeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8FE1CE1CA4700884CA4 /* ReportSuitSeView.m */; };
 		A154B9031CE1E06300884CA4 /* ReportSuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B9021CE1E06300884CA4 /* ReportSuccessView.m */; };
 		A17691171CD97E30004289DD /* MyApplyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17691161CD97E30004289DD /* MyApplyingViewController.m */; };
 		A176911B1CD9822A004289DD /* MyProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A176911A1CD9822A004289DD /* MyProcessingViewController.m */; };
 		A176911F1CD98404004289DD /* MyEndingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A176911E1CD98404004289DD /* MyEndingViewController.m */; };
-		A17691231CD98466004289DD /* MyOrderDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = A17691221CD98466004289DD /* MyOrderDetailView.m */; };
 		A17691261CD986BA004289DD /* LineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A17691251CD986BA004289DD /* LineLabel.m */; };
 		A176912A1CD9976D004289DD /* MyClosingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17691291CD9976D004289DD /* MyClosingViewController.m */; };
 		A176912E1CD99E1E004289DD /* CheckDetailPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A176912D1CD99E1E004289DD /* CheckDetailPublishViewController.m */; };
@@ -66,8 +62,6 @@
 		A17EE38D1CD86FB700ECC631 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17EE38C1CD86FB700ECC631 /* ContactUsViewController.m */; };
 		A17EE3911CD8796900ECC631 /* SuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17EE3901CD8796900ECC631 /* SuggestionViewController.m */; };
 		A17EE3941CD8983900ECC631 /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17EE3931CD8983900ECC631 /* MyOrderViewController.m */; };
-		A17EE3971CD8A6C500ECC631 /* BidCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = A17EE3961CD8A6C500ECC631 /* BidCellView.m */; };
-		A17EE39A1CD8A9D100ECC631 /* BidSingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A17EE3991CD8A9D100ECC631 /* BidSingleView.m */; };
 		A18C675C1CD06C2E00C7B070 /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C675B1CD06C2E00C7B070 /* UIButton+Block.m */; };
 		A18C675F1CD087C500C7B070 /* UIView+Fram.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C675E1CD087C500C7B070 /* UIView+Fram.m */; };
 		A18C67631CD08D9A00C7B070 /* NoLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C67621CD08D9A00C7B070 /* NoLoginView.m */; };
@@ -109,7 +103,6 @@
 		A199853E1CE07CFD0055A572 /* tab_recommend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A19985361CE07CFD0055A572 /* tab_recommend@2x.png */; };
 		A199853F1CE07CFD0055A572 /* tab_recommend@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A19985371CE07CFD0055A572 /* tab_recommend@3x.png */; };
 		A19985471CE0802A0055A572 /* ReportFinanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19985461CE0802A0055A572 /* ReportFinanceViewController.m */; };
-		A199854B1CE08FEE0055A572 /* ReportFiView.m in Sources */ = {isa = PBXBuildFile; fileRef = A199854A1CE08FEE0055A572 /* ReportFiView.m */; };
 		A19B8E221CCF42E300F8EBF2 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19B8E1A1CCF42E300F8EBF2 /* ALView+PureLayout.m */; };
 		A19B8E231CCF42E300F8EBF2 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19B8E1C1CCF42E300F8EBF2 /* NSArray+PureLayout.m */; };
 		A19B8E241CCF42E300F8EBF2 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A19B8E1E1CCF42E300F8EBF2 /* NSLayoutConstraint+PureLayout.m */; };
@@ -125,8 +118,6 @@
 		A19D294A1CD1B79000DAAEA7 /* NewProView.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D29491CD1B79000DAAEA7 /* NewProView.m */; };
 		A19D294E1CD1E04300DAAEA7 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D294D1CD1E04300DAAEA7 /* HomeCell.m */; };
 		A19D29521CD1F71800DAAEA7 /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D29511CD1F71800DAAEA7 /* BaseLabel.m */; };
-		A19D295B1CD2022900DAAEA7 /* MineView.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D295A1CD2022900DAAEA7 /* MineView.m */; };
-		A19D29611CD2034200DAAEA7 /* UserButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D29601CD2034200DAAEA7 /* UserButton.m */; };
 		A19D296A1CD208E900DAAEA7 /* AuthentyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D29691CD208E900DAAEA7 /* AuthentyViewController.m */; };
 		A19D296D1CD208FB00DAAEA7 /* CompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D296C1CD208FB00DAAEA7 /* CompleteViewController.m */; };
 		A19D29741CD2158100DAAEA7 /* AuthenPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D29731CD2158100DAAEA7 /* AuthenPersonViewController.m */; };
@@ -176,6 +167,40 @@
 		A1A017951C5B8A2100027134 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A0178A1C5B8A2100027134 /* AFURLRequestSerialization.m */; };
 		A1A017961C5B8A2100027134 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A0178C1C5B8A2100027134 /* AFURLResponseSerialization.m */; };
 		A1A017971C5B8A2100027134 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A0178E1C5B8A2100027134 /* AFURLSessionManager.m */; };
+		A1A34BE81CE2BC2300AD454A /* BidCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34BE71CE2BC2300AD454A /* BidCell.m */; };
+		A1A34BEB1CE2BEB200AD454A /* BidSingleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34BEA1CE2BEB200AD454A /* BidSingleCell.m */; };
+		A1A34BEE1CE2C7A200AD454A /* BidZeroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34BED1CE2C7A200AD454A /* BidZeroCell.m */; };
+		A1A34BF11CE2C9EB00AD454A /* MyOrderDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34BF01CE2C9EB00AD454A /* MyOrderDetailCell.m */; };
+		A1A34BF61CE2DFB400AD454A /* tab_user_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34BF21CE2DFB400AD454A /* tab_user_s@2x.png */; };
+		A1A34BF71CE2DFB400AD454A /* tab_user_s@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34BF31CE2DFB400AD454A /* tab_user_s@3x.png */; };
+		A1A34BF81CE2DFB400AD454A /* tab_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34BF41CE2DFB400AD454A /* tab_user@2x.png */; };
+		A1A34BF91CE2DFB400AD454A /* tab_user@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34BF51CE2DFB400AD454A /* tab_user@3X.png */; };
+		A1A34BFC1CE2E0B500AD454A /* CheckDetailUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34BFB1CE2E0B500AD454A /* CheckDetailUserCell.m */; };
+		A1A34BFF1CE2F63F00AD454A /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34BFE1CE2F63F00AD454A /* MineCell.m */; };
+		A1A34C021CE2F8F900AD454A /* MineUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C011CE2F8F900AD454A /* MineUserCell.m */; };
+		A1A34C051CE2FE7500AD454A /* UserButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C041CE2FE7500AD454A /* UserButton.m */; };
+		A1A34C081CE30A4C00AD454A /* ReportSuitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C071CE30A4C00AD454A /* ReportSuitCell.m */; };
+		A1A34C0B1CE30AE900AD454A /* ReportSuitSeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C0A1CE30AE900AD454A /* ReportSuitSeCell.m */; };
+		A1A34C0E1CE30C2400AD454A /* ReportFiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C0D1CE30C2400AD454A /* ReportFiCell.m */; };
+		A1A34C111CE30C8800AD454A /* ReportAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C101CE30C8800AD454A /* ReportAddCell.m */; };
+		A1A34C161CE3148A00AD454A /* UploadFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C151CE3148A00AD454A /* UploadFilesViewController.m */; };
+		A1A34C231CE319C000AD454A /* bond_icon_certificate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C171CE319C000AD454A /* bond_icon_certificate@2x.png */; };
+		A1A34C241CE319C000AD454A /* bond_icon_certificate@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C181CE319C000AD454A /* bond_icon_certificate@3x.png */; };
+		A1A34C251CE319C000AD454A /* bond_icon_contract@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C191CE319C000AD454A /* bond_icon_contract@2x.png */; };
+		A1A34C261CE319C000AD454A /* bond_icon_contract@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C1A1CE319C000AD454A /* bond_icon_contract@3x.png */; };
+		A1A34C271CE319C000AD454A /* bond_icon_receipt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C1B1CE319C000AD454A /* bond_icon_receipt@2x.png */; };
+		A1A34C281CE319C000AD454A /* bond_icon_receipt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C1C1CE319C000AD454A /* bond_icon_receipt@3x.png */; };
+		A1A34C291CE319C000AD454A /* bond_icon_repayment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C1D1CE319C000AD454A /* bond_icon_repayment@2x.png */; };
+		A1A34C2A1CE319C000AD454A /* bond_icon_repayment@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C1E1CE319C000AD454A /* bond_icon_repayment@3x.png */; };
+		A1A34C2B1CE319C000AD454A /* bond_icon_voucher@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C1F1CE319C000AD454A /* bond_icon_voucher@2x.png */; };
+		A1A34C2C1CE319C000AD454A /* bond_icon_voucher@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C201CE319C000AD454A /* bond_icon_voucher@3x.png */; };
+		A1A34C2D1CE319C000AD454A /* bond_icon_warrants@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C211CE319C000AD454A /* bond_icon_warrants@2x.png */; };
+		A1A34C2E1CE319C000AD454A /* bond_icon_warrants@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A34C221CE319C000AD454A /* bond_icon_warrants@3x.png */; };
+		A1A34C341CE32C7100AD454A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C331CE32C7100AD454A /* LoginViewController.m */; };
+		A1A34C371CE32C8000AD454A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C361CE32C8000AD454A /* RegisterViewController.m */; };
+		A1A34C3A1CE32C9300AD454A /* ForgetPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C391CE32C9300AD454A /* ForgetPassViewController.m */; };
+		A1A34C3D1CE32CF700AD454A /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C3C1CE32CF700AD454A /* LoginCell.m */; };
+		A1A34C401CE339B800AD454A /* LoginForgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C3F1CE339B800AD454A /* LoginForgetView.m */; };
 		A1A97E161CDC26A200EDE320 /* publish_list_authentication@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A97E141CDC26A200EDE320 /* publish_list_authentication@2x.png */; };
 		A1A97E171CDC26A200EDE320 /* publish_list_authentication@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A97E151CDC26A200EDE320 /* publish_list_authentication@3x.png */; };
 		A1A97E1A1CDC388E00EDE320 /* information_nav_remind@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1A97E181CDC388E00EDE320 /* information_nav_remind@2x.png */; };
@@ -249,8 +274,6 @@
 		9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Addition.m"; sourceTree = "<group>"; };
 		A1039F0A1C72C55400771747 /* RefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshViewController.h; sourceTree = "<group>"; };
 		A1039F0B1C72C55400771747 /* RefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshViewController.m; sourceTree = "<group>"; };
-		A154B8D11CE184CF00884CA4 /* ReportAddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportAddView.h; sourceTree = "<group>"; };
-		A154B8D21CE184CF00884CA4 /* ReportAddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportAddView.m; sourceTree = "<group>"; };
 		A154B8D41CE18E7F00884CA4 /* ReportFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportFootView.h; sourceTree = "<group>"; };
 		A154B8D51CE18E7F00884CA4 /* ReportFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportFootView.m; sourceTree = "<group>"; };
 		A154B8D71CE1912800884CA4 /* open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open@2x.png"; sourceTree = "<group>"; };
@@ -269,12 +292,8 @@
 		A154B8EE1CE1B71D00884CA4 /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
 		A154B8F31CE1C14100884CA4 /* ReportSuitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuitViewController.h; sourceTree = "<group>"; };
 		A154B8F41CE1C14100884CA4 /* ReportSuitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuitViewController.m; sourceTree = "<group>"; };
-		A154B8F71CE1C4B100884CA4 /* ReportSuitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuitView.h; sourceTree = "<group>"; };
-		A154B8F81CE1C4B100884CA4 /* ReportSuitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuitView.m; sourceTree = "<group>"; };
 		A154B8FA1CE1C57000884CA4 /* SuitBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuitBaseView.h; sourceTree = "<group>"; };
 		A154B8FB1CE1C57000884CA4 /* SuitBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuitBaseView.m; sourceTree = "<group>"; };
-		A154B8FD1CE1CA4700884CA4 /* ReportSuitSeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuitSeView.h; sourceTree = "<group>"; };
-		A154B8FE1CE1CA4700884CA4 /* ReportSuitSeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuitSeView.m; sourceTree = "<group>"; };
 		A154B9011CE1E06300884CA4 /* ReportSuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuccessView.h; sourceTree = "<group>"; };
 		A154B9021CE1E06300884CA4 /* ReportSuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuccessView.m; sourceTree = "<group>"; };
 		A17691151CD97E30004289DD /* MyApplyingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplyingViewController.h; sourceTree = "<group>"; };
@@ -283,8 +302,6 @@
 		A176911A1CD9822A004289DD /* MyProcessingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProcessingViewController.m; sourceTree = "<group>"; };
 		A176911D1CD98404004289DD /* MyEndingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEndingViewController.h; sourceTree = "<group>"; };
 		A176911E1CD98404004289DD /* MyEndingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEndingViewController.m; sourceTree = "<group>"; };
-		A17691211CD98466004289DD /* MyOrderDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderDetailView.h; sourceTree = "<group>"; };
-		A17691221CD98466004289DD /* MyOrderDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderDetailView.m; sourceTree = "<group>"; };
 		A17691241CD986BA004289DD /* LineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineLabel.h; sourceTree = "<group>"; };
 		A17691251CD986BA004289DD /* LineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineLabel.m; sourceTree = "<group>"; };
 		A17691281CD9976D004289DD /* MyClosingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClosingViewController.h; sourceTree = "<group>"; };
@@ -349,10 +366,6 @@
 		A17EE3901CD8796900ECC631 /* SuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionViewController.m; sourceTree = "<group>"; };
 		A17EE3921CD8983900ECC631 /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
 		A17EE3931CD8983900ECC631 /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
-		A17EE3951CD8A6C500ECC631 /* BidCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BidCellView.h; sourceTree = "<group>"; };
-		A17EE3961CD8A6C500ECC631 /* BidCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BidCellView.m; sourceTree = "<group>"; };
-		A17EE3981CD8A9D100ECC631 /* BidSingleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BidSingleView.h; sourceTree = "<group>"; };
-		A17EE3991CD8A9D100ECC631 /* BidSingleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BidSingleView.m; sourceTree = "<group>"; };
 		A18C675A1CD06C2E00C7B070 /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
 		A18C675B1CD06C2E00C7B070 /* UIButton+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
 		A18C675D1CD087C500C7B070 /* UIView+Fram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Fram.h"; sourceTree = "<group>"; };
@@ -409,8 +422,6 @@
 		A19985371CE07CFD0055A572 /* tab_recommend@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_recommend@3x.png"; sourceTree = "<group>"; };
 		A19985451CE0802A0055A572 /* ReportFinanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportFinanceViewController.h; sourceTree = "<group>"; };
 		A19985461CE0802A0055A572 /* ReportFinanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportFinanceViewController.m; sourceTree = "<group>"; };
-		A19985491CE08FEE0055A572 /* ReportFiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportFiView.h; sourceTree = "<group>"; };
-		A199854A1CE08FEE0055A572 /* ReportFiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportFiView.m; sourceTree = "<group>"; };
 		A19B8E191CCF42E300F8EBF2 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
 		A19B8E1A1CCF42E300F8EBF2 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
 		A19B8E1B1CCF42E300F8EBF2 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
@@ -444,10 +455,6 @@
 		A19D294D1CD1E04300DAAEA7 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		A19D29501CD1F71800DAAEA7 /* BaseLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLabel.h; sourceTree = "<group>"; };
 		A19D29511CD1F71800DAAEA7 /* BaseLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLabel.m; sourceTree = "<group>"; };
-		A19D29591CD2022900DAAEA7 /* MineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineView.h; sourceTree = "<group>"; };
-		A19D295A1CD2022900DAAEA7 /* MineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineView.m; sourceTree = "<group>"; };
-		A19D295F1CD2034200DAAEA7 /* UserButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserButton.h; sourceTree = "<group>"; };
-		A19D29601CD2034200DAAEA7 /* UserButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserButton.m; sourceTree = "<group>"; };
 		A19D29681CD208E900DAAEA7 /* AuthentyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthentyViewController.h; sourceTree = "<group>"; };
 		A19D29691CD208E900DAAEA7 /* AuthentyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthentyViewController.m; sourceTree = "<group>"; };
 		A19D296B1CD208FB00DAAEA7 /* CompleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompleteViewController.h; sourceTree = "<group>"; };
@@ -537,6 +544,58 @@
 		A1A0178C1C5B8A2100027134 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		A1A0178D1C5B8A2100027134 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		A1A0178E1C5B8A2100027134 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		A1A34BE61CE2BC2300AD454A /* BidCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BidCell.h; sourceTree = "<group>"; };
+		A1A34BE71CE2BC2300AD454A /* BidCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BidCell.m; sourceTree = "<group>"; };
+		A1A34BE91CE2BEB200AD454A /* BidSingleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BidSingleCell.h; sourceTree = "<group>"; };
+		A1A34BEA1CE2BEB200AD454A /* BidSingleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BidSingleCell.m; sourceTree = "<group>"; };
+		A1A34BEC1CE2C7A200AD454A /* BidZeroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BidZeroCell.h; sourceTree = "<group>"; };
+		A1A34BED1CE2C7A200AD454A /* BidZeroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BidZeroCell.m; sourceTree = "<group>"; };
+		A1A34BEF1CE2C9EB00AD454A /* MyOrderDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderDetailCell.h; sourceTree = "<group>"; };
+		A1A34BF01CE2C9EB00AD454A /* MyOrderDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderDetailCell.m; sourceTree = "<group>"; };
+		A1A34BF21CE2DFB400AD454A /* tab_user_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_user_s@2x.png"; sourceTree = "<group>"; };
+		A1A34BF31CE2DFB400AD454A /* tab_user_s@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_user_s@3x.png"; sourceTree = "<group>"; };
+		A1A34BF41CE2DFB400AD454A /* tab_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_user@2x.png"; sourceTree = "<group>"; };
+		A1A34BF51CE2DFB400AD454A /* tab_user@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_user@3X.png"; sourceTree = "<group>"; };
+		A1A34BFA1CE2E0B500AD454A /* CheckDetailUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckDetailUserCell.h; sourceTree = "<group>"; };
+		A1A34BFB1CE2E0B500AD454A /* CheckDetailUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckDetailUserCell.m; sourceTree = "<group>"; };
+		A1A34BFD1CE2F63F00AD454A /* MineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
+		A1A34BFE1CE2F63F00AD454A /* MineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
+		A1A34C001CE2F8F900AD454A /* MineUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineUserCell.h; sourceTree = "<group>"; };
+		A1A34C011CE2F8F900AD454A /* MineUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineUserCell.m; sourceTree = "<group>"; };
+		A1A34C031CE2FE7500AD454A /* UserButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserButton.h; sourceTree = "<group>"; };
+		A1A34C041CE2FE7500AD454A /* UserButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserButton.m; sourceTree = "<group>"; };
+		A1A34C061CE30A4C00AD454A /* ReportSuitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuitCell.h; sourceTree = "<group>"; };
+		A1A34C071CE30A4C00AD454A /* ReportSuitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuitCell.m; sourceTree = "<group>"; };
+		A1A34C091CE30AE900AD454A /* ReportSuitSeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuitSeCell.h; sourceTree = "<group>"; };
+		A1A34C0A1CE30AE900AD454A /* ReportSuitSeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuitSeCell.m; sourceTree = "<group>"; };
+		A1A34C0C1CE30C2400AD454A /* ReportFiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportFiCell.h; sourceTree = "<group>"; };
+		A1A34C0D1CE30C2400AD454A /* ReportFiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportFiCell.m; sourceTree = "<group>"; };
+		A1A34C0F1CE30C8800AD454A /* ReportAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportAddCell.h; sourceTree = "<group>"; };
+		A1A34C101CE30C8800AD454A /* ReportAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportAddCell.m; sourceTree = "<group>"; };
+		A1A34C141CE3148A00AD454A /* UploadFilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadFilesViewController.h; sourceTree = "<group>"; };
+		A1A34C151CE3148A00AD454A /* UploadFilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadFilesViewController.m; sourceTree = "<group>"; };
+		A1A34C171CE319C000AD454A /* bond_icon_certificate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_certificate@2x.png"; sourceTree = "<group>"; };
+		A1A34C181CE319C000AD454A /* bond_icon_certificate@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_certificate@3x.png"; sourceTree = "<group>"; };
+		A1A34C191CE319C000AD454A /* bond_icon_contract@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_contract@2x.png"; sourceTree = "<group>"; };
+		A1A34C1A1CE319C000AD454A /* bond_icon_contract@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_contract@3x.png"; sourceTree = "<group>"; };
+		A1A34C1B1CE319C000AD454A /* bond_icon_receipt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_receipt@2x.png"; sourceTree = "<group>"; };
+		A1A34C1C1CE319C000AD454A /* bond_icon_receipt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_receipt@3x.png"; sourceTree = "<group>"; };
+		A1A34C1D1CE319C000AD454A /* bond_icon_repayment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_repayment@2x.png"; sourceTree = "<group>"; };
+		A1A34C1E1CE319C000AD454A /* bond_icon_repayment@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_repayment@3x.png"; sourceTree = "<group>"; };
+		A1A34C1F1CE319C000AD454A /* bond_icon_voucher@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_voucher@2x.png"; sourceTree = "<group>"; };
+		A1A34C201CE319C000AD454A /* bond_icon_voucher@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_voucher@3x.png"; sourceTree = "<group>"; };
+		A1A34C211CE319C000AD454A /* bond_icon_warrants@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_warrants@2x.png"; sourceTree = "<group>"; };
+		A1A34C221CE319C000AD454A /* bond_icon_warrants@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bond_icon_warrants@3x.png"; sourceTree = "<group>"; };
+		A1A34C321CE32C7100AD454A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A1A34C331CE32C7100AD454A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A1A34C351CE32C8000AD454A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		A1A34C361CE32C8000AD454A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		A1A34C381CE32C9300AD454A /* ForgetPassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPassViewController.h; sourceTree = "<group>"; };
+		A1A34C391CE32C9300AD454A /* ForgetPassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPassViewController.m; sourceTree = "<group>"; };
+		A1A34C3B1CE32CF700AD454A /* LoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCell.h; sourceTree = "<group>"; };
+		A1A34C3C1CE32CF700AD454A /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
+		A1A34C3E1CE339B800AD454A /* LoginForgetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginForgetView.h; sourceTree = "<group>"; };
+		A1A34C3F1CE339B800AD454A /* LoginForgetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginForgetView.m; sourceTree = "<group>"; };
 		A1A97E141CDC26A200EDE320 /* publish_list_authentication@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "publish_list_authentication@2x.png"; sourceTree = "<group>"; };
 		A1A97E151CDC26A200EDE320 /* publish_list_authentication@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "publish_list_authentication@3x.png"; sourceTree = "<group>"; };
 		A1A97E181CDC388E00EDE320 /* information_nav_remind@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "information_nav_remind@2x.png"; sourceTree = "<group>"; };
@@ -650,12 +709,12 @@
 		A154B8F61CE1C49500884CA4 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				A154B8F71CE1C4B100884CA4 /* ReportSuitView.h */,
-				A154B8F81CE1C4B100884CA4 /* ReportSuitView.m */,
 				A154B8FA1CE1C57000884CA4 /* SuitBaseView.h */,
 				A154B8FB1CE1C57000884CA4 /* SuitBaseView.m */,
-				A154B8FD1CE1CA4700884CA4 /* ReportSuitSeView.h */,
-				A154B8FE1CE1CA4700884CA4 /* ReportSuitSeView.m */,
+				A1A34C061CE30A4C00AD454A /* ReportSuitCell.h */,
+				A1A34C071CE30A4C00AD454A /* ReportSuitCell.m */,
+				A1A34C091CE30AE900AD454A /* ReportSuitSeCell.h */,
+				A1A34C0A1CE30AE900AD454A /* ReportSuitSeCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -695,8 +754,8 @@
 		A17691201CD9844D004289DD /* view */ = {
 			isa = PBXGroup;
 			children = (
-				A17691211CD98466004289DD /* MyOrderDetailView.h */,
-				A17691221CD98466004289DD /* MyOrderDetailView.m */,
+				A1A34BEF1CE2C9EB00AD454A /* MyOrderDetailCell.h */,
+				A1A34BF01CE2C9EB00AD454A /* MyOrderDetailCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -726,6 +785,8 @@
 			children = (
 				A17691301CD9A029004289DD /* CheckDetailUserView.h */,
 				A17691311CD9A029004289DD /* CheckDetailUserView.m */,
+				A1A34BFA1CE2E0B500AD454A /* CheckDetailUserCell.h */,
+				A1A34BFB1CE2E0B500AD454A /* CheckDetailUserCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -788,10 +849,12 @@
 				A17EE37B1CD8421200ECC631 /* DetailView.m */,
 				A17EE37D1CD84DDF00ECC631 /* DetailBaseView.h */,
 				A17EE37E1CD84DDF00ECC631 /* DetailBaseView.m */,
-				A17EE3951CD8A6C500ECC631 /* BidCellView.h */,
-				A17EE3961CD8A6C500ECC631 /* BidCellView.m */,
-				A17EE3981CD8A9D100ECC631 /* BidSingleView.h */,
-				A17EE3991CD8A9D100ECC631 /* BidSingleView.m */,
+				A1A34BE61CE2BC2300AD454A /* BidCell.h */,
+				A1A34BE71CE2BC2300AD454A /* BidCell.m */,
+				A1A34BE91CE2BEB200AD454A /* BidSingleCell.h */,
+				A1A34BEA1CE2BEB200AD454A /* BidSingleCell.m */,
+				A1A34BEC1CE2C7A200AD454A /* BidZeroCell.h */,
+				A1A34BED1CE2C7A200AD454A /* BidZeroCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -849,10 +912,12 @@
 				A18C67621CD08D9A00C7B070 /* NoLoginView.m */,
 				A18C67641CD08DA800C7B070 /* LoginView.h */,
 				A18C67651CD08DA800C7B070 /* LoginView.m */,
-				A19D29591CD2022900DAAEA7 /* MineView.h */,
-				A19D295A1CD2022900DAAEA7 /* MineView.m */,
-				A19D295F1CD2034200DAAEA7 /* UserButton.h */,
-				A19D29601CD2034200DAAEA7 /* UserButton.m */,
+				A1A34C031CE2FE7500AD454A /* UserButton.h */,
+				A1A34C041CE2FE7500AD454A /* UserButton.m */,
+				A1A34BFD1CE2F63F00AD454A /* MineCell.h */,
+				A1A34BFE1CE2F63F00AD454A /* MineCell.m */,
+				A1A34C001CE2F8F900AD454A /* MineUserCell.h */,
+				A1A34C011CE2F8F900AD454A /* MineUserCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -889,6 +954,22 @@
 		A192B4BC1CDB45EB0053FC4C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A1A34C171CE319C000AD454A /* bond_icon_certificate@2x.png */,
+				A1A34C181CE319C000AD454A /* bond_icon_certificate@3x.png */,
+				A1A34C191CE319C000AD454A /* bond_icon_contract@2x.png */,
+				A1A34C1A1CE319C000AD454A /* bond_icon_contract@3x.png */,
+				A1A34C1B1CE319C000AD454A /* bond_icon_receipt@2x.png */,
+				A1A34C1C1CE319C000AD454A /* bond_icon_receipt@3x.png */,
+				A1A34C1D1CE319C000AD454A /* bond_icon_repayment@2x.png */,
+				A1A34C1E1CE319C000AD454A /* bond_icon_repayment@3x.png */,
+				A1A34C1F1CE319C000AD454A /* bond_icon_voucher@2x.png */,
+				A1A34C201CE319C000AD454A /* bond_icon_voucher@3x.png */,
+				A1A34C211CE319C000AD454A /* bond_icon_warrants@2x.png */,
+				A1A34C221CE319C000AD454A /* bond_icon_warrants@3x.png */,
+				A1A34BF21CE2DFB400AD454A /* tab_user_s@2x.png */,
+				A1A34BF31CE2DFB400AD454A /* tab_user_s@3x.png */,
+				A1A34BF41CE2DFB400AD454A /* tab_user@2x.png */,
+				A1A34BF51CE2DFB400AD454A /* tab_user@3X.png */,
 				A154B8EB1CE1B71D00884CA4 /* add@2x.png */,
 				A154B8EC1CE1B71D00884CA4 /* add@3x.png */,
 				A154B8ED1CE1B71D00884CA4 /* back@2x.png */,
@@ -1028,6 +1109,7 @@
 		A19985441CE07FD10055A572 /* 诉讼 */ = {
 			isa = PBXGroup;
 			children = (
+				A1A34C131CE313F300AD454A /* 上传文件 */,
 				A154B8F61CE1C49500884CA4 /* view */,
 				A154B8F31CE1C14100884CA4 /* ReportSuitViewController.h */,
 				A154B8F41CE1C14100884CA4 /* ReportSuitViewController.m */,
@@ -1038,12 +1120,12 @@
 		A19985481CE08FC10055A572 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				A19985491CE08FEE0055A572 /* ReportFiView.h */,
-				A199854A1CE08FEE0055A572 /* ReportFiView.m */,
-				A154B8D11CE184CF00884CA4 /* ReportAddView.h */,
-				A154B8D21CE184CF00884CA4 /* ReportAddView.m */,
 				A154B8D41CE18E7F00884CA4 /* ReportFootView.h */,
 				A154B8D51CE18E7F00884CA4 /* ReportFootView.m */,
+				A1A34C0C1CE30C2400AD454A /* ReportFiCell.h */,
+				A1A34C0D1CE30C2400AD454A /* ReportFiCell.m */,
+				A1A34C0F1CE30C8800AD454A /* ReportAddCell.h */,
+				A1A34C101CE30C8800AD454A /* ReportAddCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1117,6 +1199,7 @@
 		A19B8E431CCF52C800F8EBF2 /* 用户 */ = {
 			isa = PBXGroup;
 			children = (
+				A1A34C2F1CE32A2F00AD454A /* 登录注册 */,
 				A19D29671CD2087F00DAAEA7 /* 设置 */,
 				A19D29661CD2087400DAAEA7 /* 我的收藏 */,
 				A19D29651CD2086B00DAAEA7 /* 我的保存 */,
@@ -1512,6 +1595,48 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		A1A34C131CE313F300AD454A /* 上传文件 */ = {
+			isa = PBXGroup;
+			children = (
+				A1A34C141CE3148A00AD454A /* UploadFilesViewController.h */,
+				A1A34C151CE3148A00AD454A /* UploadFilesViewController.m */,
+			);
+			path = "上传文件";
+			sourceTree = "<group>";
+		};
+		A1A34C2F1CE32A2F00AD454A /* 登录注册 */ = {
+			isa = PBXGroup;
+			children = (
+				A1A34C311CE32C6200AD454A /* view */,
+				A1A34C301CE32C5800AD454A /* controller */,
+			);
+			path = "登录注册";
+			sourceTree = "<group>";
+		};
+		A1A34C301CE32C5800AD454A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1A34C321CE32C7100AD454A /* LoginViewController.h */,
+				A1A34C331CE32C7100AD454A /* LoginViewController.m */,
+				A1A34C351CE32C8000AD454A /* RegisterViewController.h */,
+				A1A34C361CE32C8000AD454A /* RegisterViewController.m */,
+				A1A34C381CE32C9300AD454A /* ForgetPassViewController.h */,
+				A1A34C391CE32C9300AD454A /* ForgetPassViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		A1A34C311CE32C6200AD454A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A1A34C3B1CE32CF700AD454A /* LoginCell.h */,
+				A1A34C3C1CE32CF700AD454A /* LoginCell.m */,
+				A1A34C3E1CE339B800AD454A /* LoginForgetView.h */,
+				A1A34C3F1CE339B800AD454A /* LoginForgetView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		A1A97E481CDC669300EDE320 /* 发布消息 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1710,8 +1835,10 @@
 				A192B4D11CDB52A40053FC4C /* list_icon_product@2x.png in Resources */,
 				A199852D1CE07A010055A572 /* publish_star_s@3x.png in Resources */,
 				A1A97E421CDC666400EDE320 /* news_order_icon@2x.png in Resources */,
+				A1A34C2D1CE319C000AD454A /* bond_icon_warrants@2x.png in Resources */,
 				A1B3D5281CDDC4F300F08AE8 /* conserve_interest_icon@2x.png in Resources */,
 				A1A97E741CDCA2BF00EDE320 /* conserve_loan_icon@2x.png in Resources */,
+				A1A34C251CE319C000AD454A /* bond_icon_contract@2x.png in Resources */,
 				A192B4C81CDB492B0053FC4C /* list_icon_preservation@3x.png in Resources */,
 				A1A97E411CDC666400EDE320 /* news_evaluate_icon@3x.png in Resources */,
 				A154B8DE1CE1913300884CA4 /* withdraw@3x.png in Resources */,
@@ -1722,6 +1849,7 @@
 				A154B8E41CE1AFE600884CA4 /* publish@3x.png in Resources */,
 				A1A97E361CDC631A00EDE320 /* btn_camera@2x.png in Resources */,
 				A154B8E51CE1AFE600884CA4 /* save@2x.png in Resources */,
+				A1A34C291CE319C000AD454A /* bond_icon_repayment@2x.png in Resources */,
 				A1A97E271CDC430500EDE320 /* identification_label@3x.png in Resources */,
 				A154B8F01CE1B71D00884CA4 /* add@3x.png in Resources */,
 				A192B4C01CDB46020053FC4C /* list_more@3x.png in Resources */,
@@ -1730,8 +1858,10 @@
 				A192B4D41CDB52A40053FC4C /* list_icon_user@3x.png in Resources */,
 				A1A97E261CDC430500EDE320 /* identification_label@2x.png in Resources */,
 				A192B4D31CDB52A40053FC4C /* list_icon_user@2x.png in Resources */,
+				A1A34C241CE319C000AD454A /* bond_icon_certificate@3x.png in Resources */,
 				A1A97E751CDCA2BF00EDE320 /* conserve_loan_icon@3x.png in Resources */,
 				A199853E1CE07CFD0055A572 /* tab_recommend@2x.png in Resources */,
+				A1A34BF61CE2DFB400AD454A /* tab_user_s@2x.png in Resources */,
 				A154B8E31CE1AFE600884CA4 /* publish@2x.png in Resources */,
 				A19985381CE07CFD0055A572 /* tab_product_s@2x.png in Resources */,
 				A1A97E1B1CDC388E00EDE320 /* information_nav_remind@3x.png in Resources */,
@@ -1742,7 +1872,9 @@
 				A1B3D5291CDDC4F300F08AE8 /* conserve_interest_icon@3x.png in Resources */,
 				A1A97E161CDC26A200EDE320 /* publish_list_authentication@2x.png in Resources */,
 				A1A97E401CDC666400EDE320 /* news_evaluate_icon@2x.png in Resources */,
+				A1A34C231CE319C000AD454A /* bond_icon_certificate@2x.png in Resources */,
 				A1A97E371CDC631A00EDE320 /* btn_camera@3x.png in Resources */,
+				A1A34C271CE319C000AD454A /* bond_icon_receipt@2x.png in Resources */,
 				A1A97E311CDC5C3A00EDE320 /* list_icon_firm@3x.png in Resources */,
 				A1B3D52C1CDDC4FD00F08AE8 /* conserve_rebate_icon@2x.png in Resources */,
 				A1A97E731CDCA2BF00EDE320 /* conserve_investment_icon@3x.png in Resources */,
@@ -1751,6 +1883,9 @@
 				A1A97E441CDC666400EDE320 /* news_publish_icon@2x.png in Resources */,
 				A1A97E321CDC5C3A00EDE320 /* list_icon_personal@2x.png in Resources */,
 				A154B8DA1CE1912800884CA4 /* open@3x.png in Resources */,
+				A1A34C2E1CE319C000AD454A /* bond_icon_warrants@3x.png in Resources */,
+				A1A34BF81CE2DFB400AD454A /* tab_user@2x.png in Resources */,
+				A1A34BF91CE2DFB400AD454A /* tab_user@3X.png in Resources */,
 				A1A016AF1C5A0C0300027134 /* Assets.xcassets in Resources */,
 				A1A97E231CDC414600EDE320 /* information_nav_back@3x.png in Resources */,
 				A1A97E461CDC666400EDE320 /* news_system_icon@2x.png in Resources */,
@@ -1758,6 +1893,7 @@
 				A199853F1CE07CFD0055A572 /* tab_recommend@3x.png in Resources */,
 				A192B4D21CDB52A40053FC4C /* list_icon_product@3x.png in Resources */,
 				A199852F1CE07A010055A572 /* publish_star@3x.png in Resources */,
+				A1A34BF71CE2DFB400AD454A /* tab_user_s@3x.png in Resources */,
 				A1B3D52D1CDDC4FD00F08AE8 /* conserve_rebate_icon@3x.png in Resources */,
 				A1A97E451CDC666400EDE320 /* news_publish_icon@3x.png in Resources */,
 				A1A97E1E1CDC3F8000EDE320 /* nav_tip@2x.png in Resources */,
@@ -1765,6 +1901,8 @@
 				A192B4CC1CDB49E40053FC4C /* list_icon_setting@3x.png in Resources */,
 				A1A97E721CDCA2BF00EDE320 /* conserve_investment_icon@2x.png in Resources */,
 				A1A97E2E1CDC5C3A00EDE320 /* list_icon_company@2x.png in Resources */,
+				A1A34C2A1CE319C000AD454A /* bond_icon_repayment@3x.png in Resources */,
+				A1A34C2C1CE319C000AD454A /* bond_icon_voucher@3x.png in Resources */,
 				A1A97E471CDC666400EDE320 /* news_system_icon@3x.png in Resources */,
 				A19985391CE07CFD0055A572 /* tab_product_s@3x.png in Resources */,
 				A1A97E791CDCA2C700EDE320 /* conserve_fixed_icon@3x.png in Resources */,
@@ -1775,6 +1913,7 @@
 				A1A97E221CDC414600EDE320 /* information_nav_back@2x.png in Resources */,
 				A1A97E7C1CDCA2CF00EDE320 /* conserve_rights_icon@2x.png in Resources */,
 				A1A97E171CDC26A200EDE320 /* publish_list_authentication@3x.png in Resources */,
+				A1A34C2B1CE319C000AD454A /* bond_icon_voucher@2x.png in Resources */,
 				A199852C1CE07A010055A572 /* publish_star_s@2x.png in Resources */,
 				A192B4CB1CDB49E40053FC4C /* list_icon_setting@2x.png in Resources */,
 				A154B8DD1CE1913300884CA4 /* withdraw@2x.png in Resources */,
@@ -1785,8 +1924,10 @@
 				A1A016AD1C5A0C0300027134 /* Main.storyboard in Resources */,
 				A1A97E331CDC5C3A00EDE320 /* list_icon_personal@3x.png in Resources */,
 				A1A97E1A1CDC388E00EDE320 /* information_nav_remind@2x.png in Resources */,
+				A1A34C281CE319C000AD454A /* bond_icon_receipt@3x.png in Resources */,
 				A199852E1CE07A010055A572 /* publish_star@2x.png in Resources */,
 				A154B8EF1CE1B71D00884CA4 /* add@2x.png in Resources */,
+				A1A34C261CE319C000AD454A /* bond_icon_contract@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1811,14 +1952,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A34C081CE30A4C00AD454A /* ReportSuitCell.m in Sources */,
 				A1A017561C5B696A00027134 /* NSObject+MJKeyValue.m in Sources */,
+				A1A34C0B1CE30AE900AD454A /* ReportSuitSeCell.m in Sources */,
 				A17691461CD9E42A004289DD /* AdditionalEvaluateViewController.m in Sources */,
 				A1A97E6A1CDC989200EDE320 /* MyPublishingViewController.m in Sources */,
+				A1A34C161CE3148A00AD454A /* UploadFilesViewController.m in Sources */,
 				A1A97E621CDC950100EDE320 /* EvaBaseView.m in Sources */,
 				A199851D1CE0360B0055A572 /* MessageRemindViewController.m in Sources */,
 				A192B4B41CDB2CAF0053FC4C /* AdditionMessageViewController.m in Sources */,
 				A17EE3851CD8559D00ECC631 /* MySettingsViewController.m in Sources */,
 				A1E4AFB71CD0C674001A5E9E /* SingleButton.m in Sources */,
+				A1A34BEE1CE2C7A200AD454A /* BidZeroCell.m in Sources */,
 				A1A017531C5B696A00027134 /* MJPropertyType.m in Sources */,
 				A19D29521CD1F71800DAAEA7 /* BaseLabel.m in Sources */,
 				A19B8E281CCF447200F8EBF2 /* TabBarItem.m in Sources */,
@@ -1826,6 +1971,7 @@
 				A17EE38D1CD86FB700ECC631 /* ContactUsViewController.m in Sources */,
 				A17964EB1CD3445400B6AD47 /* CompletCellView.m in Sources */,
 				A17691391CD9C37D004289DD /* RequestView.m in Sources */,
+				A1A34BFC1CE2E0B500AD454A /* CheckDetailUserCell.m in Sources */,
 				A17964FD1CD3682A00B6AD47 /* MyDetailStoreViewController.m in Sources */,
 				A1A97E5B1CDC74D800EDE320 /* NewsCell.m in Sources */,
 				A1A017901C5B8A2100027134 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -1833,40 +1979,43 @@
 				A18C67661CD08DA800C7B070 /* LoginView.m in Sources */,
 				A19B8E231CCF42E300F8EBF2 /* NSArray+PureLayout.m in Sources */,
 				A17964FA1CD3656800B6AD47 /* MyStoreViewController.m in Sources */,
+				A1A34C401CE339B800AD454A /* LoginForgetView.m in Sources */,
 				A154B8F51CE1C14100884CA4 /* ReportSuitViewController.m in Sources */,
+				A1A34C051CE2FE7500AD454A /* UserButton.m in Sources */,
 				A19B8E531CCF533B00F8EBF2 /* ProductsViewController.m in Sources */,
+				A1A34C111CE30C8800AD454A /* ReportAddCell.m in Sources */,
 				A17691321CD9A029004289DD /* CheckDetailUserView.m in Sources */,
 				A1A97E6D1CDC98EB00EDE320 /* MyDealingViewController.m in Sources */,
 				A154B8D61CE18E7F00884CA4 /* ReportFootView.m in Sources */,
-				A199854B1CE08FEE0055A572 /* ReportFiView.m in Sources */,
 				A18C675C1CD06C2E00C7B070 /* UIButton+Block.m in Sources */,
 				A17964E51CD3436700B6AD47 /* AuthenCell.m in Sources */,
 				A19B8E4D1CCF531900F8EBF2 /* MessageViewController.m in Sources */,
+				A1A34BFF1CE2F63F00AD454A /* MineCell.m in Sources */,
 				A17964EE1CD34C6000B6AD47 /* CompleteSingleView.m in Sources */,
 				A1A97E5F1CDC8AED00EDE320 /* EvaTopSwitchView.m in Sources */,
 				A1039F0C1C72C55400771747 /* RefreshViewController.m in Sources */,
 				A1A0178F1C5B8A2100027134 /* AFHTTPRequestOperation.m in Sources */,
 				A19D29741CD2158100DAAEA7 /* AuthenPersonViewController.m in Sources */,
+				A1A34C021CE2F8F900AD454A /* MineUserCell.m in Sources */,
 				A176914A1CD9E744004289DD /* StarView.m in Sources */,
 				A17EE3821CD8518600ECC631 /* BaseCommitButton.m in Sources */,
-				A154B8D31CE184CF00884CA4 /* ReportAddView.m in Sources */,
 				A17964F11CD350A800B6AD47 /* CompletePictureView.m in Sources */,
 				A19985151CE02B7A0055A572 /* ModifyPassWordViewController.m in Sources */,
 				A17EE3791CD82F4800ECC631 /* MyDetailSaveViewController.m in Sources */,
 				A1A016AA1C5A0C0300027134 /* ViewController.m in Sources */,
 				A1A0174F1C5B696A00027134 /* MJExtensionConst.m in Sources */,
-				A17691231CD98466004289DD /* MyOrderDetailView.m in Sources */,
 				A1A017271C5B421500027134 /* BaseViewController.m in Sources */,
+				A1A34BE81CE2BC2300AD454A /* BidCell.m in Sources */,
+				A1A34C3A1CE32C9300AD454A /* ForgetPassViewController.m in Sources */,
 				A19D29471CD1B44D00DAAEA7 /* MoneyView.m in Sources */,
 				A19B8E571CCF640300F8EBF2 /* MessageCell.m in Sources */,
+				A1A34C371CE32C8000AD454A /* RegisterViewController.m in Sources */,
 				A1A017501C5B696A00027134 /* MJFoundation.m in Sources */,
 				A17EE37C1CD8421200ECC631 /* DetailView.m in Sources */,
-				A17EE39A1CD8A9D100ECC631 /* BidSingleView.m in Sources */,
 				A1A017541C5B696A00027134 /* NSObject+MJClass.m in Sources */,
 				A176912E1CD99E1E004289DD /* CheckDetailPublishViewController.m in Sources */,
 				A1A016A71C5A0C0300027134 /* AppDelegate.m in Sources */,
 				A1A017581C5B696A00027134 /* NSString+MJExtension.m in Sources */,
-				A154B8F91CE1C4B100884CA4 /* ReportSuitView.m in Sources */,
 				A17691261CD986BA004289DD /* LineLabel.m in Sources */,
 				A1A017301C5B607300027134 /* UIImage+Color.m in Sources */,
 				A1A017911C5B8A2100027134 /* AFHTTPSessionManager.m in Sources */,
@@ -1885,7 +2034,6 @@
 				A176912A1CD9976D004289DD /* MyClosingViewController.m in Sources */,
 				A176911B1CD9822A004289DD /* MyProcessingViewController.m in Sources */,
 				A1A017941C5B8A2100027134 /* AFURLConnectionOperation.m in Sources */,
-				A17EE3971CD8A6C500ECC631 /* BidCellView.m in Sources */,
 				A176911F1CD98404004289DD /* MyEndingViewController.m in Sources */,
 				A17964F41CD35AD500B6AD47 /* MySaveViewController.m in Sources */,
 				A19D294A1CD1B79000DAAEA7 /* NewProView.m in Sources */,
@@ -1894,17 +2042,18 @@
 				A176914D1CD9EDC8004289DD /* StarSingleView.m in Sources */,
 				A1A017951C5B8A2100027134 /* AFURLRequestSerialization.m in Sources */,
 				A192B4B81CDB34030053FC4C /* PaceViewController.m in Sources */,
+				A1A34BF11CE2C9EB00AD454A /* MyOrderDetailCell.m in Sources */,
 				A1A017971C5B8A2100027134 /* AFURLSessionManager.m in Sources */,
 				A1A017961C5B8A2100027134 /* AFURLResponseSerialization.m in Sources */,
 				A1A0172A1C5B422700027134 /* NetworkViewController.m in Sources */,
 				A1A97E571CDC671000EDE320 /* SystemMessagesViewController.m in Sources */,
 				A176913C1CD9C911004289DD /* RequestTextView.m in Sources */,
 				A1A017351C5B67D400027134 /* MBProgressHUD.m in Sources */,
-				A154B8FF1CE1CA4700884CA4 /* ReportSuitSeView.m in Sources */,
 				A19985191CE02BFC0055A572 /* ModifyView.m in Sources */,
 				A1A017571C5B696A00027134 /* NSObject+MJProperty.m in Sources */,
-				A19D295B1CD2022900DAAEA7 /* MineView.m in Sources */,
+				A1A34C341CE32C7100AD454A /* LoginViewController.m in Sources */,
 				A17964D81CD3053200B6AD47 /* TakePictureView.m in Sources */,
+				A1A34BEB1CE2BEB200AD454A /* BidSingleCell.m in Sources */,
 				A19985471CE0802A0055A572 /* ReportFinanceViewController.m in Sources */,
 				A154B9031CE1E06300884CA4 /* ReportSuccessView.m in Sources */,
 				A19985231CE069630055A572 /* AllProSegView.m in Sources */,
@@ -1919,14 +2068,15 @@
 				9CEA216B1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */,
 				A18C675F1CD087C500C7B070 /* UIView+Fram.m in Sources */,
 				A1A017511C5B696A00027134 /* MJProperty.m in Sources */,
+				A1A34C0E1CE30C2400AD454A /* ReportFiCell.m in Sources */,
 				A19B8E221CCF42E300F8EBF2 /* ALView+PureLayout.m in Sources */,
-				A19D29611CD2034200DAAEA7 /* UserButton.m in Sources */,
 				A1A017921C5B8A2100027134 /* AFNetworkReachabilityManager.m in Sources */,
 				A19D296D1CD208FB00DAAEA7 /* CompleteViewController.m in Sources */,
 				A17691421CD9DA0B004289DD /* AnotherHomeCell.m in Sources */,
 				A17EE3891CD86B3E00ECC631 /* AboutViewController.m in Sources */,
 				A192B4BB1CDB35020053FC4C /* PaceCell.m in Sources */,
 				A1A017551C5B696A00027134 /* NSObject+MJCoding.m in Sources */,
+				A1A34C3D1CE32CF700AD454A /* LoginCell.m in Sources */,
 				A1A97E4E1CDC66D600EDE320 /* PublishMessagesViewController.m in Sources */,
 				A17EE37F1CD84DDF00ECC631 /* DetailBaseView.m in Sources */,
 				A17691351CD9C1D1004289DD /* DelayRequestViewController.m in Sources */,

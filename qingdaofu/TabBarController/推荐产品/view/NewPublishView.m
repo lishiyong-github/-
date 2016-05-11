@@ -32,8 +32,6 @@
         [self addSubview:self.suitButton];
         
         [self setNeedsUpdateConstraints];
-        
-        _tH = 95+self.financeButton.textH;
     }
     return self;
 }
@@ -42,7 +40,7 @@
 {
     if (!self.didSetupConstraints) {
         NSArray *views = @[self.financeButton,self.collectionButton,self.suitButton];
-        [views autoSetViewsDimensionsToSize:CGSizeMake(95, 95+self.financeButton.textH)];
+        [views autoSetViewsDimensionsToSize:CGSizeMake(95, 95+18)];
         
         [self.financeButton autoPinEdgeToSuperviewEdge:ALEdgeTop];
         [self.financeButton autoPinEdgeToSuperviewEdge:ALEdgeLeft];

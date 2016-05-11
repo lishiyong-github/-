@@ -175,7 +175,7 @@
     if (!_cellV6) {
         _cellV6 = [BaseLabel newAutoLayoutView];
         _cellV6.nameLabel.text = @"经典案例";
-        [_cellV6.tButton setTitle:@"查看" forState:0];
+        [_cellV6.goButton setTitle:@"查看" forState:0];
     }
     return _cellV6;
 }

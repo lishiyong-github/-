@@ -73,7 +73,6 @@
         [_getbutton setTitle:@"收到的评价" forState:0];
         [_getbutton setTitleColor:[UIColor blackColor] forState:0];
         _getbutton.titleLabel.font = kBigFont;
-        [_getbutton swapImage];
         
         QDFWeakSelf;
         [_getbutton addAction:^(UIButton *btn) {
@@ -92,7 +91,6 @@
         [_sendButton setTitle:@"发出的评价" forState:0];
         [_sendButton setTitleColor:[UIColor blackColor] forState:0];
         _sendButton.titleLabel.font = kBigFont;
-        [_sendButton swapImage];
         
         QDFWeakSelf;
         [_sendButton addAction:^(UIButton *btn) {

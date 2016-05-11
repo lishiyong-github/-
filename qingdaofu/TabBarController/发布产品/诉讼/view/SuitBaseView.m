@@ -31,7 +31,7 @@
         
         [self.label autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
         
-        [self.segment autoSetDimensionsToSize:CGSizeMake(80*2, 24)];
+        [self.segment autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:105];
         [self.segment autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:kSmallPadding];
         [self.segment autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
         

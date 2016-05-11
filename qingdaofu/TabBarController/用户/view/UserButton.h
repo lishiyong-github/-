@@ -10,4 +10,9 @@
 
 @interface UserButton : UIButton
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
+@property (nonatomic,strong) UIImageView *imageView1;
+@property (nonatomic,strong) UILabel *label1;
+
+
 @end

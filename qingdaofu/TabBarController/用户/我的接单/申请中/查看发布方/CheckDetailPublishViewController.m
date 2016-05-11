@@ -8,13 +8,13 @@
 
 #import "CheckDetailPublishViewController.h"
 #import "BaseCommitButton.h"
-#import "CheckDetailUserView.h"
+
+#import "CheckDetailUserCell.h"
 
 @interface CheckDetailPublishViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *checkDetailTableView;
 
-@property (nonatomic,strong) CheckDetailUserView *userView;
 @property (nonatomic,strong) UIView *chatView;
 @property (nonatomic,strong) BaseCommitButton *stateButton;
 
@@ -74,22 +74,6 @@
     return _checkDetailTableView;
 }
 
-- (CheckDetailUserView *)userView
-{
-    if (!_userView) {
-        _userView = [[CheckDetailUserView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight*6)];
-        _userView.cellV1.button.backgroundColor = kBlueColor;
-        [_userView.cellV2.button setTitle:@"李方方" forState:0];
-        [_userView.cellV3.button setTitle:@"421181199110105466" forState:0];
-        [_userView.cellV4.button setTitle:@"已上传" forState:0];
-        [_userView.cellV5.button setTitle:@"1234455555@qq.com" forState:0];
-        [_userView.cellV6.tButton addAction:^(UIButton *btn) {
-            NSLog(@"点击查看经典案例");
-        }];
-    }
-    return _userView;
-}
-
 - (UIView *)chatView
 {
     if (!_chatView) {
@@ -128,7 +112,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"checkDetail";
+    static NSString *identifier;
+    
+    if (indexPath.section == 0) {
+        identifier = @"as";
+        CheckDetailUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[CheckDetailUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.cellV1.button.backgroundColor = kBlueColor;
+        [cell.cellV2.button setTitle:@"李方方" forState:0];
+        [cell.cellV3.button setTitle:@"421181199110105466" forState:0];
+        [cell.cellV4.button setTitle:@"已上传" forState:0];
+        [cell.cellV5.button setTitle:@"1234455555@qq.com" forState:0];
+        [cell.cellV6.goButton addAction:^(UIButton *btn) {
+            NSLog(@"点击查看经典案例");
+        }];
+        return cell;
+
+    }
+    
+    identifier = @"bs";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
@@ -136,12 +143,8 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    if (indexPath.section == 0) {
-        [cell addSubview:self.userView];
-    }else{
-        [cell addSubview:self.chatView];
-    }
+
+    [cell addSubview:self.chatView];
     
     return cell;
 }

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AuthenBaseView.h"
 
 @interface BidZeroCell : UITableViewCell
+
+@property (nonatomic,strong) AuthenBaseView *bigProView;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
 
 @end

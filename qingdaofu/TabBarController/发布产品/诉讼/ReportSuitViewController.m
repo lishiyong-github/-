@@ -7,21 +7,23 @@
 //
 
 #import "ReportSuitViewController.h"
-#import "ReportFiSucViewController.h"
+#import "ReportFiSucViewController.h"  //发布成功
+#import "UploadFilesViewController.h"  //债权文件
 
-#import "ReportSuitView.h"
-#import "ReportSuitSeView.h"
+
 #import "ReportFootView.h"
 #import "EvaTopSwitchView.h"
+
+#import "ReportSuitCell.h"
+#import "ReportSuitSeCell.h"
 
 @interface ReportSuitViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *repSuitTableView;
 
-@property (nonatomic,strong) ReportSuitView *suitSect0;
-@property (nonatomic,strong) ReportSuitSeView *suitSect1;
 @property (nonatomic,strong) ReportFootView *repSuitFootButton;
 @property (nonatomic,strong) EvaTopSwitchView *repSuitSwitchView;
+
 @property (nonatomic,strong) NSMutableArray *suitDataList;
 
 @end
@@ -51,28 +53,14 @@
     return _repSuitTableView;
 }
 
-- (ReportSuitView *)suitSect0
-{
-    if (!_suitSect0) {
-        _suitSect0 = [[ReportSuitView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+5*kLineWidth+62)];
-    }
-    return _suitSect0;
-}
-
--  (ReportSuitSeView *)suitSect1
-{
-    if (!_suitSect1) {
-        _suitSect1 = [[ReportSuitSeView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight*13+kLineWidth*13+62)];
-    }
-    return _suitSect1;
-}
-
 - (EvaTopSwitchView *)repSuitSwitchView
 {
     if (!_repSuitSwitchView) {
-        _repSuitSwitchView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight, kScreenWidth, kTabBarHeight)];
+        _repSuitSwitchView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight-kNavHeight, kScreenWidth, kTabBarHeight)];
         _repSuitSwitchView.heightConstraint.constant = kTabBarHeight;
         _repSuitSwitchView.backgroundColor = kNavColor;
+        [_repSuitSwitchView.blueLabel setHidden:YES];
+        
         [_repSuitSwitchView.getbutton setTitle:@"  保存" forState:0];
         [_repSuitSwitchView.getbutton setImage:[UIImage imageNamed:@"save"] forState:0];
         [_repSuitSwitchView.getbutton setTitleColor:kBlueColor forState:0];
@@ -84,10 +72,7 @@
         QDFWeakSelf;
         [_repSuitSwitchView.sendButton addAction:^(UIButton *btn) {
             ReportFiSucViewController *reportSuccessVC = [[ReportFiSucViewController alloc] init];
-//            UIViewController *VC = [UIApplication sharedApplication].keyWindow.rootViewController;
-//            [VC.navigationController pushViewController:reportSuccessVC animated:YES];
             [weakself.navigationController pushViewController:reportSuccessVC animated:YES];
-            
         }];
     }
     return _repSuitSwitchView;
@@ -98,7 +83,6 @@
     if (!_repSuitFootButton) {
         _repSuitFootButton = [[ReportFootView alloc] initWithFrame:CGRectMake(kBigPadding, 0, kScreenWidth-kBigPadding*2, 70)];
         _repSuitFootButton.backgroundColor = kBlueColor;
-        //        [_repSuitFootButton addTarget:self action:@selector(openAndClose:) forControlEvents:UIControlEventTouchUpInside];
         [_repSuitFootButton.footButton addTarget:self action:@selector(openAndClose:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _repSuitFootButton;
@@ -137,31 +121,53 @@
     static NSString *identifier;
     if (indexPath.section == 0) {
         identifier = @"suitSect0";
-    }else{
-        identifier = @"suitSect1";
+        ReportSuitCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (!cell) {
+            cell = [[ReportSuitCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
     }
+    identifier = @"suitSect1";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    ReportSuitSeCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[ReportSuitSeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    if (indexPath.section == 0) {
-        [cell addSubview:self.suitSect0];
-    }else{
-        [cell addSubview:self.suitSect1];
-    }
+    QDFWeakSelf;
+    [cell setDidSelectedIndex:^(NSInteger row) {
+        switch (row) {
+            case 80:{//债权文件
+                UploadFilesViewController *uploadFilesVC = [[UploadFilesViewController alloc] init];
+                [weakself.navigationController pushViewController:uploadFilesVC animated:YES];
+            }
+                break;
+            case 81:{//债权人信息
+                
+            }
+                break;
+            case 82:{//债务人信息
+                
+            }
+                break;
+            default:
+                break;
+        }
+    }];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 0.1f;
-    }
-    return kBigPadding;
+//    if (section == 0) {
+//        return 0.1f;
+//    }
+//    return kBigPadding;
+    
+    return 0.1f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

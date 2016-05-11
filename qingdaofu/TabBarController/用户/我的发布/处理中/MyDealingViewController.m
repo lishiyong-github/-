@@ -7,23 +7,28 @@
 //
 
 #import "MyDealingViewController.h"
+
+#import "CheckDetailPublishViewController.h"  //查看发布方
 #import "PaceViewController.h"    //查看进度
 #import "AdditionMessageViewController.h"  //补充信息
 
+#import "BidZeroCell.h"
+#import "BidCell.h"
+#import "BidSingleCell.h"
 
-#import "AuthenBaseView.h"
-#import "BidCellView.h"
-#import "BidSingleView.h"
-#import "BaseLabel.h"
+//#import "AuthenBaseView.h"
+//#import "BidCellView.h"
+//#import "BidSingleView.h"
+//#import "BaseLabel.h"
 #import "EvaTopSwitchView.h"
 
 @interface MyDealingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *dealingTableView;
-@property (nonatomic,strong) AuthenBaseView *sect0;
-@property (nonatomic,strong) BidCellView *sect1;
-@property (nonatomic,strong) BidSingleView *sect2;
-@property (nonatomic,strong) BaseLabel *sect3;
+//@property (nonatomic,strong) AuthenBaseView *sect0;
+//@property (nonatomic,strong) BidCellView *sect1;
+//@property (nonatomic,strong) BidSingleView *sect2;
+//@property (nonatomic,strong) BaseLabel *sect3;
 @property (nonatomic,strong) EvaTopSwitchView *dealFootView;
 
 @end
@@ -34,16 +39,17 @@
     [super viewDidLoad];
     self.navigationItem.title = @"产品详情";
     self.navigationItem.leftBarButtonItem = self.leftItem;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"查看接单方" style:UIBarButtonItemStylePlain target:self action:@selector(showRecordList)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"查看接单方" style:UIBarButtonItemStylePlain target:self action:@selector(checkPublishUserDetail)];
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:kBigFont,NSForegroundColorAttributeName:kBlueColor} forState:0];
     
     [self.view addSubview: self.dealingTableView];
     [self.view addSubview:self.dealFootView];
 }
 
-- (void)showRecordList
+- (void)checkPublishUserDetail
 {
-    
+    CheckDetailPublishViewController *checkDetailPublishVc = [[CheckDetailPublishViewController alloc] init];
+    [self.navigationController pushViewController:checkDetailPublishVc animated:YES];
 }
 
 - (UITableView *)dealingTableView
@@ -55,88 +61,6 @@
         _dealingTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding+kTabBarHeight)];
     }
     return _dealingTableView;
-}
-
-- (AuthenBaseView *)sect0
-{
-    if (!_sect0) {
-        _sect0 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _sect0.backgroundColor = kBlueColor;
-        
-        _sect0.label.text = @"产品编号：RZ201605030001";
-        _sect0.label.textColor = kNavColor;
-        
-        _sect0.textField.userInteractionEnabled = NO;
-        
-        [_sect0.button setTitle:@"处理中" forState:0];
-        [_sect0.button setTitleColor:kNavColor forState:0];
-        _sect0.button.titleLabel.font = kBigFont;
-    }
-    return _sect0;
-}
-
-- (BidCellView *)sect1
-{
-    if (!_sect1) {
-        _sect1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
-        
-        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_interest_icon",@"conserve_rebate_icon"];
-        
-        _sect1.cellView1.label.text = @"|  展示信息";
-        _sect1.cellView1.textField.userInteractionEnabled= NO;
-        
-        [_sect1.cellView2.imageView1 setImage:[UIImage imageNamed:secImageArray[0]]];
-        _sect1.cellView2.label1.text = @"投资类型";
-        
-        [_sect1.cellView3.imageView1 setImage:[UIImage imageNamed:secImageArray[1]]];
-        _sect1.cellView3.label1.text = @"借款金额";
-        
-        [_sect1.cellView4.imageView1 setImage:[UIImage imageNamed:secImageArray[2]]];
-        _sect1.cellView4.label1.text = @"借款利率";
-        
-        [_sect1.cellView5.imageView1 setImage:[UIImage imageNamed:secImageArray[3]]];
-        _sect1.cellView5.label1.text = @"返点";
-    }
-    return _sect1;
-}
-
-- (BidSingleView *)sect2
-{
-    if (!_sect2) {
-        _sect2 = [[BidSingleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 135+2*kCellHeight+1)];
-        _sect2.cellView6.label.text = @"｜  基本信息";
-        _sect2.cellView6.textField.userInteractionEnabled = NO;
-        
-        _sect2.cellView7.complete1.label1.text = @"借款期限:";
-        _sect2.cellView7.complete1.label2.text = @"6个月";
-        
-        _sect2.cellView7.complete2.label1.text = @"资金到帐日:";
-        _sect2.cellView7.complete2.label2.text = @"1个月";
-        
-        _sect2.cellView7.complete3.label1.text = @"抵押物面积:";
-        _sect2.cellView7.complete3.label2.text = @"100M²";
-        
-        _sect2.cellView7.complete4.label1.text = @"抵押物地址:";
-        _sect2.cellView7.complete4.label2.text = @"上海市浦东新区浦东南路855号世界广场35楼";
-        
-        [_sect2.cellView8 setTitle:@"查看补充信息 >" forState:0];
-        QDFWeakSelf;
-        [_sect2.cellView8 addAction:^(UIButton *btn) {
-            AdditionMessageViewController *addtionMessageVC = [[AdditionMessageViewController alloc] init];
-            [weakself.navigationController pushViewController:addtionMessageVC animated:YES];
-        }];
-    }
-    return _sect2;
-}
-
-- (BaseLabel *)sect3
-{
-    if (!_sect3) {
-        _sect3 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _sect3.nameLabel.text = @"查看进度";
-        [_sect3.tButton setTitle:@"查看" forState:0];
-    }
-    return _sect3;
 }
 
 - (EvaTopSwitchView *)dealFootView
@@ -187,44 +111,95 @@
     static NSString *identifier;
     if (indexPath.section == 0) {
         identifier = @"sect0";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        BidZeroCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[BidZeroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell addSubview:self.sect0];
+
+        cell.bigProView.backgroundColor = kBlueColor;
+        
+        cell.bigProView.label.text = @"产品编号：RZ201605030001";
+        cell.bigProView.label.textColor = kNavColor;
+        
+        cell.bigProView.textField.userInteractionEnabled = NO;
+        
+        [cell.bigProView.button setTitle:@"处理中" forState:0];
+        [cell.bigProView.button setTitleColor:kNavColor forState:0];
+        cell.bigProView.button.titleLabel.font = kBigFont;
+
         return cell;
         
     }else if (indexPath.section == 1){
         identifier = @"sect1";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        BidCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[BidCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        [cell addSubview:self.sect1];
+        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_interest_icon",@"conserve_rebate_icon"];
+        
+        cell.cellView1.label.text = @"|  展示信息";
+        cell.cellView1.textField.userInteractionEnabled= NO;
+        
+        [cell.cellView2.imageView1 setImage:[UIImage imageNamed:secImageArray[0]]];
+        cell.cellView2.label1.text = @"投资类型";
+        
+        [cell.cellView3.imageView1 setImage:[UIImage imageNamed:secImageArray[1]]];
+        cell.cellView3.label1.text = @"借款金额";
+        
+        [cell.cellView4.imageView1 setImage:[UIImage imageNamed:secImageArray[2]]];
+        cell.cellView4.label1.text = @"借款利率";
+        
+        [cell.cellView5.imageView1 setImage:[UIImage imageNamed:secImageArray[3]]];
+        cell.cellView5.label1.text = @"返点";
+        
         return cell;
     }else if (indexPath.section == 2){
         
         identifier = @"sect2";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        BidSingleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[BidSingleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell addSubview:self.sect2];
+
+        cell.cellView6.label.text = @"｜  基本信息";
+        cell.cellView6.textField.userInteractionEnabled = NO;
+        
+        cell.cellView7.complete1.label1.text = @"借款期限:";
+        cell.cellView7.complete1.label2.text = @"6个月";
+        
+        cell.cellView7.complete2.label1.text = @"资金到帐日:";
+        cell.cellView7.complete2.label2.text = @"1个月";
+        
+        cell.cellView7.complete3.label1.text = @"抵押物面积:";
+        cell.cellView7.complete3.label2.text = @"100M²";
+        
+        cell.cellView7.complete4.label1.text = @"抵押物地址:";
+        cell.cellView7.complete4.label2.text = @"上海市浦东新区浦东南路855号世界广场35楼";
+        
+        [cell.cellView8 setTitle:@"查看补充信息 >" forState:0];
+        QDFWeakSelf;
+        [cell.cellView8 addAction:^(UIButton *btn) {
+            AdditionMessageViewController *addtionMessageVC = [[AdditionMessageViewController alloc] init];
+            [weakself.navigationController pushViewController:addtionMessageVC animated:YES];
+        }];
         
         return cell;
     }
     
-    identifier = @"sect3";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    identifier = @"sect0";
+    BidZeroCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[BidZeroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell addSubview:self.sect3];
+
+    cell.bigProView.label.text = @"查看进度";
+    [cell.bigProView.button setTitle:@"查看" forState:0];
+    [cell.bigProView.button setImage:[UIImage imageNamed:@"list_more"] forState:0];
     
     return cell;
 }

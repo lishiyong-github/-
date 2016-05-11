@@ -9,9 +9,11 @@
 #import "MyApplyingViewController.h"
 #import "CheckDetailPublishViewController.h"  //查看发布方
 
+#import "BidZeroCell.h"
+#import "BidCell.h"
+#import "BidSingleCell.h"
 
 @interface MyApplyingViewController ()<UITableViewDataSource,UITableViewDelegate>
-
 
 @end
 
@@ -44,44 +46,6 @@
     return _myApplyingTableView;
 }
 
-- (AuthenBaseView *)secView0
-{
-    if (!_secView0) {
-        _secView0 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _secView0.backgroundColor = kBlueColor;
-        _secView0.label.text = @"产品编号:";
-        _secView0.label.textColor = kNavColor;
-        _secView0.textField.text = @"RZ201605030001";
-        _secView0.textField.userInteractionEnabled = NO;
-        _secView0.textField.textColor = kNavColor;
-        [_secView0.button setTitle:@"待发布" forState:0];
-        [_secView0.button setTitleColor:kNavColor forState:0];
-    }
-    return _secView0;
-}
-
-- (BidCellView *)secView1
-{
-    if (!_secView1) {
-        _secView1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
-        
-        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_interest_icon",@"conserve_rebate_icon"];
-        _secView1.cellView2.imageView1.image = [UIImage imageNamed:secImageArray[0]];
-        _secView1.cellView3.imageView1.image = [UIImage imageNamed:secImageArray[1]];
-        _secView1.cellView4.imageView1.image = [UIImage imageNamed:secImageArray[2]];
-        _secView1.cellView5.imageView1.image = [UIImage imageNamed:secImageArray[3]];
-    }
-    return _secView1;
-}
-
-- (BidSingleView *)secView2
-{
-    if (!_secView2) {
-        _secView2 = [[BidSingleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 135+2*kCellHeight+1)];
-    }
-    return _secView2;
-}
-
 #pragma mark - tableView delegate and datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -105,23 +69,52 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"myApplying";
+    static NSString *identifier;
+    if (indexPath.section == 0) {
+        identifier = @"sess0";
+        BidZeroCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[BidZeroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+        cell.bigProView.backgroundColor = kBlueColor;
+        cell.bigProView.label.text = @"产品编号:";
+        cell.bigProView.label.textColor = kNavColor;
+        cell.bigProView.textField.text = @"RZ201605030001";
+        cell.bigProView.textField.userInteractionEnabled = NO;
+        cell.bigProView.textField.textColor = kNavColor;
+        [cell.bigProView.button setTitle:@"待发布" forState:0];
+        [cell.bigProView.button setTitleColor:kNavColor forState:0];
+        
+        return cell;
+        
+    }else if (indexPath.section == 1){
+        identifier = @"sess1";
+        BidCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[BidCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_interest_icon",@"conserve_rebate_icon"];
+        cell.cellView2.imageView1.image = [UIImage imageNamed:secImageArray[0]];
+        cell.cellView3.imageView1.image = [UIImage imageNamed:secImageArray[1]];
+        cell.cellView4.imageView1.image = [UIImage imageNamed:secImageArray[2]];
+        cell.cellView5.imageView1.image = [UIImage imageNamed:secImageArray[3]];
+        
+        return cell;
+    }
+    identifier = @"sess2";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    BidSingleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[BidSingleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    if (indexPath.section == 0) {
-        [cell addSubview:self.secView0];
-    }else if (indexPath.section == 1){
-        [cell addSubview:self.secView1];
-        
-    }else{
-        [cell addSubview:self.secView2];
-    }
     return cell;
 }
 

@@ -22,7 +22,7 @@
 @property (nonatomic,strong) StarView *cellVi1;
 @property (nonatomic,strong) RequestTextView *cellVi2;
 @property (nonatomic,strong) UIView *cellvi3;
-@property (nonatomic,strong) BaseLabel *cellVi4;
+@property (nonatomic,strong) AuthenBaseView *cellVi4;
 
 @property (nonatomic,strong) BaseCommitButton *commitEvaButton;
 
@@ -95,13 +95,12 @@
     return _cellvi3;
 }
 
-- (BaseLabel *)cellVi4
+- (AuthenBaseView *)cellVi4
 {
     if (!_cellVi4) {
-        _cellVi4 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _cellVi4.nameLabel.text = @"";
-        [_cellVi4.tButton setTitle:@"匿名评价 " forState:0];
-//        [_cellVi4.goButton setBackgroundColor:kRedColor];
+        _cellVi4 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
+        _cellVi4.textField.userInteractionEnabled = NO;
+        [_cellVi4.button setTitle:@"匿名评价  " forState:0];
     }
     return _cellVi4;
 }

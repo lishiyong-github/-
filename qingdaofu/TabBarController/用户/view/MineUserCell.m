@@ -7,8 +7,60 @@
 //
 
 #import "MineUserCell.h"
+#import "UIButton+Addition.h"
 
 @implementation MineUserCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        
+        [self addSubview:self.userNameButton];
+        [self addSubview:self.userActionButton];
+        [self setNeedsUpdateConstraints];
+    }
+    return self;
+}
+
+- (void)updateConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        NSArray *views = @[self.userNameButton,self.userActionButton];
+        [views autoAlignViewsToAxis:ALAxisHorizontal];
+        
+        [self.userNameButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
+        [self.userNameButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
+        
+        [self.userActionButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateConstraints];
+}
+
+- (UIButton *)userNameButton
+{
+    if (!_userNameButton) {
+        _userNameButton = [UIButton newAutoLayoutView];
+        [_userNameButton swapImage];
+        _userNameButton.titleLabel.font = kBigFont;
+        [_userNameButton setTitleColor:kBlackColor forState:0];
+    }
+    return _userNameButton;
+}
+
+- (UIButton *)userActionButton
+{
+    if (!_userActionButton) {
+        _userActionButton = [UIButton newAutoLayoutView];
+        [_userActionButton swapImage];
+        [_userActionButton setTitleColor:kLightGrayColor forState:0];
+        _userActionButton.titleLabel.font = kSecondFont;
+    }
+    return _userActionButton;
+}
 
 - (void)awakeFromNib {
     // Initialization code

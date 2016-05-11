@@ -45,7 +45,7 @@
 - (NewPublishView *)sectionView1
 {
     if (!_sectionView1) {
-        _sectionView1 = [[NewPublishView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, _sectionView1.tH)];
+        _sectionView1 = [[NewPublishView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 95+18)];
     }
     return _sectionView1;
 }
@@ -85,7 +85,7 @@
             return 100.f;
             break;
         case 1:
-            return self.sectionView1.tH;
+            return 95+18;
             break;
         case 2:
             return self.sectionView2.aH;

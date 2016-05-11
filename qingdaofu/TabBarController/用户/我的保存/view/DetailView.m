@@ -39,7 +39,6 @@
         
         [self.complete2 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.complete1 withOffset:30];
         
-        
         [self.complete3 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.complete2 withOffset:30];
         
         [self.complete4 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.complete3 withOffset:30];

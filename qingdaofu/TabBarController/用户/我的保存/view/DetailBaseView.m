@@ -18,7 +18,6 @@
         [self addSubview:self.imageView1];
         [self addSubview:self.label1];
         [self addSubview:self.button1];
-//        [self addSubview:self.button1];
         
         [self setNeedsUpdateConstraints];
     }
@@ -38,8 +37,6 @@
         [self.label1 autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.imageView1 withOffset:kSmallPadding];
         
         [self.button1 autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:15];
-        
-//        [self.button1 autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.button2];
         
         self.didSetupConstraints = YES;
     }
@@ -64,24 +61,12 @@
     return _label1;
 }
 
-//- (UIButton *)button1
-//{
-//    if (!_button1) {
-//        _button1 = [UIButton newAutoLayoutView];
-//        [_button1 setTitleColor:kLightGrayColor forState:0];
-//        _button1.titleLabel.font = kSecondFont;
-//        _button1.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-//    }
-//    return _button1;
-//}
-
 - (UIButton *)button1
 {
     if (!_button1) {
         _button1 = [UIButton newAutoLayoutView];
         [_button1 setTitleColor:kLightGrayColor forState:0];
         _button1.titleLabel.font = kSecondFont;
-        _button2.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 //        [_button2 setImage:[UIImage imageNamed:@"list_more"] forState:0];
     }
     return _button1;

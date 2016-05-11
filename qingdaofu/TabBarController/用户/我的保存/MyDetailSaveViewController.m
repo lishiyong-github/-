@@ -14,18 +14,18 @@
 #import "DetailBaseView.h"
 #import "BaseCommitButton.h"
 
-
-#import "BidCellView.h"
-#import "BidSingleView.h"
+#import "BidZeroCell.h"
+#import "BidCell.h"
+#import "BidSingleCell.h"
 
 @interface MyDetailSaveViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,assign) BOOL didSetupConstraints;
 
 @property (nonatomic,strong) UITableView *detailSaveTableView;
-@property (nonatomic,strong) AuthenBaseView *sectionView0;
-@property (nonatomic,strong) BidCellView *sectionView1;
-@property (nonatomic,strong) BidSingleView *sectionView2;
+//@property (nonatomic,strong) AuthenBaseView *sectionView0;
+//@property (nonatomic,strong) BidCellView *sectionView1;
+//@property (nonatomic,strong) BidSingleView *sectionView2;
 
 @property (nonatomic,strong) BaseCommitButton *footerView;
 
@@ -61,38 +61,6 @@
     return _detailSaveTableView;
 }
 
-- (AuthenBaseView *)sectionView0
-{
-    if (!_sectionView0) {
-        _sectionView0 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _sectionView0.backgroundColor = kBlueColor;
-        _sectionView0.label.text = @"产品编号:";
-        _sectionView0.label.textColor = kNavColor;
-        _sectionView0.textField.text = @"RZ201605030001";
-        _sectionView0.textField.userInteractionEnabled = NO;
-        _sectionView0.textField.textColor = kNavColor;
-        [_sectionView0.button setTitle:@"待发布" forState:0];
-        [_sectionView0.button setTitleColor:kNavColor forState:0];
-    }
-    return _sectionView0;
-}
-
-- (BidCellView *)sectionView1
-{
-    if (!_sectionView1) {
-        _sectionView1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
-    }
-    return _sectionView1;
-}
-
-- (BidSingleView *)sectionView2
-{
-    if (!_sectionView2) {
-        _sectionView2 = [[BidSingleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 135+2*kCellHeight+1)];
-    }
-    return _sectionView2;
-}
-
 - (BaseCommitButton *)footerView
 {
     if (!_footerView) {
@@ -125,23 +93,48 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"saveDetail";
+    static NSString *identifier;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (indexPath.section == 0) {
+        identifier = @"mmm";
+        
+        BidZeroCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[BidZeroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier]; 
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.bigProView.backgroundColor = kBlueColor;
+        cell.bigProView.label.text = @"产品编号:";
+        cell.bigProView.label.textColor = kNavColor;
+        cell.bigProView.textField.text = @"RZ201605030001";
+        cell.bigProView.textField.userInteractionEnabled = NO;
+        cell.bigProView.textField.textColor = kNavColor;
+        [cell.bigProView.button setTitle:@"待发布" forState:0];
+        [cell.bigProView.button setTitleColor:kNavColor forState:0];
+        
+        return cell;
+        
+    }else if (indexPath.section == 1){
+        identifier = @"nnn";
+        BidCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[BidCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        return cell;
+    }
+    
+    identifier = @"ppp";
+    BidSingleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[BidSingleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    if (indexPath.section == 0) {
-        [cell addSubview:self.sectionView0];
-    }else if (indexPath.section == 1){
-        [cell addSubview:self.sectionView1];
-
-    }else{
-        [cell addSubview:self.sectionView2];
-    }
     return cell;
 }
 

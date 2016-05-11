@@ -7,6 +7,7 @@
 //
 
 #import "AuthenBaseView.h"
+#import "UIButton+Addition.h"
 
 @interface AuthenBaseView ()<UITextFieldDelegate>
 
@@ -42,7 +43,7 @@
         [self.label autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
         [self.label autoPinEdgeToSuperviewEdge:ALEdgeRight];
         
-        [self.textField autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.label];
+        [self.textField autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.label];
         [self.textField autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:105];
         
         [self.button autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.label];
@@ -75,6 +76,7 @@
         _textField.font = kFirstFont;
         _textField.textColor = kBlackColor;
         _textField.delegate = self;
+        _textField.multipleTouchEnabled = YES;
     }
     return _textField;
 }
@@ -85,6 +87,7 @@
         _button = [UIButton newAutoLayoutView];
         _button.titleLabel.font = kSecondFont;
         [_button setTitleColor:kLightGrayColor forState:0];
+        [_button swapImage];
     }
     return _button;
 }

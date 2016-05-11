@@ -75,7 +75,7 @@
     publishItem.backgroundColor = kBlueColor;
     
     TabBarItem *messageItem = [self tabBarItemWithFram:CGRectMake(normalButtonWidth * 2 + publishItemWidth, 0, normalButtonWidth, tabBarHeight) title:@"消息" normalImageName:@"" selectedImageName:@"" tabBarItemType:TabBarItemTypeNormal];
-    TabBarItem *mineItem = [self tabBarItemWithFram:CGRectMake(normalButtonWidth * 3 + publishItemWidth, 0, normalButtonWidth, tabBarHeight) title:@"用户" normalImageName:@"" selectedImageName:@"" tabBarItemType:TabBarItemTypeNormal];
+    TabBarItem *mineItem = [self tabBarItemWithFram:CGRectMake(normalButtonWidth * 3 + publishItemWidth, 0, normalButtonWidth, tabBarHeight) title:@"用户" normalImageName:@"tab_user" selectedImageName:@"tab_user_s" tabBarItemType:TabBarItemTypeNormal];
     
     tabBar.tabBarItems = @[newProductItem,productsItem,publishItem,messageItem,mineItem];
     tabBar.delegate = self;

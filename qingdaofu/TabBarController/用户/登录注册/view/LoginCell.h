@@ -10,4 +10,11 @@
 
 @interface LoginCell : UITableViewCell
 
+@property (nonatomic,strong) UITextField *loginTextField;
+@property (nonatomic,strong) UIButton *loginButton;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+
+- (void)changePlaceholderColor:(NSString *)placeholder;
+
 @end

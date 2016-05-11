@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+#import "AuthenBaseView.h"
+#import "DetailView.h"
+#import "LineLabel.h"
+
 @interface BidSingleCell : UITableViewCell
+
+@property (nonatomic,strong) AuthenBaseView *cellView6;
+@property (nonatomic,strong) LineLabel *lineLabel6;
+@property (nonatomic,strong) DetailView *cellView7;
+@property (nonatomic,strong) LineLabel *lineLabel7;
+@property (nonatomic,strong) UIButton *cellView8;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
 
 @end

@@ -10,6 +10,58 @@
 
 @implementation LoginForgetView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+        [self addSubview:self.loginCommitButton];
+        [self addSubview:self.forgrtButton];
+        
+        [self setNeedsUpdateConstraints];
+    }
+    return self;
+}
+
+- (void)updateConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.loginCommitButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:30];
+        [self.loginCommitButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
+        [self.loginCommitButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
+        [self.loginCommitButton autoSetDimension:ALDimensionHeight toSize:40];
+
+        
+        [self.forgrtButton autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.loginCommitButton withOffset:kBigPadding];
+        [self.forgrtButton autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.loginCommitButton];
+       
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateConstraints];
+}
+
+- (BaseCommitButton *)loginCommitButton
+{
+    if (!_loginCommitButton) {
+        _loginCommitButton = [BaseCommitButton newAutoLayoutView];
+        [_loginCommitButton setTitle:@"登录" forState:0];
+    }
+    return _loginCommitButton;
+}
+
+- (UIButton *)forgrtButton
+{
+    if (!_forgrtButton) {
+        _forgrtButton = [UIButton newAutoLayoutView];
+        [_forgrtButton setTitleColor:kBlueColor forState:0];
+        _forgrtButton.titleLabel.font = kSecondFont;
+        [_forgrtButton setTitle:@"忘记密码?" forState:0];
+    }
+    return _forgrtButton;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

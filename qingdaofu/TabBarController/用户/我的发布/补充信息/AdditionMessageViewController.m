@@ -57,7 +57,7 @@
     if (!_mCell0) {
         _mCell0 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         _mCell0.nameLabel.text = @"抵押物类型";
-        [_mCell0.tButton setTitle:@"住宅" forState:0];
+        [_mCell0.goButton setTitle:@"住宅" forState:0];
     }
     return _mCell0;
 }
@@ -67,7 +67,7 @@
     if (!_mCell1) {
         _mCell1 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         _mCell1.nameLabel.text = @"状态";
-        [_mCell1.tButton setTitle:@"自住" forState:0];
+        [_mCell1.goButton setTitle:@"自住" forState:0];
     }
     return _mCell1;
 }
@@ -77,7 +77,7 @@
     if (!_mCell2) {
         _mCell2 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         _mCell2.nameLabel.text = @"抵押状况";
-        [_mCell2.tButton setTitle:@"清房" forState:0];
+        [_mCell2.goButton setTitle:@"清房" forState:0];
     }
     return _mCell2;
 }
@@ -98,7 +98,7 @@
     if (!_mCell4) {
         _mCell4 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         _mCell4.nameLabel.text = @"权利人年龄";
-        [_mCell4.tButton setTitle:@"65岁以下" forState:0];
+        [_mCell4.goButton setTitle:@"65岁以下" forState:0];
     }
     return _mCell4;
 }

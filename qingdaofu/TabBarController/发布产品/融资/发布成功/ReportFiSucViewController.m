@@ -7,6 +7,7 @@
 //
 
 #import "ReportFiSucViewController.h"
+#import "MyReleaseViewController.h"   //我的发布
 
 #import "ReportSuccessView.h"
 #import "EvaTopSwitchView.h"
@@ -72,6 +73,14 @@
         _sucSec0.tiLabel.text = @"发布时间：2016-05-10 17:40";
         _sucSec0.tyLabel.text = @"产品类型：融资";
         _sucSec0.stLabel.text = @"产品状态：已发布";
+        QDFWeakSelf;
+        [_sucSec0.toButton addAction:^(UIButton *btn) {
+            MyReleaseViewController *myReleaseVC = [[MyReleaseViewController alloc] init];
+            UINavigationController *nav = weakself.navigationController;
+            [nav popViewControllerAnimated:NO];
+            [nav popViewControllerAnimated:NO];
+            [nav pushViewController:myReleaseVC animated:NO];
+        }];
     }
     return _sucSec0;
 }
@@ -84,12 +93,12 @@
         _reportSucFootView.heightConstraint.constant = kTabBarHeight;
         [_reportSucFootView.blueLabel setHidden:YES];
         
-        [_reportSucFootView.getbutton setTitle:@"回主页  " forState:0];
+        [_reportSucFootView.getbutton setTitle:@"  回主页" forState:0];
         [_reportSucFootView.getbutton setImage:[UIImage imageNamed:@"back"] forState:0];
         [_reportSucFootView.getbutton setTitleColor:kBlueColor forState:0];
         [_reportSucFootView.getbutton addTarget:self action:@selector(finishReport) forControlEvents:UIControlEventTouchUpInside];
         
-        [_reportSucFootView.sendButton setTitle:@"继续发布  " forState:0];
+        [_reportSucFootView.sendButton setTitle:@"  继续发布" forState:0];
         [_reportSucFootView.sendButton setImage:[UIImage imageNamed:@"add"] forState:0];
         [_reportSucFootView.sendButton setTitleColor:kBlueColor forState:0];
     }

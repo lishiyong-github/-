@@ -10,6 +10,37 @@
 
 @implementation BidZeroCell
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self addSubview:self.bigProView];
+        
+        [self setNeedsUpdateConstraints];
+    }
+    return self;
+}
+
+- (void)updateConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.bigProView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateConstraints];
+}
+
+- (AuthenBaseView *)bigProView
+{
+    if (!_bigProView) {
+        _bigProView = [AuthenBaseView newAutoLayoutView];
+//        [_bigProView.button setImage:[UIImage imageNamed:@"list_more"] forState:0];
+    }
+    return _bigProView;
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

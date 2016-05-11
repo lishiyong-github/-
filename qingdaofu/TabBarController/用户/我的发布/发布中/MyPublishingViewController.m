@@ -9,17 +9,16 @@
 #import "MyPublishingViewController.h"
 #import "AdditionMessageViewController.h"  //补充信息
 
-
-#import "AuthenBaseView.h"
-#import "BidCellView.h"
-#import "BidSingleView.h"
+#import "BidZeroCell.h"
+#import "BidCell.h"
+#import "BidSingleCell.h"
 
 @interface MyPublishingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *publishingTableView;
-@property (nonatomic,strong) AuthenBaseView *sec0;
-@property (nonatomic,strong) BidCellView *sec1;
-@property (nonatomic,strong) BidSingleView *sec2;
+//@property (nonatomic,strong) AuthenBaseView *sec0;
+//@property (nonatomic,strong) BidCellView *sec1;
+//@property (nonatomic,strong) BidSingleView *sec2;
 
 @end
 
@@ -51,53 +50,7 @@
     return _publishingTableView;
 }
 
-- (AuthenBaseView *)sec0
-{
-    if (!_sec0) {
-        _sec0 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _sec0.backgroundColor = kBlueColor;
-        
-        _sec0.label.text = @"产品编号：RZ201605030001";
-        _sec0.label.textColor = kNavColor;
-        
-        _sec0.textField.userInteractionEnabled = NO;
-
-        [_sec0.button setTitle:@"发布中" forState:0];
-        [_sec0.button setTitleColor:[UIColor whiteColor] forState:0];
-    }
-    return _sec0;
-}
-
-- (BidCellView *)sec1
-{
-    if (!_sec1) {
-        _sec1 = [[BidCellView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 5*kCellHeight+2)];
-        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_fixed_icon",@"conserve_rights_icon"];
-
-        [_sec1.cellView2.imageView1 setImage:[UIImage imageNamed:secImageArray[0]]];
-        [_sec1.cellView3.imageView1 setImage:[UIImage imageNamed:secImageArray[1]]];
-        [_sec1.cellView4.imageView1 setImage:[UIImage imageNamed:secImageArray[2]]];
-        [_sec1.cellView5.imageView1 setImage:[UIImage imageNamed:secImageArray[3]]];
-    }
-    return _sec1;
-}
-
-- (BidSingleView *)sec2
-{
-    if (!_sec2) {
-        _sec2 = [[BidSingleView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 135+2*kCellHeight+1)];
-        
-        
-        QDFWeakSelf;
-        [_sec2.cellView8 addAction:^(UIButton *btn) {
-            AdditionMessageViewController *addtionMessageVC = [[AdditionMessageViewController alloc] init];
-            [weakself.navigationController pushViewController:addtionMessageVC animated:YES];
-        }];
-    }
-    return _sec2;
-}
-
-#pragma mark - 
+#pragma mark -
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 3;
@@ -123,33 +76,54 @@
     static NSString *identifier;
     if (indexPath.section == 0) {
         identifier = @"sec0";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        BidZeroCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[BidZeroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell addSubview:self.sec0];
+
+        cell.bigProView.backgroundColor = kBlueColor;
+        
+        cell.bigProView.label.text = @"产品编号：RZ201605030001";
+        cell.bigProView.label.textColor = kNavColor;
+        
+        cell.bigProView.textField.userInteractionEnabled = NO;
+        
+        [cell.bigProView.button setTitle:@"发布中" forState:0];
+        [cell.bigProView.button setTitleColor:[UIColor whiteColor] forState:0];
+        
         return cell;
         
     }else if (indexPath.section == 1){
         identifier = @"sec1";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        BidCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[BidCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        [cell addSubview:self.sec1];
+        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_fixed_icon",@"conserve_rights_icon"];
+        
+        [cell.cellView2.imageView1 setImage:[UIImage imageNamed:secImageArray[0]]];
+        [cell.cellView3.imageView1 setImage:[UIImage imageNamed:secImageArray[1]]];
+        [cell.cellView4.imageView1 setImage:[UIImage imageNamed:secImageArray[2]]];
+        [cell.cellView5.imageView1 setImage:[UIImage imageNamed:secImageArray[3]]];
+        
         return cell;
     }
     
     identifier = @"sec2";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    BidSingleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[BidSingleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell addSubview:self.sec2];
+
+    QDFWeakSelf;
+    [cell.cellView8 addAction:^(UIButton *btn) {
+        AdditionMessageViewController *addtionMessageVC = [[AdditionMessageViewController alloc] init];
+        [weakself.navigationController pushViewController:addtionMessageVC animated:YES];
+    }];
     
     return cell;
 }

@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "BaseCommitButton.h"
+
 @interface LoginForgetView : UIView
+
+@property (nonatomic,strong) BaseCommitButton *loginCommitButton;
+@property (nonatomic,strong) UIButton *forgrtButton;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "BaseLabel.h"
+#import "UIButton+Addition.h"
 
 @interface BaseLabel ()
 
@@ -24,7 +25,6 @@
         [self addSubview:self.nameLabel];
         [self addSubview:self.tagImageView];
         [self addSubview:self.goButton];
-        [self addSubview:self.tButton];
         
         [self setNeedsUpdateConstraints];
         
@@ -36,7 +36,7 @@
 - (void)updateConstraints
 {
     if (!self.didSetupConstraints) {
-        NSArray *views = @[self.nameLabel,self.tagImageView,self.tButton,self.goButton];
+        NSArray *views = @[self.nameLabel,self.tagImageView,self.goButton];
         [views autoAlignViewsToAxis:ALAxisHorizontal];
         
         [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
@@ -46,9 +46,7 @@
         [self.tagImageView autoSetDimensionsToSize:CGSizeMake(24, 24)];
         
         [self.goButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
-        [self.goButton autoSetDimensionsToSize:CGSizeMake(15, 15)];
-        
-        [self.tButton autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.goButton];
+//        [self.goButton autoSetDimensionsToSize:CGSizeMake(15, 15)];
         
         self.didSetupConstraints = YES;
     }
@@ -77,22 +75,25 @@
     }
     return _tagImageView;
 }
-
-- (UIButton *)tButton
-{
-    if (!_tButton) {
-        _tButton = [UIButton newAutoLayoutView];
-        [_tButton setTitleColor:kLightGrayColor forState:0];
-        _tButton.titleLabel.font = kSecondFont;
-    }
-    return _tButton;
-}
+//
+//- (UIButton *)tButton
+//{
+//    if (!_tButton) {
+//        _tButton = [UIButton newAutoLayoutView];
+//        [_tButton setTitleColor:kLightGrayColor forState:0];
+//        _tButton.titleLabel.font = kSecondFont;
+//    }
+//    return _tButton;
+//}
 
 - (UIButton *)goButton
 {
     if (!_goButton) {
         _goButton = [UIButton newAutoLayoutView];
         [_goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+        [_goButton swapImage];
+        [_goButton setTitleColor:kLightGrayColor forState:0];
+        _goButton.titleLabel.font = kSecondFont;
     }
     return _goButton;
 }
