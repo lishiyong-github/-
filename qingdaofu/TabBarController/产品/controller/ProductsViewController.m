@@ -7,6 +7,7 @@
 //
 
 #import "ProductsViewController.h"
+#import "ProductsDetailViewController.h"   //详细信息
 
 #import "HomeCell.h"
 
@@ -63,11 +64,10 @@
         _productsTableView = [UITableView newAutoLayoutView];
         _productsTableView.delegate = self;
         _productsTableView.dataSource = self;
-        _productsTableView.tableFooterView = [[UIView alloc] init];
         _productsTableView.backgroundColor = kBackColor;
         _productsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _productsTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
-        _productsTableView.tableFooterView.backgroundColor = kBackColor;
+//        _productsTableView.tableFooterView.backgroundColor = kBackColor;
     }
     return _productsTableView;
 }
@@ -75,30 +75,53 @@
 #pragma mark - tableView delegate and datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 10;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 170;
+    return 156;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HomeCell *cell = [HomeCell cellWithTableView:tableView];
+    static NSString *identifier = @"pros";
+    HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[HomeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    [cell.recommendimageView setHidden:YES];
+
+    UIView *cellBackView = [[UIView alloc] initWithFrame:CGRectMake(0, kBigPadding, kScreenWidth, 156)];
+    cellBackView.backgroundColor = kSeparateColor;
+    cell.selectedBackgroundView = cellBackView;
     
-    [cell.cellView.recommendimageView setHidden:YES];
-//    cell.cellView.typeLabel.text = @"申请中";
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ProductsDetailViewController *productsDetailVC = [[ProductsDetailViewController alloc] init];
+    productsDetailVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:productsDetailVC animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return kBigPadding;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = kBackColor;
+    self.productsTableView.tableHeaderView = headerView;
+    return headerView;
 }
 
 - (void)didReceiveMemoryWarning {

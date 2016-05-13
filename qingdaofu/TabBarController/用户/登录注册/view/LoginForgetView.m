@@ -47,6 +47,12 @@
     if (!_loginCommitButton) {
         _loginCommitButton = [BaseCommitButton newAutoLayoutView];
         [_loginCommitButton setTitle:@"登录" forState:0];
+        QDFWeakSelf;
+        [_loginCommitButton addAction:^(UIButton *btn) {
+            if (weakself.didSelecBtn) {
+                weakself.didSelecBtn(21);
+            }
+        }];
     }
     return _loginCommitButton;
 }
@@ -58,6 +64,12 @@
         [_forgrtButton setTitleColor:kBlueColor forState:0];
         _forgrtButton.titleLabel.font = kSecondFont;
         [_forgrtButton setTitle:@"忘记密码?" forState:0];
+        QDFWeakSelf;
+        [_forgrtButton addAction:^(UIButton *btn) {
+            if (weakself.didSelecBtn) {
+                weakself.didSelecBtn(22);
+            }
+        }];
     }
     return _forgrtButton;
 }

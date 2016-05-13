@@ -20,6 +20,7 @@
 
 @interface MyOrderViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) AllProSegView *orderHeadView;
 @property (nonatomic,strong) UITableView *myOrderTableView;
 
@@ -34,12 +35,29 @@
     
     [self.view addSubview:self.orderHeadView];
     [self.view addSubview:self.myOrderTableView];
+    
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.orderHeadView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeBottom];
+        [self.orderHeadView autoSetDimension:ALDimensionHeight toSize:40];
+        
+        [self.myOrderTableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.orderHeadView];
+        [self.myOrderTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
 }
 
 - (AllProSegView *)orderHeadView
 {
     if (!_orderHeadView) {
-        _orderHeadView = [[AllProSegView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
+        _orderHeadView = [AllProSegView newAutoLayoutView];
         _orderHeadView.backgroundColor = kRedColor;
     }
     return _orderHeadView;
@@ -48,7 +66,7 @@
 - (UITableView *)myOrderTableView
 {
     if (!_myOrderTableView) {
-        _myOrderTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.orderHeadView.bottom, kScreenWidth, kScreenHeight-kNavHeight-self.orderHeadView.height) style:UITableViewStylePlain];
+        _myOrderTableView = [UITableView newAutoLayoutView];
         _myOrderTableView.delegate = self;
         _myOrderTableView.dataSource = self;
         _myOrderTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
@@ -61,12 +79,17 @@
 #pragma mark - tableView delegate and datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 20;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 170+kCellHeight;
+    return 200;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,7 +101,7 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    cell.cellView.typeLabel.text = @"申请中";
+    cell.typeLabel.text = @"申请中";
     [cell.actionView.firstButton setTitle:@"截止日期：2016-01-01" forState:0];
     [cell.actionView.secondButton setHidden:YES];
     [cell.actionView.thirdButton setTitle:@"去评价" forState:0];
@@ -92,6 +115,23 @@
     }];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section>0) {
+        
+        return kBigPadding;
+    }
+    return 0.1f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerVirw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+    headerVirw.backgroundColor = kBackColor;
+    self.myOrderTableView.tableHeaderView = headerVirw;
+    return headerVirw;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

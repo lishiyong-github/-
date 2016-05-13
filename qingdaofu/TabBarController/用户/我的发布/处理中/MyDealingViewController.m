@@ -16,19 +16,12 @@
 #import "BidCell.h"
 #import "BidSingleCell.h"
 
-//#import "AuthenBaseView.h"
-//#import "BidCellView.h"
-//#import "BidSingleView.h"
-//#import "BaseLabel.h"
 #import "EvaTopSwitchView.h"
 
 @interface MyDealingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *dealingTableView;
-//@property (nonatomic,strong) AuthenBaseView *sect0;
-//@property (nonatomic,strong) BidCellView *sect1;
-//@property (nonatomic,strong) BidSingleView *sect2;
-//@property (nonatomic,strong) BaseLabel *sect3;
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) EvaTopSwitchView *dealFootView;
 
 @end
@@ -44,6 +37,8 @@
     
     [self.view addSubview: self.dealingTableView];
     [self.view addSubview:self.dealFootView];
+    
+    [self.view setNeedsUpdateConstraints];
 }
 
 - (void)checkPublishUserDetail
@@ -52,13 +47,29 @@
     [self.navigationController pushViewController:checkDetailPublishVc animated:YES];
 }
 
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.dealingTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeBottom];
+        [self.dealingTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
+        
+        [self.dealFootView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+        [self.dealFootView autoSetDimension:ALDimensionHeight toSize:kTabBarHeight];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
+}
+
+
 - (UITableView *)dealingTableView
 {
     if (!_dealingTableView) {
-        _dealingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStyleGrouped];
+        _dealingTableView = [UITableView newAutoLayoutView];
         _dealingTableView.delegate = self;
         _dealingTableView.dataSource = self;
-        _dealingTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding+kTabBarHeight)];
+        _dealingTableView.backgroundColor = kBackColor;
     }
     return _dealingTableView;
 }
@@ -66,7 +77,8 @@
 - (EvaTopSwitchView *)dealFootView
 {
     if (!_dealFootView) {
-        _dealFootView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kNavHeight-kTabBarHeight, kScreenWidth, kTabBarHeight)];
+        _dealFootView = [EvaTopSwitchView newAutoLayoutView];
+        _dealFootView.heightConstraint.constant = kTabBarHeight;
         _dealFootView.backgroundColor = kNavColor;
         
         [_dealFootView.getbutton setTitleColor:kBlueColor forState:0];
@@ -212,6 +224,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return kBigPadding;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+    footView.backgroundColor = kBackColor;
+    self.dealingTableView.tableFooterView = footView;
+    return footView;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

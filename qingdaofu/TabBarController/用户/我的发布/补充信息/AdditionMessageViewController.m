@@ -10,14 +10,12 @@
 #import "BaseLabel.h"
 #import "AuthenBaseView.h"
 
+#import "MyStoreCell.h"
+
 @interface AdditionMessageViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) UITableView *addMessageTableView;
-@property (nonatomic,strong) BaseLabel *mCell0;
-@property (nonatomic,strong) BaseLabel *mCell1;
-@property (nonatomic,strong) BaseLabel *mCell2;
-@property (nonatomic,strong) AuthenBaseView *mCell3;
-@property (nonatomic,strong) BaseLabel *mCell4;
 
 @end
 
@@ -31,6 +29,7 @@
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:kFirstFont,NSForegroundColorAttributeName:kBlueColor} forState:0];
     
     [self.view addSubview:self.addMessageTableView];
+    [self.view setNeedsUpdateConstraints];
 }
 
 - (void)saveMessage
@@ -38,69 +37,27 @@
     
 }
 
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.addMessageTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
+}
+
 - (UITableView *)addMessageTableView
 {
     if (!_addMessageTableView) {
-        _addMessageTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth,kScreenHeight-kNavHeight) style:UITableViewStylePlain];
+        _addMessageTableView = [UITableView newAutoLayoutView];
         _addMessageTableView.backgroundColor = kBackColor;
         _addMessageTableView.delegate = self;
         _addMessageTableView.dataSource = self;
         _addMessageTableView.tableFooterView = [[UIView alloc] init];
         _addMessageTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kSmallPadding)];
-        _addMessageTableView.tableHeaderView.backgroundColor = kBackColor;
     }
     return _addMessageTableView;
-}
-
-- (BaseLabel *)mCell0
-{
-    if (!_mCell0) {
-        _mCell0 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _mCell0.nameLabel.text = @"抵押物类型";
-        [_mCell0.goButton setTitle:@"住宅" forState:0];
-    }
-    return _mCell0;
-}
-
-- (BaseLabel *)mCell1
-{
-    if (!_mCell1) {
-        _mCell1 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _mCell1.nameLabel.text = @"状态";
-        [_mCell1.goButton setTitle:@"自住" forState:0];
-    }
-    return _mCell1;
-}
-
-- (BaseLabel *)mCell2
-{
-    if (!_mCell2) {
-        _mCell2 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _mCell2.nameLabel.text = @"抵押状况";
-        [_mCell2.goButton setTitle:@"清房" forState:0];
-    }
-    return _mCell2;
-}
-
-- (AuthenBaseView *)mCell3
-{
-    if (!_mCell3) {
-        _mCell3 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _mCell3.label.text = @"借款人年龄";
-        _mCell3.textField.userInteractionEnabled = NO;
-        [_mCell3.button setTitle:@"30" forState:0];
-    }
-    return _mCell3;
-}
-
-- (BaseLabel *)mCell4
-{
-    if (!_mCell4) {
-        _mCell4 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _mCell4.nameLabel.text = @"权利人年龄";
-        [_mCell4.goButton setTitle:@"65岁以下" forState:0];
-    }
-    return _mCell4;
 }
 
 #pragma mark - 
@@ -118,23 +75,15 @@
 {
     static NSString *identifier = @"additionMessage";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    MyStoreCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[MyStoreCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-
-    if (indexPath.row == 0) {
-        [cell addSubview:self.mCell0];
-    }else if (indexPath.row == 1){
-        [cell addSubview:self.mCell1];
-    }else if (indexPath.row == 2){
-        [cell addSubview:self.mCell2];
-    }else if (indexPath.row == 3){
-        [cell addSubview:self.mCell3];
-    }else{
-        [cell addSubview:self.mCell4];
-    }
+    
+    NSArray *tArray = @[@"抵押物类型",@"状态",@"抵押状况",@"借款人年龄",@"权利人年龄"];
+    [cell.sButton1 setTitle:tArray[indexPath.row] forState:0];
+    [cell.sButton2 setImage:[UIImage imageNamed:@"list_more"] forState:0];
     
     return cell;
 }

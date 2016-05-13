@@ -17,6 +17,7 @@
 
 @interface MyReleaseViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) AllProSegView *releaseProView;
 @property (nonatomic,strong) UITableView *myReleaseTableView;
 
@@ -31,12 +32,28 @@
 
     [self.view addSubview:self.releaseProView];
     [self.view addSubview:self.myReleaseTableView];
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.releaseProView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeBottom];
+        [self.releaseProView autoSetDimension:ALDimensionHeight toSize:40];
+        
+        [self.myReleaseTableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.releaseProView];
+        [self.myReleaseTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
 }
 
 - (AllProSegView *)releaseProView
 {
     if (!_releaseProView) {
-        _releaseProView = [[AllProSegView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
+        _releaseProView = [AllProSegView newAutoLayoutView];
         _releaseProView.backgroundColor = kBlueColor;
     }
     return _releaseProView;
@@ -45,12 +62,11 @@
 - (UITableView *)myReleaseTableView
 {
     if (!_myReleaseTableView) {
-        _myReleaseTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.releaseProView.bottom, kScreenWidth, kScreenHeight-kNavHeight-self.releaseProView.height) style:UITableViewStylePlain];
+        _myReleaseTableView = [UITableView newAutoLayoutView];
         _myReleaseTableView.delegate = self;
         _myReleaseTableView.dataSource = self;
         _myReleaseTableView.backgroundColor = kBackColor;
         _myReleaseTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
-        _myReleaseTableView.tableFooterView.backgroundColor = kBackColor;
     }
     return _myReleaseTableView;
 }
@@ -58,12 +74,17 @@
 #pragma mark - 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 170+kCellHeight;
+    return 200;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,12 +96,14 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.cellView.typeLabel.text = @"发布中";
-    cell.cellView.typeLabel.textColor = kBlueColor;
+    cell.typeLabel.text = @"发布中";
+    cell.typeLabel.textColor = kBlueColor;
     
     [cell.actionView.firstButton setTitle:@"您有新的申请记录" forState:0];
     [cell.actionView.secondButton setTitle:@"补充信息" forState:0];
     [cell.actionView.thirdButton setTitle:@"查看申请" forState:0];
+    
+    
     
     QDFWeakSelf;
     [cell.actionView.secondButton addAction:^(UIButton *btn) {
@@ -91,14 +114,31 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section>0) {
+        
+        return kBigPadding;
+    }
+    return 0.1f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+    headView.backgroundColor = kBackColor;
+    self.myReleaseTableView.tableHeaderView = headView;
+    return headView;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyPublishingViewController *myPublishingVC = [[MyPublishingViewController alloc] init];
-    [self.navigationController pushViewController:myPublishingVC animated:YES];
+//    MyPublishingViewController *myPublishingVC = [[MyPublishingViewController alloc] init];
+//    [self.navigationController pushViewController:myPublishingVC animated:YES];
     
-//    MyDealingViewController *myDealingVC = [[MyDealingViewController alloc] init];
-//    [self.navigationController pushViewController:myDealingVC animated:YES];
-//
+    MyDealingViewController *myDealingVC = [[MyDealingViewController alloc] init];
+    [self.navigationController pushViewController:myDealingVC animated:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {

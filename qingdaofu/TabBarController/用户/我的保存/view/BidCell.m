@@ -40,10 +40,6 @@
         NSArray *views2 = @[self.lineLabel1,self.lineLabel2,self.lineLabel3,self.lineLabel4];
         [views2 autoSetViewsDimension:ALDimensionHeight toSize:kLineWidth];
         
-        NSArray *views3 = @[self.lineLabel2,self.lineLabel3,self.lineLabel4];
-        [views3 autoAlignViewsToAxis:ALAxisVertical];
-        
-        
         [self.cellView1 autoPinEdgeToSuperviewEdge:ALEdgeTop];
         [self.cellView1 autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         
@@ -91,7 +87,7 @@
     return _cellView1;
 }
 
-- (UILabel *)lineLabel1
+- (LineLabel *)lineLabel1
 {
     if (!_lineLabel1) {
         _lineLabel1 = [LineLabel newAutoLayoutView];

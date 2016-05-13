@@ -14,6 +14,7 @@
 @property (nonatomic,strong) UIButton *loginButton;
 
 @property (nonatomic,assign) BOOL didSetupConstraints;
+@property (nonatomic,strong) NSLayoutConstraint *topConstraint;
 
 - (void)changePlaceholderColor:(NSString *)placeholder;
 

@@ -71,13 +71,20 @@
     if (!_getbutton) {
         _getbutton = [UIButton newAutoLayoutView];
         [_getbutton setTitle:@"收到的评价" forState:0];
-        [_getbutton setTitleColor:[UIColor blackColor] forState:0];
+        [_getbutton setTitleColor:kBlueColor forState:0];
         _getbutton.titleLabel.font = kBigFont;
         
         QDFWeakSelf;
         [_getbutton addAction:^(UIButton *btn) {
             [UIView animateWithDuration:0.3 animations:^{
+
+                [btn setTitleColor:kBlueColor forState:0];
+                [weakself.sendButton setTitleColor:kBlackColor forState:0];
                 weakself.blueLabel.frame = CGRectMake(_getbutton.left+kScreenWidth/8,38, kScreenWidth/4, 2);
+                
+                if (weakself.didSelectedButton) {
+                    weakself.didSelectedButton(33);
+                }
             }];
         }];
     }
@@ -95,7 +102,14 @@
         QDFWeakSelf;
         [_sendButton addAction:^(UIButton *btn) {
             [UIView animateWithDuration:0.3 animations:^{
+                [btn setTitleColor:kBlueColor forState:0];
+                [weakself.getbutton setTitleColor:kBlackColor forState:0];
+                
                 weakself.blueLabel.frame = CGRectMake(_sendButton.left+kScreenWidth/8,38, kScreenWidth/4, 2);
+                
+                if (weakself.didSelectedButton) {
+                    weakself.didSelectedButton(34);
+                }
             }];
         }];
     }

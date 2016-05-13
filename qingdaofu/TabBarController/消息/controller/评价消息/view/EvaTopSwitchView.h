@@ -20,8 +20,6 @@
 @property (nonatomic,strong) UILabel *shortLineLabel;
 @property (nonatomic,strong) UILabel *longLineLabel;
 
-@property (nonatomic,strong) NSLayoutConstraint *getBtnHeight;
-
 @property (nonatomic,strong) NSLayoutConstraint *heightConstraint;
 
 @end

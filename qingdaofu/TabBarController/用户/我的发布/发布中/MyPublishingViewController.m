@@ -15,10 +15,8 @@
 
 @interface MyPublishingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) UITableView *publishingTableView;
-//@property (nonatomic,strong) AuthenBaseView *sec0;
-//@property (nonatomic,strong) BidCellView *sec1;
-//@property (nonatomic,strong) BidSingleView *sec2;
 
 @end
 
@@ -32,6 +30,8 @@
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:kBigFont,NSForegroundColorAttributeName:kBlueColor} forState:0];
     
     [self.view addSubview: self.publishingTableView];
+    
+    [self.view setNeedsUpdateConstraints];
 }
 
 - (void)showRecordList
@@ -39,13 +39,23 @@
     
 }
 
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.publishingTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
+}
+
 - (UITableView *)publishingTableView
 {
     if (!_publishingTableView) {
-        _publishingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStyleGrouped];
+        _publishingTableView = [UITableView newAutoLayoutView];
         _publishingTableView.delegate = self;
         _publishingTableView.dataSource = self;
-        _publishingTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+        _publishingTableView.backgroundColor = kBackColor;
     }
     return _publishingTableView;
 }
@@ -136,6 +146,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return kBigPadding;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+    footView.backgroundColor = kBackColor;
+    self.publishingTableView.tableFooterView = footView;
+    return footView;
 }
 
 - (void)didReceiveMemoryWarning {

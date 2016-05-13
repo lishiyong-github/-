@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SingleButton.h"
+
+//95+18
 @interface NewPublishCell : UITableViewCell
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+
+@property (nonatomic,strong) SingleButton *financeButton;
+@property (nonatomic,strong) SingleButton *collectionButton;
+@property (nonatomic,strong) SingleButton *suitButton;
+
 
 @end

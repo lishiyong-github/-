@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"  //注册
+#import "ForgetPassViewController.h"  //忘记密码
 
 #import "LoginCell.h"
 #import "LoginForgetView.h"
@@ -68,6 +69,16 @@
 {
     if (!_loginFooterView) {
         _loginFooterView = [[LoginForgetView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
+        
+        QDFWeakSelf;
+        [_loginFooterView setDidSelecBtn:^(NSInteger buttonTag) {
+            if (buttonTag == 21) {//登录
+                
+            }else{//忘记密码
+                ForgetPassViewController *forgetPassVC = [[ForgetPassViewController alloc] init];
+                [weakself.navigationController pushViewController:forgetPassVC animated:YES];
+            }
+        }];
     }
     return _loginFooterView;
 }
@@ -91,13 +102,14 @@
         cell = [[LoginCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    NSArray *array1 = @[@"输入您的手机号码    ",@"输入您的密码        "];
-    cell.loginTextField.placeholder = array1[indexPath.row];
-    [cell changePlaceholderColor:array1[indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    NSArray *array1 = @[@"输入您的手机号码    ",@"输入您的密码        "];
+    NSMutableAttributedString *attriStr = [[NSMutableAttributedString alloc] initWithString:array1[indexPath.row]];
+    [attriStr addAttributes:@{NSFontAttributeName:kBigFont,NSForegroundColorAttributeName:kLightGrayColor} range:NSMakeRange(0, attriStr.length)];
+    [cell.loginTextField setAttributedPlaceholder:attriStr];
     
     if (indexPath.row == 1) {
-        cell.separatorInset = UIEdgeInsetsMake(0, kScreenWidth, 0, 0);
         cell.loginTextField.secureTextEntry = YES;
         [cell.loginButton setTitle:@"显示密码" forState:0];
         [cell.loginButton setTitle:@"隐藏密码" forState:UIControlStateSelected];

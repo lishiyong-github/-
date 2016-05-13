@@ -62,6 +62,13 @@
 		A17EE38D1CD86FB700ECC631 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17EE38C1CD86FB700ECC631 /* ContactUsViewController.m */; };
 		A17EE3911CD8796900ECC631 /* SuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17EE3901CD8796900ECC631 /* SuggestionViewController.m */; };
 		A17EE3941CD8983900ECC631 /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17EE3931CD8983900ECC631 /* MyOrderViewController.m */; };
+		A17F7BE51CE567D300E882A3 /* RegistCommitView.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BE41CE567D300E882A3 /* RegistCommitView.m */; };
+		A17F7BE91CE578EB00E882A3 /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BE81CE578EB00E882A3 /* JKCountDownButton.m */; };
+		A17F7BEC1CE5AD3100E882A3 /* ProductsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BEB1CE5AD3100E882A3 /* ProductsDetailViewController.m */; };
+		A17F7BEF1CE5B01100E882A3 /* ProLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BEE1CE5B01100E882A3 /* ProLeftView.m */; };
+		A17F7BF21CE5B02000E882A3 /* ProRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BF11CE5B02000E882A3 /* ProRightView.m */; };
+		A17F7BF51CE5C52700E882A3 /* NewPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BF41CE5C52700E882A3 /* NewPublishCell.m */; };
+		A17F7BFC1CE5DDDA00E882A3 /* ApplyRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BFB1CE5DDDA00E882A3 /* ApplyRecordsViewController.m */; };
 		A18C675C1CD06C2E00C7B070 /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C675B1CD06C2E00C7B070 /* UIButton+Block.m */; };
 		A18C675F1CD087C500C7B070 /* UIView+Fram.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C675E1CD087C500C7B070 /* UIView+Fram.m */; };
 		A18C67631CD08D9A00C7B070 /* NoLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C67621CD08D9A00C7B070 /* NoLoginView.m */; };
@@ -115,7 +122,6 @@
 		A19B8E571CCF640300F8EBF2 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A19B8E561CCF640300F8EBF2 /* MessageCell.m */; };
 		A19D293E1CD1A32D00DAAEA7 /* NSString+Fram.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D293D1CD1A32D00DAAEA7 /* NSString+Fram.m */; };
 		A19D29471CD1B44D00DAAEA7 /* MoneyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D29461CD1B44D00DAAEA7 /* MoneyView.m */; };
-		A19D294A1CD1B79000DAAEA7 /* NewProView.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D29491CD1B79000DAAEA7 /* NewProView.m */; };
 		A19D294E1CD1E04300DAAEA7 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D294D1CD1E04300DAAEA7 /* HomeCell.m */; };
 		A19D29521CD1F71800DAAEA7 /* BaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D29511CD1F71800DAAEA7 /* BaseLabel.m */; };
 		A19D296A1CD208E900DAAEA7 /* AuthentyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D29691CD208E900DAAEA7 /* AuthentyViewController.m */; };
@@ -248,7 +254,6 @@
 		A1B3D5291CDDC4F300F08AE8 /* conserve_interest_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B3D5271CDDC4F300F08AE8 /* conserve_interest_icon@3x.png */; };
 		A1B3D52C1CDDC4FD00F08AE8 /* conserve_rebate_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B3D52A1CDDC4FD00F08AE8 /* conserve_rebate_icon@2x.png */; };
 		A1B3D52D1CDDC4FD00F08AE8 /* conserve_rebate_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B3D52B1CDDC4FD00F08AE8 /* conserve_rebate_icon@3x.png */; };
-		A1E4AFAB1CD0B0A2001A5E9E /* NewPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4AFAA1CD0B0A2001A5E9E /* NewPublishView.m */; };
 		A1E4AFB71CD0C674001A5E9E /* SingleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4AFB61CD0C674001A5E9E /* SingleButton.m */; };
 /* End PBXBuildFile section */
 
@@ -366,6 +371,20 @@
 		A17EE3901CD8796900ECC631 /* SuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionViewController.m; sourceTree = "<group>"; };
 		A17EE3921CD8983900ECC631 /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
 		A17EE3931CD8983900ECC631 /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
+		A17F7BE31CE567D300E882A3 /* RegistCommitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistCommitView.h; sourceTree = "<group>"; };
+		A17F7BE41CE567D300E882A3 /* RegistCommitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistCommitView.m; sourceTree = "<group>"; };
+		A17F7BE71CE578EB00E882A3 /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
+		A17F7BE81CE578EB00E882A3 /* JKCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
+		A17F7BEA1CE5AD3100E882A3 /* ProductsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsDetailViewController.h; sourceTree = "<group>"; };
+		A17F7BEB1CE5AD3100E882A3 /* ProductsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsDetailViewController.m; sourceTree = "<group>"; };
+		A17F7BED1CE5B01100E882A3 /* ProLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProLeftView.h; sourceTree = "<group>"; };
+		A17F7BEE1CE5B01100E882A3 /* ProLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProLeftView.m; sourceTree = "<group>"; };
+		A17F7BF01CE5B02000E882A3 /* ProRightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProRightView.h; sourceTree = "<group>"; };
+		A17F7BF11CE5B02000E882A3 /* ProRightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProRightView.m; sourceTree = "<group>"; };
+		A17F7BF31CE5C52700E882A3 /* NewPublishCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPublishCell.h; sourceTree = "<group>"; };
+		A17F7BF41CE5C52700E882A3 /* NewPublishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPublishCell.m; sourceTree = "<group>"; };
+		A17F7BFA1CE5DDDA00E882A3 /* ApplyRecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyRecordsViewController.h; sourceTree = "<group>"; };
+		A17F7BFB1CE5DDDA00E882A3 /* ApplyRecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyRecordsViewController.m; sourceTree = "<group>"; };
 		A18C675A1CD06C2E00C7B070 /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
 		A18C675B1CD06C2E00C7B070 /* UIButton+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
 		A18C675D1CD087C500C7B070 /* UIView+Fram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Fram.h"; sourceTree = "<group>"; };
@@ -449,8 +468,6 @@
 		A19D293D1CD1A32D00DAAEA7 /* NSString+Fram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Fram.m"; sourceTree = "<group>"; };
 		A19D29451CD1B44D00DAAEA7 /* MoneyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyView.h; sourceTree = "<group>"; };
 		A19D29461CD1B44D00DAAEA7 /* MoneyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyView.m; sourceTree = "<group>"; };
-		A19D29481CD1B79000DAAEA7 /* NewProView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProView.h; sourceTree = "<group>"; };
-		A19D29491CD1B79000DAAEA7 /* NewProView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProView.m; sourceTree = "<group>"; };
 		A19D294C1CD1E04300DAAEA7 /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		A19D294D1CD1E04300DAAEA7 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		A19D29501CD1F71800DAAEA7 /* BaseLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLabel.h; sourceTree = "<group>"; };
@@ -652,8 +669,6 @@
 		A1B3D5271CDDC4F300F08AE8 /* conserve_interest_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_interest_icon@3x.png"; sourceTree = "<group>"; };
 		A1B3D52A1CDDC4FD00F08AE8 /* conserve_rebate_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_rebate_icon@2x.png"; sourceTree = "<group>"; };
 		A1B3D52B1CDDC4FD00F08AE8 /* conserve_rebate_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_rebate_icon@3x.png"; sourceTree = "<group>"; };
-		A1E4AFA91CD0B0A2001A5E9E /* NewPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPublishView.h; sourceTree = "<group>"; };
-		A1E4AFAA1CD0B0A2001A5E9E /* NewPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPublishView.m; sourceTree = "<group>"; };
 		A1E4AFB51CD0C674001A5E9E /* SingleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleButton.h; sourceTree = "<group>"; };
 		A1E4AFB61CD0C674001A5E9E /* SingleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -903,6 +918,24 @@
 				A17691161CD97E30004289DD /* MyApplyingViewController.m */,
 			);
 			path = "申请中";
+			sourceTree = "<group>";
+		};
+		A17F7BE61CE578EB00E882A3 /* JKCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				A17F7BE71CE578EB00E882A3 /* JKCountDownButton.h */,
+				A17F7BE81CE578EB00E882A3 /* JKCountDownButton.m */,
+			);
+			path = JKCountDownButton;
+			sourceTree = "<group>";
+		};
+		A17F7BF91CE5DDB700E882A3 /* 查看申请 */ = {
+			isa = PBXGroup;
+			children = (
+				A17F7BFA1CE5DDDA00E882A3 /* ApplyRecordsViewController.h */,
+				A17F7BFB1CE5DDDA00E882A3 /* ApplyRecordsViewController.m */,
+			);
+			path = "查看申请";
 			sourceTree = "<group>";
 		};
 		A18C67601CD08D6B00C7B070 /* view */ = {
@@ -1248,6 +1281,8 @@
 			children = (
 				A19B8E511CCF533B00F8EBF2 /* ProductsViewController.h */,
 				A19B8E521CCF533B00F8EBF2 /* ProductsViewController.m */,
+				A17F7BEA1CE5AD3100E882A3 /* ProductsDetailViewController.h */,
+				A17F7BEB1CE5AD3100E882A3 /* ProductsDetailViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1266,6 +1301,10 @@
 			children = (
 				A19D294C1CD1E04300DAAEA7 /* HomeCell.h */,
 				A19D294D1CD1E04300DAAEA7 /* HomeCell.m */,
+				A17F7BED1CE5B01100E882A3 /* ProLeftView.h */,
+				A17F7BEE1CE5B01100E882A3 /* ProLeftView.m */,
+				A17F7BF01CE5B02000E882A3 /* ProRightView.h */,
+				A17F7BF11CE5B02000E882A3 /* ProRightView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1299,6 +1338,7 @@
 		A19D29631CD2084B00DAAEA7 /* 我的发布 */ = {
 			isa = PBXGroup;
 			children = (
+				A17F7BF91CE5DDB700E882A3 /* 查看申请 */,
 				A1A97E641CDC985200EDE320 /* 发布中 */,
 				A1A97E631CDC984300EDE320 /* 处理中 */,
 				A192B4B51CDB33B50053FC4C /* 处理进度 */,
@@ -1522,6 +1562,7 @@
 		A1A017311C5B677200027134 /* 第三方 */ = {
 			isa = PBXGroup;
 			children = (
+				A17F7BE61CE578EB00E882A3 /* JKCountDownButton */,
 				A19B8E181CCF42E300F8EBF2 /* PureLayout */,
 				A1A0177B1C5B8A2100027134 /* AFNetworking */,
 				A1A017361C5B696A00027134 /* MJExtension */,
@@ -1633,6 +1674,8 @@
 				A1A34C3C1CE32CF700AD454A /* LoginCell.m */,
 				A1A34C3E1CE339B800AD454A /* LoginForgetView.h */,
 				A1A34C3F1CE339B800AD454A /* LoginForgetView.m */,
+				A17F7BE31CE567D300E882A3 /* RegistCommitView.h */,
+				A17F7BE41CE567D300E882A3 /* RegistCommitView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1716,14 +1759,12 @@
 		A1E4AFA81CD0B046001A5E9E /* view */ = {
 			isa = PBXGroup;
 			children = (
-				A1E4AFA91CD0B0A2001A5E9E /* NewPublishView.h */,
-				A1E4AFAA1CD0B0A2001A5E9E /* NewPublishView.m */,
 				A1E4AFB51CD0C674001A5E9E /* SingleButton.h */,
 				A1E4AFB61CD0C674001A5E9E /* SingleButton.m */,
-				A19D29481CD1B79000DAAEA7 /* NewProView.h */,
-				A19D29491CD1B79000DAAEA7 /* NewProView.m */,
 				A19D29451CD1B44D00DAAEA7 /* MoneyView.h */,
 				A19D29461CD1B44D00DAAEA7 /* MoneyView.m */,
+				A17F7BF31CE5C52700E882A3 /* NewPublishCell.h */,
+				A17F7BF41CE5C52700E882A3 /* NewPublishCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1971,6 +2012,8 @@
 				A17EE38D1CD86FB700ECC631 /* ContactUsViewController.m in Sources */,
 				A17964EB1CD3445400B6AD47 /* CompletCellView.m in Sources */,
 				A17691391CD9C37D004289DD /* RequestView.m in Sources */,
+				A17F7BE51CE567D300E882A3 /* RegistCommitView.m in Sources */,
+				A17F7BF51CE5C52700E882A3 /* NewPublishCell.m in Sources */,
 				A1A34BFC1CE2E0B500AD454A /* CheckDetailUserCell.m in Sources */,
 				A17964FD1CD3682A00B6AD47 /* MyDetailStoreViewController.m in Sources */,
 				A1A97E5B1CDC74D800EDE320 /* NewsCell.m in Sources */,
@@ -1994,6 +2037,7 @@
 				A17964EE1CD34C6000B6AD47 /* CompleteSingleView.m in Sources */,
 				A1A97E5F1CDC8AED00EDE320 /* EvaTopSwitchView.m in Sources */,
 				A1039F0C1C72C55400771747 /* RefreshViewController.m in Sources */,
+				A17F7BEC1CE5AD3100E882A3 /* ProductsDetailViewController.m in Sources */,
 				A1A0178F1C5B8A2100027134 /* AFHTTPRequestOperation.m in Sources */,
 				A19D29741CD2158100DAAEA7 /* AuthenPersonViewController.m in Sources */,
 				A1A34C021CE2F8F900AD454A /* MineUserCell.m in Sources */,
@@ -2003,6 +2047,7 @@
 				A19985151CE02B7A0055A572 /* ModifyPassWordViewController.m in Sources */,
 				A17EE3791CD82F4800ECC631 /* MyDetailSaveViewController.m in Sources */,
 				A1A016AA1C5A0C0300027134 /* ViewController.m in Sources */,
+				A17F7BFC1CE5DDDA00E882A3 /* ApplyRecordsViewController.m in Sources */,
 				A1A0174F1C5B696A00027134 /* MJExtensionConst.m in Sources */,
 				A1A017271C5B421500027134 /* BaseViewController.m in Sources */,
 				A1A34BE81CE2BC2300AD454A /* BidCell.m in Sources */,
@@ -2015,6 +2060,7 @@
 				A1A017541C5B696A00027134 /* NSObject+MJClass.m in Sources */,
 				A176912E1CD99E1E004289DD /* CheckDetailPublishViewController.m in Sources */,
 				A1A016A71C5A0C0300027134 /* AppDelegate.m in Sources */,
+				A17F7BEF1CE5B01100E882A3 /* ProLeftView.m in Sources */,
 				A1A017581C5B696A00027134 /* NSString+MJExtension.m in Sources */,
 				A17691261CD986BA004289DD /* LineLabel.m in Sources */,
 				A1A017301C5B607300027134 /* UIImage+Color.m in Sources */,
@@ -2022,6 +2068,7 @@
 				A154B8FC1CE1C57000884CA4 /* SuitBaseView.m in Sources */,
 				A1A016A41C5A0C0300027134 /* main.m in Sources */,
 				A19B8E501CCF532B00F8EBF2 /* NewProductViewController.m in Sources */,
+				A17F7BE91CE578EB00E882A3 /* JKCountDownButton.m in Sources */,
 				A1A017521C5B696A00027134 /* MJPropertyKey.m in Sources */,
 				A19B8E241CCF42E300F8EBF2 /* NSLayoutConstraint+PureLayout.m in Sources */,
 				A1A97E541CDC66FE00EDE320 /* EvaluateMessagesViewController.m in Sources */,
@@ -2036,7 +2083,6 @@
 				A1A017941C5B8A2100027134 /* AFURLConnectionOperation.m in Sources */,
 				A176911F1CD98404004289DD /* MyEndingViewController.m in Sources */,
 				A17964F41CD35AD500B6AD47 /* MySaveViewController.m in Sources */,
-				A19D294A1CD1B79000DAAEA7 /* NewProView.m in Sources */,
 				A192B4B01CDAFAC60053FC4C /* MyScheduleViewController.m in Sources */,
 				A19B8E2B1CCF474B00F8EBF2 /* TabBar.m in Sources */,
 				A176914D1CD9EDC8004289DD /* StarSingleView.m in Sources */,
@@ -2059,7 +2105,6 @@
 				A19985231CE069630055A572 /* AllProSegView.m in Sources */,
 				A1A0174E1C5B696A00027134 /* MJDictionaryCache.m in Sources */,
 				A17691171CD97E30004289DD /* MyApplyingViewController.m in Sources */,
-				A1E4AFAB1CD0B0A2001A5E9E /* NewPublishView.m in Sources */,
 				A154B8EA1CE1B47B00884CA4 /* ReportFiSucViewController.m in Sources */,
 				A19985201CE061DB0055A572 /* AnotherView.m in Sources */,
 				A1A97E511CDC66E900EDE320 /* ReceiveMessagesViewController.m in Sources */,
@@ -2079,6 +2124,7 @@
 				A1A34C3D1CE32CF700AD454A /* LoginCell.m in Sources */,
 				A1A97E4E1CDC66D600EDE320 /* PublishMessagesViewController.m in Sources */,
 				A17EE37F1CD84DDF00ECC631 /* DetailBaseView.m in Sources */,
+				A17F7BF21CE5B02000E882A3 /* ProRightView.m in Sources */,
 				A17691351CD9C1D1004289DD /* DelayRequestViewController.m in Sources */,
 				A18C67631CD08D9A00C7B070 /* NoLoginView.m in Sources */,
 				A19D293E1CD1A32D00DAAEA7 /* NSString+Fram.m in Sources */,

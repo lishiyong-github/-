@@ -7,16 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NewProView.h"
-#import "AuthenBaseView.h"
+
 #import "AnotherView.h"
+#import "MoneyView.h"
+#import "LineLabel.h"
 
 @interface AnotherHomeCell : UITableViewCell
 
 @property (nonatomic,assign) BOOL didSetupConstraints;
-@property (nonatomic,strong) UILabel *lineLabel;
-@property (nonatomic,strong) NewProView *cellView;
-@property (nonatomic,strong) UILabel *lineLabel2;
+
+@property (nonatomic,strong) UIImageView *typeImageView;
+@property (nonatomic,strong) UILabel *nameLabel;
+@property (nonatomic,strong) UILabel *typeLabel;
+@property (nonatomic,strong) UILabel *addressLabel;
+@property (nonatomic,strong) LineLabel *grayLabel;
+@property (nonatomic,strong) MoneyView *moneyView;
+@property (nonatomic,strong) MoneyView *pointView;
+@property (nonatomic,strong) MoneyView *rateView;
+@property (nonatomic,strong) LineLabel *lineLabel2;
 @property (nonatomic,strong) AnotherView *actionView;
 
 @end

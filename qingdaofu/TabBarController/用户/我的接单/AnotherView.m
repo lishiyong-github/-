@@ -38,7 +38,9 @@
         [self.firstButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
         
         [self.secondButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:9.5];
-        [self.secondButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:100];
+//        [self.secondButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:100];
+        
+        [self.secondButton autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.thirdButton withOffset:-10];
         
         [self.thirdButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
         

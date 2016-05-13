@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProLeftView : UITableView
+#import "MyStoreCell.h"
+
+@interface ProLeftView : UITableView<UITableViewDataSource,UITableViewDelegate>
 
 @end

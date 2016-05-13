@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProRightView : UITableView
+@interface ProRightView : UITableView<UITableViewDelegate,UITableViewDataSource>
 
 @end

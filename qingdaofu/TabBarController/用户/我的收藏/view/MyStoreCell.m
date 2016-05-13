@@ -8,32 +8,37 @@
 
 #import "MyStoreCell.h"
 
+#import "UIButton+Addition.h"
+
 @implementation MyStoreCell
 
 
-+(instancetype)cellWithTableView:(UITableView *)tableView
-{
-    static NSString *identifier = @"mySave";
-    MyStoreCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if (!cell) {
-        cell = [[MyStoreCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    return cell;
-}
+//+(instancetype)cellWithTableView:(UITableView *)tableView
+//{
+//    static NSString *identifier = @"mySave";
+//    MyStoreCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+//    
+//    if (!cell) {
+//        cell = [[MyStoreCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+//    }
+//    
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    
+//    return cell;
+//}
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        [self addSubview:self.imageView1];
-        [self addSubview:self.label1];
-        [self addSubview:self.label2];
+//        [self addSubview:self.imageView1];
+//        [self addSubview:self.label1];
+//        [self addSubview:self.label2];
         //        [self addSubview:self.label3];
+        
+        [self addSubview:self.sButton1];
+        [self addSubview:self.sButton2];
         
         [self setNeedsUpdateConstraints];
     }
@@ -44,53 +49,43 @@
 {
     if (!self.didSetupConstraints) {
         
-        [self.imageView1 autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
-        [self.imageView1 autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:15];
-        [self.imageView1 autoSetDimensionsToSize:CGSizeMake(40, 18)];
+        NSArray *views = @[self.sButton1,self.sButton2];
+        [views autoAlignViewsToAxis:ALAxisHorizontal];
         
-        [self.label1 autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.imageView1 withOffset:10];
-        [self.label1 autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
-        //        [self.label1 autoAlignAxis:ALAxisBaseline toSameAxisOfView:self.imageView1];
+        [self.sButton1 autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
+        [self.sButton1 autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
         
-        [self.label2 autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:18];
-        [self.label2 autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:15];
-        
+        [self.sButton2 autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
+
         self.didSetupConstraints = YES;
     }
     [super updateConstraints];
 }
 
-- (UIImageView *)imageView1
+- (UIButton *)sButton1
 {
-    if (!_imageView1) {
-        _imageView1 = [UIImageView newAutoLayoutView];
-        _imageView1.backgroundColor = kBlueColor;
+    if (!_sButton1) {
+        _sButton1 = [UIButton newAutoLayoutView];
+        [_sButton1 setTitleColor:kBlackColor forState:0];
+        _sButton1.titleLabel.font = kBigFont;
+        _sButton1.userInteractionEnabled = NO;
     }
-    return _imageView1;
+    return _sButton1;
 }
 
-- (UILabel *)label1
+- (UIButton *)sButton2
 {
-    if (!_label1) {
-        _label1 = [UILabel newAutoLayoutView];
-        _label1.textColor = kBlackColor;
-        _label1.text = @"BF364757070077";
-        _label1.font = kFirstFont;
+    if (!_sButton2) {
+        _sButton2 = [UIButton newAutoLayoutView];
+        [_sButton2 setTitleColor:kLightGrayColor forState:0];
+        _sButton2.titleLabel.font = kSecondFont;
+        [_sButton2 swapImage];
+        _sButton2.userInteractionEnabled = NO;
     }
-    return _label1;
+    return _sButton2;
 }
 
-- (UILabel *)label2
-{
-    if (!_label2) {
-        _label2 = [UILabel newAutoLayoutView];
-        _label2.text = @"2016-12-12 >";
-        _label2.textColor = kLightGrayColor;
-        _label2.font = kSecondFont;
-        _label2.textAlignment = NSTextAlignmentRight;
-    }
-    return _label2;
-}
+
 
 - (void)awakeFromNib {
     // Initialization code

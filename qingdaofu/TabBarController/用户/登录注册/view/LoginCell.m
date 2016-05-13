@@ -17,6 +17,8 @@
         [self addSubview:self.loginTextField];
         [self addSubview:self.loginButton];
         
+        self.topConstraint = [self.loginTextField autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
+        
         [self setNeedsUpdateConstraints];
     }
     return self;
@@ -26,7 +28,6 @@
 {
     if (!self.didSetupConstraints) {
         
-        [self.loginTextField autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
         [self.loginTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
         
         [self.loginButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
@@ -51,7 +52,9 @@
 {
     if (!_loginButton) {
         _loginButton = [UIButton newAutoLayoutView];
-        _loginButton.titleLabel.font = kBigFont;
+        _loginButton.titleLabel.font = kSecondFont
+        
+        ;
         [_loginButton setTitleColor:kBlueColor forState:0];
     }
     return _loginButton;

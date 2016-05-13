@@ -16,5 +16,5 @@
 @property (nonatomic,strong) UIButton *forgrtButton;
 
 @property (nonatomic,assign) BOOL didSetupConstraints;
-
+@property (nonatomic,strong) void (^didSelecBtn)(NSInteger);
 @end

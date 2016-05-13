@@ -8,10 +8,6 @@
 
 #import "MyDetailSaveViewController.h"
 
-#import "AuthenBaseView.h"
-#import "CompletCellView.h"
-#import "DetailView.h"
-#import "DetailBaseView.h"
 #import "BaseCommitButton.h"
 
 #import "BidZeroCell.h"
@@ -23,11 +19,8 @@
 @property (nonatomic,assign) BOOL didSetupConstraints;
 
 @property (nonatomic,strong) UITableView *detailSaveTableView;
-//@property (nonatomic,strong) AuthenBaseView *sectionView0;
-//@property (nonatomic,strong) BidCellView *sectionView1;
-//@property (nonatomic,strong) BidSingleView *sectionView2;
 
-@property (nonatomic,strong) BaseCommitButton *footerView;
+@property (nonatomic,strong) BaseCommitButton *saveFooterView;
 
 @end
 
@@ -41,7 +34,9 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(edit)];
     
     [self.view addSubview:self.detailSaveTableView];
-    [self.view addSubview:self.footerView];
+    [self.view addSubview:self.saveFooterView];
+    
+    [self.view setNeedsUpdateConstraints];
 }
 
 - (void)edit
@@ -49,25 +44,42 @@
     
 }
 
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.detailSaveTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeBottom];
+        [self.detailSaveTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
+        
+        
+        [self.saveFooterView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+        [self.saveFooterView autoSetDimension:ALDimensionHeight toSize:kTabBarHeight];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
+}
+
 - (UITableView *)detailSaveTableView
 {
     if (!_detailSaveTableView) {
-        _detailSaveTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStyleGrouped];
+        _detailSaveTableView = [UITableView newAutoLayoutView];
         _detailSaveTableView.delegate = self;
         _detailSaveTableView.dataSource = self;
         _detailSaveTableView.tableFooterView = [[UIView alloc] init];
+        _detailSaveTableView.backgroundColor = kBackColor;
         _detailSaveTableView.separatorColor = kSeparateColor;
     }
     return _detailSaveTableView;
 }
 
-- (BaseCommitButton *)footerView
+- (BaseCommitButton *)saveFooterView
 {
-    if (!_footerView) {
-        _footerView = [[BaseCommitButton alloc] initWithFrame:CGRectMake(0, kScreenHeight-kNavHeight-kTabBarHeight, kScreenWidth, kTabBarHeight)];
-        [_footerView setTitle:@"立即发布" forState:0];
+    if (!_saveFooterView) {
+        _saveFooterView = [BaseCommitButton newAutoLayoutView];
+        [_saveFooterView setTitle:@"立即发布" forState:0];
     }
-    return _footerView;
+    return _saveFooterView;
 }
 
 #pragma mark - tableView delegate and datasource
@@ -105,11 +117,12 @@
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.bigProView.backgroundColor = kBlueColor;
-        cell.bigProView.label.text = @"产品编号:";
+        cell.bigProView.label.text = @"产品编号:RZ201605030001";
         cell.bigProView.label.textColor = kNavColor;
-        cell.bigProView.textField.text = @"RZ201605030001";
+       
         cell.bigProView.textField.userInteractionEnabled = NO;
-        cell.bigProView.textField.textColor = kNavColor;
+        
+        cell.bigProView.button.titleLabel.font = kBigFont;
         [cell.bigProView.button setTitle:@"待发布" forState:0];
         [cell.bigProView.button setTitleColor:kNavColor forState:0];
         
@@ -145,7 +158,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return kBigPadding;
+    if (section<2) {
+        return kBigPadding;
+    }
+    return 0.1f;
 }
 
 - (void)didReceiveMemoryWarning {

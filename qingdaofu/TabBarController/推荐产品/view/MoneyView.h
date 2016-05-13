@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+//45+29+14
 @interface MoneyView : UIView
 
 @property (nonatomic,assign) BOOL didSetupConstraints;

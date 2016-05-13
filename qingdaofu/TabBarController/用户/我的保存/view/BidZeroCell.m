@@ -36,7 +36,7 @@
 {
     if (!_bigProView) {
         _bigProView = [AuthenBaseView newAutoLayoutView];
-//        [_bigProView.button setImage:[UIImage imageNamed:@"list_more"] forState:0];
+        _bigProView.button.titleLabel.font = kBigFont;
     }
     return _bigProView;
 }

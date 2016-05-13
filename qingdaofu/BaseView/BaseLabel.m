@@ -59,7 +59,7 @@
     if (!_nameLabel) {
         _nameLabel = [UILabel newAutoLayoutView];
         _nameLabel.textColor = kBlackColor;
-        _nameLabel.text = @"借款人年龄";
+//        _nameLabel.text = @"借款人年龄";
         _nameLabel.font = kBigFont;
         _nameLabel.numberOfLines = 0;
         CGSize size = [_nameLabel.text sizeWithAttributes:@{NSFontAttributeName:kBigFont}];
@@ -90,7 +90,7 @@
 {
     if (!_goButton) {
         _goButton = [UIButton newAutoLayoutView];
-        [_goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+//        [_goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
         [_goButton swapImage];
         [_goButton setTitleColor:kLightGrayColor forState:0];
         _goButton.titleLabel.font = kSecondFont;

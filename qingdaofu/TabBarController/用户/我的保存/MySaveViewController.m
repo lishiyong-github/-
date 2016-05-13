@@ -60,12 +60,20 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    return kCellHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyStoreCell *cell = [MyStoreCell cellWithTableView:tableView];
+    static NSString *identifier = @"save";
+    MyStoreCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[MyStoreCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    [cell.sButton1 setTitle:@"RZ201605130001" forState:0];
+    [cell.sButton2 setTitle:@"2016-05-13" forState:0];
+    [cell.sButton2 setImage:[UIImage imageNamed:@"list_more"] forState:0];
     
     return cell;
 }
@@ -107,6 +115,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     MyDetailSaveViewController *myDetailSaveVC = [[MyDetailSaveViewController alloc] init];
     [self.navigationController pushViewController:myDetailSaveVC animated:YES];
 }
