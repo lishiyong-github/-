@@ -10,4 +10,9 @@
 
 @interface ProDetailHeadFootView : UIView
 
+@property (nonatomic,strong) UILabel *fLabel1;
+@property (nonatomic,strong) UILabel *fLabel2;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+
 @end

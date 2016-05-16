@@ -11,6 +11,7 @@
 
 @interface PaceViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstarits;
 @property (nonatomic,strong) UITableView *paceTableView;
 
 @end
@@ -23,16 +24,31 @@
     self.navigationItem.leftBarButtonItem = self.leftItem;
     
     [self.view addSubview:self.paceTableView];
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstarits) {
+        
+        [self.paceTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(kBigPadding, kBigPadding, kBigPadding, kBigPadding)];
+        self.didSetupConstarits = YES;
+    }
+    [super updateViewConstraints];
 }
 
 - (UITableView *)paceTableView
 {
     if (!_paceTableView) {
-        _paceTableView = [[UITableView alloc] initWithFrame:CGRectMake(kSmallPadding, kSmallPadding, kScreenWidth-kSmallPadding*2, kScreenHeight-kNavHeight-kSmallPadding) style:UITableViewStylePlain];
+        _paceTableView = [UITableView newAutoLayoutView];
         _paceTableView.delegate = self;
         _paceTableView.dataSource = self;
-        _paceTableView.backgroundColor = kBackColor;
         _paceTableView.tableFooterView = [[UIView alloc] init];
+        _paceTableView.showsVerticalScrollIndicator = NO;
+        
+        _paceTableView.separatorColor = kBlueColor;
+        _paceTableView.layer.borderColor = kBlueColor.CGColor;
+        _paceTableView.layer.borderWidth = kLineWidth;
     }
     return _paceTableView;
 }
@@ -45,17 +61,46 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return kCellHeight;
+    if (indexPath.row ==0) {
+        return kCellHeight;
+    }
+    return 60.f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"pace";
+    
+    if (indexPath.row == 0) {
+        identifier = @"pace0";
+        PaceCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[PaceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+        cell.dateLabel.text = @"日期";
+        cell.stateLabel.text = @"状态";
+        cell.messageLabel.text = @"详情";
+        
+        return cell;
+    }
+    
+    identifier = @"pace1";
     PaceCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
         cell = [[PaceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    cell.leftConstraints.constant = kSmallPadding;
+    
+    cell.dateLabel.text = @"2016-05-16";
+    cell.stateLabel.text = @"放款";
+    cell.messageLabel.text = @"详情详情详情详情详情详情详情详情详情详情详情详情详情详";
     
     return cell;
 }

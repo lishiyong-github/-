@@ -8,6 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+#import "LineLabel.h"
+#import "ProDetailHeadFootView.h"
+
 @interface ProDetailHeadView : UIView
+
+@property (nonatomic,strong) UILabel *deRateLabel;
+@property (nonatomic,strong) UILabel *deRateLabel1;
+
+//@property (nonatomic,strong) UILabel *deMoneyLabel;
+//@property (nonatomic,strong) UILabel *deMoneyLabel1;
+//
+//@property (nonatomic,strong) UILabel *deTypeLabel;
+//@property (nonatomic,strong) UILabel *deTypeLabel1;
+
+@property (nonatomic,strong) ProDetailHeadFootView *deMoneyView;
+@property (nonatomic,strong) ProDetailHeadFootView *deTypeView;
+
+@property (nonatomic,strong) LineLabel *deLineLabel;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
 
 @end

@@ -7,9 +7,10 @@
 //
 
 #import "ProductsViewController.h"
-#import "ProductsDetailViewController.h"   //详细信息
+#import "ProductsDetailsViewController.h"   //详细信息
 
 #import "HomeCell.h"
+#import "UIImage+Color.h"
 
 @interface ProductsViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -21,10 +22,17 @@
 
 @implementation ProductsViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:kBlackColor,NSFontAttributeName:kNavFont}];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:kNavColor] forBarMetrics:UIBarMetricsDefault];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"所有产品";
- 
+
     [self.view addSubview:self.chooseView];
     [self.view addSubview:self.productsTableView];
     
@@ -106,9 +114,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    ProductsDetailViewController *productsDetailVC = [[ProductsDetailViewController alloc] init];
-    productsDetailVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:productsDetailVC animated:YES];
+    ProductsDetailsViewController *productsDetailsVC = [[ProductsDetailsViewController alloc] init];
+    productsDetailsVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:productsDetailsVC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

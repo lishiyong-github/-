@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProdRightView : UITableView
+@interface ProdRightView : UITableView<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic,strong) void (^didSelectedRow)(NSInteger);
+
+
 
 @end

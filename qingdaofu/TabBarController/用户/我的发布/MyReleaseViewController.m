@@ -11,6 +11,8 @@
 #import "MyDealingViewController.h"   //处理中
 
 #import "AdditionMessageViewController.h"  //补充信息
+#import "ApplyRecordsViewController.h"     //申请记录
+#import "PaceViewController.h"          //处理进度
 
 #import "AnotherHomeCell.h"
 #import "AllProSegView.h"
@@ -100,15 +102,21 @@
     cell.typeLabel.textColor = kBlueColor;
     
     [cell.actionView.firstButton setTitle:@"您有新的申请记录" forState:0];
-    [cell.actionView.secondButton setTitle:@"补充信息" forState:0];
+    [cell.actionView.secondButton setTitle:@"查看进度" forState:0];
     [cell.actionView.thirdButton setTitle:@"查看申请" forState:0];
-    
-    
     
     QDFWeakSelf;
     [cell.actionView.secondButton addAction:^(UIButton *btn) {
-        AdditionMessageViewController *addtionMessageVC = [[AdditionMessageViewController alloc] init];
-        [weakself.navigationController pushViewController:addtionMessageVC animated:YES];
+//        AdditionMessageViewController *addtionMessageVC = [[AdditionMessageViewController alloc] init];
+//        [weakself.navigationController pushViewController:addtionMessageVC animated:YES];
+        
+        PaceViewController *paceVC = [[PaceViewController alloc] init];
+        [self.navigationController pushViewController:paceVC animated:YES];
+    }];
+    
+    [cell.actionView.thirdButton addAction:^(UIButton *btn) {
+        ApplyRecordsViewController *applyRecordsVC = [[ApplyRecordsViewController alloc] init];
+        [weakself.navigationController pushViewController:applyRecordsVC animated:YES];
     }];
     
     return cell;

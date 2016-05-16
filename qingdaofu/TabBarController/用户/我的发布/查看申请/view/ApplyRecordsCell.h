@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LineLabel.h"
 
 @interface ApplyRecordsCell : UITableViewCell
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+@property (nonatomic,strong) UILabel *personLabel;
+@property (nonatomic,strong) LineLabel *lineLabel11;
+@property (nonatomic,strong) UILabel *dateLabel;
+@property (nonatomic,strong) LineLabel *lineLabel12;
+@property (nonatomic,strong) UIButton *actButton;
 
 @end

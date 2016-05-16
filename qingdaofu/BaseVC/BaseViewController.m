@@ -13,6 +13,7 @@
 @interface BaseViewController ()
 
 @property (nonatomic,strong) UIButton *leftBackBtn;
+@property (nonatomic,assign) BOOL didSetupConstraints;
 
 @end
 
@@ -33,6 +34,7 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
 }
 
 -(UIBarButtonItem *)leftItem

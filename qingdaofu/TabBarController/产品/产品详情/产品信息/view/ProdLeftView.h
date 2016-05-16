@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProdLeftView : UITableView
+@interface ProdLeftView : UITableView<UITableViewDataSource,UITableViewDelegate>
+
 
 @end

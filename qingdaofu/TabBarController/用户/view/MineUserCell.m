@@ -30,7 +30,7 @@
         NSArray *views = @[self.userNameButton,self.userActionButton];
         [views autoAlignViewsToAxis:ALAxisHorizontal];
         
-        [self.userNameButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
+        [self.userNameButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
         [self.userNameButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
         
         [self.userActionButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
@@ -44,7 +44,6 @@
 {
     if (!_userNameButton) {
         _userNameButton = [UIButton newAutoLayoutView];
-        [_userNameButton swapImage];
         _userNameButton.titleLabel.font = kBigFont;
         [_userNameButton setTitleColor:kBlackColor forState:0];
     }

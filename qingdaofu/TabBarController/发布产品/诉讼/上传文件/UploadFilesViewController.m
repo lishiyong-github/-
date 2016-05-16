@@ -10,6 +10,8 @@
 
 #import "UIButton+Addition.h"
 
+#import "MineUserCell.h"
+
 @interface UploadFilesViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *uploadTableView;
@@ -68,28 +70,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"upload";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    MineUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[MineUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSArray *arr1 = @[@"bond_icon_certificate",@"bond_icon_contract",@"bond_icon_warrants",@"bond_icon_voucher",@"bond_icon_receipt",@"bond_icon_repayment"];
-    NSArray *arr2 = @[@"公证书",@"借款合同",@"他项权证",@"收款凭证",@"收据",@"还款凭证"];
-    cell.imageView.image = [UIImage imageNamed:arr1[indexPath.row]];
-    cell.textLabel.text = arr2[indexPath.row];
-    cell.textLabel.font = kBigFont;
-    cell.textLabel.textColor = kBlackColor;
+    NSArray *arr2 = @[@"  公证书",@"  借款合同",@"  他项权证",@"  收款凭证",@"  收据",@"  还款凭证"];
+    [cell.userNameButton setImage:[UIImage imageNamed:arr1[indexPath.row]] forState:0];
+    [cell.userNameButton setTitle:arr2[indexPath.row] forState:0];
     
-    UIButton *actButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, kCellHeight)];
-    [actButton swapImage];
-    [actButton setTitle:@"上传" forState:0];
-    [actButton setTitleColor:kBlueColor forState:0];
-    [actButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
-    actButton.titleLabel.font = kSecondFont;
-    cell.accessoryView = actButton;
+    [cell.userActionButton setTitle:@"上传" forState:0];
+    [cell.userActionButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+    cell.userActionButton.titleLabel.font = kSecondFont;
+    [cell.userActionButton setTitleColor:kBlueColor forState:0];
     
     return cell;
 }

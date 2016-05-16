@@ -27,6 +27,21 @@
 		A154B8F51CE1C14100884CA4 /* ReportSuitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8F41CE1C14100884CA4 /* ReportSuitViewController.m */; };
 		A154B8FC1CE1C57000884CA4 /* SuitBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8FB1CE1C57000884CA4 /* SuitBaseView.m */; };
 		A154B9031CE1E06300884CA4 /* ReportSuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B9021CE1E06300884CA4 /* ReportSuccessView.m */; };
+		A16856761CE951EB006A0887 /* ApplyRecordsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A16856751CE951EB006A0887 /* ApplyRecordsCell.m */; };
+		A168567B1CE992C4006A0887 /* ProductsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A168567A1CE992C4006A0887 /* ProductsDetailsViewController.m */; };
+		A16856801CE99358006A0887 /* ProductsDetailsProViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A168567F1CE99358006A0887 /* ProductsDetailsProViewController.m */; };
+		A16856871CE994C9006A0887 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A16856811CE994C9006A0887 /* nav_back@2x.png */; };
+		A16856881CE994C9006A0887 /* nav_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A16856821CE994C9006A0887 /* nav_back@3x.png */; };
+		A16856891CE994C9006A0887 /* nav_collection_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A16856831CE994C9006A0887 /* nav_collection_s@2x.png */; };
+		A168568A1CE994C9006A0887 /* nav_collection_s@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A16856841CE994C9006A0887 /* nav_collection_s@3x.png */; };
+		A168568B1CE994C9006A0887 /* nav_collection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A16856851CE994C9006A0887 /* nav_collection@2x.png */; };
+		A168568C1CE994C9006A0887 /* nav_collection@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A16856861CE994C9006A0887 /* nav_collection@3x.png */; };
+		A16856931CE9A291006A0887 /* ProductsDetailsPerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A16856921CE9A291006A0887 /* ProductsDetailsPerViewController.m */; };
+		A168569E1CE9B39D006A0887 /* ProdLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = A168569D1CE9B39D006A0887 /* ProdLeftView.m */; };
+		A16856A11CE9B3AD006A0887 /* ProdRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = A16856A01CE9B3AD006A0887 /* ProdRightView.m */; };
+		A16856A51CE9B864006A0887 /* DebtDocumnetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A16856A41CE9B864006A0887 /* DebtDocumnetsViewController.m */; };
+		A16856A91CE9BF82006A0887 /* ProDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A16856A81CE9BF82006A0887 /* ProDetailHeadView.m */; };
+		A16856AC1CE9CBA5006A0887 /* ProDetailHeadFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = A16856AB1CE9CBA5006A0887 /* ProDetailHeadFootView.m */; };
 		A17691171CD97E30004289DD /* MyApplyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17691161CD97E30004289DD /* MyApplyingViewController.m */; };
 		A176911B1CD9822A004289DD /* MyProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A176911A1CD9822A004289DD /* MyProcessingViewController.m */; };
 		A176911F1CD98404004289DD /* MyEndingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A176911E1CD98404004289DD /* MyEndingViewController.m */; };
@@ -64,9 +79,6 @@
 		A17EE3941CD8983900ECC631 /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17EE3931CD8983900ECC631 /* MyOrderViewController.m */; };
 		A17F7BE51CE567D300E882A3 /* RegistCommitView.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BE41CE567D300E882A3 /* RegistCommitView.m */; };
 		A17F7BE91CE578EB00E882A3 /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BE81CE578EB00E882A3 /* JKCountDownButton.m */; };
-		A17F7BEC1CE5AD3100E882A3 /* ProductsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BEB1CE5AD3100E882A3 /* ProductsDetailViewController.m */; };
-		A17F7BEF1CE5B01100E882A3 /* ProLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BEE1CE5B01100E882A3 /* ProLeftView.m */; };
-		A17F7BF21CE5B02000E882A3 /* ProRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BF11CE5B02000E882A3 /* ProRightView.m */; };
 		A17F7BF51CE5C52700E882A3 /* NewPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BF41CE5C52700E882A3 /* NewPublishCell.m */; };
 		A17F7BFC1CE5DDDA00E882A3 /* ApplyRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BFB1CE5DDDA00E882A3 /* ApplyRecordsViewController.m */; };
 		A18C675C1CD06C2E00C7B070 /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C675B1CD06C2E00C7B070 /* UIButton+Block.m */; };
@@ -301,6 +313,30 @@
 		A154B8FB1CE1C57000884CA4 /* SuitBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuitBaseView.m; sourceTree = "<group>"; };
 		A154B9011CE1E06300884CA4 /* ReportSuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuccessView.h; sourceTree = "<group>"; };
 		A154B9021CE1E06300884CA4 /* ReportSuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuccessView.m; sourceTree = "<group>"; };
+		A16856741CE951EB006A0887 /* ApplyRecordsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyRecordsCell.h; sourceTree = "<group>"; };
+		A16856751CE951EB006A0887 /* ApplyRecordsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyRecordsCell.m; sourceTree = "<group>"; };
+		A16856791CE992C4006A0887 /* ProductsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsDetailsViewController.h; sourceTree = "<group>"; };
+		A168567A1CE992C4006A0887 /* ProductsDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsDetailsViewController.m; sourceTree = "<group>"; };
+		A168567E1CE99358006A0887 /* ProductsDetailsProViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsDetailsProViewController.h; sourceTree = "<group>"; };
+		A168567F1CE99358006A0887 /* ProductsDetailsProViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsDetailsProViewController.m; sourceTree = "<group>"; };
+		A16856811CE994C9006A0887 /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
+		A16856821CE994C9006A0887 /* nav_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@3x.png"; sourceTree = "<group>"; };
+		A16856831CE994C9006A0887 /* nav_collection_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_collection_s@2x.png"; sourceTree = "<group>"; };
+		A16856841CE994C9006A0887 /* nav_collection_s@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_collection_s@3x.png"; sourceTree = "<group>"; };
+		A16856851CE994C9006A0887 /* nav_collection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_collection@2x.png"; sourceTree = "<group>"; };
+		A16856861CE994C9006A0887 /* nav_collection@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_collection@3x.png"; sourceTree = "<group>"; };
+		A16856911CE9A291006A0887 /* ProductsDetailsPerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsDetailsPerViewController.h; sourceTree = "<group>"; };
+		A16856921CE9A291006A0887 /* ProductsDetailsPerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsDetailsPerViewController.m; sourceTree = "<group>"; };
+		A168569C1CE9B39D006A0887 /* ProdLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProdLeftView.h; sourceTree = "<group>"; };
+		A168569D1CE9B39D006A0887 /* ProdLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProdLeftView.m; sourceTree = "<group>"; };
+		A168569F1CE9B3AD006A0887 /* ProdRightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProdRightView.h; sourceTree = "<group>"; };
+		A16856A01CE9B3AD006A0887 /* ProdRightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProdRightView.m; sourceTree = "<group>"; };
+		A16856A31CE9B864006A0887 /* DebtDocumnetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebtDocumnetsViewController.h; sourceTree = "<group>"; };
+		A16856A41CE9B864006A0887 /* DebtDocumnetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebtDocumnetsViewController.m; sourceTree = "<group>"; };
+		A16856A71CE9BF82006A0887 /* ProDetailHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProDetailHeadView.h; sourceTree = "<group>"; };
+		A16856A81CE9BF82006A0887 /* ProDetailHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProDetailHeadView.m; sourceTree = "<group>"; };
+		A16856AA1CE9CBA5006A0887 /* ProDetailHeadFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProDetailHeadFootView.h; sourceTree = "<group>"; };
+		A16856AB1CE9CBA5006A0887 /* ProDetailHeadFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProDetailHeadFootView.m; sourceTree = "<group>"; };
 		A17691151CD97E30004289DD /* MyApplyingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplyingViewController.h; sourceTree = "<group>"; };
 		A17691161CD97E30004289DD /* MyApplyingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplyingViewController.m; sourceTree = "<group>"; };
 		A17691191CD9822A004289DD /* MyProcessingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProcessingViewController.h; sourceTree = "<group>"; };
@@ -375,12 +411,6 @@
 		A17F7BE41CE567D300E882A3 /* RegistCommitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistCommitView.m; sourceTree = "<group>"; };
 		A17F7BE71CE578EB00E882A3 /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
 		A17F7BE81CE578EB00E882A3 /* JKCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
-		A17F7BEA1CE5AD3100E882A3 /* ProductsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsDetailViewController.h; sourceTree = "<group>"; };
-		A17F7BEB1CE5AD3100E882A3 /* ProductsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsDetailViewController.m; sourceTree = "<group>"; };
-		A17F7BED1CE5B01100E882A3 /* ProLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProLeftView.h; sourceTree = "<group>"; };
-		A17F7BEE1CE5B01100E882A3 /* ProLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProLeftView.m; sourceTree = "<group>"; };
-		A17F7BF01CE5B02000E882A3 /* ProRightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProRightView.h; sourceTree = "<group>"; };
-		A17F7BF11CE5B02000E882A3 /* ProRightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProRightView.m; sourceTree = "<group>"; };
 		A17F7BF31CE5C52700E882A3 /* NewPublishCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPublishCell.h; sourceTree = "<group>"; };
 		A17F7BF41CE5C52700E882A3 /* NewPublishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPublishCell.m; sourceTree = "<group>"; };
 		A17F7BFA1CE5DDDA00E882A3 /* ApplyRecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyRecordsViewController.h; sourceTree = "<group>"; };
@@ -743,6 +773,78 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		A16856731CE951D0006A0887 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A16856741CE951EB006A0887 /* ApplyRecordsCell.h */,
+				A16856751CE951EB006A0887 /* ApplyRecordsCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A16856781CE992AD006A0887 /* 产品详情 */ = {
+			isa = PBXGroup;
+			children = (
+				A168567D1CE9931F006A0887 /* 发布人信息 */,
+				A168567C1CE99314006A0887 /* 产品信息 */,
+				A16856A61CE9BF6C006A0887 /* view */,
+				A16856791CE992C4006A0887 /* ProductsDetailsViewController.h */,
+				A168567A1CE992C4006A0887 /* ProductsDetailsViewController.m */,
+			);
+			path = "产品详情";
+			sourceTree = "<group>";
+		};
+		A168567C1CE99314006A0887 /* 产品信息 */ = {
+			isa = PBXGroup;
+			children = (
+				A16856A21CE9B824006A0887 /* 债权文件 */,
+				A168569B1CE9B38A006A0887 /* view */,
+				A168567E1CE99358006A0887 /* ProductsDetailsProViewController.h */,
+				A168567F1CE99358006A0887 /* ProductsDetailsProViewController.m */,
+			);
+			path = "产品信息";
+			sourceTree = "<group>";
+		};
+		A168567D1CE9931F006A0887 /* 发布人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				A16856911CE9A291006A0887 /* ProductsDetailsPerViewController.h */,
+				A16856921CE9A291006A0887 /* ProductsDetailsPerViewController.m */,
+			);
+			path = "发布人信息";
+			sourceTree = "<group>";
+		};
+		A168569B1CE9B38A006A0887 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A168569C1CE9B39D006A0887 /* ProdLeftView.h */,
+				A168569D1CE9B39D006A0887 /* ProdLeftView.m */,
+				A168569F1CE9B3AD006A0887 /* ProdRightView.h */,
+				A16856A01CE9B3AD006A0887 /* ProdRightView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A16856A21CE9B824006A0887 /* 债权文件 */ = {
+			isa = PBXGroup;
+			children = (
+				A16856A31CE9B864006A0887 /* DebtDocumnetsViewController.h */,
+				A16856A41CE9B864006A0887 /* DebtDocumnetsViewController.m */,
+			);
+			path = "债权文件";
+			sourceTree = "<group>";
+		};
+		A16856A61CE9BF6C006A0887 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A16856A71CE9BF82006A0887 /* ProDetailHeadView.h */,
+				A16856A81CE9BF82006A0887 /* ProDetailHeadView.m */,
+				A16856AA1CE9CBA5006A0887 /* ProDetailHeadFootView.h */,
+				A16856AB1CE9CBA5006A0887 /* ProDetailHeadFootView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		A17691181CD981FC004289DD /* 处理中 */ = {
 			isa = PBXGroup;
 			children = (
@@ -932,6 +1034,7 @@
 		A17F7BF91CE5DDB700E882A3 /* 查看申请 */ = {
 			isa = PBXGroup;
 			children = (
+				A16856731CE951D0006A0887 /* view */,
 				A17F7BFA1CE5DDDA00E882A3 /* ApplyRecordsViewController.h */,
 				A17F7BFB1CE5DDDA00E882A3 /* ApplyRecordsViewController.m */,
 			);
@@ -987,6 +1090,12 @@
 		A192B4BC1CDB45EB0053FC4C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A16856811CE994C9006A0887 /* nav_back@2x.png */,
+				A16856821CE994C9006A0887 /* nav_back@3x.png */,
+				A16856831CE994C9006A0887 /* nav_collection_s@2x.png */,
+				A16856841CE994C9006A0887 /* nav_collection_s@3x.png */,
+				A16856851CE994C9006A0887 /* nav_collection@2x.png */,
+				A16856861CE994C9006A0887 /* nav_collection@3x.png */,
 				A1A34C171CE319C000AD454A /* bond_icon_certificate@2x.png */,
 				A1A34C181CE319C000AD454A /* bond_icon_certificate@3x.png */,
 				A1A34C191CE319C000AD454A /* bond_icon_contract@2x.png */,
@@ -1205,6 +1314,7 @@
 		A19B8E401CCF52A000F8EBF2 /* 产品 */ = {
 			isa = PBXGroup;
 			children = (
+				A16856781CE992AD006A0887 /* 产品详情 */,
 				A19D294B1CD1DDD200DAAEA7 /* view */,
 				A19B8E471CCF52FA00F8EBF2 /* controller */,
 			);
@@ -1281,8 +1391,6 @@
 			children = (
 				A19B8E511CCF533B00F8EBF2 /* ProductsViewController.h */,
 				A19B8E521CCF533B00F8EBF2 /* ProductsViewController.m */,
-				A17F7BEA1CE5AD3100E882A3 /* ProductsDetailViewController.h */,
-				A17F7BEB1CE5AD3100E882A3 /* ProductsDetailViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1301,10 +1409,6 @@
 			children = (
 				A19D294C1CD1E04300DAAEA7 /* HomeCell.h */,
 				A19D294D1CD1E04300DAAEA7 /* HomeCell.m */,
-				A17F7BED1CE5B01100E882A3 /* ProLeftView.h */,
-				A17F7BEE1CE5B01100E882A3 /* ProLeftView.m */,
-				A17F7BF01CE5B02000E882A3 /* ProRightView.h */,
-				A17F7BF11CE5B02000E882A3 /* ProRightView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1914,6 +2018,7 @@
 				A1A97E161CDC26A200EDE320 /* publish_list_authentication@2x.png in Resources */,
 				A1A97E401CDC666400EDE320 /* news_evaluate_icon@2x.png in Resources */,
 				A1A34C231CE319C000AD454A /* bond_icon_certificate@2x.png in Resources */,
+				A16856871CE994C9006A0887 /* nav_back@2x.png in Resources */,
 				A1A97E371CDC631A00EDE320 /* btn_camera@3x.png in Resources */,
 				A1A34C271CE319C000AD454A /* bond_icon_receipt@2x.png in Resources */,
 				A1A97E311CDC5C3A00EDE320 /* list_icon_firm@3x.png in Resources */,
@@ -1923,7 +2028,9 @@
 				A199853A1CE07CFD0055A572 /* tab_product@2x.png in Resources */,
 				A1A97E441CDC666400EDE320 /* news_publish_icon@2x.png in Resources */,
 				A1A97E321CDC5C3A00EDE320 /* list_icon_personal@2x.png in Resources */,
+				A168568A1CE994C9006A0887 /* nav_collection_s@3x.png in Resources */,
 				A154B8DA1CE1912800884CA4 /* open@3x.png in Resources */,
+				A16856881CE994C9006A0887 /* nav_back@3x.png in Resources */,
 				A1A34C2E1CE319C000AD454A /* bond_icon_warrants@3x.png in Resources */,
 				A1A34BF81CE2DFB400AD454A /* tab_user@2x.png in Resources */,
 				A1A34BF91CE2DFB400AD454A /* tab_user@3X.png in Resources */,
@@ -1952,12 +2059,15 @@
 				A192B4C71CDB492B0053FC4C /* list_icon_preservation@2x.png in Resources */,
 				A19985271CE071D40055A572 /* conserve_risk_icon@3x.png in Resources */,
 				A1A97E221CDC414600EDE320 /* information_nav_back@2x.png in Resources */,
+				A168568B1CE994C9006A0887 /* nav_collection@2x.png in Resources */,
 				A1A97E7C1CDCA2CF00EDE320 /* conserve_rights_icon@2x.png in Resources */,
 				A1A97E171CDC26A200EDE320 /* publish_list_authentication@3x.png in Resources */,
 				A1A34C2B1CE319C000AD454A /* bond_icon_voucher@2x.png in Resources */,
 				A199852C1CE07A010055A572 /* publish_star_s@2x.png in Resources */,
+				A168568C1CE994C9006A0887 /* nav_collection@3x.png in Resources */,
 				A192B4CB1CDB49E40053FC4C /* list_icon_setting@2x.png in Resources */,
 				A154B8DD1CE1913300884CA4 /* withdraw@2x.png in Resources */,
+				A16856891CE994C9006A0887 /* nav_collection_s@2x.png in Resources */,
 				A19985261CE071D40055A572 /* conserve_risk_icon@2x.png in Resources */,
 				A1A97E2F1CDC5C3A00EDE320 /* list_icon_company@3x.png in Resources */,
 				A1A97E1F1CDC3F8000EDE320 /* nav_tip@3x.png in Resources */,
@@ -2022,9 +2132,11 @@
 				A18C67661CD08DA800C7B070 /* LoginView.m in Sources */,
 				A19B8E231CCF42E300F8EBF2 /* NSArray+PureLayout.m in Sources */,
 				A17964FA1CD3656800B6AD47 /* MyStoreViewController.m in Sources */,
+				A16856A11CE9B3AD006A0887 /* ProdRightView.m in Sources */,
 				A1A34C401CE339B800AD454A /* LoginForgetView.m in Sources */,
 				A154B8F51CE1C14100884CA4 /* ReportSuitViewController.m in Sources */,
 				A1A34C051CE2FE7500AD454A /* UserButton.m in Sources */,
+				A16856AC1CE9CBA5006A0887 /* ProDetailHeadFootView.m in Sources */,
 				A19B8E531CCF533B00F8EBF2 /* ProductsViewController.m in Sources */,
 				A1A34C111CE30C8800AD454A /* ReportAddCell.m in Sources */,
 				A17691321CD9A029004289DD /* CheckDetailUserView.m in Sources */,
@@ -2032,15 +2144,16 @@
 				A154B8D61CE18E7F00884CA4 /* ReportFootView.m in Sources */,
 				A18C675C1CD06C2E00C7B070 /* UIButton+Block.m in Sources */,
 				A17964E51CD3436700B6AD47 /* AuthenCell.m in Sources */,
+				A16856761CE951EB006A0887 /* ApplyRecordsCell.m in Sources */,
 				A19B8E4D1CCF531900F8EBF2 /* MessageViewController.m in Sources */,
 				A1A34BFF1CE2F63F00AD454A /* MineCell.m in Sources */,
 				A17964EE1CD34C6000B6AD47 /* CompleteSingleView.m in Sources */,
 				A1A97E5F1CDC8AED00EDE320 /* EvaTopSwitchView.m in Sources */,
 				A1039F0C1C72C55400771747 /* RefreshViewController.m in Sources */,
-				A17F7BEC1CE5AD3100E882A3 /* ProductsDetailViewController.m in Sources */,
 				A1A0178F1C5B8A2100027134 /* AFHTTPRequestOperation.m in Sources */,
 				A19D29741CD2158100DAAEA7 /* AuthenPersonViewController.m in Sources */,
 				A1A34C021CE2F8F900AD454A /* MineUserCell.m in Sources */,
+				A168567B1CE992C4006A0887 /* ProductsDetailsViewController.m in Sources */,
 				A176914A1CD9E744004289DD /* StarView.m in Sources */,
 				A17EE3821CD8518600ECC631 /* BaseCommitButton.m in Sources */,
 				A17964F11CD350A800B6AD47 /* CompletePictureView.m in Sources */,
@@ -2051,6 +2164,7 @@
 				A1A0174F1C5B696A00027134 /* MJExtensionConst.m in Sources */,
 				A1A017271C5B421500027134 /* BaseViewController.m in Sources */,
 				A1A34BE81CE2BC2300AD454A /* BidCell.m in Sources */,
+				A168569E1CE9B39D006A0887 /* ProdLeftView.m in Sources */,
 				A1A34C3A1CE32C9300AD454A /* ForgetPassViewController.m in Sources */,
 				A19D29471CD1B44D00DAAEA7 /* MoneyView.m in Sources */,
 				A19B8E571CCF640300F8EBF2 /* MessageCell.m in Sources */,
@@ -2060,7 +2174,6 @@
 				A1A017541C5B696A00027134 /* NSObject+MJClass.m in Sources */,
 				A176912E1CD99E1E004289DD /* CheckDetailPublishViewController.m in Sources */,
 				A1A016A71C5A0C0300027134 /* AppDelegate.m in Sources */,
-				A17F7BEF1CE5B01100E882A3 /* ProLeftView.m in Sources */,
 				A1A017581C5B696A00027134 /* NSString+MJExtension.m in Sources */,
 				A17691261CD986BA004289DD /* LineLabel.m in Sources */,
 				A1A017301C5B607300027134 /* UIImage+Color.m in Sources */,
@@ -2091,6 +2204,8 @@
 				A1A34BF11CE2C9EB00AD454A /* MyOrderDetailCell.m in Sources */,
 				A1A017971C5B8A2100027134 /* AFURLSessionManager.m in Sources */,
 				A1A017961C5B8A2100027134 /* AFURLResponseSerialization.m in Sources */,
+				A16856A51CE9B864006A0887 /* DebtDocumnetsViewController.m in Sources */,
+				A16856A91CE9BF82006A0887 /* ProDetailHeadView.m in Sources */,
 				A1A0172A1C5B422700027134 /* NetworkViewController.m in Sources */,
 				A1A97E571CDC671000EDE320 /* SystemMessagesViewController.m in Sources */,
 				A176913C1CD9C911004289DD /* RequestTextView.m in Sources */,
@@ -2111,10 +2226,12 @@
 				A19D296A1CD208E900DAAEA7 /* AuthentyViewController.m in Sources */,
 				A19B8E4A1CCF530900F8EBF2 /* MineViewController.m in Sources */,
 				9CEA216B1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */,
+				A16856801CE99358006A0887 /* ProductsDetailsProViewController.m in Sources */,
 				A18C675F1CD087C500C7B070 /* UIView+Fram.m in Sources */,
 				A1A017511C5B696A00027134 /* MJProperty.m in Sources */,
 				A1A34C0E1CE30C2400AD454A /* ReportFiCell.m in Sources */,
 				A19B8E221CCF42E300F8EBF2 /* ALView+PureLayout.m in Sources */,
+				A16856931CE9A291006A0887 /* ProductsDetailsPerViewController.m in Sources */,
 				A1A017921C5B8A2100027134 /* AFNetworkReachabilityManager.m in Sources */,
 				A19D296D1CD208FB00DAAEA7 /* CompleteViewController.m in Sources */,
 				A17691421CD9DA0B004289DD /* AnotherHomeCell.m in Sources */,
@@ -2124,7 +2241,6 @@
 				A1A34C3D1CE32CF700AD454A /* LoginCell.m in Sources */,
 				A1A97E4E1CDC66D600EDE320 /* PublishMessagesViewController.m in Sources */,
 				A17EE37F1CD84DDF00ECC631 /* DetailBaseView.m in Sources */,
-				A17F7BF21CE5B02000E882A3 /* ProRightView.m in Sources */,
 				A17691351CD9C1D1004289DD /* DelayRequestViewController.m in Sources */,
 				A18C67631CD08D9A00C7B070 /* NoLoginView.m in Sources */,
 				A19D293E1CD1A32D00DAAEA7 /* NSString+Fram.m in Sources */,
