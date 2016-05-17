@@ -10,4 +10,13 @@
 
 @implementation NSMutableAttributedString (UIColor)
 
++ (NSMutableAttributedString *)setAttributeString:(NSString *)firstString andSecond:(NSString *)secondString
+{
+    NSString *str = [NSString stringWithFormat:@"%@%@",firstString,secondString];
+    NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:str];
+    [attributeString setAttributes:@{NSFontAttributeName:kBigFont,NSForegroundColorAttributeName:kBlackColor} range:NSMakeRange(0, firstString.length)];
+    [attributeString setAttributes:@{NSFontAttributeName:kSecondFont,NSForegroundColorAttributeName:kLightGrayColor} range:NSMakeRange(firstString.length, secondString.length)];
+    return attributeString;
+}
+
 @end

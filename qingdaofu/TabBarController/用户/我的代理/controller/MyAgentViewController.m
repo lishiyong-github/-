@@ -8,7 +8,18 @@
 
 #import "MyAgentViewController.h"
 
-@interface MyAgentViewController ()
+#import "AddMyAgentViewController.h"
+
+#import "MyAgentCell.h"
+#import "BaseCommitButton.h"
+
+#import "UIView+UITextColor.h"
+
+@interface MyAgentViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+@property (nonatomic,strong) UITableView *myAgentTableView;
+@property (nonatomic,strong) BaseCommitButton *myAgentCommitButton;
 
 @end
 
@@ -16,7 +27,108 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"我的代理";
+    self.navigationItem.leftBarButtonItem = self.leftItem;
+    
+    [self.view addSubview:self.myAgentTableView];
+    [self.view addSubview:self.myAgentCommitButton];
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.myAgentTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+        [self.myAgentTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
+        
+        [self.myAgentCommitButton autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+        [self.myAgentCommitButton autoSetDimension:ALDimensionHeight toSize:kTabBarHeight];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
+}
+
+- (UITableView *)myAgentTableView
+{
+    if (!_myAgentTableView) {
+        _myAgentTableView = [UITableView newAutoLayoutView];
+        _myAgentTableView.translatesAutoresizingMaskIntoConstraints = YES;
+        _myAgentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
+        _myAgentTableView.delegate = self;
+        _myAgentTableView.dataSource = self;
+        _myAgentTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+    }
+    return _myAgentTableView;
+}
+
+- (BaseCommitButton *)myAgentCommitButton
+{
+    if (!_myAgentCommitButton) {
+        _myAgentCommitButton = [BaseCommitButton newAutoLayoutView];
+        [_myAgentCommitButton setTitle:@"继续添加" forState:0];
+    }
+    return _myAgentCommitButton;
+}
+
+#pragma mark - tableView delegate and datasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 160;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"myAgent";
+    MyAgentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[MyAgentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    NSMutableAttributedString *str1 = [cell.agentNameLabel setAttributeString:@"姓        名：" andSecond:@"李三三"];
+    [cell.agentNameLabel setAttributedText:str1];
+    
+    NSMutableAttributedString *str2 = [cell.agentNameLabel setAttributeString:@"联系方式：" andSecond:@"12345678900"];
+    [cell.agentTelLabel setAttributedText:str2];
+    
+    NSMutableAttributedString *str3 = [cell.agentNameLabel setAttributeString:@"身份证号：" andSecond:@"4211111111111111111"];
+    [cell.agentIDLabel setAttributedText:str3];
+    
+    NSMutableAttributedString *str4 = [cell.agentNameLabel setAttributeString:@"执业证号：" andSecond:@"12223344455566666"];
+    [cell.agentCerLabel setAttributedText:str4];
+    
+    NSMutableAttributedString *str5 = [cell.agentNameLabel setAttributeString:@"登录密码：" andSecond:@"1234567ddrrr"];
+    [cell.agentPassLabel setAttributedText:str5];
+    
+    QDFWeakSelf;
+    [cell.agentEditButton addAction:^(UIButton *btn) {
+        AddMyAgentViewController *addMyagentVc = [[AddMyAgentViewController alloc] init];
+        [weakself.navigationController pushViewController:addMyagentVc animated:YES];
+    }];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return kBigPadding;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.1f;
 }
 
 - (void)didReceiveMemoryWarning {

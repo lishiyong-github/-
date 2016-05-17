@@ -243,6 +243,7 @@
         _ssCell3.nameLabel.text = @"选择还款方式";
         [_ssCell3.goButton setTitle:@"按月付息，到期还本" forState:0];
         [_ssCell3.goButton setTitleColor:kBlueColor forState:0];
+        [_ssCell3.goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
     }
     return _ssCell3;
 }
@@ -261,6 +262,8 @@
         _ssCell4.nameLabel.text = @"债务人主体";
         [_ssCell4.goButton setTitleColor:kBlueColor forState:0];
         [_ssCell4.goButton setTitle:@"自然人" forState:0];
+        [_ssCell4.goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+
     }
     return _ssCell4;
 }
@@ -281,6 +284,7 @@
         
         [_ssCell5.goButton setTitleColor:kBlueColor forState:0];
         [_ssCell5.goButton setTitle:@"代理诉讼" forState:0];
+        [_ssCell5.goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
     }
     return _ssCell5;
 }
@@ -300,6 +304,7 @@
         _ssCell6.nameLabel.text = @"委托代理期限(月)";
         [_ssCell6.goButton setTitleColor:kBlueColor forState:0];
         [_ssCell6.goButton setTitle:@"1" forState:0];
+        [_ssCell6.goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
     }
     return _ssCell6;
 }
@@ -380,6 +385,7 @@
         [_ssCell10.goButton setTitleColor:kBlueColor forState:0];
         [_ssCell10.goButton setTitle:@"分期" forState:0];
         _ssCell10.goButton.titleLabel.font = kSecondFont;
+        [_ssCell10.goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
     }
     return _ssCell10;
 }
@@ -400,7 +406,8 @@
         [_ssCell11.goButton setTitleColor:kBlueColor forState:0];
         [_ssCell11.goButton setTitle:@"上传" forState:0];
         _ssCell11.goButton.titleLabel.font = kSecondFont;
-        
+        [_ssCell11.goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+
         QDFWeakSelf;
         [_ssCell11.goButton addAction:^(UIButton *btn) {
             if (weakself.didSelectedIndex) {
@@ -427,7 +434,8 @@
         [_ssCell12.goButton setTitleColor:kBlueColor forState:0];
         [_ssCell12.goButton setTitle:@"完善" forState:0];
         _ssCell12.goButton.titleLabel.font = kSecondFont;
-        
+        [_ssCell12.goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+
         QDFWeakSelf;
         [_ssCell12.goButton addAction:^(UIButton *btn) {
             if (weakself.didSelectedIndex) {
@@ -455,7 +463,8 @@
         [_ssCell13.goButton setTitleColor:kBlueColor forState:0];
         [_ssCell13.goButton setTitle:@"完善" forState:0];
         _ssCell13.goButton.titleLabel.font = kSecondFont;
-        
+        [_ssCell13.goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+
         QDFWeakSelf;
         [_ssCell13.goButton addAction:^(UIButton *btn) {
             if (weakself.didSelectedIndex) {

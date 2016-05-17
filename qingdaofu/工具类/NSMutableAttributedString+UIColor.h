@@ -10,4 +10,6 @@
 
 @interface NSMutableAttributedString (UIColor)
 
++ (NSMutableAttributedString *)setAttributeString:(NSString *)firstString andSecond:(NSString *)secondString;
+
 @end

@@ -10,4 +10,10 @@
 
 @interface ReportFinanceCell : UITableViewCell
 
+@property (nonatomic,strong) UILabel *fiLabel;
+@property (nonatomic,strong) UITextField *fiTextField;
+@property (nonatomic,strong) UIButton *fiButton;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+
 @end

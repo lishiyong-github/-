@@ -11,8 +11,11 @@
 #import "MineCell.h"
 #import "MineUserCell.h"
 
+#import "UIButton+Addition.h"
+
 @interface LoginView ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) UITableView *loginTableView;
 
 @end
@@ -23,17 +26,31 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.loginTableView];
+        [self setNeedsUpdateConstraints];
     }
     return self;
+}
+
+- (void)updateConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.loginTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateConstraints];
 }
 
 - (UITableView *)loginTableView
 {
     if (!_loginTableView) {
-        _loginTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight-kTabBarHeight) style:UITableViewStyleGrouped];
+        _loginTableView = [UITableView newAutoLayoutView];
+        _loginTableView.translatesAutoresizingMaskIntoConstraints = YES;
+        _loginTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
         _loginTableView.delegate = self;
         _loginTableView.dataSource = self;
-        _loginTableView.tableFooterView = [[UIView alloc] init];
+        _loginTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
         _loginTableView.backgroundColor = kBackColor;
         _loginTableView.separatorColor = kSeparateColor;
     }
@@ -60,7 +77,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 3) {
-        return 2;
+        return 3;
     }
     
     return 1;
@@ -94,7 +111,9 @@
     
         [cell.userNameButton setTitle:@"12345678900  " forState:0];
         [cell.userNameButton setImage:[UIImage imageNamed:@"publish_list_authentication"] forState:0];
-        [cell.userActionButton setTitle:@"已认证公司" forState:0];
+        [cell.userNameButton swapImage];
+        
+        [cell.userActionButton setTitle:@"已认证公司  " forState:0];
         [cell.userActionButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
         
         return cell;
@@ -191,28 +210,31 @@
     }
     //收藏保存设置
     identifier = @"lForth";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    MineUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[MineUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.font = kBigFont;
-    cell.imageView.frame = CGRectMake(0, 0, 21, 21);
-    [cell setSeparatorInset:UIEdgeInsetsMake(0, kBigPadding, 0, 0)];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    NSArray *imageArr = @[@"list_icon_preservation",@"list_icon_collection",@"list_icon_setting"];
-    NSArray *textArr = @[@"我的保存",@"我的收藏",@"设置"];
+    NSArray *imageArray = @[@[@"",@"list_icon_preservation",@"list_icon_collection"],@[@"list_icon_setting"]];
+    NSArray *titileArray = @[@[@"  我的代理",@"  我的保存",@"  我的收藏"],@[@"  我的设置"]];
+    
+    NSString *imageStr = imageArray[indexPath.section-3][indexPath.row];
+    NSString *titleStr = titileArray[indexPath.section-3][indexPath.row];
+    [cell.userNameButton setImage:[UIImage imageNamed:imageStr] forState:0];
+    [cell.userNameButton setTitle:titleStr forState:0];
+    [cell.userActionButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
     
     if (indexPath.section == 3) {
-        cell.imageView.image = [UIImage imageNamed:imageArr[indexPath.row]];
-        
-        cell.textLabel.text = textArr[indexPath.row];
-    }else{
-        cell.imageView.image = [UIImage imageNamed:imageArr[2]];
-        
-        cell.textLabel.text = textArr[2];
+        if (indexPath.row ==0) {
+            [cell.userActionButton setTitle:@"添加  " forState:0];
+            QDFWeakSelf;
+            [cell.userActionButton addAction:^(UIButton *btn) {
+                if (weakself.didSelectedButton) {
+                    weakself.didSelectedButton(100);
+                }
+            }];
+        }
     }
     
     return cell;
@@ -237,6 +259,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if (self.didSelectedIndex) {
         self.didSelectedIndex(indexPath);
     }

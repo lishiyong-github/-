@@ -19,10 +19,11 @@
 
 @interface ReportSuitViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic,strong) UITableView *repSuitTableView;
+@property (nonatomic,assign) BOOL didSetupConstraints;
+@property (nonatomic,strong) UITableView *repCoTableView;
 
 @property (nonatomic,strong) ReportFootView *repSuitFootButton;
-@property (nonatomic,strong) EvaTopSwitchView *repSuitSwitchView;
+@property (nonatomic,strong) EvaTopSwitchView *repCoSwitchView;
 
 @property (nonatomic,strong) NSMutableArray *suitDataList;
 
@@ -35,47 +36,65 @@
     self.navigationItem.title = @"发布诉讼";
     self.navigationItem.leftBarButtonItem = self.leftItem;
     
-    [self.view addSubview:self.repSuitTableView];
-    [self.view addSubview:self.repSuitSwitchView];
+    [self.view addSubview:self.repCoTableView];
+    [self.view addSubview:self.repCoSwitchView];
+    [self.view setNeedsUpdateConstraints];
 }
 
-- (UITableView *)repSuitTableView
+- (void)updateViewConstraints
 {
-    if (!_repSuitTableView) {
-        _repSuitTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTabBarHeight-kNavHeight) style:UITableViewStyleGrouped];
-        _repSuitTableView.backgroundColor = kBackColor;
-        _repSuitTableView.delegate = self;
-        _repSuitTableView.dataSource = self;
-        _repSuitTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 90)];
-        [_repSuitTableView.tableFooterView addSubview:self.repSuitFootButton];
-        _repSuitTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kSmallPadding)];
+    if (!self.didSetupConstraints) {
+        
+        [self.repCoTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+        [self.repCoTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
+        
+        [self.repCoSwitchView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+        [self.repCoSwitchView autoSetDimension:ALDimensionHeight toSize:kTabBarHeight];
+        
+        self.didSetupConstraints = YES;
     }
-    return _repSuitTableView;
+    [super updateViewConstraints];
 }
 
-- (EvaTopSwitchView *)repSuitSwitchView
+- (UITableView *)repCoTableView
 {
-    if (!_repSuitSwitchView) {
-        _repSuitSwitchView = [[EvaTopSwitchView alloc] initWithFrame:CGRectMake(0, kScreenHeight-kTabBarHeight-kNavHeight, kScreenWidth, kTabBarHeight)];
-        _repSuitSwitchView.heightConstraint.constant = kTabBarHeight;
-        _repSuitSwitchView.backgroundColor = kNavColor;
-        [_repSuitSwitchView.blueLabel setHidden:YES];
+    if (!_repCoTableView) {
+        _repCoTableView = [UITableView newAutoLayoutView];
+        _repCoTableView.translatesAutoresizingMaskIntoConstraints = YES;
+        _repCoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
+        _repCoTableView.backgroundColor = kBackColor;
+        _repCoTableView.delegate = self;
+        _repCoTableView.dataSource = self;
+        _repCoTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 90)];
+        [_repCoTableView.tableFooterView addSubview:self.repSuitFootButton];
+        _repCoTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kSmallPadding)];
+    }
+    return _repCoTableView;
+}
+
+- (EvaTopSwitchView *)repCoSwitchView
+{
+    if (!_repCoSwitchView) {
+        _repCoSwitchView = [EvaTopSwitchView newAutoLayoutView];
+        _repCoSwitchView.heightConstraint.constant = kTabBarHeight;
+        _repCoSwitchView.backgroundColor = kNavColor;
+        [_repCoSwitchView.blueLabel setHidden:YES];
         
-        [_repSuitSwitchView.getbutton setTitle:@"  保存" forState:0];
-        [_repSuitSwitchView.getbutton setImage:[UIImage imageNamed:@"save"] forState:0];
-        [_repSuitSwitchView.getbutton setTitleColor:kBlueColor forState:0];
+        [_repCoSwitchView.getbutton setTitle:@"  保存" forState:0];
+        [_repCoSwitchView.getbutton setImage:[UIImage imageNamed:@"save"] forState:0];
+        [_repCoSwitchView.getbutton setTitleColor:kBlueColor forState:0];
         
-        [_repSuitSwitchView.sendButton setTitle:@"  立即发布" forState:0];
-        [_repSuitSwitchView.sendButton setImage:[UIImage imageNamed:@"publish"] forState:0];
-        [_repSuitSwitchView.sendButton setTitleColor:kBlueColor forState:0];
+        [_repCoSwitchView.sendButton setTitle:@"  立即发布" forState:0];
+        [_repCoSwitchView.sendButton setImage:[UIImage imageNamed:@"publish"] forState:0];
+        [_repCoSwitchView.sendButton setTitleColor:kBlueColor forState:0];
         
         QDFWeakSelf;
-        [_repSuitSwitchView.sendButton addAction:^(UIButton *btn) {
+        [_repCoSwitchView.sendButton addAction:^(UIButton *btn) {
             ReportFiSucViewController *reportSuccessVC = [[ReportFiSucViewController alloc] init];
             [weakself.navigationController pushViewController:reportSuccessVC animated:YES];
         }];
     }
-    return _repSuitSwitchView;
+    return _repCoSwitchView;
 }
 
 - (ReportFootView *)repSuitFootButton
@@ -87,7 +106,6 @@
     }
     return _repSuitFootButton;
 }
-
 
 - (NSMutableArray *)suitDataList
 {
@@ -187,13 +205,13 @@
     if (btn.selected) {
         [self.suitDataList insertObject:@"大喊大叫" atIndex:1];
         NSIndexSet *set = [[NSIndexSet alloc] initWithIndex:1];
-        [self.repSuitTableView insertSections:set withRowAnimation:UITableViewRowAnimationFade];
+        [self.repCoTableView insertSections:set withRowAnimation:UITableViewRowAnimationFade];
     }else{
         [self.suitDataList removeObjectAtIndex:1];
         NSIndexSet *set = [[NSIndexSet alloc] initWithIndex:1];
-        [self.repSuitTableView deleteSections:set withRowAnimation:UITableViewRowAnimationFade];
+        [self.repCoTableView deleteSections:set withRowAnimation:UITableViewRowAnimationFade];
     }
-    [self.repSuitTableView reloadData];
+    [self.repCoTableView reloadData];
 }
 
 

@@ -13,6 +13,7 @@
 
 @interface MyStoreViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) UITableView *myStoreTableView;
 @property (nonatomic,strong) NSMutableArray *dataList;
 
@@ -26,17 +27,30 @@
     self.navigationItem.leftBarButtonItem = self.leftItem;
     
     [self.view addSubview:self.myStoreTableView];
-    
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.myStoreTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
 }
 
 - (UITableView *)myStoreTableView
 {
     if (!_myStoreTableView) {
-        _myStoreTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStylePlain];
+        _myStoreTableView = [UITableView newAutoLayoutView];
         _myStoreTableView.delegate = self;
         _myStoreTableView.dataSource = self;
-        _myStoreTableView.tableFooterView = [[UIView alloc] init];
+        _myStoreTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+        _myStoreTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
         _myStoreTableView.separatorColor = kSeparateColor;
+        _myStoreTableView.backgroundColor = kBackColor;
     }
     return _myStoreTableView;
 }

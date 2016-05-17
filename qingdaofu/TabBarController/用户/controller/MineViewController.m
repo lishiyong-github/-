@@ -17,6 +17,9 @@
 
 #import "MySaveViewController.h"  //我的保存
 #import "MyStoreViewController.h"  //我的收藏
+#import "MyAgentViewController.h"  //我的代理
+#import "AddMyAgentViewController.h" //添加代理
+
 #import "MySettingsViewController.h"  //设置
 
 #import "LoginView.h"
@@ -50,6 +53,8 @@
             
             switch (buttonTag) {
                 case 10://我的发布
+                    NSLog(@"全部");
+                    break;
                 case 11:
                 case 12:
                 case 13:
@@ -69,6 +74,13 @@
                     [weakself.navigationController pushViewController:myOrderVC animated:YES];
                 }
                     break;
+                case 100:{//添加代理
+                    AddMyAgentViewController *addMyAgentVC = [[AddMyAgentViewController alloc] init];
+                    addMyAgentVC.hidesBottomBarWhenPushed = YES;
+                    [weakself.navigationController pushViewController:addMyAgentVC animated:YES];
+                }
+                    break;
+                    
                 default:
                     break;
             }
@@ -91,7 +103,13 @@
 //                [weakself.navigationController pushViewController:completeVC animated:YES];
 //
             }else if (indexPath.section == 3){
-                if (indexPath.row == 0) {//我的保存
+                if (indexPath.row == 0) {//我的代理
+                    
+                    MyAgentViewController *myAgentVC = [[MyAgentViewController alloc] init];
+                    myAgentVC.hidesBottomBarWhenPushed = YES;
+                    [weakself.navigationController pushViewController:myAgentVC animated:YES];
+                    
+                }else if (indexPath.row == 2){//我的保存
                     MySaveViewController *mySaveVC = [[MySaveViewController alloc] init];
                     mySaveVC.hidesBottomBarWhenPushed = YES;
                     [weakself.navigationController pushViewController:mySaveVC animated:YES];
@@ -101,6 +119,7 @@
                     myStoreVC.hidesBottomBarWhenPushed = YES;
                     [weakself.navigationController pushViewController:myStoreVC animated:YES];
                 }
+                
             }else if(indexPath.section == 4){//设置
                 MySettingsViewController *mySettingsVC = [[MySettingsViewController alloc] init];
                 mySettingsVC.hidesBottomBarWhenPushed = YES;

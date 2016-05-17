@@ -129,8 +129,9 @@
     if (!_adCell1) {
         _adCell1 = [AuthenBaseView newAutoLayoutView];
         _adCell1.label.text = @"借款期限";
-        _adCell1.textField.placeholder = @"借款期限";
-        [_adCell1.button setTitle:@">" forState:0];
+        _adCell1.textField.placeholder = @"请填写借款期限";
+        [_adCell1.button setImage:[UIImage imageNamed:@"list_more"] forState:0];
+        
     }
     return _adCell1;
 }
@@ -148,6 +149,8 @@
         _adCell2 = [BaseLabel newAutoLayoutView];
         _adCell2.nameLabel.text = @"抵押物类型";
         [_adCell2.goButton setTitleColor:kBlueColor forState:0];
+        [_adCell2.goButton setTitle:@"出租" forState:0];
+        [_adCell2.goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
     }
     return _adCell2;
 }
@@ -165,6 +168,8 @@
         _adCell3 = [BaseLabel newAutoLayoutView];
         _adCell3.nameLabel.text = @"抵押物状态";
         [_adCell3.goButton setTitleColor:kBlueColor forState:0];
+        [_adCell3.goButton setTitle:@"请选择" forState:0];
+        [_adCell3.goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
     }
     return _adCell3;
 }

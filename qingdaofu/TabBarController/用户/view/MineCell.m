@@ -58,6 +58,7 @@
         _topLabel = [BaseLabel newAutoLayoutView];
         _topLabel.nameLabel.text = @"我的发布";
         [_topLabel.goButton setTitle:@"查看全部  " forState:0];
+        [_topLabel.goButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
     }
     return _topLabel;
 }

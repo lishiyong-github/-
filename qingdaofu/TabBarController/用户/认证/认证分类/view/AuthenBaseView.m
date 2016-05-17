@@ -25,12 +25,13 @@
     
     if (self) {
         [self addSubview:self.label];
-//        [self addSubview:self.textView];
         [self addSubview:self.textField];
         [self addSubview:self.button];
         
+        self.leftTextConstraints = [self.textField autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:105];
+        
         [self setNeedsUpdateConstraints];
-        _aH = 30 + _lH;
+//        _aH = 30 + _lH;
     }
     return self;
 }
@@ -44,7 +45,6 @@
         [self.label autoPinEdgeToSuperviewEdge:ALEdgeRight];
         
         [self.textField autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.label];
-        [self.textField autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:105];
         
         [self.button autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.label];
         [self.button autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:15];

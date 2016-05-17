@@ -72,7 +72,7 @@
 - (AuthenBaseView *)baseView1
 {
     if (!_baseView1) {
-        _baseView1 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, _baseView1.aH)];
+        _baseView1 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
         
         _baseView1.label.text = @"|  基本信息";
         _baseView1.label.textColor = kBlueColor;

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SingleButton.h"
+
 @interface MainView : UIView
+
+@property (nonatomic,strong) SingleButton *pubFiSingleButton;
+@property (nonatomic,strong) SingleButton *pubCoSingleButton;
+@property (nonatomic,strong) SingleButton *pubSuSingleButton;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
 
 @end

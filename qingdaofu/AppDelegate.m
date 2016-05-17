@@ -8,28 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "MainViewController.h"
 
-#import "TabBar.h"
-#import "TabBarItem.h"
-
-#import "NewProductViewController.h"
-#import "ProductsViewController.h"
-#import "MessageViewController.h"
-#import "MineViewController.h"
-
-#import "ReportFinanceViewController.h"  //融资
-#import "ReportSuitViewController.h"     //诉讼
-
-#import "MoneyView.h"
-
-#import "APIKey.h"
-#import <MAMapKit/MAMapKit.h>
-
-@interface AppDelegate ()<TabBarDelegate,UIActionSheetDelegate>
-
-@property (nonatomic,strong) MoneyView *singleButton1;
-@property (nonatomic,strong) MoneyView *singleButton2;
-@property (nonatomic,strong) MoneyView *singleButton3;
+@interface AppDelegate ()
 
 @end
 
@@ -41,135 +22,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    //设置apiKey
-//    [MAMapServices sharedServices].apiKey = (NSString *)APIKey;
-    
-//    ViewController *VC = [[ViewController alloc] init];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:VC];
-//    self.window.rootViewController = nav;
-    
-    NewProductViewController *newProductVC = [[NewProductViewController alloc] init];
-    UINavigationController *newproductNav = [[UINavigationController alloc] initWithRootViewController:newProductVC];
-    ProductsViewController *productsVC = [[ProductsViewController alloc] init];
-    UINavigationController *productsNav = [[UINavigationController alloc] initWithRootViewController:productsVC];
-    MessageViewController *messageVC = [[MessageViewController alloc] init];
-    UINavigationController *messageNav = [[UINavigationController alloc] initWithRootViewController:messageVC];
-    MineViewController *mineVC = [[MineViewController alloc] init];
-    UINavigationController *mineNav = [[UINavigationController alloc] initWithRootViewController:mineVC];
-    
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[newproductNav,productsNav,messageNav,mineNav];
-    
-    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
-    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
-    
-    TabBar *tabBar = [[TabBar alloc] initWithFrame:tabBarController.tabBar.bounds];
-    
-    CGFloat normalButtonWidth = (kScreenWidth * 3 / 4) / 4;
-    CGFloat tabBarHeight = CGRectGetHeight(tabBar.frame);
-    CGFloat publishItemWidth = (kScreenWidth / 4);
+    MainViewController *mainVC = [[MainViewController alloc] init];
+    UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    self.window.rootViewController = mainNav;
 
-    TabBarItem *newProductItem = [self tabBarItemWithFram:CGRectMake(0, 0, normalButtonWidth, tabBarHeight) title:@"推荐" normalImageName:@"tab_recommend" selectedImageName:@"tab_recommend_s" tabBarItemType:TabBarItemTypeNormal];
-    TabBarItem *productsItem = [self tabBarItemWithFram:CGRectMake(normalButtonWidth, 0, normalButtonWidth, tabBarHeight) title:@"产品" normalImageName:@"tab_product" selectedImageName:@"tab_product_s" tabBarItemType:TabBarItemTypeNormal];
-    TabBarItem *publishItem = [self tabBarItemWithFram:CGRectMake(normalButtonWidth * 2, 0, normalButtonWidth, tabBarHeight) title:@"" normalImageName:@"" selectedImageName:@"" tabBarItemType:TabBarItemTypeRise];
-    publishItem.backgroundColor = kBlueColor;
-    
-    TabBarItem *messageItem = [self tabBarItemWithFram:CGRectMake(normalButtonWidth * 2 + publishItemWidth, 0, normalButtonWidth, tabBarHeight) title:@"消息" normalImageName:@"" selectedImageName:@"" tabBarItemType:TabBarItemTypeNormal];
-    TabBarItem *mineItem = [self tabBarItemWithFram:CGRectMake(normalButtonWidth * 3 + publishItemWidth, 0, normalButtonWidth, tabBarHeight) title:@"用户" normalImageName:@"tab_user" selectedImageName:@"tab_user_s" tabBarItemType:TabBarItemTypeNormal];
-    
-    tabBar.tabBarItems = @[newProductItem,productsItem,publishItem,messageItem,mineItem];
-    tabBar.delegate = self;
-    [tabBarController.tabBar addSubview:tabBar];
-    
-//    tabBarController.selectedIndex = 3;
-//    tabBarController.selectedViewController = newproductNav;
-//    tabBarController.tabBarItem.badgeValue = @"2";
-    
-    self.window.rootViewController = tabBarController;
-    
     return YES;
-}
-
-#pragma mark - TabBarDelegate
-- (TabBarItem *)tabBarItemWithFram:(CGRect)frame title:(NSString *)title normalImageName:(NSString *)normalImageName selectedImageName:(NSString *)selectedImageName tabBarItemType:(TabBarItemType)tabBarItemType
-{
-    TabBarItem *item = [[TabBarItem alloc] initWithFrame:frame];
-    [item setTitle:title forState:0];
-    [item setTitle:title forState:UIControlStateSelected];
-    item.titleLabel.font = kTabBarFont;
-    
-    UIImage *normalImage = [UIImage imageNamed:normalImageName];
-    UIImage *selectedImage = [UIImage imageNamed:selectedImageName];
-    
-    [item setImage:normalImage forState:0];
-    [item setImage:selectedImage forState:UIControlStateSelected];
-    [item setTitleColor:kLightGrayColor forState:0];
-    [item setTitleColor:kBlueColor forState:UIControlStateSelected];
-    item.tabBarItemType = tabBarItemType;
-    return item;
-}
-
-#pragma mark - tabBar delegate
-- (void)tabBarDidSelectedRiseButton
-{
-    
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    UINavigationController *viewController = tabBarController.selectedViewController;
-    UIView *showView = [UIView newAutoLayoutView];
-//
-//    [showView setBackgroundColor:kBackColor];
-//    [self.window addSubview:showView];
-//    [showView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
-//    return;
-    UIAlertController *tabAlertController = [UIAlertController alertControllerWithTitle:@"测试" message:@"发布催收融资" preferredStyle:UIAlertControllerStyleActionSheet];
-
-    UIAlertAction *act1 = [UIAlertAction actionWithTitle:@"诉讼" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        ReportSuitViewController *reportSuitVC = [[ReportSuitViewController alloc] init];
-        [reportSuitVC setHidesBottomBarWhenPushed:YES];
-        [viewController pushViewController:reportSuitVC animated:YES];
-    }];
-    
-    UIAlertAction *act2 = [UIAlertAction actionWithTitle:@"催收" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    
-    UIAlertAction *act3 = [UIAlertAction actionWithTitle:@"融资" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        ReportFinanceViewController *reportFinanceVC = [[ReportFinanceViewController alloc] init];
-        [reportFinanceVC setHidesBottomBarWhenPushed:YES];
-        [viewController pushViewController:reportFinanceVC animated:YES];
-    }];
-    
-    UIAlertAction *act0 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    
-    [tabAlertController addAction:act1];
-    [tabAlertController addAction:act2];
-    [tabAlertController addAction:act3];
-    [tabAlertController addAction:act0];
-    
-    [viewController presentViewController:tabAlertController animated:YES completion:nil];
-    
-    NSLog(@"发布");
-    
-}
-
-- (MoneyView *)singleButton1
-{
-    if (!_singleButton1) {
-
-    }
-    return _singleButton1;
-}
-
-- (MoneyView *)singleButton2
-{
-    if (!_singleButton2) {
-        UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
-        _singleButton2 = [[MoneyView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth/3, kScreenWidth/3)];
-        _singleButton2.center = keyWindow.center;
-    }
-    return _singleButton2;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -10,4 +10,13 @@
 
 @interface MyAgentCell : UITableViewCell
 
+@property (nonatomic,strong) UILabel *agentNameLabel;
+@property (nonatomic,strong) UIButton *agentEditButton;
+@property (nonatomic,strong) UILabel *agentTelLabel;
+@property (nonatomic,strong) UILabel *agentIDLabel;
+@property (nonatomic,strong) UILabel *agentCerLabel;
+@property (nonatomic,strong) UILabel *agentPassLabel;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+
 @end

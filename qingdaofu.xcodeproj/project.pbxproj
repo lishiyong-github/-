@@ -10,6 +10,16 @@
 		9CEA216B1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
 		9CEA216C1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
 		A1039F0C1C72C55400771747 /* RefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1039F0B1C72C55400771747 /* RefreshViewController.m */; };
+		A10D7B6C1CEABDCB00422D7D /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B6B1CEABDCB00422D7D /* MainView.m */; };
+		A10D7B6F1CEAC3D700422D7D /* ReportFinanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B6E1CEAC3D700422D7D /* ReportFinanceCell.m */; };
+		A10D7B751CEAF5EA00422D7D /* MyAgentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B741CEAF5EA00422D7D /* MyAgentViewController.m */; };
+		A10D7B781CEAF73C00422D7D /* MyAgentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B771CEAF73C00422D7D /* MyAgentCell.m */; };
+		A10D7B7B1CEAFAFE00422D7D /* AddMyAgentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B7A1CEAFAFE00422D7D /* AddMyAgentViewController.m */; };
+		A10D7B7E1CEAFB7A00422D7D /* AgentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B7D1CEAFB7A00422D7D /* AgentCell.m */; };
+		A10D7B811CEB083300422D7D /* ReportCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B801CEB083300422D7D /* ReportCollectViewController.m */; };
+		A10D7B841CEB163800422D7D /* NSMutableAttributedString+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B831CEB163800422D7D /* NSMutableAttributedString+UIColor.m */; };
+		A10D7B871CEB1BE000422D7D /* UIView+UITextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B861CEB1BE000422D7D /* UIView+UITextColor.m */; };
+		A10D7B8B1CEB246700422D7D /* DebtCreditMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B8A1CEB246700422D7D /* DebtCreditMessageViewController.m */; };
 		A154B8D61CE18E7F00884CA4 /* ReportFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8D51CE18E7F00884CA4 /* ReportFootView.m */; };
 		A154B8D91CE1912800884CA4 /* open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8D71CE1912800884CA4 /* open@2x.png */; };
 		A154B8DA1CE1912800884CA4 /* open@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8D81CE1912800884CA4 /* open@3x.png */; };
@@ -81,6 +91,7 @@
 		A17F7BE91CE578EB00E882A3 /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BE81CE578EB00E882A3 /* JKCountDownButton.m */; };
 		A17F7BF51CE5C52700E882A3 /* NewPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BF41CE5C52700E882A3 /* NewPublishCell.m */; };
 		A17F7BFC1CE5DDDA00E882A3 /* ApplyRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17F7BFB1CE5DDDA00E882A3 /* ApplyRecordsViewController.m */; };
+		A18B26481CEAA699005526C5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18B26471CEAA699005526C5 /* MainViewController.m */; };
 		A18C675C1CD06C2E00C7B070 /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C675B1CD06C2E00C7B070 /* UIButton+Block.m */; };
 		A18C675F1CD087C500C7B070 /* UIView+Fram.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C675E1CD087C500C7B070 /* UIView+Fram.m */; };
 		A18C67631CD08D9A00C7B070 /* NoLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = A18C67621CD08D9A00C7B070 /* NoLoginView.m */; };
@@ -291,6 +302,26 @@
 		9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Addition.m"; sourceTree = "<group>"; };
 		A1039F0A1C72C55400771747 /* RefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshViewController.h; sourceTree = "<group>"; };
 		A1039F0B1C72C55400771747 /* RefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshViewController.m; sourceTree = "<group>"; };
+		A10D7B6A1CEABDCB00422D7D /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		A10D7B6B1CEABDCB00422D7D /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		A10D7B6D1CEAC3D700422D7D /* ReportFinanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportFinanceCell.h; sourceTree = "<group>"; };
+		A10D7B6E1CEAC3D700422D7D /* ReportFinanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportFinanceCell.m; sourceTree = "<group>"; };
+		A10D7B731CEAF5EA00422D7D /* MyAgentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAgentViewController.h; sourceTree = "<group>"; };
+		A10D7B741CEAF5EA00422D7D /* MyAgentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAgentViewController.m; sourceTree = "<group>"; };
+		A10D7B761CEAF73C00422D7D /* MyAgentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAgentCell.h; sourceTree = "<group>"; };
+		A10D7B771CEAF73C00422D7D /* MyAgentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAgentCell.m; sourceTree = "<group>"; };
+		A10D7B791CEAFAFE00422D7D /* AddMyAgentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMyAgentViewController.h; sourceTree = "<group>"; };
+		A10D7B7A1CEAFAFE00422D7D /* AddMyAgentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMyAgentViewController.m; sourceTree = "<group>"; };
+		A10D7B7C1CEAFB7A00422D7D /* AgentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgentCell.h; sourceTree = "<group>"; };
+		A10D7B7D1CEAFB7A00422D7D /* AgentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgentCell.m; sourceTree = "<group>"; };
+		A10D7B7F1CEB083300422D7D /* ReportCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportCollectViewController.h; sourceTree = "<group>"; };
+		A10D7B801CEB083300422D7D /* ReportCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportCollectViewController.m; sourceTree = "<group>"; };
+		A10D7B821CEB163800422D7D /* NSMutableAttributedString+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+UIColor.h"; sourceTree = "<group>"; };
+		A10D7B831CEB163800422D7D /* NSMutableAttributedString+UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+UIColor.m"; sourceTree = "<group>"; };
+		A10D7B851CEB1BE000422D7D /* UIView+UITextColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UITextColor.h"; sourceTree = "<group>"; };
+		A10D7B861CEB1BE000422D7D /* UIView+UITextColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UITextColor.m"; sourceTree = "<group>"; };
+		A10D7B891CEB246700422D7D /* DebtCreditMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebtCreditMessageViewController.h; sourceTree = "<group>"; };
+		A10D7B8A1CEB246700422D7D /* DebtCreditMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebtCreditMessageViewController.m; sourceTree = "<group>"; };
 		A154B8D41CE18E7F00884CA4 /* ReportFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportFootView.h; sourceTree = "<group>"; };
 		A154B8D51CE18E7F00884CA4 /* ReportFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportFootView.m; sourceTree = "<group>"; };
 		A154B8D71CE1912800884CA4 /* open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open@2x.png"; sourceTree = "<group>"; };
@@ -415,6 +446,8 @@
 		A17F7BF41CE5C52700E882A3 /* NewPublishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPublishCell.m; sourceTree = "<group>"; };
 		A17F7BFA1CE5DDDA00E882A3 /* ApplyRecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyRecordsViewController.h; sourceTree = "<group>"; };
 		A17F7BFB1CE5DDDA00E882A3 /* ApplyRecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyRecordsViewController.m; sourceTree = "<group>"; };
+		A18B26461CEAA699005526C5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A18B26471CEAA699005526C5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		A18C675A1CD06C2E00C7B070 /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
 		A18C675B1CD06C2E00C7B070 /* UIButton+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
 		A18C675D1CD087C500C7B070 /* UIView+Fram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Fram.h"; sourceTree = "<group>"; };
@@ -741,6 +774,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A10D7B701CEAF40300422D7D /* 我的代理 */ = {
+			isa = PBXGroup;
+			children = (
+				A10D7B721CEAF5D700422D7D /* view */,
+				A10D7B711CEAF5CA00422D7D /* controller */,
+			);
+			path = "我的代理";
+			sourceTree = "<group>";
+		};
+		A10D7B711CEAF5CA00422D7D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A10D7B731CEAF5EA00422D7D /* MyAgentViewController.h */,
+				A10D7B741CEAF5EA00422D7D /* MyAgentViewController.m */,
+				A10D7B791CEAFAFE00422D7D /* AddMyAgentViewController.h */,
+				A10D7B7A1CEAFAFE00422D7D /* AddMyAgentViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		A10D7B721CEAF5D700422D7D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A10D7B761CEAF73C00422D7D /* MyAgentCell.h */,
+				A10D7B771CEAF73C00422D7D /* MyAgentCell.m */,
+				A10D7B7C1CEAFB7A00422D7D /* AgentCell.h */,
+				A10D7B7D1CEAFB7A00422D7D /* AgentCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A10D7B881CEB222A00422D7D /* 债权人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				A10D7B891CEB246700422D7D /* DebtCreditMessageViewController.h */,
+				A10D7B8A1CEB246700422D7D /* DebtCreditMessageViewController.m */,
+			);
+			path = "债权人信息";
+			sourceTree = "<group>";
+		};
 		A154B8E71CE1B45900884CA4 /* 发布成功 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1244,6 +1317,8 @@
 		A19985431CE07FCA0055A572 /* 催收 */ = {
 			isa = PBXGroup;
 			children = (
+				A10D7B7F1CEB083300422D7D /* ReportCollectViewController.h */,
+				A10D7B801CEB083300422D7D /* ReportCollectViewController.m */,
 			);
 			path = "催收";
 			sourceTree = "<group>";
@@ -1251,6 +1326,7 @@
 		A19985441CE07FD10055A572 /* 诉讼 */ = {
 			isa = PBXGroup;
 			children = (
+				A10D7B881CEB222A00422D7D /* 债权人信息 */,
 				A1A34C131CE313F300AD454A /* 上传文件 */,
 				A154B8F61CE1C49500884CA4 /* view */,
 				A154B8F31CE1C14100884CA4 /* ReportSuitViewController.h */,
@@ -1268,6 +1344,8 @@
 				A1A34C0D1CE30C2400AD454A /* ReportFiCell.m */,
 				A1A34C0F1CE30C8800AD454A /* ReportAddCell.h */,
 				A1A34C101CE30C8800AD454A /* ReportAddCell.m */,
+				A10D7B6D1CEAC3D700422D7D /* ReportFinanceCell.h */,
+				A10D7B6E1CEAC3D700422D7D /* ReportFinanceCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1344,6 +1422,7 @@
 			children = (
 				A1A34C2F1CE32A2F00AD454A /* 登录注册 */,
 				A19D29671CD2087F00DAAEA7 /* 设置 */,
+				A10D7B701CEAF40300422D7D /* 我的代理 */,
 				A19D29661CD2087400DAAEA7 /* 我的收藏 */,
 				A19D29651CD2086B00DAAEA7 /* 我的保存 */,
 				A19D29641CD2085500DAAEA7 /* 我的接单 */,
@@ -1564,6 +1643,10 @@
 				A19B8E3F1CCF528600F8EBF2 /* TabBarController */,
 				A1A016A51C5A0C0300027134 /* AppDelegate.h */,
 				A1A016A61C5A0C0300027134 /* AppDelegate.m */,
+				A18B26461CEAA699005526C5 /* MainViewController.h */,
+				A18B26471CEAA699005526C5 /* MainViewController.m */,
+				A10D7B6A1CEABDCB00422D7D /* MainView.h */,
+				A10D7B6B1CEABDCB00422D7D /* MainView.m */,
 				A1A016A81C5A0C0300027134 /* ViewController.h */,
 				A1A016A91C5A0C0300027134 /* ViewController.m */,
 				A1A016AB1C5A0C0300027134 /* Main.storyboard */,
@@ -1659,6 +1742,10 @@
 				A18C675E1CD087C500C7B070 /* UIView+Fram.m */,
 				A19D293C1CD1A32D00DAAEA7 /* NSString+Fram.h */,
 				A19D293D1CD1A32D00DAAEA7 /* NSString+Fram.m */,
+				A10D7B821CEB163800422D7D /* NSMutableAttributedString+UIColor.h */,
+				A10D7B831CEB163800422D7D /* NSMutableAttributedString+UIColor.m */,
+				A10D7B851CEB1BE000422D7D /* UIView+UITextColor.h */,
+				A10D7B861CEB1BE000422D7D /* UIView+UITextColor.m */,
 			);
 			path = "工具类";
 			sourceTree = "<group>";
@@ -2106,8 +2193,10 @@
 				A1A34C081CE30A4C00AD454A /* ReportSuitCell.m in Sources */,
 				A1A017561C5B696A00027134 /* NSObject+MJKeyValue.m in Sources */,
 				A1A34C0B1CE30AE900AD454A /* ReportSuitSeCell.m in Sources */,
+				A10D7B8B1CEB246700422D7D /* DebtCreditMessageViewController.m in Sources */,
 				A17691461CD9E42A004289DD /* AdditionalEvaluateViewController.m in Sources */,
 				A1A97E6A1CDC989200EDE320 /* MyPublishingViewController.m in Sources */,
+				A10D7B6C1CEABDCB00422D7D /* MainView.m in Sources */,
 				A1A34C161CE3148A00AD454A /* UploadFilesViewController.m in Sources */,
 				A1A97E621CDC950100EDE320 /* EvaBaseView.m in Sources */,
 				A199851D1CE0360B0055A572 /* MessageRemindViewController.m in Sources */,
@@ -2132,6 +2221,7 @@
 				A18C67661CD08DA800C7B070 /* LoginView.m in Sources */,
 				A19B8E231CCF42E300F8EBF2 /* NSArray+PureLayout.m in Sources */,
 				A17964FA1CD3656800B6AD47 /* MyStoreViewController.m in Sources */,
+				A10D7B841CEB163800422D7D /* NSMutableAttributedString+UIColor.m in Sources */,
 				A16856A11CE9B3AD006A0887 /* ProdRightView.m in Sources */,
 				A1A34C401CE339B800AD454A /* LoginForgetView.m in Sources */,
 				A154B8F51CE1C14100884CA4 /* ReportSuitViewController.m in Sources */,
@@ -2146,6 +2236,7 @@
 				A17964E51CD3436700B6AD47 /* AuthenCell.m in Sources */,
 				A16856761CE951EB006A0887 /* ApplyRecordsCell.m in Sources */,
 				A19B8E4D1CCF531900F8EBF2 /* MessageViewController.m in Sources */,
+				A10D7B871CEB1BE000422D7D /* UIView+UITextColor.m in Sources */,
 				A1A34BFF1CE2F63F00AD454A /* MineCell.m in Sources */,
 				A17964EE1CD34C6000B6AD47 /* CompleteSingleView.m in Sources */,
 				A1A97E5F1CDC8AED00EDE320 /* EvaTopSwitchView.m in Sources */,
@@ -2164,6 +2255,7 @@
 				A1A0174F1C5B696A00027134 /* MJExtensionConst.m in Sources */,
 				A1A017271C5B421500027134 /* BaseViewController.m in Sources */,
 				A1A34BE81CE2BC2300AD454A /* BidCell.m in Sources */,
+				A10D7B751CEAF5EA00422D7D /* MyAgentViewController.m in Sources */,
 				A168569E1CE9B39D006A0887 /* ProdLeftView.m in Sources */,
 				A1A34C3A1CE32C9300AD454A /* ForgetPassViewController.m in Sources */,
 				A19D29471CD1B44D00DAAEA7 /* MoneyView.m in Sources */,
@@ -2173,7 +2265,9 @@
 				A17EE37C1CD8421200ECC631 /* DetailView.m in Sources */,
 				A1A017541C5B696A00027134 /* NSObject+MJClass.m in Sources */,
 				A176912E1CD99E1E004289DD /* CheckDetailPublishViewController.m in Sources */,
+				A10D7B781CEAF73C00422D7D /* MyAgentCell.m in Sources */,
 				A1A016A71C5A0C0300027134 /* AppDelegate.m in Sources */,
+				A10D7B7B1CEAFAFE00422D7D /* AddMyAgentViewController.m in Sources */,
 				A1A017581C5B696A00027134 /* NSString+MJExtension.m in Sources */,
 				A17691261CD986BA004289DD /* LineLabel.m in Sources */,
 				A1A017301C5B607300027134 /* UIImage+Color.m in Sources */,
@@ -2181,6 +2275,7 @@
 				A154B8FC1CE1C57000884CA4 /* SuitBaseView.m in Sources */,
 				A1A016A41C5A0C0300027134 /* main.m in Sources */,
 				A19B8E501CCF532B00F8EBF2 /* NewProductViewController.m in Sources */,
+				A10D7B6F1CEAC3D700422D7D /* ReportFinanceCell.m in Sources */,
 				A17F7BE91CE578EB00E882A3 /* JKCountDownButton.m in Sources */,
 				A1A017521C5B696A00027134 /* MJPropertyKey.m in Sources */,
 				A19B8E241CCF42E300F8EBF2 /* NSLayoutConstraint+PureLayout.m in Sources */,
@@ -2224,13 +2319,16 @@
 				A19985201CE061DB0055A572 /* AnotherView.m in Sources */,
 				A1A97E511CDC66E900EDE320 /* ReceiveMessagesViewController.m in Sources */,
 				A19D296A1CD208E900DAAEA7 /* AuthentyViewController.m in Sources */,
+				A18B26481CEAA699005526C5 /* MainViewController.m in Sources */,
 				A19B8E4A1CCF530900F8EBF2 /* MineViewController.m in Sources */,
 				9CEA216B1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */,
 				A16856801CE99358006A0887 /* ProductsDetailsProViewController.m in Sources */,
+				A10D7B7E1CEAFB7A00422D7D /* AgentCell.m in Sources */,
 				A18C675F1CD087C500C7B070 /* UIView+Fram.m in Sources */,
 				A1A017511C5B696A00027134 /* MJProperty.m in Sources */,
 				A1A34C0E1CE30C2400AD454A /* ReportFiCell.m in Sources */,
 				A19B8E221CCF42E300F8EBF2 /* ALView+PureLayout.m in Sources */,
+				A10D7B811CEB083300422D7D /* ReportCollectViewController.m in Sources */,
 				A16856931CE9A291006A0887 /* ProductsDetailsPerViewController.m in Sources */,
 				A1A017921C5B8A2100027134 /* AFNetworkReachabilityManager.m in Sources */,
 				A19D296D1CD208FB00DAAEA7 /* CompleteViewController.m in Sources */,

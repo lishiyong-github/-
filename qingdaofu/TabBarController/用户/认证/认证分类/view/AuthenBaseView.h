@@ -14,6 +14,7 @@
 @property (nonatomic,strong) UITextField *textField;
 @property (nonatomic,strong) UIButton *button;
 
-@property (nonatomic,assign) CGFloat aH;
+//@property (nonatomic,assign) CGFloat aH;
+@property (nonatomic,strong) NSLayoutConstraint *leftTextConstraints;
 
 @end

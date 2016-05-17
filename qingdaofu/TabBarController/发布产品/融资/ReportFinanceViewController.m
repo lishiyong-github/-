@@ -17,6 +17,8 @@
 #import "ReportFiCell.h"
 #import "ReportAddCell.h"
 
+#import "ReportFinanceCell.h"
+
 @interface ReportFinanceViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *reportFinanceTableView;
@@ -50,6 +52,7 @@
         _reportFinanceTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
         [_reportFinanceTableView.tableFooterView addSubview:self.openFooterView];
         _reportFinanceTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kSmallPadding)];
+        _reportFinanceTableView.separatorColor = kSeparateColor;
     }
     return _reportFinanceTableView;
 }
@@ -67,7 +70,6 @@
     if (!_openFooterView) {
         _openFooterView = [[ReportFootView alloc] initWithFrame:CGRectMake(kBigPadding, kBigPadding, kScreenWidth-kBigPadding*2, 70)];
         _openFooterView.backgroundColor = kBlueColor;
-//        [_openFooterView addTarget:self action:@selector(openAndClose:) forControlEvents:UIControlEventTouchUpInside];
         [_openFooterView.footButton addTarget:self action:@selector(openAndClose:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _openFooterView;
@@ -107,6 +109,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 1;
+//    if (section == 0) {
+//        return 6;
+//    }
+//    return 7;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,11 +121,70 @@
         return 5*kCellHeight+5*kLineWidth+62;
     }
     return kCellHeight*7+kLineWidth*6;
+    
+//    return kCellHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier;
+    //= @"reportFi";
+    
+//    ReportFinanceCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+//    if (!cell) {
+//        cell = [[ReportFinanceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+//    }
+//    
+//    NSArray *ttArray = @[@[@"|  基本信息",@"借款本金",@"返点(%)",@"借款利率(%)",@"抵押物地址",@""],@[@"",@"借款期限",@"抵押物类型",@"抵押物状态",@"抵押物面积",@"借款人年龄",@"权利人年龄"]];
+//    NSArray *placeArray = @[@[@"",@"填写您希望融资的金额",@"能够给到中介的返点，如没有请输入0",@"能够给到融资方的利息",@"小区/写字楼/商铺等",@"详细地址"],@[@"",@"",@"",@"",@"输入抵押物面积",@"请输入年龄，智能输入数字",@""]];
+//    
+//    cell.fiLabel.text = ttArray[indexPath.section][indexPath.row];
+//    cell.fiTextField.placeholder = placeArray[indexPath.section][indexPath.row];
+//    
+//    if (indexPath.section == 0) {
+//        if (indexPath.row == 0) {
+//            cell.fiLabel.textColor = kBlueColor;
+//            cell.fiTextField.userInteractionEnabled = NO;
+//        }else if (indexPath.row ==1){
+//            [cell.fiButton setTitle:@"万元" forState:0];
+//        }else if (indexPath.row == 3){
+//            [cell.fiButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+//            [cell.fiButton setTitle:@"月" forState:0];
+//        }else if (indexPath.row == 4){
+//            cell.fiTextField.userInteractionEnabled = NO;
+//            [cell.fiButton setTitle:@"有" forState:0];
+//            [cell.fiButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+//        }
+//    }else{
+//        if (indexPath.row == 0) {
+//            NSString *str1 = @"|  补充信息";
+//            NSString *str2 = @"(选填)";
+//            NSString *str = [[NSString alloc] initWithFormat:@"%@%@",str1,str2];
+//            NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:str];
+//            [attStr addAttributes:@{NSFontAttributeName:kBigFont,NSForegroundColorAttributeName:kBlueColor} range:NSMakeRange(0, str1.length)];
+//            [attStr addAttributes:@{NSFontAttributeName:kSecondFont,NSForegroundColorAttributeName:kBlackColor} range:NSMakeRange(str1.length, str2.length)];
+//            [cell.fiLabel setAttributedText:attStr];
+//            
+//        }else if (indexPath.row>0 && indexPath.row<4){
+//            cell.fiTextField.userInteractionEnabled = NO;
+//            [cell.fiButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+//    
+//            [cell.fiButton setTitle:@"月" forState:0];
+//            
+//        }else if (indexPath.row == 4){
+//            
+//            [cell.fiButton setTitle:@"平方" forState:0];
+//        }else if (indexPath.row == 5){
+//            [cell.fiButton setTitle:@"岁" forState:0];
+//
+//        }else{
+//            cell.fiTextField.userInteractionEnabled = NO;
+//            [cell.fiButton setTitle:@"65岁以下" forState:0];
+//            [cell.fiButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+//        }
+//    }
+//    
+    
     if (indexPath.section == 0) {
         identifier = @"se0";
         ReportFiCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
@@ -128,14 +193,15 @@
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
-
     }
     identifier = @"se1";
     
     ReportAddCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
     if (!cell) {
         cell = [[ReportAddCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -174,7 +240,6 @@
     
     [self.reportFinanceTableView reloadData];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

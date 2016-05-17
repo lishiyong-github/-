@@ -10,4 +10,10 @@
 
 @interface AgentCell : UITableViewCell
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
+@property (nonatomic,strong) UILabel *agentLabel;
+@property (nonatomic,strong) UITextField *agentTextField;
+
+@property (nonatomic,strong) NSLayoutConstraint *leftAgentContraints;
+
 @end

@@ -54,10 +54,16 @@
 {
     if (!_segment) {
         _segment = [UISegmentedControl newAutoLayoutView];
-        [_segment insertSegmentWithTitle:@"民间借贷" atIndex:0 animated:YES];
-        [_segment insertSegmentWithTitle:@"应收帐款" atIndex:1 animated:YES];
+        [_segment insertSegmentWithTitle:@"房产抵押" atIndex:0 animated:YES];
+        [_segment insertSegmentWithTitle:@"机动车抵押" atIndex:1 animated:YES];
+        [_segment insertSegmentWithTitle:@"应收帐款" atIndex:2 animated:YES];
+        [_segment insertSegmentWithTitle:@"无抵押" atIndex:3 animated:YES];
+        
         _segment.tintColor = kBlueColor;
         _segment.selectedSegmentIndex = 0;
+        [_segment setWidth:60 forSegmentAtIndex:0];
+        [_segment setTitleTextAttributes:@{NSFontAttributeName:kSecondFont,NSForegroundColorAttributeName:kLightGrayColor} forState:0];
+        [_segment setTitleTextAttributes:@{NSFontAttributeName:kSecondFont,NSForegroundColorAttributeName:kNavColor} forState:UIControlStateSelected];
     }
     return _segment;
 }

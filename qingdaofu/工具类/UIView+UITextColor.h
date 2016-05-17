@@ -10,4 +10,7 @@
 
 @interface UIView (UITextColor)
 
+- (NSMutableAttributedString *)setAttributeString:(NSString *)firstString andSecond:(NSString *)secondString;
+
+
 @end

@@ -53,6 +53,7 @@
         _button = [UIButton newAutoLayoutView];
         _button.backgroundColor = kBlueColor;
         _button.layer.masksToBounds = YES;
+        _button.userInteractionEnabled = NO;
     }
     return _button;
 }

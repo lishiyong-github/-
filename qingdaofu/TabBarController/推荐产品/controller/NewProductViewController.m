@@ -11,8 +11,10 @@
 #import "NewPublishCell.h"
 #import "HomeCell.h"
 
-//#import "NewPublishView.h"  //发布（section==1）
-//#import "NewProView.h"  //section==2,3
+#import "ReportFinanceViewController.h"  //发布融资
+#import "ReportSuitViewController.h"   //发布催收
+#import "ReportCollectViewController.h" //发布诉讼
+
 
 @interface NewProductViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -44,31 +46,6 @@
     }
     return _mainTableView;
 }
-//
-//- (NewPublishView *)sectionView1
-//{
-//    if (!_sectionView1) {
-//        _sectionView1 = [[NewPublishView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 95+18)];
-//    }
-//    return _sectionView1;
-//}
-
-//- (NewProView *)sectionView2
-//{
-//    if (!_sectionView2) {
-//        _sectionView2 = [[NewProView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth,_sectionView2.aH)];
-//       _sectionView2.nameLabel.text = @"RZ201509280005dbdbd";
-//    }
-//    return _sectionView2;
-//}
-//
-//- (NewProView *)sectionView3
-//{
-//    if (!_sectionView3) {
-//        _sectionView3 = [[NewProView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth,_sectionView2.aH)];
-//    }
-//    return _sectionView3;
-//}
 
 #pragma mark - tableView delelagte and datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -107,7 +84,6 @@
 {
     static NSString *identifier;
     if (indexPath.section == 0) {
-        
         identifier = @"main1";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (!cell) {
@@ -116,6 +92,7 @@
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = kBlueColor;
+        
         return cell;
         
     }else if (indexPath.section == 1){
@@ -126,9 +103,27 @@
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                
+        
+        QDFWeakSelf;
+        [cell.financeButton addAction:^(UIButton *btn) {//融资
+            ReportFinanceViewController *reportFinanceVC = [[ReportFinanceViewController alloc] init];
+            reportFinanceVC.hidesBottomBarWhenPushed = YES;
+            [weakself.navigationController pushViewController:reportFinanceVC animated:YES];
+        }];
+        
+        [cell.collectionButton addAction:^(UIButton *btn) {//催收
+            ReportCollectViewController *reportCollectVC = [[ReportCollectViewController alloc] init];
+            reportCollectVC.hidesBottomBarWhenPushed = YES;
+            [weakself.navigationController pushViewController:reportCollectVC animated:YES];
+        }];
+        
+        [cell.suitButton addAction:^(UIButton *btn) {//诉讼
+            ReportSuitViewController *reportSuitVC = [[ReportSuitViewController alloc] init];
+            reportSuitVC.hidesBottomBarWhenPushed = YES;
+            [weakself.navigationController pushViewController:reportSuitVC animated:YES];
+        }];
+        
         return cell;
-    
     }
         identifier = @"main3";
         HomeCell *cell = [tableView dequeueReusableCellWithIdentifier: identifier];

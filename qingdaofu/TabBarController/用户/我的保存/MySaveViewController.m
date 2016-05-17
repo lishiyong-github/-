@@ -28,17 +28,30 @@
     self.navigationItem.leftBarButtonItem = self.leftItem;
     
     [self.view addSubview:self.mySavetableView];
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.mySavetableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
 }
 
 - (UITableView *)mySavetableView
 {
     if (!_mySavetableView) {
-        _mySavetableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStylePlain];
+        _mySavetableView = [UITableView newAutoLayoutView];
         _mySavetableView.delegate = self;
         _mySavetableView.dataSource = self;
-        _mySavetableView.tableFooterView = [[UIView alloc] init];
+        _mySavetableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
         _mySavetableView.backgroundColor = kBackColor;
         _mySavetableView.separatorColor = kSeparateColor;
+        _mySavetableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
     }
     return _mySavetableView;
 }
@@ -76,23 +89,6 @@
     [cell.sButton2 setImage:[UIImage imageNamed:@"list_more"] forState:0];
     
     return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return kBigPadding;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 0.1f;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = kBackColor;
-    return headerView;
 }
 
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath

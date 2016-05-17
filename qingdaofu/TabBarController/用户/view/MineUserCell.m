@@ -30,7 +30,7 @@
         NSArray *views = @[self.userNameButton,self.userActionButton];
         [views autoAlignViewsToAxis:ALAxisHorizontal];
         
-        [self.userNameButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
+        [self.userNameButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:12];
         [self.userNameButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
         
         [self.userActionButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];

@@ -8,7 +8,12 @@
 
 #import "DebtCreditMessageViewController.h"
 
-@interface DebtCreditMessageViewController ()
+#import "BaseCommitButton.h"
+
+@interface DebtCreditMessageViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+@property (nonatomic,strong) UITableView *debtCreditTableView;
 
 @end
 
@@ -16,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+
 }
 
 - (void)didReceiveMemoryWarning {

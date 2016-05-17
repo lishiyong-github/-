@@ -40,7 +40,8 @@
 -(UIBarButtonItem *)leftItem
 {
     if (!_leftItem) {
-        _leftItem = [[UIBarButtonItem alloc] initWithCustomView:self.leftBackBtn];
+        _leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"information_nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+//        _leftItem = [[UIBarButtonItem alloc] initWithCustomView:self.leftBackBtn];
     }
     return _leftItem;
 }
@@ -51,12 +52,18 @@
         _leftBackBtn = [UIButton buttonWithType:0];
         _leftBackBtn.bounds = CGRectMake(0, 0, 24, 24);
         [_leftBackBtn setImage:[UIImage imageNamed:@"information_nav_back"] forState:0];
-        QDFWeakSelf;
-        [_leftBackBtn addAction:^(UIButton *btn) {
-            [weakself.navigationController popViewControllerAnimated:YES];
-        }];
+        [_leftBackBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+//        QDFWeakSelf;
+//        [_leftBackBtn addAction:^(UIButton *btn) {
+//            [weakself.navigationController popViewControllerAnimated:YES];
+//        }];
     }
     return _leftBackBtn;
+}
+
+- (void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
