@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9CEA216B1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
 		9CEA216C1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
+		9CF191401CEC445300CFEDA1 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF1913F1CEC445300CFEDA1 /* Reveal.framework */; };
 		A1039F0C1C72C55400771747 /* RefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1039F0B1C72C55400771747 /* RefreshViewController.m */; };
 		A10D7B6C1CEABDCB00422D7D /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B6B1CEABDCB00422D7D /* MainView.m */; };
 		A10D7B6F1CEAC3D700422D7D /* ReportFinanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B6E1CEAC3D700422D7D /* ReportFinanceCell.m */; };
@@ -300,6 +301,7 @@
 /* Begin PBXFileReference section */
 		9CEA21691CE2140C002C5BA7 /* UIButton+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Addition.h"; sourceTree = "<group>"; };
 		9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Addition.m"; sourceTree = "<group>"; };
+		9CF1913F1CEC445300CFEDA1 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		A1039F0A1C72C55400771747 /* RefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshViewController.h; sourceTree = "<group>"; };
 		A1039F0B1C72C55400771747 /* RefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshViewController.m; sourceTree = "<group>"; };
 		A10D7B6A1CEABDCB00422D7D /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
@@ -748,6 +750,7 @@
 				A1A017151C5B3BC600027134 /* libz.tbd in Frameworks */,
 				A1A017131C5B3BBE00027134 /* SystemConfiguration.framework in Frameworks */,
 				A1A017111C5B3BB300027134 /* CoreTelephony.framework in Frameworks */,
+				9CF191401CEC445300CFEDA1 /* Reveal.framework in Frameworks */,
 				A1A0170F1C5B3BAA00027134 /* CoreLocation.framework in Frameworks */,
 				A1A0170D1C5B3BA400027134 /* OpenGLES.framework in Frameworks */,
 				A1A0170B1C5B3B9B00027134 /* QuartzCore.framework in Frameworks */,
@@ -1698,6 +1701,7 @@
 			isa = PBXGroup;
 			children = (
 				A1A0172B1C5B5D7400027134 /* MAMapKit.framework */,
+				9CF1913F1CEC445300CFEDA1 /* Reveal.framework */,
 				A1A0171A1C5B3BFD00027134 /* Security.framework */,
 				A1A017181C5B3BF600027134 /* libc++.tbd */,
 				A1A017161C5B3BD600027134 /* libstdc++.6.0.9.tbd */,
@@ -2493,7 +2497,12 @@
 				INFOPLIST_FILE = qingdaofu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-ObjC",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhixiang.qingdaofu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -2514,7 +2523,12 @@
 				INFOPLIST_FILE = qingdaofu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-ObjC",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhixiang.qingdaofu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
