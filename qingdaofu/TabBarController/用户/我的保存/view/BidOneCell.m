@@ -8,7 +8,42 @@
 
 #import "BidOneCell.h"
 
+#import "UIView+UITextColor.h"
+
 @implementation BidOneCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self.contentView addSubview:self.oneButton];
+        
+        [self.contentView setNeedsUpdateConstraints];
+    }
+    return self;
+}
+
+- (void)updateConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.oneButton autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+        [self.oneButton autoAlignAxisToSuperviewAxis:ALAxisVertical];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateConstraints];
+}
+
+- (UIButton *)oneButton
+{
+    if (!_oneButton) {
+        _oneButton = [UIButton newAutoLayoutView];
+        _oneButton.titleLabel .font = kBigFont;
+        [_oneButton setTitleColor:kBlueColor forState:0];
+    }
+    return _oneButton;
+}
 
 - (void)awakeFromNib {
     // Initialization code

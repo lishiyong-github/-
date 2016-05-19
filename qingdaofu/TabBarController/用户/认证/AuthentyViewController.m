@@ -29,17 +29,31 @@
     self.navigationItem.title = @"认证";
     
     [self.view addSubview:self.authenTableView];
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.authenTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
 }
 
 - (UITableView *)authenTableView
 {
     if (!_authenTableView) {
-        _authenTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStylePlain];
+        _authenTableView = [UITableView newAutoLayoutView];
         _authenTableView.delegate = self;
         _authenTableView.dataSource = self;
         _authenTableView.tableFooterView = [[UIView alloc] init];
         _authenTableView.separatorColor = kSeparateColor;
         _authenTableView.backgroundColor = kBackColor;
+        _authenTableView.tableHeaderView = self.authenHeadView;
+        _authenTableView.tableFooterView = self.authenFootView;
     }
     return _authenTableView;
 }
@@ -47,7 +61,7 @@
 - (AuthenBaseView *)authenHeadView
 {
     if (!_authenHeadView) {
-        _authenHeadView = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 52)];
+        _authenHeadView = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 56)];
         _authenHeadView.label.textAlignment = NSTextAlignmentCenter;
         _authenHeadView.label.font = [UIFont systemFontOfSize:22];
         _authenHeadView.label.text = @"请选择认证的身份";
@@ -58,7 +72,7 @@
 - (AuthenBaseView *)authenFootView
 {
     if (!_authenFootView) {
-        _authenFootView = [[AuthenBaseView alloc ] initWithFrame:CGRectMake(0, 0, kScreenWidth, 60)];
+        _authenFootView = [[AuthenBaseView alloc ] initWithFrame:CGRectMake(0, 0, kScreenWidth, 45)];
         _authenFootView.label.text = @"在您未发布及未接单前，您可以根据实际需要，修改您的身份认证";
         _authenFootView.label.textColor = kLightGrayColor;
         _authenFootView.label.font = kSecondFont;
@@ -79,7 +93,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AuthenCell *cell = [AuthenCell cellWithTableView:tableView];
+    static NSString *identifier = @"authenty";
+    
+    AuthenCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[AuthenCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSArray *imageArr = @[@"list_icon_personal",@"list_icon_firm",@"list_icon_company"];
@@ -108,22 +128,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 52;
+    return 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 60;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return self.authenHeadView;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    return self.authenFootView;
+    return 0.1;
 }
 
 - (void)didReceiveMemoryWarning {

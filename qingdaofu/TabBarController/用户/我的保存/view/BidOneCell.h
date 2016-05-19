@@ -10,4 +10,8 @@
 
 @interface BidOneCell : UITableViewCell
 
+@property (nonatomic,strong) UIButton *oneButton;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+
 @end

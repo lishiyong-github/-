@@ -12,6 +12,7 @@
 #import "ReportFinanceCell.h"
 #import "EditDebtAddressCell.h"
 #import "BaseCommitButton.h"
+
 #import "UIView+UITextColor.h"
 
 
@@ -179,11 +180,10 @@
             cell = [[EditDebtAddressCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textHeightConstraint.constant = 60;
         
         cell.ediLabel.text = @"经典案例";
         cell.ediTextView.placeholder = @"关于个人在融资等方面的成功案例，有利于发布方更加青睐你";
-        cell.ediTextView.font = kBigFont;
+        cell.ediTextView.font = kFirstFont;
         return cell;
     }
     

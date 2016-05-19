@@ -31,7 +31,6 @@
         self.leftTextConstraints = [self.textField autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:105];
         
         [self setNeedsUpdateConstraints];
-//        _aH = 30 + _lH;
     }
     return self;
 }
@@ -40,7 +39,7 @@
 {
     if (!self.didSetupConstraints) {
     
-        [self.label autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
+        [self.label autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
         [self.label autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
         [self.label autoPinEdgeToSuperviewEdge:ALEdgeRight];
         
@@ -63,8 +62,6 @@
         _label.text = @"联系方式";
         _label.textColor = kBlackColor;
         _label.numberOfLines = 0;
-        CGSize size = [_label.text sizeWithAttributes:@{NSFontAttributeName:kFirstFont}];
-        _lH = size.height;
     }
     return _label;
 }
@@ -76,7 +73,6 @@
         _textField.font = kFirstFont;
         _textField.textColor = kBlackColor;
         _textField.delegate = self;
-        _textField.multipleTouchEnabled = YES;
     }
     return _textField;
 }

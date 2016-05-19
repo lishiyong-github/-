@@ -10,4 +10,11 @@
 
 @interface BidMessageCell : UITableViewCell
 
+@property (nonatomic,strong) UILabel *deadlineLabel;
+@property (nonatomic,strong) UILabel *dateLabel;
+@property (nonatomic,strong) UILabel *areaLabel;
+@property (nonatomic,strong) UILabel *addressLabel;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+
 @end

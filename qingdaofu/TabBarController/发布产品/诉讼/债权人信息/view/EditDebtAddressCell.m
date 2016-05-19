@@ -20,8 +20,6 @@
         
         self.leftTextViewConstraints = [self.ediTextView autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:90];
         
-        self.textHeightConstraint = [self.ediTextView autoSetDimension:ALDimensionHeight toSize:50];
-        
         [self setNeedsUpdateConstraints];
     }
     return self;
@@ -32,10 +30,10 @@
     if (!self.didSetupConstraints) {
         
         [self.ediLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
-
         [self.ediLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
         
-        [self.ediTextView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
+        [self.ediTextView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:5];
+        [self.ediTextView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
         [self.ediTextView autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
         
         self.didSetupConstraints = YES;

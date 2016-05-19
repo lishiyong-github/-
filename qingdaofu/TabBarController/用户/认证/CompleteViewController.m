@@ -7,19 +7,23 @@
 //
 
 #import "CompleteViewController.h"
-#import "AuthenPersonViewController.h"
+#import "AuthenPersonViewController.h"  //认证个人
 
+#import "MineUserCell.h"
+#import "CompleteCell.h"
 #import "AuthenBaseView.h"
-#import "CompletView.h"
+#import "BaseCommitButton.h"
+
+#import "UIView+UITextColor.h"
+
+#define string @"不得不崩更多活动活动吧动荡不定活动和很多很多是实话实说会实话实说我咕咚咕咚沟通"
 
 @interface CompleteViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) UITableView *completeTableView;
-@property (nonatomic,strong) UIButton *rightBarBtn;
-@property (nonatomic,strong) AuthenBaseView *cell0;
-@property (nonatomic,strong) CompletView *cell1;
+@property (nonatomic,strong) BaseCommitButton *completeCommitButton;
 @property (nonatomic,strong) AuthenBaseView *comFootView;
-
 
 @end
 
@@ -29,62 +33,49 @@
     [super viewDidLoad];
     self.navigationItem.title = @"个人信息";
     self.navigationItem.leftBarButtonItem = self.leftItem;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightBarBtn];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_tip"] style:UIBarButtonItemStylePlain target:self action:@selector(showRemindMessage)];
     
     [self.view addSubview:self.completeTableView];
+    [self.view addSubview:self.completeCommitButton];
+    [self.view setNeedsUpdateConstraints];
 }
 
-- (UIButton *)rightBarBtn
+- (void)updateViewConstraints
 {
-    if (!_rightBarBtn) {
-        _rightBarBtn = [UIButton buttonWithType:0];
-        _rightBarBtn.bounds = CGRectMake(0, 0, 24, 24);
-        [_rightBarBtn setImage:[UIImage imageNamed:@"nav_tip"] forState:0];
-        [_rightBarBtn addAction:^(UIButton *btn) {
-            NSLog(@"可发布融资催收诉讼");
-        }];
+    if (!self.didSetupConstraints) {
+        
+        [self.completeTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+        [self.completeTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
+        
+        [self.completeCommitButton autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+        [self.completeCommitButton autoSetDimension:ALDimensionHeight toSize:kTabBarHeight];
+        
+        self.didSetupConstraints = YES;
     }
-    return _rightBarBtn;
+    [super updateViewConstraints];
 }
 
 - (UITableView *)completeTableView
 {
     if (!_completeTableView) {
-        _completeTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStylePlain];
+        _completeTableView = [UITableView newAutoLayoutView];
         _completeTableView.delegate = self;
         _completeTableView.dataSource = self;
-        _completeTableView.tableFooterView = [[UIView alloc] init];
         _completeTableView.backgroundColor = kBackColor;
         _completeTableView.separatorInset = UIEdgeInsetsZero;
+        _completeTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+        _completeTableView.tableFooterView = self.comFootView;
     }
     return _completeTableView;
 }
 
-- (AuthenBaseView *)cell0
+- (BaseCommitButton *)completeCommitButton
 {
-    if (!_cell0) {
-        _cell0 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _cell0.label.text = @"|  认证信息";
-        _cell0.label.textColor = kBlueColor;
-        _cell0.textField.userInteractionEnabled = NO;
-        [_cell0.button setTitle:@"编辑" forState:0];
-        [_cell0.button setTitleColor:kBlueColor forState:0];
-        _cell0.button.titleLabel.font = kFirstFont;
-        QDFWeakSelf;
-        [_cell0.button addAction:^(UIButton *btn) {
-            AuthenPersonViewController *authenPersonVC = [[AuthenPersonViewController alloc] init];
-            [weakself.navigationController pushViewController:authenPersonVC animated:YES];
-        }];
+    if (!_completeCommitButton) {
+        _completeCommitButton = [BaseCommitButton newAutoLayoutView];
+        [_completeCommitButton setTitle:@"修改认证" forState:0];
     }
-    return _cell0;
-}
-
-- (CompletView *)cell1
-{
-    if (!_cell1) {
-        _cell1 = [[CompletView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 215)];
-    }
-    return _cell1;
+    return _completeCommitButton;
 }
 
 - (AuthenBaseView *)comFootView
@@ -109,63 +100,74 @@
     if (indexPath.row == 0) {
         return kCellHeight;
     }
-    return 215;
+    
+    CGSize titleSize = [string boundingRectWithSize:CGSizeMake(kScreenWidth*0.5, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:kFirstFont} context:nil].size;
+
+    return 195 + titleSize.height ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"complete";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    static NSString *identifier;
+    if (indexPath.row == 0) {
+        identifier = @"complete0";
+        MineUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[MineUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        [cell.userNameButton setTitle:@"|  认证信息" forState:0];
+        [cell.userNameButton setTitleColor:kBlueColor forState:0];
+        
+        [cell.userActionButton setTitle:@"编辑" forState:0];
+        [cell.userActionButton setTitleColor:kBlueColor forState:0];
+        cell.userActionButton .titleLabel.font = kFirstFont;
+        
+        return cell;
+    }
+    identifier = @"complete1";
+    CompleteCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[CompleteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    if (indexPath.row == 0) {
-        [cell addSubview:self.cell0];
-    }else{
-        [cell addSubview:self.cell1];
-    }
+    NSMutableAttributedString *nameString = [cell.comNameLabel setAttributeString:@"姓名：            " withColor:kBlackColor andSecond:@"潘潘潘" withColor:kLightGrayColor withFont:14];
+    [cell.comNameLabel setAttributedText:nameString];
+    
+    NSMutableAttributedString *IDString = [cell.comIDLabel setAttributeString:@"身份证号码：" withColor:kBlackColor andSecond:@"1234567777777777777" withColor:kLightGrayColor withFont:14];
+    [cell.comIDLabel setAttributedText:IDString];
+
+    NSMutableAttributedString *mailString = [cell.comMailLabel setAttributeString:@"邮箱：            " withColor:kBlackColor andSecond:@"1234444444@qq.com" withColor:kLightGrayColor withFont:14];
+    [cell.comMailLabel setAttributedText:mailString];
+
+    cell.comExampleLabel.text = @"经典案例：   ";
+    cell.comExampleLabel2.text = string;
     
     return cell;
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return kBigPadding;
+    return 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 60;
+    return 0.1;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = kBackColor;
-    return headerView;
-}
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+#pragma mark - method
+- (void)showRemindMessage
 {
-//    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 60)];
-//    footerView.backgroundColor = kBackColor;
-//    
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, kScreenWidth-30, 40)];
-//    label.numberOfLines = 0;
-//    label.textColor = kLightGrayColor;
-//    label.text = @"在您未发布及未接单前，您可以根据实际需要，修改您的身份认证";
-//    label.font = kFirstFont;
-//    label.backgroundColor = [UIColor clearColor];
-//    [footerView addSubview:label];
-//    
-//    return footerView;
-    
-    return self.comFootView;
+    NSLog(@"可发布融资催收诉讼");
+
 }
 
 

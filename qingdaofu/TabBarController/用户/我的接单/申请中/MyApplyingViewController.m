@@ -9,9 +9,9 @@
 #import "MyApplyingViewController.h"
 #import "CheckDetailPublishViewController.h"  //查看发布方
 
-#import "BidZeroCell.h"
-#import "BidCell.h"
-#import "BidSingleCell.h"
+//#import "BidZeroCell.h"
+//#import "BidCell.h"
+//#import "BidSingleCell.h"
 
 @interface MyApplyingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -67,6 +67,7 @@
     return 2*kCellHeight + 135 + 1;
 }
 
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier;
@@ -117,6 +118,8 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+ 
+ */
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

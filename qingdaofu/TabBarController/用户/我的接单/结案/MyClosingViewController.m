@@ -12,9 +12,9 @@
 #import "AdditionalEvaluateViewController.h"  //追加评价
 #import "AdditionMessageViewController.h"     //补充信息
 
-#import "BidZeroCell.h"  //0产品编号
-#import "BidCell.h"      //1展示信息
-#import "BidSingleCell.h"//2基本信息
+//#import "BidZeroCell.h"  //0产品编号
+//#import "BidCell.h"      //1展示信息
+//#import "BidSingleCell.h"//2基本信息
 #import "MyOrderDetailCell.h"//进度详情
 
 @interface MyClosingViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -103,6 +103,7 @@
     return 100;
 }
 
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier;
@@ -173,6 +174,8 @@
     [cell addSubview:self.secView4];
     return cell;
 }
+ 
+ */
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

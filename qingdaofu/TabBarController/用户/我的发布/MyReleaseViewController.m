@@ -144,8 +144,8 @@
 //    MyPublishingViewController *myPublishingVC = [[MyPublishingViewController alloc] init];
 //    [self.navigationController pushViewController:myPublishingVC animated:YES];
     
-    MyDealingViewController *myDealingVC = [[MyDealingViewController alloc] init];
-    [self.navigationController pushViewController:myDealingVC animated:YES];
+//    MyDealingViewController *myDealingVC = [[MyDealingViewController alloc] init];
+//    [self.navigationController pushViewController:myDealingVC animated:YES];
 
 }
 

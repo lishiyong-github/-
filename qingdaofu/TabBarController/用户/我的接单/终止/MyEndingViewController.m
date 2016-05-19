@@ -10,9 +10,9 @@
 #import "CheckDetailPublishViewController.h"  //查看发布方
 #import "MyScheduleViewController.h"    //填写进度
 
-#import "BidZeroCell.h"
-#import "BidCell.h"
-#import "BidSingleCell.h"
+//#import "BidZeroCell.h"
+//#import "BidCell.h"
+//#import "BidSingleCell.h"
 #import "MyOrderDetailCell.h"
 
 #import "BaseCommitButton.h"
@@ -87,6 +87,7 @@
     return kCellHeight*2 + 120 + 1;
 }
 
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier;
@@ -155,6 +156,7 @@
 
     return cell;
 }
+ */
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

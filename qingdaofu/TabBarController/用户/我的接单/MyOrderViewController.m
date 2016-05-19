@@ -133,14 +133,14 @@
 //    MyApplyingViewController *myApplyingVC = [[MyApplyingViewController alloc] init];
 //    [self.navigationController pushViewController:myApplyingVC animated:YES];
     
-//    MyProcessingViewController *myProcessingVC = [[MyProcessingViewController alloc] init];
-//    [self.navigationController pushViewController:myProcessingVC animated:YES];
+    MyProcessingViewController *myProcessingVC = [[MyProcessingViewController alloc] init];
+    [self.navigationController pushViewController:myProcessingVC animated:YES];
     
 //    MyEndingViewController *myEndingVC = [[MyEndingViewController alloc] init];
 //    [self.navigationController pushViewController:myEndingVC animated:YES];
     
-    MyClosingViewController *myClosingVC = [[MyClosingViewController alloc] init];
-    [self.navigationController pushViewController:myClosingVC animated:YES];
+//    MyClosingViewController *myClosingVC = [[MyClosingViewController alloc] init];
+//    [self.navigationController pushViewController:myClosingVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

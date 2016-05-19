@@ -16,17 +16,6 @@
 
 @implementation AuthenCell
 
-+ (instancetype)cellWithTableView:(UITableView *)tableView
-{
-    static NSString *identifier = @"authenty";
-    AuthenCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if (!cell) {
-        cell = [[AuthenCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    return cell;
-}
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -48,11 +37,11 @@
     if (!self.didSetupConstraints) {
         
         [self.aImageView autoSetDimensionsToSize:CGSizeMake(50, 50)];
-        [self.aImageView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:37.5];
+        [self.aImageView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
         [self.aImageView autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:15];
         
-        [self.bLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:22];
-        [self.bLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.aImageView withOffset:22];
+        [self.bLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:25];
+        [self.bLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.aImageView withOffset:20];
         
         [self.cLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.bLabel withOffset:20];
         [self.cLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.bLabel];
@@ -61,7 +50,7 @@
         [self.dLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.cLabel];
         
         [self.AuthenButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:15];
-        [self.AuthenButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:45];
+        [self.AuthenButton autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
         [self.AuthenButton autoSetDimensionsToSize:CGSizeMake(70, 35)];
         
         self.didSetupConstraints = YES;
