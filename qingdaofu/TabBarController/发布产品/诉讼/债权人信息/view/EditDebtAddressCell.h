@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RequestTextView.h"
+//#import "RequestTextView.h"
+#import "PlaceHolderTextView.h"
 
 @interface EditDebtAddressCell : UITableViewCell
 
 @property (nonatomic,strong) UILabel *ediLabel;
-@property (nonatomic,strong) RequestTextView *ediTextView;
+@property (nonatomic,strong) PlaceHolderTextView *ediTextView;
 
 @property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) NSLayoutConstraint *leftTextViewConstraints;

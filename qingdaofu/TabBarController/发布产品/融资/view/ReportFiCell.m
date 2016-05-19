@@ -201,12 +201,13 @@
     return _reLine4;
 }
 
-- (RequestTextView *)reCell5
+- (PlaceHolderTextView *)reCell5
 {
     if (!_reCell5) {
-        _reCell5 = [RequestTextView newAutoLayoutView];
-        _reCell5.remindLabel.text = @"详细地址";
-        _reCell5.remindLabel.font = kSecondFont;
+        _reCell5 = [PlaceHolderTextView newAutoLayoutView];
+        _reCell5.placeholder = @"详细地址";
+        _reCell5.font = kSecondFont;
+        _reCell5.placeholderColor = kLightGrayColor;
     }
     return _reCell5;
 }

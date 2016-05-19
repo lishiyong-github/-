@@ -11,8 +11,9 @@
 #import "AuthenBaseView.h"
 #import "StarView.h"
 #import "BaseLabel.h"
-#import "RequestTextView.h"
+//#import "RequestTextView.h"
 #import "BaseCommitButton.h"
+#import "PlaceHolderTextView.h"
 
 @interface AdditionalEvaluateViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -20,7 +21,7 @@
 
 @property (nonatomic,strong) AuthenBaseView *cellVi0;
 @property (nonatomic,strong) StarView *cellVi1;
-@property (nonatomic,strong) RequestTextView *cellVi2;
+@property (nonatomic,strong) PlaceHolderTextView *cellVi2;
 @property (nonatomic,strong) UIView *cellvi3;
 @property (nonatomic,strong) AuthenBaseView *cellVi4;
 
@@ -78,11 +79,12 @@
     return _cellVi1;
 }
 
-- (RequestTextView *)cellVi2
+- (PlaceHolderTextView *)cellVi2
 {
     if (!_cellVi2) {
-        _cellVi2 = [[RequestTextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
-        _cellVi2.remindLabel.text = @"请输入您的真实感受，对接单方的帮助很大奥";
+        _cellVi2 = [[PlaceHolderTextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
+        _cellVi2.placeholder = @"请输入您的真实感受，对接单方的帮助很大奥";
+        _cellVi2.placeholderColor = kLightGrayColor;
     }
     return _cellVi2;
 }

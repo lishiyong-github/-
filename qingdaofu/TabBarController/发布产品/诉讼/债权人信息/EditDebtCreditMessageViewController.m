@@ -110,7 +110,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
         cell.ediLabel.text = @"联系地址";
-        cell.ediTextView.remindLabel.text = @"请输入联系地址";
+        cell.ediTextView.placeholder = @"请输入联系地址";
         
         return cell;
         

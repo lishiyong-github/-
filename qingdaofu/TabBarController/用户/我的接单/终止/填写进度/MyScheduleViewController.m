@@ -7,13 +7,13 @@
 //
 
 #import "MyScheduleViewController.h"
-#import "RequestTextView.h"
+#import "PlaceHolderTextView.h"
 #import "AuthenBaseView.h"
 
 @interface MyScheduleViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *scheduleTableView;
-@property (nonatomic,strong) RequestTextView *cell0;
+@property (nonatomic,strong) PlaceHolderTextView *cell0;
 @property (nonatomic,strong) AuthenBaseView *cell1;
 
 @end
@@ -46,11 +46,13 @@
     return _scheduleTableView;
 }
 
-- (RequestTextView *)cell0
+- (PlaceHolderTextView *)cell0
 {
     if (!_cell0) {
-        _cell0 = [[RequestTextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
-        _cell0.remindLabel.text = @"请填写进度";
+        _cell0 = [[PlaceHolderTextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
+        _cell0.font = kBigFont;
+        _cell0.placeholder = @"请填写进度";
+        _cell0.placeholderColor = kLightGrayColor;
     }
     return _cell0;
 }

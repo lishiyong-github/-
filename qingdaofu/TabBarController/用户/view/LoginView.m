@@ -25,8 +25,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
         [self addSubview:self.loginTableView];
         [self setNeedsUpdateConstraints];
+        
     }
     return self;
 }
@@ -57,16 +59,16 @@
     return _loginTableView;
 }
 
-- (BaseLabel *)sectionView0
-{
-    if (!_sectionView0) {
-        _sectionView0 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, _sectionView0.aH)];
-        _sectionView0.nameLabel.text = @"12345678900";
-        _sectionView0.tagImageView.backgroundColor = kYellowColor;
-        [_sectionView0.goButton setTitle:@"已认证公司  " forState:0];
-    }
-    return _sectionView0;
-}
+//- (BaseLabel *)sectionView0
+//{
+//    if (!_sectionView0) {
+//        _sectionView0 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, _sectionView0.aH)];
+//        _sectionView0.nameLabel.text = @"12345678900";
+//        _sectionView0.tagImageView.backgroundColor = kYellowColor;
+//        [_sectionView0.goButton setTitle:@"已认证公司  " forState:0];
+//    }
+//    return _sectionView0;
+//}
 
 #pragma mark - tableView delegate and dataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -103,18 +105,16 @@
         if (!cell) {
             cell = [[MineUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.font = kBigFont;
-        cell.imageView.frame = CGRectMake(0, 0, 21, 21);
-        [cell setSeparatorInset:UIEdgeInsetsMake(0, kBigPadding, 0, 0)];
-    
+            
         [cell.userNameButton setTitle:@"12345678900  " forState:0];
         [cell.userNameButton setImage:[UIImage imageNamed:@"publish_list_authentication"] forState:0];
         [cell.userNameButton swapImage];
         
         [cell.userActionButton setTitle:@"已认证公司  " forState:0];
         [cell.userActionButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+        
+        cell.userNameButton.userInteractionEnabled = NO;
+        cell.userActionButton.userInteractionEnabled = NO;
         
         return cell;
         

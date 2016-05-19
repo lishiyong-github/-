@@ -53,15 +53,15 @@
     return _ediLabel;
 }
 
-- (RequestTextView *)ediTextView
+- (PlaceHolderTextView *)ediTextView
 {
     if (!_ediTextView) {
-        _ediTextView = [RequestTextView newAutoLayoutView];
+        _ediTextView = [PlaceHolderTextView newAutoLayoutView];
         _ediTextView.textColor = kBlackColor;
         _ediTextView.font = kSecondFont;
         
-        _ediTextView.remindLabel.text = @"请输入地址";
-        _ediTextView.remindLabel.font = kSecondFont;
+        _ediTextView.placeholder = @"请输入地址";
+        _ediTextView.placeholderColor = kLightGrayColor;
     }
     return _ediTextView;
 }

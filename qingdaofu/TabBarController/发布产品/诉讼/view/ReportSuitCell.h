@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AuthenBaseView.h"
 #import "LineLabel.h"
-#import "RequestTextView.h"
+#import "PlaceHolderTextView.h"
 #import "SuitBaseView.h"
 
 @interface ReportSuitCell : UITableViewCell
@@ -25,7 +25,7 @@
 @property (nonatomic,strong) LineLabel *suLine3;
 @property (nonatomic,strong) AuthenBaseView *suCell4;
 @property (nonatomic,strong) LineLabel *suLine4;
-@property (nonatomic,strong) RequestTextView *suCell5;
+@property (nonatomic,strong) PlaceHolderTextView *suCell5;
 
 @property (nonatomic,assign) BOOL didSetupConstarints;
 

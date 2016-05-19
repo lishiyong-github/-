@@ -106,7 +106,9 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.leftTextViewConstraints.constant = kBigPadding;
             cell.textHeightConstraint.constant = 70;
-            cell.ediTextView.remindLabel.text = @"请详细描述您的问题或建议，您的反馈是我们前进最大的动力";
+            cell.ediTextView.placeholder = @"请详细描述您的问题或建议，您的反馈是我们前进最大的动力";
+            cell.ediTextView.placeholderColor = kLightGrayColor;
+            cell.ediTextView.font = kSecondFont;
             
             return cell;
         }

@@ -10,7 +10,6 @@
 
 #import "AuthenBaseView.h"
 #import "LineLabel.h"
-#import "RequestTextView.h"
 #import "BaseLabel.h"
 
 @interface ReportSuitSeCell : UITableViewCell

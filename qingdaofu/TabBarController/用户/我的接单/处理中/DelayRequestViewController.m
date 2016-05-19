@@ -8,7 +8,7 @@
 
 #import "DelayRequestViewController.h"
 
-#import "RequestTextView.h"
+#import "PlaceHolderTextView.h"
 #import "AuthenBaseView.h"
 #import "RequestView.h"
 #import "BaseCommitButton.h"
@@ -16,7 +16,7 @@
 @interface DelayRequestViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *delayTableView;
-@property (nonatomic,strong) RequestTextView *reasonTextView;
+@property (nonatomic,strong) PlaceHolderTextView *reasonTextView;
 @property (nonatomic,strong) RequestView *requestView;
 @property (nonatomic,strong) BaseCommitButton *commitButton;
 
@@ -46,12 +46,12 @@
     }
     return _delayTableView;
 }
-- (RequestTextView *)reasonTextView
+- (PlaceHolderTextView *)reasonTextView
 {
     if (!_reasonTextView) {
-        _reasonTextView = [[RequestTextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
-//        _reasonTextView.textView.text = @"dveerb";
-        _reasonTextView.remindLabel.text = @"请填写申请延期原因";
+        _reasonTextView = [[PlaceHolderTextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
+        _reasonTextView.placeholder = @"请填写申请延期原因";
+        _reasonTextView.placeholderColor = kLightGrayColor;
     }
     return _reasonTextView;
 }

@@ -11,9 +11,7 @@
 #import "TakePictureCell.h"
 #import "ReportFinanceCell.h"
 #import "EditDebtAddressCell.h"
-
 #import "BaseCommitButton.h"
-
 #import "UIView+UITextColor.h"
 
 
@@ -97,7 +95,7 @@
         return 80;
     }else if (indexPath.section == 2){
         if (indexPath.row == 2) {
-            return 60;
+            return 70;
         }
     }
     return kCellHeight;
@@ -181,11 +179,11 @@
             cell = [[EditDebtAddressCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textHeightConstraint.constant = 60;
         
         cell.ediLabel.text = @"经典案例";
-        cell.ediTextView.remindLabel.text = @"关于个人在融资等方面的成功案例，有利于发布方更加青睐你";
-        cell.ediTextView.remindLabel.font = kFirstFont;
-
+        cell.ediTextView.placeholder = @"关于个人在融资等方面的成功案例，有利于发布方更加青睐你";
+        cell.ediTextView.font = kBigFont;
         return cell;
     }
     
