@@ -7,9 +7,10 @@
 //
 
 #import "ReportSuitViewController.h"
+
 #import "ReportFiSucViewController.h"  //发布成功
 #import "UploadFilesViewController.h"  //债权文件
-
+#import "DebtCreditMessageViewController.h"  //债权人信息
 
 #import "ReportFootView.h"
 #import "EvaTopSwitchView.h"
@@ -163,7 +164,8 @@
             }
                 break;
             case 81:{//债权人信息
-                
+                DebtCreditMessageViewController *debtCreditVc = [[DebtCreditMessageViewController alloc] init];
+                [weakself.navigationController pushViewController:debtCreditVc animated:YES];
             }
                 break;
             case 82:{//债务人信息

@@ -14,11 +14,11 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self addSubview:self.personLabel];
-        [self addSubview:self.lineLabel11];
-        [self addSubview:self.dateLabel];
-        [self addSubview:self.lineLabel12];
-        [self addSubview:self.actButton];
+        [self.contentView addSubview:self.personLabel];
+        [self.contentView addSubview:self.lineLabel11];
+        [self.contentView addSubview:self.dateLabel];
+        [self.contentView addSubview:self.lineLabel12];
+        [self.contentView addSubview:self.actButton];
         
         [self setNeedsUpdateConstraints];
     }

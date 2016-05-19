@@ -14,12 +14,12 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        [self addSubview: self.userLabel];
-        [self addSubview:self.timeLabel];
-        [self addSubview:self.newsLabel];
-        [self addSubview:self.countLabel];
+        [self.contentView addSubview: self.userLabel];
+        [self.contentView addSubview:self.timeLabel];
+        [self.contentView addSubview:self.newsLabel];
+        [self.contentView addSubview:self.countLabel];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

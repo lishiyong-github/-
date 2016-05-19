@@ -14,11 +14,11 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self addSubview:self.financeButton];
-        [self addSubview:self.collectionButton];
-        [self addSubview:self.suitButton];
+        [self.contentView addSubview:self.financeButton];
+        [self.contentView addSubview:self.collectionButton];
+        [self.contentView addSubview:self.suitButton];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }
@@ -27,16 +27,16 @@
 {
     if (!self.didSetupConstraints) {
         NSArray *views = @[self.financeButton,self.collectionButton,self.suitButton];
-        [views autoSetViewsDimensionsToSize:CGSizeMake(95, 95+18)];
+        [views autoSetViewsDimensionsToSize:CGSizeMake(85, 85+18)];
         
         [self.financeButton autoPinEdgeToSuperviewEdge:ALEdgeTop];
-        [self.financeButton autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        [self.financeButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:5];
         
         [self.collectionButton autoPinEdgeToSuperviewEdge:ALEdgeTop];
         [self.collectionButton autoAlignAxisToSuperviewAxis:ALAxisVertical];
         
         [self.suitButton autoPinEdgeToSuperviewEdge:ALEdgeTop];
-        [self.suitButton autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        [self.suitButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:5];
         self.didSetupConstraints = YES;
     }
     [super updateConstraints];
@@ -55,7 +55,7 @@
 {
     if (!_collectionButton) {
         _collectionButton = [SingleButton newAutoLayoutView];
-        _collectionButton.center = self.center;
+//        _collectionButton.center = self.center;
         _collectionButton.label.text = @"发布催收";
     }
     return _collectionButton;

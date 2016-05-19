@@ -32,13 +32,13 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        [self addSubview:self.aImageView];
-        [self addSubview:self.bLabel];
-        [self addSubview:self.cLabel];
-        [self addSubview:self.dLabel];
-        [self addSubview:self.AuthenButton];
+        [self.contentView addSubview:self.aImageView];
+        [self.contentView addSubview:self.bLabel];
+        [self.contentView addSubview:self.cLabel];
+        [self.contentView addSubview:self.dLabel];
+        [self.contentView addSubview:self.AuthenButton];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

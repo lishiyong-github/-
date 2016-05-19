@@ -14,11 +14,11 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self addSubview:self.dateLabel];
-        [self addSubview:self.separateLabel1];
-        [self addSubview:self.stateLabel];
-        [self addSubview:self.separateLabel2];
-        [self addSubview:self.messageLabel];
+        [self.contentView addSubview:self.dateLabel];
+        [self.contentView addSubview:self.separateLabel1];
+        [self.contentView addSubview:self.stateLabel];
+        [self.contentView addSubview:self.separateLabel2];
+        [self.contentView addSubview:self.messageLabel];
         
        
        self.leftConstraints = [self.messageLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.separateLabel2 withOffset:0];

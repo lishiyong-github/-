@@ -101,12 +101,12 @@
     cell.typeLabel.text = @"发布中";
     cell.typeLabel.textColor = kBlueColor;
     
-    [cell.actionView.firstButton setTitle:@"您有新的申请记录" forState:0];
-    [cell.actionView.secondButton setTitle:@"查看进度" forState:0];
-    [cell.actionView.thirdButton setTitle:@"查看申请" forState:0];
+    [cell.firstButton setTitle:@"您有新的申请记录" forState:0];
+    [cell.secondButton setTitle:@"查看进度" forState:0];
+    [cell.thirdButton setTitle:@"查看申请" forState:0];
     
     QDFWeakSelf;
-    [cell.actionView.secondButton addAction:^(UIButton *btn) {
+    [cell.secondButton addAction:^(UIButton *btn) {
 //        AdditionMessageViewController *addtionMessageVC = [[AdditionMessageViewController alloc] init];
 //        [weakself.navigationController pushViewController:addtionMessageVC animated:YES];
         
@@ -114,7 +114,7 @@
         [self.navigationController pushViewController:paceVC animated:YES];
     }];
     
-    [cell.actionView.thirdButton addAction:^(UIButton *btn) {
+    [cell.thirdButton addAction:^(UIButton *btn) {
         ApplyRecordsViewController *applyRecordsVC = [[ApplyRecordsViewController alloc] init];
         [weakself.navigationController pushViewController:applyRecordsVC animated:YES];
     }];

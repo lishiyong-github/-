@@ -14,9 +14,9 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self addSubview:self.bigProView];
+        [self.contentView addSubview:self.bigProView];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

@@ -97,19 +97,19 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSMutableAttributedString *str1 = [cell.agentNameLabel setAttributeString:@"姓        名：" andSecond:@"李三三"];
+    NSMutableAttributedString *str1 = [cell.agentNameLabel setAttributeString:@"姓名" withColor:kBlackColor andSecond:@"张三三" withColor:kLightGrayColor withFont:12];
     [cell.agentNameLabel setAttributedText:str1];
     
-    NSMutableAttributedString *str2 = [cell.agentNameLabel setAttributeString:@"联系方式：" andSecond:@"12345678900"];
+    NSMutableAttributedString *str2 = [cell.agentTelLabel setAttributeString:@"联系方式" withColor:kBlackColor andSecond:@"12345678900" withColor:kLightGrayColor withFont:12];
     [cell.agentTelLabel setAttributedText:str2];
     
-    NSMutableAttributedString *str3 = [cell.agentNameLabel setAttributeString:@"身份证号：" andSecond:@"4211111111111111111"];
+    NSMutableAttributedString *str3 = [cell.agentIDLabel setAttributeString:@"身份证号" withColor:kBlackColor andSecond:@"123456789856432134" withColor:kLightGrayColor withFont:12];
     [cell.agentIDLabel setAttributedText:str3];
     
-    NSMutableAttributedString *str4 = [cell.agentNameLabel setAttributeString:@"执业证号：" andSecond:@"12223344455566666"];
+    NSMutableAttributedString *str4 = [cell.agentCerLabel setAttributeString:@"执业证号" withColor:kBlackColor andSecond:@"1234455555555555555" withColor:kLightGrayColor withFont:12];
     [cell.agentCerLabel setAttributedText:str4];
     
-    NSMutableAttributedString *str5 = [cell.agentNameLabel setAttributeString:@"登录密码：" andSecond:@"1234567ddrrr"];
+    NSMutableAttributedString *str5 = [cell.agentPassLabel setAttributeString:@"登录密码" withColor:kBlackColor andSecond:@"123ghjk" withColor:kLightGrayColor withFont:12];
     [cell.agentPassLabel setAttributedText:str5];
     
     QDFWeakSelf;

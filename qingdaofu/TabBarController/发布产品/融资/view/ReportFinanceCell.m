@@ -15,11 +15,13 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self addSubview:self.fiLabel];
-        [self addSubview:self.fiTextField];
-        [self addSubview:self.fiButton];
+        [self.contentView addSubview:self.fiLabel];
+        [self.contentView addSubview:self.fiTextField];
+        [self.contentView addSubview:self.fiButton];
         
-        [self setNeedsUpdateConstraints];
+        self.leftTextFieldConstraits = [self.fiTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:110];
+        
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }
@@ -33,9 +35,8 @@
         
         [self.fiLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
         
-        [self.fiLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
-        
-        [self.fiTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:110];
+        [self.fiTextField autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
+        [self.fiTextField autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
         
         [self.fiButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
         

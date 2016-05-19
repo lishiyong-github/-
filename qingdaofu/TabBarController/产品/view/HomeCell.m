@@ -16,17 +16,17 @@
     
     if (self) {
         
-        [self addSubview:self.typeImageView];
-        [self addSubview:self.nameLabel];
-        [self addSubview:self.recommendimageView];
-        [self addSubview:self.typeLabel];
-        [self addSubview:self.addressLabel];
-        [self addSubview:self.grayLabel];
-        [self addSubview:self.moneyView];
-        [self addSubview:self.pointView];
-        [self addSubview:self.rateView];
+        [self.contentView addSubview:self.typeImageView];
+        [self.contentView addSubview:self.nameLabel];
+        [self.contentView addSubview:self.recommendimageView];
+        [self.contentView addSubview:self.typeLabel];
+        [self.contentView addSubview:self.addressLabel];
+        [self.contentView addSubview:self.grayLabel];
+        [self.contentView addSubview:self.moneyView];
+        [self.contentView addSubview:self.pointView];
+        [self.contentView addSubview:self.rateView];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

@@ -15,14 +15,14 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        [self addSubview:self.agentNameLabel];
-        [self addSubview:self.agentEditButton];
-        [self addSubview:self.agentTelLabel];
-        [self addSubview:self.agentIDLabel];
-        [self addSubview:self.agentCerLabel];
-        [self addSubview:self.agentPassLabel];
+        [self.contentView addSubview:self.agentNameLabel];
+        [self.contentView addSubview:self.agentEditButton];
+        [self.contentView addSubview:self.agentTelLabel];
+        [self.contentView addSubview:self.agentIDLabel];
+        [self.contentView addSubview:self.agentCerLabel];
+        [self.contentView addSubview:self.agentPassLabel];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

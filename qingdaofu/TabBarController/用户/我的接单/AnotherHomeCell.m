@@ -16,18 +16,20 @@
     
     if (self) {
         
-        [self addSubview:self.typeImageView];
-        [self addSubview:self.nameLabel];
-        [self addSubview:self.typeLabel];
-        [self addSubview:self.addressLabel];
-        [self addSubview:self.grayLabel];
-        [self addSubview:self.moneyView];
-        [self addSubview:self.pointView];
-        [self addSubview:self.rateView];
-        [self addSubview:self.lineLabel2];
-        [self addSubview:self.actionView];
+        [self.contentView addSubview:self.typeImageView];
+        [self.contentView addSubview:self.nameLabel];
+        [self.contentView addSubview:self.typeLabel];
+        [self.contentView addSubview:self.addressLabel];
+        [self.contentView addSubview:self.grayLabel];
+        [self.contentView addSubview:self.moneyView];
+        [self.contentView addSubview:self.pointView];
+        [self.contentView addSubview:self.rateView];
+        [self.contentView addSubview:self.lineLabel2];
+        [self.contentView addSubview:self.firstButton];
+        [self.contentView addSubview:self.secondButton];
+        [self.contentView addSubview:self.thirdButton];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }
@@ -71,10 +73,18 @@
         [self.lineLabel2 autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [self.lineLabel2 autoSetDimension:ALDimensionHeight toSize:kLineWidth];
         
-        [self.actionView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.lineLabel2];
-        [self.actionView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-        [self.actionView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-        [self.actionView autoSetDimension:ALDimensionHeight toSize:kCellHeight];
+        NSArray *views3 = @[self.firstButton,self.secondButton,self.thirdButton];
+        [views3 autoAlignViewsToAxis:ALAxisHorizontal];
+        
+        NSArray *views4 = @[self.secondButton,self.thirdButton];
+        [views4 autoSetViewsDimensionsToSize:CGSizeMake(75, 25)];
+        
+        [self.firstButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
+        
+        [self.secondButton autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.lineLabel2 withOffset:9.5];
+        [self.secondButton autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.thirdButton withOffset:-10];
+        
+        [self.thirdButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
 
         self.didSetupConstraints = YES;
     }
@@ -171,12 +181,38 @@
     return _lineLabel2;
 }
 
-- (AnotherView *)actionView
+- (UIButton *)firstButton
 {
-    if (!_actionView) {
-        _actionView = [AnotherView newAutoLayoutView];
+    if (!_firstButton) {
+        _firstButton = [UIButton newAutoLayoutView];
+        _firstButton.titleLabel.font = kSecondFont;
+        [_firstButton setTitleColor:kRedColor forState:0];
     }
-    return _actionView;
+    return _firstButton;
+}
+
+- (UIButton *)secondButton
+{
+    if (!_secondButton) {
+        _secondButton = [UIButton newAutoLayoutView];
+        [_secondButton setTitleColor:kBlackColor forState:0];
+        _secondButton.titleLabel.font = kFirstFont;
+        _secondButton.layer.borderColor = kLightGrayColor.CGColor;
+        _secondButton.layer.borderWidth = kLineWidth;
+    }
+    return _secondButton;
+}
+
+- (UIButton *)thirdButton
+{
+    if (!_thirdButton) {
+        _thirdButton = [UIButton newAutoLayoutView];
+        [_thirdButton setTitleColor:kBlueColor forState:0];
+        _thirdButton.titleLabel.font = kFirstFont;
+        _thirdButton.layer.borderColor = kBlueColor.CGColor;
+        _thirdButton.layer.borderWidth = kLineWidth;
+    }
+    return _thirdButton;
 }
 
 - (void)awakeFromNib {

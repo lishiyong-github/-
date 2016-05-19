@@ -14,12 +14,12 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self addSubview:self.loginTextField];
-        [self addSubview:self.loginButton];
+        [self.contentView addSubview:self.loginTextField];
+        [self.contentView addSubview:self.loginButton];
         
         self.topConstraint = [self.loginTextField autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

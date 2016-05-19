@@ -15,12 +15,12 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        [self addSubview:self.agentLabel];
-        [self addSubview:self.agentTextField];
+        [self.contentView addSubview:self.agentLabel];
+        [self.contentView addSubview:self.agentTextField];
         
         self.leftAgentContraints = [self.agentTextField autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:90];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

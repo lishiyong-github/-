@@ -11,10 +11,16 @@
 
 #import "HomeCell.h"
 #import "UIImage+Color.h"
+#import "UIButton+Addition.h"
+#import "AllProView.h"
 
 @interface ProductsViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,assign) BOOL didSetupConstraints;
+
+@property (nonatomic,strong) UIButton *proTitleView;
+@property (nonatomic,strong) AllProView *proTitleAllView;
+
 @property (nonatomic,strong) UIView *chooseView;
 @property (nonatomic,strong) UITableView *productsTableView;
 
@@ -31,7 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"所有产品";
+    self.navigationItem.titleView = self.proTitleView;
 
     [self.view addSubview:self.chooseView];
     [self.view addSubview:self.productsTableView];
@@ -39,18 +45,35 @@
     [self.view setNeedsUpdateConstraints];
 }
 
+- (UIButton *)proTitleView
+{
+    if (!_proTitleView) {
+        _proTitleView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+        [_proTitleView swapImage];
+        [_proTitleView setTitle:@"所有产品 " forState:0];
+        [_proTitleView setTitleColor:kBlackColor forState:0];
+        _proTitleView.titleLabel.font = kNavFont;
+        [_proTitleView setImage:[UIImage imageNamed:@"nav_more"] forState:0];
+        QDFWeakSelf;
+        [_proTitleView addAction:^(UIButton *btn) {
+
+            
+        }];
+    }
+    return _proTitleView;
+}
+
 - (void)updateViewConstraints
 {
     if (!self.didSetupConstraints) {
-        [self.chooseView autoPinEdgeToSuperviewMargin:ALEdgeTop];
-        [self.chooseView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-        [self.chooseView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-        [self.chooseView autoSetDimension:ALDimensionHeight toSize:60];
+        
+        [self.chooseView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+        [self.chooseView autoSetDimension:ALDimensionHeight toSize:40];
         
         [self.productsTableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.chooseView];
         [self.productsTableView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [self.productsTableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-        [self.productsTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:49];
+        [self.productsTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
         
         self.didSetupConstraints = YES;
     }
@@ -70,12 +93,12 @@
 {
     if (!_productsTableView) {
         _productsTableView = [UITableView newAutoLayoutView];
+        _productsTableView.translatesAutoresizingMaskIntoConstraints = YES;
+        _productsTableView = [[UITableView alloc ]initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
         _productsTableView.delegate = self;
         _productsTableView.dataSource = self;
         _productsTableView.backgroundColor = kBackColor;
-        _productsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _productsTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
-//        _productsTableView.tableFooterView.backgroundColor = kBackColor;
     }
     return _productsTableView;
 }
@@ -124,12 +147,9 @@
     return kBigPadding;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = kBackColor;
-    self.productsTableView.tableHeaderView = headerView;
-    return headerView;
+    return 0.1f;
 }
 
 - (void)didReceiveMemoryWarning {

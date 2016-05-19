@@ -10,4 +10,9 @@
 
 @interface TakePictureCell : UITableViewCell
 
+@property (nonatomic,strong) UIButton *pictureButton1;
+@property (nonatomic,strong) UIButton *pictureButton2;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+
 @end

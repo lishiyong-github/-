@@ -14,13 +14,13 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self addSubview:self.cellView6];
-        [self addSubview:self.lineLabel6];
-        [self addSubview:self.cellView7];
-        [self addSubview:self.lineLabel7];
-        [self addSubview:self.cellView8];
+        [self.contentView addSubview:self.cellView6];
+        [self.contentView addSubview:self.lineLabel6];
+        [self.contentView addSubview:self.cellView7];
+        [self.contentView addSubview:self.lineLabel7];
+        [self.contentView addSubview:self.cellView8];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

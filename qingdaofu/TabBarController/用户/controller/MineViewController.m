@@ -90,13 +90,13 @@
             if (indexPath.section == 0) {//认证
                 NSLog(@"认证");
 
-                LoginViewController *loginVC = [[LoginViewController alloc] init];
-                loginVC.hidesBottomBarWhenPushed = YES;
-                [weakself.navigationController pushViewController:loginVC animated:YES];
+//                LoginViewController *loginVC = [[LoginViewController alloc] init];
+//                loginVC.hidesBottomBarWhenPushed = YES;
+//                [weakself.navigationController pushViewController:loginVC animated:YES];
                 
-//                AuthentyViewController *authentyVC = [[AuthentyViewController alloc] init];
-//                authentyVC.hidesBottomBarWhenPushed = YES;
-//                [weakself.navigationController pushViewController:authentyVC animated:YES];
+                AuthentyViewController *authentyVC = [[AuthentyViewController alloc] init];
+                authentyVC.hidesBottomBarWhenPushed = YES;
+                [weakself.navigationController pushViewController:authentyVC animated:YES];
                 
 //                CompleteViewController *completeVC = [[CompleteViewController alloc] init];
 //                completeVC.hidesBottomBarWhenPushed = YES;

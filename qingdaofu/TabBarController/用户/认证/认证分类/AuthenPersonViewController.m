@@ -8,22 +8,20 @@
 
 #import "AuthenPersonViewController.h"
 
-#import "AuthenBaseView.h"
-#import "TakePictureView.h"
+#import "TakePictureCell.h"
+#import "ReportFinanceCell.h"
+#import "EditDebtAddressCell.h"
+
+#import "BaseCommitButton.h"
+
+#import "UIView+UITextColor.h"
+
 
 @interface AuthenPersonViewController ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) UITableView *personAuTableView;
-
-@property (nonatomic,strong) TakePictureView *pictureButton1;
-@property (nonatomic,strong) TakePictureView *pictureButton2;
-@property (nonatomic,strong) AuthenBaseView *baseView1;
-@property (nonatomic,strong) AuthenBaseView *baseView2;
-@property (nonatomic,strong) AuthenBaseView *baseView3;
-@property (nonatomic,strong) AuthenBaseView *baseView4;
-@property (nonatomic,strong) AuthenBaseView *baseView5;
-@property (nonatomic,strong) AuthenBaseView *baseView6;
-@property (nonatomic,strong) AuthenBaseView *baseView7;
+@property (nonatomic,strong) BaseCommitButton *personAuCommitButton;
 
 @end
 
@@ -35,12 +33,31 @@
     self.navigationItem.leftBarButtonItem = self.leftItem;
 
     [self.view addSubview:self.personAuTableView];
+    [self.view addSubview:self.personAuCommitButton];
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.personAuTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+        [self.personAuTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
+        
+        [self.personAuCommitButton autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+        [self.personAuCommitButton autoSetDimension:ALDimensionHeight toSize:kTabBarHeight];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
 }
 
 - (UITableView *)personAuTableView
 {
     if (!_personAuTableView) {
-        _personAuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStyleGrouped];
+        _personAuTableView = [UITableView newAutoLayoutView];
+        _personAuTableView.translatesAutoresizingMaskIntoConstraints = YES;
+        _personAuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
         _personAuTableView.delegate = self;
         _personAuTableView.dataSource = self;
         _personAuTableView.tableFooterView = [[UIView alloc] init];
@@ -49,102 +66,13 @@
     return _personAuTableView;
 }
 
-- (TakePictureView *)pictureButton1
+- (BaseCommitButton *)personAuCommitButton
 {
-    if (!_pictureButton1) {
-        _pictureButton1 = [[TakePictureView alloc] initWithFrame:CGRectMake(kBigPadding, kBigPadding, 50, 50)];
-        [_pictureButton1.button setImage:[UIImage imageNamed:@"btn_camera"] forState:0];
-        [_pictureButton1.button addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
+    if (!_personAuCommitButton) {
+        _personAuCommitButton = [BaseCommitButton newAutoLayoutView];
+        [_personAuCommitButton setTitle:@"立即认证" forState:0];
     }
-    return _pictureButton1;
-}
-
-- (TakePictureView *)pictureButton2
-{
-    if (!_pictureButton2) {
-        _pictureButton2 = [[TakePictureView alloc] initWithFrame:CGRectMake(self.pictureButton1.right + kBigPadding, self.pictureButton1.top, self.pictureButton1.width, self.pictureButton1.height)];
-        [_pictureButton2.button setImage:[UIImage imageNamed:@"btn_camera"] forState:0];
-        [_pictureButton2.button addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _pictureButton2;
-}
-
-- (AuthenBaseView *)baseView1
-{
-    if (!_baseView1) {
-        _baseView1 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        
-        _baseView1.label.text = @"|  基本信息";
-        _baseView1.label.textColor = kBlueColor;
-        _baseView1.textField.userInteractionEnabled = NO;
-    }
-    return _baseView1;
-}
-
-- (AuthenBaseView *)baseView2
-{
-    if (!_baseView2) {
-        _baseView2 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _baseView2.label.text = @"姓名";
-        _baseView2.textField.placeholder = @"请输入您的姓名";
-    }
-    return _baseView2;
-}
-- (AuthenBaseView *)baseView3
-{
-    if (!_baseView3) {
-        _baseView3 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-       _baseView3.label.text = @"身份证";
-        _baseView3.textField.placeholder = @"请输入您的身份证号码";
-    }
-    return _baseView3;
-}
-- (AuthenBaseView *)baseView4
-{
-    if (!_baseView4) {
-        _baseView4 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _baseView4.label.text = @"联系方式";
-        _baseView4.textField.placeholder = @"12345678900";
-    }
-    return _baseView4;
-}
-- (AuthenBaseView *)baseView5
-{
-    if (!_baseView5) {
-        _baseView5 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _baseView5.label.textColor = kBlueColor;
-        NSString *str1 = @"|  补充信息";
-        NSString *str2 = @"（选填）";
-        NSString *str = [NSString stringWithFormat:@"%@%@",str1,str2];
-        
-        NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:str];
-        
-        [attributeStr addAttributes:@{NSFontAttributeName:kBigFont,NSForegroundColorAttributeName:kBlueColor,NSFontAttributeName:kBigFont} range:NSMakeRange(0, str1.length)];
-        [attributeStr addAttributes:@{NSForegroundColorAttributeName:kBlackColor,NSFontAttributeName:kSecondFont} range:NSMakeRange(str1.length, str2.length)];
-        [_baseView5.label setAttributedText:attributeStr];
-        
-        _baseView5.textField.placeholder = @"";
-        _baseView5.textField.userInteractionEnabled = NO;
-    }
-    return _baseView5;
-}
-- (AuthenBaseView *)baseView6
-{
-    if (!_baseView6) {
-        _baseView6 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-       _baseView6.label.text = @"邮箱";
-        _baseView6.textField.placeholder = @"请输入您的常用邮箱";
-    }
-    return _baseView6;
-}
-- (AuthenBaseView *)baseView7
-{
-    if (!_baseView7) {
-        _baseView7 = [[AuthenBaseView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
-        _baseView7.label.text = @"经典案例";
-        _baseView7.textField.placeholder = @"关于个人在融资等方面的成功案例，有利于";
-    }
-    return _baseView7;
+    return _personAuCommitButton;
 }
 
 #pragma mark - tableView delegate and datasource
@@ -167,44 +95,101 @@
 {
     if (indexPath.section == 0) {
         return 80;
+    }else if (indexPath.section == 2){
+        if (indexPath.row == 2) {
+            return 60;
+        }
     }
     return kCellHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"personAu";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    static NSString *identifier;
     
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    if (indexPath.section == 0) {
-        [cell addSubview:self.pictureButton1];
-        [cell addSubview:self.pictureButton2];
-    }else if (indexPath.section == 1) {
-        if (indexPath.row == 0) {
-            [cell addSubview:self.baseView1];
-        }else if (indexPath.row == 1){
-            [cell addSubview:self.baseView2];
-        }else if (indexPath.row == 2){
-            [cell addSubview:self.baseView3];
-        }else{
-            [cell addSubview:self.baseView4];
+    if (indexPath.section ==0) {
+        identifier = @"authenPer0";
+        TakePictureCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[TakePictureCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
-    }else if (indexPath.section == 2){
-        if (indexPath.row == 0) {
-            [cell addSubview:self.baseView5];
-        }else if (indexPath.row == 1){
-            [cell addSubview:self.baseView6];
-        }else{
-            [cell addSubview:self.baseView7];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell.pictureButton1 setImage:[UIImage imageNamed:@"btn_camera"] forState:0];
+        [cell.pictureButton1 addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
+        [cell.pictureButton2 setImage:[UIImage imageNamed:@"btn_camera"] forState:0];
+        [cell.pictureButton2 addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
+        return cell;
+        
+    }else if (indexPath.section == 1){
+        identifier = @"authenPer1";
+        ReportFinanceCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[ReportFinanceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        NSArray *perTextArray = @[@"|  基本信息",@"姓名",@"身份证",@"联系方式"];
+        NSArray *perPlacaTextArray = @[@"",@"请输入您的姓名",@"请输入您的身份证号码",@"请输入您常用的手机号码"];
+        
+        cell.leftTextFieldConstraits.constant = 100;
+        cell.fiLabel.text = perTextArray[indexPath.row];
+        cell.fiTextField.placeholder = perPlacaTextArray[indexPath.row];
+        cell.fiTextField.font = kFirstFont;
+        
+        if (indexPath.row == 0) {
+            cell.fiLabel.textColor = kBlueColor;
+            cell.fiTextField.userInteractionEnabled = NO;
+        }
+        
+        return cell;
+    }else{
+    
+        if (indexPath.row <2) {
+            identifier = @"authenPer2";
+            
+            ReportFinanceCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+            
+            if (!cell) {
+                cell = [[ReportFinanceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            NSArray *perTesArray = @[@"补充信息",@"邮箱"];
+            NSArray *perHolderArray = @[@"",@"请输入您常用邮箱"];
+            
+            cell.leftTextFieldConstraits.constant = 95;
+            cell.fiLabel.text = perTesArray[indexPath.row];
+            cell.fiTextField.placeholder = perHolderArray[indexPath.row];
+            cell.fiTextField.font = kFirstFont;
+            
+            if (indexPath.row == 0) {
+                cell.fiTextField.userInteractionEnabled = NO;
+                NSMutableAttributedString *ttt = [cell.fiTextField setAttributeString:@"|  补充信息  " withColor:kBlueColor andSecond:@"(选填)" withColor:kLightGrayColor withFont:12];
+                [cell.fiLabel setAttributedText:ttt];
+            }
+            
+            return cell;
+        }
+        
+        identifier = @"authenPer3";
+        
+        EditDebtAddressCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (!cell) {
+            cell = [[EditDebtAddressCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        cell.ediLabel.text = @"经典案例";
+        cell.ediTextView.remindLabel.text = @"关于个人在融资等方面的成功案例，有利于发布方更加青睐你";
+        cell.ediTextView.remindLabel.font = kFirstFont;
+
+        return cell;
     }
     
-    return cell;
+    return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -218,6 +203,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
+    if (section > 1) {
+        return kBigPadding;
+    }
     return 0.1f;
 }
 

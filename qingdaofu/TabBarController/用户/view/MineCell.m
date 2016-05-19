@@ -14,14 +14,14 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self addSubview:self.topLabel];
-        [self addSubview:self.linelabel];
-        [self addSubview:self.button1];
-        [self addSubview:self.button2];
-        [self addSubview:self.button3];
-        [self addSubview:self.button4];
+        [self.contentView addSubview:self.topLabel];
+        [self.contentView addSubview:self.linelabel];
+        [self.contentView addSubview:self.button1];
+        [self.contentView addSubview:self.button2];
+        [self.contentView addSubview:self.button3];
+        [self.contentView addSubview:self.button4];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

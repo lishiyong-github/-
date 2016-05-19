@@ -16,11 +16,11 @@
     if (self) {
         
 //        [self addSubview:self.seperateLabel];
-        [self addSubview:self.flagImageView];
-        [self addSubview:self.typeLabel];
-        [self addSubview:self.timeLabel];
-        [self addSubview:self.contextLabel];
-        [self addSubview:self.goTobutton];
+        [self.contentView addSubview:self.flagImageView];
+        [self.contentView addSubview:self.typeLabel];
+        [self.contentView addSubview:self.timeLabel];
+        [self.contentView addSubview:self.contextLabel];
+        [self.contentView addSubview:self.goTobutton];
         
         [self setNeedsUpdateConstraints];
     }

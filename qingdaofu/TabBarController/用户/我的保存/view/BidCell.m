@@ -14,17 +14,17 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self addSubview:self.cellView1];
-        [self addSubview:self.lineLabel1];
-        [self addSubview:self.cellView2];
-        [self addSubview:self.lineLabel2];
-        [self addSubview:self.cellView3];
-        [self addSubview:self.lineLabel3];
-        [self addSubview:self.cellView4];
-        [self addSubview:self.lineLabel4];
-        [self addSubview:self.cellView5];
+        [self.contentView addSubview:self.cellView1];
+        [self.contentView addSubview:self.lineLabel1];
+        [self.contentView addSubview:self.cellView2];
+        [self.contentView addSubview:self.lineLabel2];
+        [self.contentView addSubview:self.cellView3];
+        [self.contentView addSubview:self.lineLabel3];
+        [self.contentView addSubview:self.cellView4];
+        [self.contentView addSubview:self.lineLabel4];
+        [self.contentView addSubview:self.cellView5];
 
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return  self;
 }

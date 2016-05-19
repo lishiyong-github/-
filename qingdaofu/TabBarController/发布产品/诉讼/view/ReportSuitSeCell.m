@@ -14,35 +14,35 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self addSubview:self.ssCell0];
-        [self addSubview:self.ssLine0];
-        [self addSubview:self.ssCell1];
-        [self addSubview:self.ssLine1];
-        [self addSubview:self.ssCell2];
-        [self addSubview:self.ssLine2];
-        [self addSubview:self.ssCell3];
-        [self addSubview:self.ssLine3];
-        [self addSubview:self.ssCell4];
-        [self addSubview:self.ssLine4];
-        [self addSubview:self.ssCell5];
-        [self addSubview:self.ssLine5];
-        [self addSubview:self.ssCell6];
-        [self addSubview:self.ssLine6];
-        [self addSubview:self.ssCell7];
-        [self addSubview:self.ssLine7];
-        [self addSubview:self.ssCell8];
-        [self addSubview:self.ssLine8];
-        [self addSubview:self.ssCell9];
-        [self addSubview:self.ssLine9];
-        [self addSubview:self.ssCell10];
-        [self addSubview:self.ssLine10];
-        [self addSubview:self.ssCell11];
-        [self addSubview:self.ssLine11];
-        [self addSubview:self.ssCell12];
-        [self addSubview:self.ssLine12];
-        [self addSubview:self.ssCell13];
+        [self.contentView addSubview:self.ssCell0];
+        [self.contentView addSubview:self.ssLine0];
+        [self.contentView addSubview:self.ssCell1];
+        [self.contentView addSubview:self.ssLine1];
+        [self.contentView addSubview:self.ssCell2];
+        [self.contentView addSubview:self.ssLine2];
+        [self.contentView addSubview:self.ssCell3];
+        [self.contentView addSubview:self.ssLine3];
+        [self.contentView addSubview:self.ssCell4];
+        [self.contentView addSubview:self.ssLine4];
+        [self.contentView addSubview:self.ssCell5];
+        [self.contentView addSubview:self.ssLine5];
+        [self.contentView addSubview:self.ssCell6];
+        [self.contentView addSubview:self.ssLine6];
+        [self.contentView addSubview:self.ssCell7];
+        [self.contentView addSubview:self.ssLine7];
+        [self.contentView addSubview:self.ssCell8];
+        [self.contentView addSubview:self.ssLine8];
+        [self.contentView addSubview:self.ssCell9];
+        [self.contentView addSubview:self.ssLine9];
+        [self.contentView addSubview:self.ssCell10];
+        [self.contentView addSubview:self.ssLine10];
+        [self.contentView addSubview:self.ssCell11];
+        [self.contentView addSubview:self.ssLine11];
+        [self.contentView addSubview:self.ssCell12];
+        [self.contentView addSubview:self.ssLine12];
+        [self.contentView addSubview:self.ssCell13];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

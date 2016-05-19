@@ -67,11 +67,12 @@
 {
     if (!_myOrderTableView) {
         _myOrderTableView = [UITableView newAutoLayoutView];
+        _myOrderTableView.translatesAutoresizingMaskIntoConstraints = YES;
+        _myOrderTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
         _myOrderTableView.delegate = self;
         _myOrderTableView.dataSource = self;
-        _myOrderTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
-        _myOrderTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _myOrderTableView.backgroundColor = kBackColor;
+        _myOrderTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
     }
     return _myOrderTableView;
 }
@@ -102,11 +103,11 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.typeLabel.text = @"申请中";
-    [cell.actionView.firstButton setTitle:@"截止日期：2016-01-01" forState:0];
-    [cell.actionView.secondButton setHidden:YES];
-    [cell.actionView.thirdButton setTitle:@"去评价" forState:0];
+    [cell.firstButton setTitle:@"截止日期：2016-01-01" forState:0];
+    [cell.secondButton setHidden:YES];
+    [cell.thirdButton setTitle:@"去评价" forState:0];
     QDFWeakSelf;
-    [cell.actionView.thirdButton addAction:^(UIButton *btn) {
+    [cell.thirdButton addAction:^(UIButton *btn) {
 //        MyScheduleViewController *myScheduleVC = [[MyScheduleViewController alloc] init];
 //        [weakself.navigationController pushViewController:myScheduleVC animated:YES];
         
@@ -119,19 +120,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section>0) {
-        
-        return kBigPadding;
-    }
-    return 0.1f;
+    return kBigPadding;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    UIView *headerVirw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
-    headerVirw.backgroundColor = kBackColor;
-    self.myOrderTableView.tableHeaderView = headerVirw;
-    return headerVirw;
+    return 0.1f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

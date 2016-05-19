@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SingleButton.h"
+
 
 @interface EditDebtCell : UITableViewCell
+
+@property (nonatomic,strong) SingleButton *editImageButton1;
+@property (nonatomic,strong) SingleButton *editImageButton2;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
 
 @end

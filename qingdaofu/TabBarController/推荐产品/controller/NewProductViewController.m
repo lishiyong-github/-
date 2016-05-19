@@ -11,38 +11,72 @@
 #import "NewPublishCell.h"
 #import "HomeCell.h"
 
+#import "UIImage+Color.h"
+
 #import "ReportFinanceViewController.h"  //发布融资
 #import "ReportSuitViewController.h"   //发布催收
 #import "ReportCollectViewController.h" //发布诉讼
-
+#import "ProductsDetailsViewController.h" //详细信息
 
 @interface NewProductViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,assign) BOOL didSetupConstraints;
+
+@property (nonatomic,strong) UIButton *titleView;
 @property (nonatomic,strong) UITableView *mainTableView;
-//@property (nonatomic,strong) NewPublishView *sectionView1;
-//@property (nonatomic,strong) NewProView *sectionView2;
-//@property (nonatomic,strong) NewProView *sectionView3;
 
 @end
 
 @implementation NewProductViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:kBlackColor,NSFontAttributeName:kNavFont}];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:kNavColor] forBarMetrics:UIBarMetricsDefault];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"清道夫债管家";
+
+    self.navigationItem.titleView = self.titleView;
     
     [self.view addSubview:self.mainTableView];
+    
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (UIButton *)titleView
+{
+    if (!_titleView) {
+        _titleView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 30)];
+        [_titleView setImage:[UIImage imageNamed:@"nav_logo"] forState:0];
+    }
+    return _titleView;
+}
+
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.mainTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+        [self.mainTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
 }
 
 - (UITableView *)mainTableView
 {
     if (!_mainTableView) {
-        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight-kTabBarHeight) style:UITableViewStyleGrouped];
+        _mainTableView = [UITableView newAutoLayoutView];
+        _mainTableView.translatesAutoresizingMaskIntoConstraints = YES;
+        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
         _mainTableView.backgroundColor = kBackColor;
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
-        _mainTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+//        _mainTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
     }
     return _mainTableView;
 }
@@ -137,30 +171,26 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    return 0.1f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
     if (section == 0) {
-        return 0.1f;
-    }else if (section == 1){
         return kSmallPadding;
     }
     
     return kBigPadding;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 0.1f;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *headerView = [[UIView alloc] init];
-    
-    return headerView;
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 2 || indexPath.section ==3) {
+        ProductsDetailsViewController *productsDetailVC = [[ProductsDetailsViewController alloc] init];
+        productsDetailVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:productsDetailVC animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

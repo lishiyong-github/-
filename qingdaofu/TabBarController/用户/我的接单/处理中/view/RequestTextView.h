@@ -10,7 +10,6 @@
 
 @interface RequestTextView : UITextView<UITextViewDelegate>
 
-//@property (nonatomic,strong) UITextView *textView;
 @property (nonatomic,strong) UILabel *remindLabel;
 
 @property (nonatomic,assign) BOOL didSetupConstraits;

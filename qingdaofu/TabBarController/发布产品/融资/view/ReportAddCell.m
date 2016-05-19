@@ -14,21 +14,21 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self addSubview:self.adCell0];
-        [self addSubview:self.adLine0];
-        [self addSubview:self.adCell1];
-        [self addSubview:self.adLine1];
-        [self addSubview:self.adCell2];
-        [self addSubview:self.adLine2];
-        [self addSubview:self.adCell3];
-        [self addSubview:self.adLine3];
-        [self addSubview:self.adCell4];
-        [self addSubview:self.adLine4];
-        [self addSubview:self.adCell5];
-        [self addSubview:self.adLine5];
-        [self addSubview:self.adCell6];
+        [self.contentView addSubview:self.adCell0];
+        [self.contentView addSubview:self.adLine0];
+        [self.contentView addSubview:self.adCell1];
+        [self.contentView addSubview:self.adLine1];
+        [self.contentView addSubview:self.adCell2];
+        [self.contentView addSubview:self.adLine2];
+        [self.contentView addSubview:self.adCell3];
+        [self.contentView addSubview:self.adLine3];
+        [self.contentView addSubview:self.adCell4];
+        [self.contentView addSubview:self.adLine4];
+        [self.contentView addSubview:self.adCell5];
+        [self.contentView addSubview:self.adLine5];
+        [self.contentView addSubview:self.adCell6];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

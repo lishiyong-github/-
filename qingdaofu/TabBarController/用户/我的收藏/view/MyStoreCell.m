@@ -37,10 +37,10 @@
 //        [self addSubview:self.label2];
         //        [self addSubview:self.label3];
         
-        [self addSubview:self.sButton1];
-        [self addSubview:self.sButton2];
+        [self.contentView addSubview:self.sButton1];
+        [self.contentView addSubview:self.sButton2];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

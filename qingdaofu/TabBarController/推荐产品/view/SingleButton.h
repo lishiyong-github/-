@@ -13,7 +13,4 @@
 @property (nonatomic,strong) UIButton *button;
 @property (nonatomic,strong) UILabel *label;
 
-@property (nonatomic,assign) CGFloat textW;
-@property (nonatomic,assign) CGFloat textH;
-
 @end

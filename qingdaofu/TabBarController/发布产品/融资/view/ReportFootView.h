@@ -13,6 +13,7 @@
 @property (nonatomic,strong) UIButton *footButton;
 @property (nonatomic,strong) UILabel *footLabel;
 
+
 @property (nonatomic,assign) BOOL didSetupConstraints;
 
 @end

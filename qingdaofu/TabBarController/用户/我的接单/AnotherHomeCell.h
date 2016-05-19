@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AnotherView.h"
 #import "MoneyView.h"
 #import "LineLabel.h"
 
@@ -25,6 +24,10 @@
 @property (nonatomic,strong) MoneyView *pointView;
 @property (nonatomic,strong) MoneyView *rateView;
 @property (nonatomic,strong) LineLabel *lineLabel2;
-@property (nonatomic,strong) AnotherView *actionView;
+@property (nonatomic,strong) UIButton *firstButton;
+@property (nonatomic,strong) UIButton *secondButton;
+@property (nonatomic,strong) UIButton *thirdButton;
+
+
 
 @end

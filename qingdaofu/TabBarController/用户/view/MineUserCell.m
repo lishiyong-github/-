@@ -16,9 +16,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        [self addSubview:self.userNameButton];
-        [self addSubview:self.userActionButton];
-        [self setNeedsUpdateConstraints];
+        [self.contentView addSubview:self.userNameButton];
+        [self.contentView addSubview:self.userActionButton];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AllProView : UITableView
+@interface AllProView : UITableView<UITableViewDataSource,UITableViewDelegate>
 
 @end

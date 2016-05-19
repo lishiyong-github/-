@@ -16,4 +16,5 @@
 
 @property (nonatomic,assign) BOOL didSetupConstraints;
 
+@property (nonatomic,strong) NSLayoutConstraint *leftTextFieldConstraits;
 @end
