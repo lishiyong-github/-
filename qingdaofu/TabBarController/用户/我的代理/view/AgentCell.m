@@ -30,7 +30,8 @@
     if (!self.didSetupConstraints) {
         
         [self.agentLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
-        [self.agentLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
+//        [self.agentLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
+        [self.agentLabel autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
         
         [self.agentTextField autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.agentLabel];
         [self.agentTextField autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];

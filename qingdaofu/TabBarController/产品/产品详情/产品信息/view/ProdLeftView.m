@@ -25,6 +25,12 @@
     return self;
 }
 
+- (void)setDataList:(NSArray *)dataList
+{
+    _dataList = dataList;
+//    [self reloadData];
+}
+
 #pragma mark - delegate and datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

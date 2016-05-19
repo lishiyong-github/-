@@ -10,5 +10,5 @@
 
 @interface ProdLeftView : UITableView<UITableViewDataSource,UITableViewDelegate>
 
-
+@property (nonatomic,strong) NSArray *dataList;
 @end

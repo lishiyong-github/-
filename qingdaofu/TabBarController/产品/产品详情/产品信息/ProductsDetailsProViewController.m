@@ -110,6 +110,8 @@
 {
     if (!_leftTableView) {
         _leftTableView = [ProdLeftView newAutoLayoutView];
+//    _leftTableView.dataList =
+//        [_leftTableView reloadData];
     }
     return _leftTableView;
 }
