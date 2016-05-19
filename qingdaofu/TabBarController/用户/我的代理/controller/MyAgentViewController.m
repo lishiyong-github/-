@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"我的代理";
+    self.navigationItem.title = @"代理人详情";
     self.navigationItem.leftBarButtonItem = self.leftItem;
     
     [self.view addSubview:self.myAgentTableView];
@@ -54,11 +54,11 @@
 {
     if (!_myAgentTableView) {
         _myAgentTableView = [UITableView newAutoLayoutView];
-        _myAgentTableView.translatesAutoresizingMaskIntoConstraints = YES;
-        _myAgentTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
         _myAgentTableView.delegate = self;
         _myAgentTableView.dataSource = self;
         _myAgentTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+        _myAgentTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+        _myAgentTableView.backgroundColor = kBackColor;
     }
     return _myAgentTableView;
 }
@@ -67,17 +67,12 @@
 {
     if (!_myAgentCommitButton) {
         _myAgentCommitButton = [BaseCommitButton newAutoLayoutView];
-        [_myAgentCommitButton setTitle:@"继续添加" forState:0];
+        [_myAgentCommitButton setTitle:@"停用" forState:0];
     }
     return _myAgentCommitButton;
 }
 
 #pragma mark - tableView delegate and datasource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 2;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 1;
@@ -97,19 +92,19 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSMutableAttributedString *str1 = [cell.agentNameLabel setAttributeString:@"姓名" withColor:kBlackColor andSecond:@"张三三" withColor:kLightGrayColor withFont:12];
+    NSMutableAttributedString *str1 = [cell.agentNameLabel setAttributeString:@"姓        名：" withColor:kBlackColor andSecond:@"张三三" withColor:kLightGrayColor withFont:12];
     [cell.agentNameLabel setAttributedText:str1];
     
-    NSMutableAttributedString *str2 = [cell.agentTelLabel setAttributeString:@"联系方式" withColor:kBlackColor andSecond:@"12345678900" withColor:kLightGrayColor withFont:12];
+    NSMutableAttributedString *str2 = [cell.agentTelLabel setAttributeString:@"联系方式：" withColor:kBlackColor andSecond:@"12345678900" withColor:kLightGrayColor withFont:12];
     [cell.agentTelLabel setAttributedText:str2];
     
-    NSMutableAttributedString *str3 = [cell.agentIDLabel setAttributeString:@"身份证号" withColor:kBlackColor andSecond:@"123456789856432134" withColor:kLightGrayColor withFont:12];
+    NSMutableAttributedString *str3 = [cell.agentIDLabel setAttributeString:@"身份证号：" withColor:kBlackColor andSecond:@"123456789856432134" withColor:kLightGrayColor withFont:12];
     [cell.agentIDLabel setAttributedText:str3];
     
-    NSMutableAttributedString *str4 = [cell.agentCerLabel setAttributeString:@"执业证号" withColor:kBlackColor andSecond:@"1234455555555555555" withColor:kLightGrayColor withFont:12];
+    NSMutableAttributedString *str4 = [cell.agentCerLabel setAttributeString:@"执业证号：" withColor:kBlackColor andSecond:@"1234455555555555555" withColor:kLightGrayColor withFont:12];
     [cell.agentCerLabel setAttributedText:str4];
     
-    NSMutableAttributedString *str5 = [cell.agentPassLabel setAttributeString:@"登录密码" withColor:kBlackColor andSecond:@"123ghjk" withColor:kLightGrayColor withFont:12];
+    NSMutableAttributedString *str5 = [cell.agentPassLabel setAttributeString:@"登录密码：" withColor:kBlackColor andSecond:@"123ghjk" withColor:kLightGrayColor withFont:12];
     [cell.agentPassLabel setAttributedText:str5];
     
     QDFWeakSelf;
@@ -119,16 +114,6 @@
     }];
     
     return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return kBigPadding;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 0.1f;
 }
 
 - (void)didReceiveMemoryWarning {

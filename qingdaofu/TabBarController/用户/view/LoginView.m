@@ -225,18 +225,6 @@
     [cell.userNameButton setTitle:titleStr forState:0];
     [cell.userActionButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
     
-    if (indexPath.section == 3) {
-        if (indexPath.row ==0) {
-            [cell.userActionButton setTitle:@"添加  " forState:0];
-            QDFWeakSelf;
-            [cell.userActionButton addAction:^(UIButton *btn) {
-                if (weakself.didSelectedButton) {
-                    weakself.didSelectedButton(100);
-                }
-            }];
-        }
-    }
-    
     return cell;
 }
 

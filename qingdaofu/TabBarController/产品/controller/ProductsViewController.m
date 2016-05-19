@@ -19,7 +19,7 @@
 @property (nonatomic,assign) BOOL didSetupConstraints;
 
 @property (nonatomic,strong) UIButton *proTitleView;
-@property (nonatomic,strong) AllProView *proTitleAllView;
+@property (nonatomic,strong) AllProView *proNavView;
 
 @property (nonatomic,strong) UIView *chooseView;
 @property (nonatomic,strong) UITableView *productsTableView;

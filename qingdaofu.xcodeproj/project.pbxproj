@@ -61,6 +61,7 @@
 		A16BA1501CEC746D00A7010C /* nav_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A16BA14E1CEC746D00A7010C /* nav_more@2x.png */; };
 		A16BA1511CEC746D00A7010C /* nav_more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A16BA14F1CEC746D00A7010C /* nav_more@3x.png */; };
 		A16BA1541CEC757900A7010C /* AllProView.m in Sources */ = {isa = PBXBuildFile; fileRef = A16BA1531CEC757900A7010C /* AllProView.m */; };
+		A16BA1571CED4A2500A7010C /* MyAgentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A16BA1561CED4A2500A7010C /* MyAgentListViewController.m */; };
 		A17691171CD97E30004289DD /* MyApplyingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A17691161CD97E30004289DD /* MyApplyingViewController.m */; };
 		A176911B1CD9822A004289DD /* MyProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A176911A1CD9822A004289DD /* MyProcessingViewController.m */; };
 		A176911F1CD98404004289DD /* MyEndingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A176911E1CD98404004289DD /* MyEndingViewController.m */; };
@@ -389,6 +390,8 @@
 		A16BA14F1CEC746D00A7010C /* nav_more@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_more@3x.png"; sourceTree = "<group>"; };
 		A16BA1521CEC757900A7010C /* AllProView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllProView.h; sourceTree = "<group>"; };
 		A16BA1531CEC757900A7010C /* AllProView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllProView.m; sourceTree = "<group>"; };
+		A16BA1551CED4A2500A7010C /* MyAgentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAgentListViewController.h; sourceTree = "<group>"; };
+		A16BA1561CED4A2500A7010C /* MyAgentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAgentListViewController.m; sourceTree = "<group>"; };
 		A17691151CD97E30004289DD /* MyApplyingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplyingViewController.h; sourceTree = "<group>"; };
 		A17691161CD97E30004289DD /* MyApplyingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplyingViewController.m; sourceTree = "<group>"; };
 		A17691191CD9822A004289DD /* MyProcessingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProcessingViewController.h; sourceTree = "<group>"; };
@@ -807,6 +810,8 @@
 				A10D7B741CEAF5EA00422D7D /* MyAgentViewController.m */,
 				A10D7B791CEAFAFE00422D7D /* AddMyAgentViewController.h */,
 				A10D7B7A1CEAFAFE00422D7D /* AddMyAgentViewController.m */,
+				A16BA1551CED4A2500A7010C /* MyAgentListViewController.h */,
+				A16BA1561CED4A2500A7010C /* MyAgentListViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -2256,6 +2261,7 @@
 				A1A34BFC1CE2E0B500AD454A /* CheckDetailUserCell.m in Sources */,
 				A17964FD1CD3682A00B6AD47 /* MyDetailStoreViewController.m in Sources */,
 				A1A97E5B1CDC74D800EDE320 /* NewsCell.m in Sources */,
+				A16BA1571CED4A2500A7010C /* MyAgentListViewController.m in Sources */,
 				A16BA1491CEC4E2B00A7010C /* TakePictureCell.m in Sources */,
 				A1A017901C5B8A2100027134 /* AFHTTPRequestOperationManager.m in Sources */,
 				A17965021CD3690D00B6AD47 /* MyStoreCell.m in Sources */,
