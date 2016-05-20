@@ -10,16 +10,20 @@
 #import "CheckDetailPublishViewController.h"  //查看发布方
 #import "MyScheduleViewController.h"    //填写进度
 
-//#import "BidZeroCell.h"
-//#import "BidCell.h"
-//#import "BidSingleCell.h"
+
+#import "MineUserCell.h"
+#import "BidMessageCell.h"
+#import "BidOneCell.h"
+#import "UIView+UITextColor.h"
 #import "MyOrderDetailCell.h"
+#import "UIButton+Addition.h"
 
 #import "BaseCommitButton.h"
 @interface MyEndingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) UITableView *myEndingTableView;
-@property (nonatomic,strong) BaseCommitButton *footerButton;
+@property (nonatomic,strong) BaseCommitButton *endingCommitButton;
 
 @end
 
@@ -29,38 +33,49 @@
     [super viewDidLoad];
     self.navigationItem.title = @"产品详情";
     self.navigationItem.leftBarButtonItem = self.leftItem;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"查看发布方" style:UIBarButtonItemStylePlain target:self action:@selector(checkDetail)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"查看发布方" style:UIBarButtonItemStylePlain target:self action:@selector(checkDetails)];
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:kBigFont,NSForegroundColorAttributeName:kBlueColor} forState:0];
     
     [self.view addSubview:self.myEndingTableView];
-    [self.view addSubview:self.footerButton];
+    [self.view addSubview:self.endingCommitButton];
+    [self.view setNeedsUpdateConstraints];
 }
 
-- (void)checkDetail
+- (void)updateViewConstraints
 {
-    CheckDetailPublishViewController *checkDetailPublishVC = [[CheckDetailPublishViewController alloc] init];
-    [self.navigationController pushViewController:checkDetailPublishVC animated:YES];
+    if (!self.didSetupConstraints) {
+        
+        [self.myEndingTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+        [self.myEndingTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
+        
+        [self.endingCommitButton autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+        [self.endingCommitButton autoSetDimension:ALDimensionHeight toSize:kTabBarHeight];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
 }
 
 - (UITableView *)myEndingTableView
 {
     if (!_myEndingTableView) {
-        _myEndingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight- kCellHeight) style:UITableViewStyleGrouped];
+        _myEndingTableView = [UITableView newAutoLayoutView];
+        _myEndingTableView.translatesAutoresizingMaskIntoConstraints = YES;
+        _myEndingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
         _myEndingTableView.delegate = self;
         _myEndingTableView.dataSource = self;
     }
     return _myEndingTableView;
 }
 
-- (BaseCommitButton *)footerButton
+- (BaseCommitButton *)endingCommitButton
 {
-    if (!_footerButton) {
-        _footerButton = [BaseCommitButton buttonWithType:0];
-        _footerButton.frame = CGRectMake(0, kScreenHeight-kNavHeight-kTabBarHeight, kScreenWidth, kTabBarHeight);
-        _footerButton.backgroundColor = kLightGrayColor;
-        [_footerButton setTitle:@"已终止" forState:0];
+    if (!_endingCommitButton) {
+        _endingCommitButton = [BaseCommitButton newAutoLayoutView];
+        _endingCommitButton.backgroundColor = kLightGrayColor;
+        [_endingCommitButton setTitle:@"已终止" forState:0];
     }
-    return _footerButton;
+    return _endingCommitButton;
 }
 
 #pragma mark - delegate
@@ -71,92 +86,163 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (section == 0) {
+        return 1;
+    }else if (section == 1){
+        return 5;
+    }
+    return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        return kCellHeight;
-    }else if (indexPath.section == 1){
-        return 5*kCellHeight + 2;
-    }else if (indexPath.section == 2){
-        
-        return 2*kCellHeight + 135 + 1;
+    if ((indexPath.section == 2) && (indexPath.row == 1)) {
+        return 145;
+    }else if ((indexPath.section == 3) && (indexPath.row == 1)){
+        return 100;
     }
-    return kCellHeight*2 + 120 + 1;
+    return kCellHeight;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier;
     if (indexPath.section == 0) {
-        identifier = @"aaaaa";
-        BidZeroCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        identifier = @"ending0";
+        MineUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         
         if (!cell) {
-            cell = [[BidZeroCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[MineUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = UIColorFromRGB(0x42566d);
         
-        cell.backgroundColor = kBlueColor;
-        cell.bigProView.label.text = @"产品编号：RZ201605030001";
-        cell.bigProView.label.textColor = kNavColor;
+        [cell.userNameButton setTitleColor:UIColorFromRGB(0xcfd4e8) forState:0];
+        [cell.userNameButton setTitle:@"产品编号：RZ201605030001" forState:0];
+        cell.userNameButton.titleLabel.font = kFirstFont;
         
-        cell.bigProView.textField.userInteractionEnabled = NO;
-        
-        [cell.bigProView.button setTitle:@"已终止" forState:0];
-        [cell.bigProView.button setTitleColor:kNavColor forState:0];
-        cell.bigProView.button.titleLabel.font = kBigFont;
+        [cell.userActionButton setTitle:@"已终止" forState:0];
+        [cell.userActionButton setTitleColor:kNavColor forState:0];
+        cell.userActionButton.titleLabel.font = kBigFont;
         
         return cell;
         
     }else if (indexPath.section == 1){
-        identifier = @"bbbbb";
-        BidCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        identifier = @"ending1";
+        MineUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         
         if (!cell) {
-            cell = [[BidCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[MineUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        NSArray *secImageArray = @[@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_interest_icon",@"conserve_rebate_icon"];
-        cell.cellView2.imageView1.image = [UIImage imageNamed:secImageArray[0]];
-        cell.cellView3.imageView1.image = [UIImage imageNamed:secImageArray[1]];
-        cell.cellView4.imageView1.image = [UIImage imageNamed:secImageArray[2]];
-        cell.cellView5.imageView1.image = [UIImage imageNamed:secImageArray[3]];
+        NSArray *dataArray = @[@"|  展示信息",@"  投资类型",@"  借款金额",@"  风险费率",@"  债权类型"];
+        NSArray *imageArray = @[@"",@"conserve_investment_icon",@"conserve_loan_icon",@"conserve_risk_icon",@"conserve_rights_icon"];
+        [cell.userNameButton setTitle:dataArray[indexPath.row] forState:0];
+        [cell.userNameButton setImage:[UIImage imageNamed:imageArray[indexPath.row]] forState:0];
+        
+        if (indexPath.row == 0) {
+            [cell.userNameButton setTitleColor:kBlueColor forState:0];
+        }
+        
         return cell;
         
     }else if (indexPath.section == 2){
-        identifier = @"ccccc";
-        BidSingleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-        
-        if (!cell) {
-            cell = [[BidSingleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        if (indexPath.row == 0) {
+            identifier = @"ending20";
+            MineUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+            
+            if (!cell) {
+                cell = [[MineUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            [cell.userNameButton setTitle:@"|  基本信息" forState:0];
+            [cell.userNameButton setTitleColor:kBlueColor forState:0];
+            
+            return cell;
+            
+        }else if (indexPath.row == 1){
+            identifier = @"ending21";
+            BidMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+            
+            if (!cell) {
+                cell = [[BidMessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            NSMutableAttributedString *deallineStr = [cell.deadlineLabel setAttributeString:@"借款期限：    " withColor:kBlackColor andSecond:@"6个月" withColor:kLightGrayColor withFont:12];
+            [cell.deadlineLabel setAttributedText:deallineStr];
+            
+            NSMutableAttributedString *dateStr = [cell.dateLabel setAttributeString:@"资金到帐日：" withColor:kBlackColor andSecond:@"6个月" withColor:kLightGrayColor withFont:12];
+            [cell.dateLabel setAttributedText:dateStr];
+            
+            NSMutableAttributedString *areaStr = [cell.areaLabel setAttributeString:@"抵押物面积：" withColor:kBlackColor andSecond:@"100m" withColor:kLightGrayColor withFont:12];
+            [cell.areaLabel setAttributedText:areaStr];
+            
+            NSMutableAttributedString *addressStr = [cell.addressLabel setAttributeString:@"抵押物地址：" withColor:kBlackColor andSecond:@"上海市浦东新区浦东南路855号" withColor:kLightGrayColor withFont:12];
+            [cell.addressLabel setAttributedText:addressStr];
+            
+            return cell;
+            
+        }else{
+            identifier = @"ending22";
+            BidOneCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+            
+            if (!cell) {
+                cell = [[BidOneCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            [cell.oneButton setTitle:@"查看补充信息" forState:0];
+            
+            return cell;
         }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        return cell;
+    }else{
+        if (indexPath.row == 0) {
+            identifier = @"ending30";
+            MineUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+            if (!cell) {
+                cell = [[MineUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            [cell.userNameButton setTitleColor:kBlueColor forState:0];
+            [cell.userNameButton setTitle:@"|  进度详情" forState:0];
+            
+            return cell;
+            
+        }else if (indexPath.row == 1){
+            identifier = @"ending31";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+            if (!cell) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.backgroundColor = kYellowColor;
+            
+            return cell;
+        }else{
+            identifier = @"ending32";
+            BidOneCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+            
+            if (!cell) {
+                cell = [[BidOneCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            
+            [cell.oneButton setTitle:@"填写进度" forState:0];
+            [cell.oneButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+            [cell.oneButton setTitleColor:kLightGrayColor forState:0];
+            [cell.oneButton swapImage];
+            
+            return cell;
+        }
     }
     
-    identifier = @"ddddd";
-    MyOrderDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if (!cell) {
-        cell = [[MyOrderDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
-    QDFWeakSelf;
-    [cell.detail3 addAction:^(UIButton *btn) {
-        MyScheduleViewController *myScheduleVC = [[MyScheduleViewController alloc] init];
-        [weakself.navigationController pushViewController:myScheduleVC animated:YES];
-    }];
-
-    return cell;
+    return nil;
 }
- */
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -166,6 +252,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return kBigPadding;
+}
+
+#pragma mark - method
+- (void)checkDetails
+{
+    CheckDetailPublishViewController *checkDetailPublishVC = [[CheckDetailPublishViewController alloc] init];
+    [self.navigationController pushViewController:checkDetailPublishVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

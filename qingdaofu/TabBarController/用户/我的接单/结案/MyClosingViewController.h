@@ -8,12 +8,6 @@
 
 #import "BaseViewController.h"
 
-#import "BaseCommitButton.h"
-
 @interface MyClosingViewController : BaseViewController
-
-@property (nonatomic,strong) UIView *secView4;
-
-@property (nonatomic,strong) BaseCommitButton *additionalEvalateButton;
 
 @end

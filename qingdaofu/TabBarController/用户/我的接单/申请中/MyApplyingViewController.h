@@ -10,6 +10,5 @@
 
 @interface MyApplyingViewController : BaseViewController
 
-@property (nonatomic,strong) UITableView *myApplyingTableView;
 
 @end

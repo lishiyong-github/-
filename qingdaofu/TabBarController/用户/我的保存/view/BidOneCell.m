@@ -8,8 +8,6 @@
 
 #import "BidOneCell.h"
 
-#import "UIView+UITextColor.h"
-
 @implementation BidOneCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

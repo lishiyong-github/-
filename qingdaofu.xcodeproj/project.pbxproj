@@ -20,6 +20,10 @@
 		A10D7B811CEB083300422D7D /* ReportCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B801CEB083300422D7D /* ReportCollectViewController.m */; };
 		A10D7B871CEB1BE000422D7D /* UIView+UITextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B861CEB1BE000422D7D /* UIView+UITextColor.m */; };
 		A10D7B8B1CEB246700422D7D /* DebtCreditMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A10D7B8A1CEB246700422D7D /* DebtCreditMessageViewController.m */; };
+		A145B28D1CEEAE02003A93B7 /* conserve_tip_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A145B2891CEEAE02003A93B7 /* conserve_tip_icon@2x.png */; };
+		A145B28E1CEEAE02003A93B7 /* conserve_tip_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A145B28A1CEEAE02003A93B7 /* conserve_tip_icon@3x.png */; };
+		A145B28F1CEEAE02003A93B7 /* conserve_wait_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A145B28B1CEEAE02003A93B7 /* conserve_wait_icon@2x.png */; };
+		A145B2901CEEAE02003A93B7 /* conserve_wait_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A145B28C1CEEAE02003A93B7 /* conserve_wait_icon@3x.png */; };
 		A154B8D61CE18E7F00884CA4 /* ReportFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8D51CE18E7F00884CA4 /* ReportFootView.m */; };
 		A154B8D91CE1912800884CA4 /* open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8D71CE1912800884CA4 /* open@2x.png */; };
 		A154B8DA1CE1912800884CA4 /* open@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8D81CE1912800884CA4 /* open@3x.png */; };
@@ -326,6 +330,10 @@
 		A10D7B861CEB1BE000422D7D /* UIView+UITextColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UITextColor.m"; sourceTree = "<group>"; };
 		A10D7B891CEB246700422D7D /* DebtCreditMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebtCreditMessageViewController.h; sourceTree = "<group>"; };
 		A10D7B8A1CEB246700422D7D /* DebtCreditMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebtCreditMessageViewController.m; sourceTree = "<group>"; };
+		A145B2891CEEAE02003A93B7 /* conserve_tip_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_tip_icon@2x.png"; sourceTree = "<group>"; };
+		A145B28A1CEEAE02003A93B7 /* conserve_tip_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_tip_icon@3x.png"; sourceTree = "<group>"; };
+		A145B28B1CEEAE02003A93B7 /* conserve_wait_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_wait_icon@2x.png"; sourceTree = "<group>"; };
+		A145B28C1CEEAE02003A93B7 /* conserve_wait_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "conserve_wait_icon@3x.png"; sourceTree = "<group>"; };
 		A154B8D41CE18E7F00884CA4 /* ReportFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportFootView.h; sourceTree = "<group>"; };
 		A154B8D51CE18E7F00884CA4 /* ReportFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportFootView.m; sourceTree = "<group>"; };
 		A154B8D71CE1912800884CA4 /* open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open@2x.png"; sourceTree = "<group>"; };
@@ -1182,6 +1190,10 @@
 		A192B4BC1CDB45EB0053FC4C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A145B2891CEEAE02003A93B7 /* conserve_tip_icon@2x.png */,
+				A145B28A1CEEAE02003A93B7 /* conserve_tip_icon@3x.png */,
+				A145B28B1CEEAE02003A93B7 /* conserve_wait_icon@2x.png */,
+				A145B28C1CEEAE02003A93B7 /* conserve_wait_icon@3x.png */,
 				A16BA14E1CEC746D00A7010C /* nav_more@2x.png */,
 				A16BA14F1CEC746D00A7010C /* nav_more@3x.png */,
 				A16BA14A1CEC733A00A7010C /* nav_logo@2x.png */,
@@ -2091,6 +2103,7 @@
 				A192B4D11CDB52A40053FC4C /* list_icon_product@2x.png in Resources */,
 				A199852D1CE07A010055A572 /* publish_star_s@3x.png in Resources */,
 				A1A97E421CDC666400EDE320 /* news_order_icon@2x.png in Resources */,
+				A145B28F1CEEAE02003A93B7 /* conserve_wait_icon@2x.png in Resources */,
 				A1A34C2D1CE319C000AD454A /* bond_icon_warrants@2x.png in Resources */,
 				A1B3D5281CDDC4F300F08AE8 /* conserve_interest_icon@2x.png in Resources */,
 				A1A97E741CDCA2BF00EDE320 /* conserve_loan_icon@2x.png in Resources */,
@@ -2127,6 +2140,7 @@
 				A1A016B21C5A0C0300027134 /* LaunchScreen.storyboard in Resources */,
 				A16BA1501CEC746D00A7010C /* nav_more@2x.png in Resources */,
 				A154B8D91CE1912800884CA4 /* open@2x.png in Resources */,
+				A145B28E1CEEAE02003A93B7 /* conserve_tip_icon@3x.png in Resources */,
 				A1B3D5291CDDC4F300F08AE8 /* conserve_interest_icon@3x.png in Resources */,
 				A1A97E161CDC26A200EDE320 /* publish_list_authentication@2x.png in Resources */,
 				A1A97E401CDC666400EDE320 /* news_evaluate_icon@2x.png in Resources */,
@@ -2144,6 +2158,7 @@
 				A1A97E321CDC5C3A00EDE320 /* list_icon_personal@2x.png in Resources */,
 				A168568A1CE994C9006A0887 /* nav_collection_s@3x.png in Resources */,
 				A154B8DA1CE1912800884CA4 /* open@3x.png in Resources */,
+				A145B2901CEEAE02003A93B7 /* conserve_wait_icon@3x.png in Resources */,
 				A16856881CE994C9006A0887 /* nav_back@3x.png in Resources */,
 				A1A34C2E1CE319C000AD454A /* bond_icon_warrants@3x.png in Resources */,
 				A1A34BF81CE2DFB400AD454A /* tab_user@2x.png in Resources */,
@@ -2187,6 +2202,7 @@
 				A1A97E2F1CDC5C3A00EDE320 /* list_icon_company@3x.png in Resources */,
 				A1A97E1F1CDC3F8000EDE320 /* nav_tip@3x.png in Resources */,
 				A1A97E7D1CDCA2CF00EDE320 /* conserve_rights_icon@3x.png in Resources */,
+				A145B28D1CEEAE02003A93B7 /* conserve_tip_icon@2x.png in Resources */,
 				A1A016AD1C5A0C0300027134 /* Main.storyboard in Resources */,
 				A1A97E331CDC5C3A00EDE320 /* list_icon_personal@3x.png in Resources */,
 				A1A97E1A1CDC388E00EDE320 /* information_nav_remind@2x.png in Resources */,

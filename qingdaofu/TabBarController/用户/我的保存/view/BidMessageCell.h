@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//145
 @interface BidMessageCell : UITableViewCell
 
 @property (nonatomic,strong) UILabel *deadlineLabel;
