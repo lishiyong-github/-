@@ -10,15 +10,12 @@
 
 @interface NewsCell : UITableViewCell
 
-@property (nonatomic,strong) UILabel *seperateLabel;
-@property (nonatomic,strong) UIImageView *flagImageView;
-@property (nonatomic,strong) UILabel *typeLabel;
+//75
+@property (nonatomic,strong) UIButton *typeButton;
 @property (nonatomic,strong) UILabel *timeLabel;
 @property (nonatomic,strong) UILabel *contextLabel;
 @property (nonatomic,strong) UIButton *goTobutton;
 
 @property (nonatomic,assign) BOOL didSetupConstraints;
-
-@property (nonatomic,strong) NSLayoutConstraint *leftWidthConstraints;
 
 @end

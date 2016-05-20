@@ -24,16 +24,29 @@
     self.navigationItem.leftBarButtonItem = self.leftItem;
     
     [self.view addSubview:self.sysMessageTableView];
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.sysMessageTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
 }
 
 - (UITableView *)sysMessageTableView
 {
     if (!_sysMessageTableView) {
-        _sysMessageTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStylePlain];
+        _sysMessageTableView = [UITableView newAutoLayoutView];
+        _sysMessageTableView.translatesAutoresizingMaskIntoConstraints = YES;
+        _sysMessageTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
         _sysMessageTableView.delegate = self;
         _sysMessageTableView.dataSource = self;
         _sysMessageTableView.backgroundColor = kBackColor;
-        _sysMessageTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _sysMessageTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
     }
     return _sysMessageTableView;
@@ -65,8 +78,7 @@
     cell.selectedBackgroundView = [[UIView alloc] init];
     cell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0xdee8ed);
     
-    //    cell.leftWidthConstraints.constant = kBigPadding;
-    cell.typeLabel.text = @"申请消息";
+    [cell.typeButton setTitle:@"申请消息" forState:0];
     cell.timeLabel.text = @"2016-12-12 10:10";
     cell.contextLabel.text = @"您发布的融资RZ201601010001有心得申请记录";
     
@@ -78,11 +90,9 @@
     return kBigPadding;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = kBackColor;
-    return headerView;
+    return 0.1;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

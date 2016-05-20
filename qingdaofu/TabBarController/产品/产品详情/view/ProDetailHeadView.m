@@ -63,7 +63,7 @@
     if (!_deRateLabel) {
         _deRateLabel = [UILabel newAutoLayoutView];
         _deRateLabel.font = kSecondFont;
-        _deRateLabel.textColor = kRedColor;
+        _deRateLabel.textColor = UIColorFromRGB(0xbdcae3);
         _deRateLabel.text = @"代理费率";
     }
     return _deRateLabel;
@@ -74,7 +74,7 @@
     if (!_deRateLabel1) {
         _deRateLabel1 = [UILabel newAutoLayoutView];
         _deRateLabel1.textColor = kNavColor;
-        _deRateLabel1.font = [UIFont systemFontOfSize:40];
+        _deRateLabel1.font = [UIFont systemFontOfSize:50];  //24
         _deRateLabel1.text = @"5.6%";
     }
     return _deRateLabel1;

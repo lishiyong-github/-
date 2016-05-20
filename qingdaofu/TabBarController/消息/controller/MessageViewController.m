@@ -14,8 +14,11 @@
 
 #import "MessageCell.h"
 
+#import "MineUserCell.h"
+
 @interface MessageViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) UITableView *messageTableView;
 
 @end
@@ -27,19 +30,31 @@
     self.navigationItem.title = @"消息";
     
     [self.view addSubview:self.messageTableView];
+    [self.view setNeedsUpdateConstraints];
+}
+
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.messageTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+        [self.messageTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
 }
 
 - (UITableView *)messageTableView
 {
     if (!_messageTableView) {
-        _messageTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStyleGrouped];
+        _messageTableView = [UITableView newAutoLayoutView];
+        _messageTableView.translatesAutoresizingMaskIntoConstraints = YES;
+        _messageTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
         _messageTableView.delegate = self;
         _messageTableView.dataSource = self;
         _messageTableView.tableFooterView = [[UIView alloc] init];
-        _messageTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
-        _messageTableView.tableHeaderView.backgroundColor = kBackColor;
         _messageTableView.backgroundColor = kBackColor;
-        _messageTableView.separatorColor = kSeparateColor;
     }
     return _messageTableView;
 }
@@ -72,24 +87,23 @@
     
     if (indexPath.section == 0) {
         identifier = @"all";
-        NSArray *titleArray = @[@"发布消息",@"接单消息",@"评价消息",@"系统消息"];
+        NSArray *titleArray = @[@"  发布消息",@"  接单消息",@"  评价消息",@"  系统消息"];
         NSArray *imageArray = @[@"news_publish_icon",@"news_order_icon",@"news_evaluate_icon",@"news_system_icon"];
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        MineUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[MineUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
         
         [cell setSeparatorInset:UIEdgeInsetsMake(0, kBigPadding, 0, 0)];
         
-        cell.imageView.bounds = CGRectMake(0, 0, 41, 41);
-        cell.imageView.image = [UIImage imageNamed:imageArray[indexPath.row]];
-    
-        cell.textLabel.font = [UIFont systemFontOfSize:18];
-        cell.textLabel.textColor = kBlackColor;
-        cell.textLabel.text = titleArray[indexPath.row];
+        [cell.userNameButton setTitle:titleArray[indexPath.row] forState:0];
+        [cell.userNameButton setImage:[UIImage imageNamed:imageArray[indexPath.row]] forState:0];
+        cell.userNameButton.titleLabel.font = [UIFont systemFontOfSize:18];
+        [cell.userActionButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
         
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.userNameButton.userInteractionEnabled = NO;
+        cell.userActionButton.userInteractionEnabled = NO;
         
         return cell;
     }
@@ -111,11 +125,10 @@
     return cell;
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 0.1f;
+        return kBigPadding;
     }
     return kCellHeight;
 }
@@ -128,10 +141,18 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 1) {
-        UILabel *headerView1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, kScreenWidth, kCellHeight-10)];
-        headerView1.text = @"   最近联系人";
-        headerView1.textColor = kBlackColor;
-        headerView1.font = kBigFont;
+        UIView *headerView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kCellHeight)];
+        headerView1.backgroundColor = kBackColor;
+        
+        UILabel *friendLabel = [UILabel newAutoLayoutView];
+        friendLabel.text = @"最近联系人";
+        friendLabel.textColor = kBlackColor;
+        friendLabel.font = kBigFont;
+        [headerView1 addSubview:friendLabel];
+        
+        [friendLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
+        [friendLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
+        
         return headerView1;
     }
     return nil;

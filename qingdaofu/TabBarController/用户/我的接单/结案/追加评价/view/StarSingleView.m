@@ -69,10 +69,6 @@
     if (!_starBtn1) {
         _starBtn1 = [UIButton newAutoLayoutView];
         _starBtn1.tag = 11;
-//        [_starBtn1 setTitle:@"星" forState:0];
-//        [_starBtn1 setTitleColor:kLightGrayColor forState:0];
-//        [_starBtn1 setTitleColor:kRedColor forState:UIControlStateSelected];
-//        _starBtn1.titleLabel.font = kBigFont;
         [_starBtn1 setImage:[UIImage imageNamed:@"publish_star_s"] forState:UIControlStateSelected];
         [_starBtn1 setImage:[UIImage imageNamed:@"publish_star"] forState:0];
         [_starBtn1 addTarget:self action:@selector(starResult:) forControlEvents:UIControlEventTouchUpInside];

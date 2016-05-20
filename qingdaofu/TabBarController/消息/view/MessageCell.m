@@ -36,6 +36,7 @@
         
         [self.newsLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.userLabel withOffset:kSmallPadding];
         [self.newsLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.userLabel];
+        [self.newsLabel autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.countLabel withOffset:-kBigPadding];
         
         [self.countLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
         [self.countLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.timeLabel withOffset:kSmallPadding];

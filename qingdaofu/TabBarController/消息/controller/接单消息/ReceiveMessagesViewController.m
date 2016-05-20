@@ -11,7 +11,8 @@
 
 @interface ReceiveMessagesViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic,strong) UITableView *ReceiveTableView;
+@property (nonatomic,assign) BOOL didSetupConstraints;
+@property (nonatomic,strong) UITableView *receiveTableView;
 
 @end
 
@@ -22,20 +23,33 @@
     self.navigationItem.title = @"接单消息";
     self.navigationItem.leftBarButtonItem = self.leftItem;
     
-    [self.view addSubview:self.ReceiveTableView];
+    [self.view addSubview:self.receiveTableView];
+    [self.view setNeedsUpdateConstraints];
 }
 
-- (UITableView *)ReceiveTableView
+- (void)updateViewConstraints
 {
-    if (!_ReceiveTableView) {
-        _ReceiveTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavHeight) style:UITableViewStylePlain];
-        _ReceiveTableView.delegate = self;
-        _ReceiveTableView.dataSource = self;
-        _ReceiveTableView.backgroundColor = kBackColor;
-        _ReceiveTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _ReceiveTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+    if (!self.didSetupConstraints) {
+        
+        [self.receiveTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+        
+        self.didSetupConstraints = YES;
     }
-    return _ReceiveTableView;
+    [super updateViewConstraints];
+}
+
+- (UITableView *)receiveTableView
+{
+    if (!_receiveTableView) {
+        _receiveTableView = [UITableView newAutoLayoutView];
+        _receiveTableView.translatesAutoresizingMaskIntoConstraints = YES;
+        _receiveTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStyleGrouped];
+        _receiveTableView.delegate = self;
+        _receiveTableView.dataSource = self;
+        _receiveTableView.backgroundColor = kBackColor;
+        _receiveTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+    }
+    return _receiveTableView;
 }
 
 #pragma mark -
@@ -55,7 +69,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"newsList";
+    static NSString *identifier = @"reNewsList";
     NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[NewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
@@ -64,8 +78,7 @@
     cell.selectedBackgroundView = [[UIView alloc] init];
     cell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0xdee8ed);
     
-    //    cell.leftWidthConstraints.constant = kBigPadding;
-    cell.typeLabel.text = @"申请消息";
+    [cell.typeButton setTitle:@"申请消息" forState:0];
     cell.timeLabel.text = @"2016-12-12 10:10";
     cell.contextLabel.text = @"您发布的融资RZ201601010001有心得申请记录";
     
@@ -77,11 +90,9 @@
     return kBigPadding;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = kBackColor;
-    return headerView;
+    return 0.1;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -54,11 +54,10 @@
         [self.shortLineLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kSmallPadding];
         [self.shortLineLabel autoSetDimension:ALDimensionWidth toSize:1];
         
-//        [self.shortLineLabel autoSetDimensionsToSize:CGSizeMake(1, 25)];
-        
-        [self.longLineLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.getbutton];
+        [self.longLineLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.getbutton withOffset:-1];
         [self.longLineLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-        [self.longLineLabel autoSetDimensionsToSize:CGSizeMake(kScreenWidth, 1)];
+        [self.longLineLabel autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        [self.longLineLabel autoSetDimension:ALDimensionHeight toSize:1];
         
         self.didSetupConstraints = YES;
     }
@@ -80,7 +79,7 @@
 
                 [btn setTitleColor:kBlueColor forState:0];
                 [weakself.sendButton setTitleColor:kBlackColor forState:0];
-                weakself.blueLabel.frame = CGRectMake(_getbutton.left+kScreenWidth/8,38, kScreenWidth/4, 2);
+                weakself.blueLabel.frame = CGRectMake(_getbutton.left+kScreenWidth/8,37, kScreenWidth/4, 2);
                 
                 if (weakself.didSelectedButton) {
                     weakself.didSelectedButton(33);
@@ -105,7 +104,7 @@
                 [btn setTitleColor:kBlueColor forState:0];
                 [weakself.getbutton setTitleColor:kBlackColor forState:0];
                 
-                weakself.blueLabel.frame = CGRectMake(_sendButton.left+kScreenWidth/8,38, kScreenWidth/4, 2);
+                weakself.blueLabel.frame = CGRectMake(_sendButton.left+kScreenWidth/8,37, kScreenWidth/4, 2);
                 
                 if (weakself.didSelectedButton) {
                     weakself.didSelectedButton(34);
@@ -128,7 +127,7 @@
 - (UILabel *)blueLabel
 {
     if (!_blueLabel) {
-        _blueLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/8,38, kScreenWidth/4, 2)];
+        _blueLabel = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/8,37, kScreenWidth/4, 2)];
         _blueLabel.backgroundColor = kBlueColor;
     }
     

@@ -14,15 +14,12 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
-//        [self addSubview:self.seperateLabel];
-        [self.contentView addSubview:self.flagImageView];
-        [self.contentView addSubview:self.typeLabel];
+        [self.contentView addSubview:self.typeButton];
         [self.contentView addSubview:self.timeLabel];
         [self.contentView addSubview:self.contextLabel];
         [self.contentView addSubview:self.goTobutton];
         
-        [self setNeedsUpdateConstraints];
+        [self.contentView setNeedsUpdateConstraints];
     }
     return self;
 }
@@ -31,63 +28,32 @@
 {
     if (!self.didSetupConstraints) {
         
-        NSArray *views = @[self.flagImageView,self.typeLabel,self.timeLabel];
-        [views autoAlignViewsToAxis:ALAxisHorizontal];
-        
-        NSArray *views2 = @[self.contextLabel,self.goTobutton];
-        [views2 autoAlignViewsToAxis:ALAxisHorizontal];
-        
-//        [self.seperateLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeBottom];
-//        [self.seperateLabel autoSetDimension:ALDimensionHeight toSize:kBigPadding];
-        
-        [self.flagImageView autoSetDimensionsToSize:CGSizeMake(5, 5)];
-        [self.flagImageView autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
-        
-//        [self.typeLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.seperateLabel withOffset:kBigPadding];
-//        [self.typeLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:self.leftWidthConstraints.constant];
-        [self.typeLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.flagImageView withOffset:5];
-        [self.typeLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:kBigPadding];
-        
+        [self.typeButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
+        [self.typeButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:kSmallPadding];
         
         [self.timeLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
+        [self.timeLabel autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.typeButton];
         
-        [self.contextLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.typeLabel withOffset:kBigPadding];
+        [self.contextLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.typeButton withOffset:5];
         [self.contextLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:kBigPadding];
+        [self.contextLabel autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.goTobutton withOffset:-kBigPadding];
         
-        [self.goTobutton autoSetDimensionsToSize:CGSizeMake(15, 15)];
         [self.goTobutton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:kBigPadding];
+        [self.goTobutton autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.contextLabel];
         
         self.didSetupConstraints = YES;
     }
     [super updateConstraints];
 }
 
-- (UILabel *)seperateLabel
+- (UIButton *)typeButton
 {
-    if (!_seperateLabel) {
-        _seperateLabel = [UILabel newAutoLayoutView];
-        _seperateLabel.backgroundColor = kBackColor;
+    if (!_typeButton) {
+        _typeButton = [UIButton newAutoLayoutView];
+        [_typeButton setTitleColor:kBlackColor forState:0];
+        _typeButton.titleLabel.font = kBigFont;
     }
-    return _seperateLabel;
-}
-
-- (UIImageView *)flagImageView
-{
-    if (!_flagImageView) {
-        _flagImageView = [UIImageView newAutoLayoutView];
-        _flagImageView.backgroundColor = kBlueColor;
-    }
-    return _flagImageView;
-}
-
-- (UILabel *)typeLabel
-{
-    if (!_typeLabel) {
-        _typeLabel = [UILabel newAutoLayoutView];
-        _typeLabel.textColor = kBlackColor;
-        _typeLabel.font = kBigFont;
-    }
-    return _typeLabel;
+    return _typeButton;
 }
 
 - (UILabel *)timeLabel
@@ -115,6 +81,7 @@
     if (!_goTobutton) {
         _goTobutton = [UIButton newAutoLayoutView];
         [_goTobutton setImage:[UIImage imageNamed:@"list_more"] forState:0];
+//        _goTobutton.titleLabel.font = kBigFont;
     }
     return _goTobutton;
 }

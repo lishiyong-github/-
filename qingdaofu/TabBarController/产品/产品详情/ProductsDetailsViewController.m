@@ -33,7 +33,7 @@
 {
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:kNavColor,NSFontAttributeName:kNavFont}];
 
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:kGrayColor] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:UIColorFromRGB(0x42566d)] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidLoad
