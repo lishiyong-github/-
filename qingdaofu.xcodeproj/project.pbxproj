@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3F2902D9921F99EF82651ABE /* libPods-qingdaofu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85603BCA885599B6E0B5F71E /* libPods-qingdaofu.a */; };
-		9CD572EE1CF1CDE8006560C2 /* UIViewController+HideKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD572ED1CF1CDE8006560C2 /* UIViewController+HideKeyBoard.m */; };
 		9CEA216B1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
 		9CEA216C1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
 		9CF191401CEC445300CFEDA1 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF1913F1CEC445300CFEDA1 /* Reveal.framework */; };
@@ -322,8 +321,6 @@
 		1F58D0855B44DFE63508E13F /* Pods-qingdaofu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qingdaofu.release.xcconfig"; path = "Pods/Target Support Files/Pods-qingdaofu/Pods-qingdaofu.release.xcconfig"; sourceTree = "<group>"; };
 		7245E2770B63600D801A3886 /* Pods-qingdaofu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qingdaofu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-qingdaofu/Pods-qingdaofu.debug.xcconfig"; sourceTree = "<group>"; };
 		85603BCA885599B6E0B5F71E /* libPods-qingdaofu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qingdaofu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CD572EC1CF1CDE8006560C2 /* UIViewController+HideKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HideKeyBoard.h"; sourceTree = "<group>"; };
-		9CD572ED1CF1CDE8006560C2 /* UIViewController+HideKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HideKeyBoard.m"; sourceTree = "<group>"; };
 		9CEA21691CE2140C002C5BA7 /* UIButton+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Addition.h"; sourceTree = "<group>"; };
 		9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Addition.m"; sourceTree = "<group>"; };
 		9CF1913F1CEC445300CFEDA1 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
@@ -1822,8 +1819,6 @@
 				A10D7B861CEB1BE000422D7D /* UIView+UITextColor.m */,
 				A1ECB66D1CED6CA70017EA10 /* PlaceHolderTextView.h */,
 				A1ECB66E1CED6CA70017EA10 /* PlaceHolderTextView.m */,
-				9CD572EC1CF1CDE8006560C2 /* UIViewController+HideKeyBoard.h */,
-				9CD572ED1CF1CDE8006560C2 /* UIViewController+HideKeyBoard.m */,
 			);
 			path = "工具类";
 			sourceTree = "<group>";
@@ -2465,7 +2460,6 @@
 				A1A34BF11CE2C9EB00AD454A /* MyOrderDetailCell.m in Sources */,
 				A1A017971C5B8A2100027134 /* AFURLSessionManager.m in Sources */,
 				A1A017961C5B8A2100027134 /* AFURLResponseSerialization.m in Sources */,
-				9CD572EE1CF1CDE8006560C2 /* UIViewController+HideKeyBoard.m in Sources */,
 				A16856A51CE9B864006A0887 /* DebtDocumnetsViewController.m in Sources */,
 				A16856A91CE9BF82006A0887 /* ProDetailHeadView.m in Sources */,
 				A1A0172A1C5B422700027134 /* NetworkViewController.m in Sources */,
