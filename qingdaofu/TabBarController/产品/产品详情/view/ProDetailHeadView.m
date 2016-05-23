@@ -34,21 +34,20 @@
         [self.deRateLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:kBigPadding];
         [self.deRateLabel autoAlignAxisToSuperviewAxis:ALAxisVertical];
         
-        [self.deRateLabel1 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.deRateLabel withOffset:5];
+        [self.deRateLabel1 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.deRateLabel withOffset:20];
         [self.deRateLabel1 autoAlignAxis:ALAxisVertical toSameAxisOfView:self.deRateLabel];
         
-        [self.deMoneyView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.deRateLabel1 withOffset:kBigPadding];
+        [self.deMoneyView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.deRateLabel1 withOffset:25];
         [self.deMoneyView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [self.deMoneyView autoSetDimension:ALDimensionWidth toSize:kScreenWidth/2];
         [self.deMoneyView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
 
-//
         [self.deTypeView autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.deMoneyView];
         [self.deTypeView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.deMoneyView];
         [self.deTypeView autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [self.deTypeView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-        
-        [self.deLineLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.deMoneyView withOffset:kSmallPadding];
+
+        [self.deLineLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.deMoneyView withOffset:kBigPadding];
         [self.deLineLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.deMoneyView];
         [self.deLineLabel autoSetDimension:ALDimensionWidth toSize:kLineWidth];
         [self.deLineLabel autoSetDimension:ALDimensionHeight toSize:45];
@@ -86,6 +85,7 @@
         _deMoneyView = [ProDetailHeadFootView newAutoLayoutView];
         _deMoneyView.fLabel1.text = @"借款本金(元)";
         _deMoneyView.fLabel2.text = @"10000000";
+        _deMoneyView.backgroundColor = kDarkGrayColor;
     }
     return _deMoneyView;
 }
@@ -94,6 +94,7 @@
 {
     if (!_deLineLabel) {
         _deLineLabel = [LineLabel newAutoLayoutView];
+        _deLineLabel.backgroundColor = UIColorFromRGB(0x5d6d7c);
     }
     return _deLineLabel;
 }
@@ -102,6 +103,7 @@
 {
     if (!_deTypeView) {
         _deTypeView = [ProDetailHeadFootView newAutoLayoutView];
+        _deTypeView.backgroundColor = kDarkGrayColor;
         _deTypeView.fLabel1.text = @"债权类型";
         _deTypeView.fLabel2.text = @"应收帐款";
     }

@@ -31,7 +31,7 @@
         [self.fLabel1 autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:kBigPadding];
         [self.fLabel1 autoAlignAxisToSuperviewAxis:ALAxisVertical];
         
-        [self.fLabel2 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.fLabel1 withOffset:5];
+        [self.fLabel2 autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.fLabel1 withOffset:kSmallPadding];
         [self.fLabel2 autoAlignAxis:ALAxisVertical toSameAxisOfView:self.fLabel1];
         
         self.didSetupConstraints = YES;
@@ -43,7 +43,7 @@
 {
     if (!_fLabel1) {
         _fLabel1 = [UILabel newAutoLayoutView];
-        _fLabel1.textColor = kRedColor;
+        _fLabel1.textColor = UIColorFromRGB(0xbdcae3);
         _fLabel1.font = kSecondFont;
     }
     return _fLabel1;
@@ -54,7 +54,7 @@
     if (!_fLabel2) {
         _fLabel2 = [UILabel newAutoLayoutView];
         _fLabel2.textColor = kNavColor;
-        _fLabel2.font = kBigFont;
+        _fLabel2.font = [UIFont systemFontOfSize:20];
     }
     return _fLabel2;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "AllProView.h"
+#import "BidOneCell.h"
 
 @implementation AllProView
 
@@ -14,8 +15,17 @@
 {
     self = [super initWithFrame:frame style:style];
     if (self) {
-        self.backgroundColor = kBackColor;
         self.tableFooterView = [[UIView alloc] init];
+        self.delegate = self;
+        self.dataSource = self;
+        self.separatorColor = kSeparateColor;
+        if ([self respondsToSelector:@selector(setSeparatorInset:)]) {
+            [self setSeparatorInset:UIEdgeInsetsZero];
+        }
+        if ([self respondsToSelector:@selector(setLayoutMargins:)]) {
+            [self setLayoutMargins:UIEdgeInsetsZero];
+        }
+        
     }
     return self;
 }
@@ -23,23 +33,35 @@
 #pragma mark - delegate and datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return self.dataList.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return kCellHeight;
+    return 40;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"all";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    BidOneCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[BidOneCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    cell.textLabel.text = @"选择产品";
+    cell.backgroundColor = kNavColor;
+    [cell setSelectedBackgroundView:[[UIView alloc] init]];
+    cell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0xeef3f6);
+    
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
+    [cell.oneButton setTitle:self.dataList[indexPath.row] forState:0];
+    cell.oneButton.userInteractionEnabled = NO;
     
     return cell;
 }

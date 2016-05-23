@@ -59,17 +59,6 @@
     return _loginTableView;
 }
 
-//- (BaseLabel *)sectionView0
-//{
-//    if (!_sectionView0) {
-//        _sectionView0 = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, _sectionView0.aH)];
-//        _sectionView0.nameLabel.text = @"12345678900";
-//        _sectionView0.tagImageView.backgroundColor = kYellowColor;
-//        [_sectionView0.goButton setTitle:@"已认证公司  " forState:0];
-//    }
-//    return _sectionView0;
-//}
-
 #pragma mark - tableView delegate and dataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -88,7 +77,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1 || indexPath.section == 2) {
-        return 105+18;
+//        return 105+18;
+        return 120;
     }
     return kCellHeight;
 }

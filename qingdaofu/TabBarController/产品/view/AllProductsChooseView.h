@@ -10,4 +10,12 @@
 
 @interface AllProductsChooseView : UIView
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
+
+@property (nonatomic,strong) void (^didSelectedButton)(NSInteger);
+
+@property (nonatomic,strong) UIButton *squrebutton;
+@property (nonatomic,strong) UIButton *stateButton;
+@property (nonatomic,strong) UIButton *moneyButton;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ProductsViewController.h"
+#import "SearchViewController.h"   //搜索
 #import "ProductsDetailsViewController.h"   //详细信息
 
 #import "HomeCell.h"
@@ -14,14 +15,18 @@
 #import "UIButton+Addition.h"
 #import "AllProView.h"
 
+#import "AllProductsChooseView.h"
+
 @interface ProductsViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,assign) BOOL didSetupConstraints;
 
 @property (nonatomic,strong) UIButton *proTitleView;
-@property (nonatomic,strong) AllProView *proNavView;
+@property (nonatomic,strong) AllProView *proView;
 
-@property (nonatomic,strong) UIView *chooseView;
+
+
+@property (nonatomic,strong) AllProductsChooseView *chooseView;
 @property (nonatomic,strong) UITableView *productsTableView;
 
 @end
@@ -38,9 +43,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.titleView = self.proTitleView;
+    self.navigationItem.rightBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_search"] style:UIBarButtonItemStylePlain target:self action:@selector(searchProducts)];
 
     [self.view addSubview:self.chooseView];
     [self.view addSubview:self.productsTableView];
+    [self.view addSubview:self.proView];
+    [self.proView setHidden:YES];
+    
+//    self.topConstraints = [self.proView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.chooseView];
+    self.topConstraints = [self.proView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:40];
+
+    self.heightConstraints = [self.proView autoSetDimension:ALDimensionHeight toSize:240];
     
     [self.view setNeedsUpdateConstraints];
 }
@@ -49,15 +62,18 @@
 {
     if (!_proTitleView) {
         _proTitleView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-        [_proTitleView swapImage];
         [_proTitleView setTitle:@"所有产品 " forState:0];
         [_proTitleView setTitleColor:kBlackColor forState:0];
         _proTitleView.titleLabel.font = kNavFont;
-        [_proTitleView setImage:[UIImage imageNamed:@"nav_more"] forState:0];
+//        [_proTitleView setImage:[UIImage imageNamed:@"nav_more"] forState:0];
         QDFWeakSelf;
         [_proTitleView addAction:^(UIButton *btn) {
-
-            
+            weakself.productsTableView.alpha = 0.8;
+            [weakself.proView setHidden:NO];
+            weakself.topConstraints.constant = 0;
+            weakself.proView.dataList = @[@"全部",@"融资",@"催收",@"诉讼"];
+            weakself.heightConstraints.constant = 5*40;
+            [weakself.proView reloadData];
         }];
     }
     return _proTitleView;
@@ -75,18 +91,65 @@
         [self.productsTableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [self.productsTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
         
+        [self.proView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        [self.proView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        
         self.didSetupConstraints = YES;
     }
     [super updateViewConstraints];
 }
 
-- (UIView *)chooseView
+- (AllProductsChooseView *)chooseView
 {
     if (!_chooseView) {
-        _chooseView = [UIView newAutoLayoutView];
-        _chooseView.backgroundColor = kRedColor;
+        _chooseView = [AllProductsChooseView newAutoLayoutView];
+        _chooseView.backgroundColor = kNavColor;
+        [_chooseView.squrebutton setTitle:@"区域" forState:0];
+        [_chooseView.stateButton setTitle:@"状态" forState:0];
+        [_chooseView.moneyButton setTitle:@"金额" forState:0];
+
+        QDFWeakSelf;
+        [_chooseView setDidSelectedButton:^(NSInteger tag) {
+            
+            
+            switch (tag) {
+                case 201:{//区域
+                }
+                    break;
+                case 202:{//状态
+                    weakself.productsTableView.alpha = 0.8;
+                    [weakself.proView setHidden:NO];
+                    weakself.proView.dataList = @[@"不限",@"发布中",@"处理中",@"已结案"];
+                    weakself.heightConstraints.constant = 5*40;
+                    [weakself.proView reloadData];
+                }
+                    break;
+                case 203:{//金额
+                    weakself.productsTableView.alpha = 0.8;
+
+                    [weakself.proView setHidden:NO];
+                    weakself.proView.dataList = @[@"不限",@"30万以下",@"30-100万",@"100-500万",@"500万以上"];
+                    weakself.heightConstraints.constant = 6*40;
+                    [weakself.proView reloadData];
+
+                }
+                    break;
+                default:
+                    break;
+            }
+        }];
+        
     }
     return _chooseView;
+}
+
+- (AllProView *)proView
+{
+    if (!_proView) {
+        _proView = [AllProView newAutoLayoutView];
+        _proView.backgroundColor = kNavColor;
+    }
+    return _proView;
 }
 
 - (UITableView *)productsTableView
@@ -150,6 +213,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 0.1f;
+}
+
+#pragma mark - method
+- (void)searchProducts
+{
+    SearchViewController *searchVC = [[SearchViewController alloc] init];
+    searchVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

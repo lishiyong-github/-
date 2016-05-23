@@ -51,7 +51,6 @@
 		A154B8F21CE1B71D00884CA4 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A154B8EE1CE1B71D00884CA4 /* back@3x.png */; };
 		A154B8F51CE1C14100884CA4 /* ReportSuitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8F41CE1C14100884CA4 /* ReportSuitViewController.m */; };
 		A154B8FC1CE1C57000884CA4 /* SuitBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B8FB1CE1C57000884CA4 /* SuitBaseView.m */; };
-		A154B9031CE1E06300884CA4 /* ReportSuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = A154B9021CE1E06300884CA4 /* ReportSuccessView.m */; };
 		A1602E741CED8D320053F850 /* CompleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1602E731CED8D320053F850 /* CompleteCell.m */; };
 		A1602E771CEDA9F50053F850 /* CompletePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1602E761CEDA9F50053F850 /* CompletePhotoView.m */; };
 		A1602E7A1CEDAF790053F850 /* BidMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1602E791CEDAF790053F850 /* BidMessageCell.m */; };
@@ -297,6 +296,15 @@
 		A1B3D52D1CDDC4FD00F08AE8 /* conserve_rebate_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B3D52B1CDDC4FD00F08AE8 /* conserve_rebate_icon@3x.png */; };
 		A1E4AFB71CD0C674001A5E9E /* SingleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4AFB61CD0C674001A5E9E /* SingleButton.m */; };
 		A1ECB66F1CED6CA70017EA10 /* PlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1ECB66E1CED6CA70017EA10 /* PlaceHolderTextView.m */; };
+		A1FB26571CF2B41B00B66608 /* ReportSuccessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FB26561CF2B41B00B66608 /* ReportSuccessCell.m */; };
+		A1FB265A1CF2CC8700B66608 /* nav_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1FB26581CF2CC8700B66608 /* nav_search@2x.png */; };
+		A1FB265B1CF2CC8700B66608 /* nav_search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1FB26591CF2CC8700B66608 /* nav_search@3x.png */; };
+		A1FB265F1CF2CD8900B66608 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FB265E1CF2CD8900B66608 /* SearchViewController.m */; };
+		A1FB26621CF2D47B00B66608 /* AllProductsChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1FB26611CF2D47B00B66608 /* AllProductsChooseView.m */; };
+		A1FB26651CF2E51500B66608 /* select_oepn_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1FB26631CF2E51500B66608 /* select_oepn_s@2x.png */; };
+		A1FB26661CF2E51500B66608 /* select_oepn_s@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1FB26641CF2E51500B66608 /* select_oepn_s@3x.png */; };
+		A1FB26691CF2E52B00B66608 /* select_oepn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1FB26671CF2E52B00B66608 /* select_oepn@2x.png */; };
+		A1FB266A1CF2E52B00B66608 /* select_oepn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1FB26681CF2E52B00B66608 /* select_oepn@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,8 +386,6 @@
 		A154B8F41CE1C14100884CA4 /* ReportSuitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuitViewController.m; sourceTree = "<group>"; };
 		A154B8FA1CE1C57000884CA4 /* SuitBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuitBaseView.h; sourceTree = "<group>"; };
 		A154B8FB1CE1C57000884CA4 /* SuitBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuitBaseView.m; sourceTree = "<group>"; };
-		A154B9011CE1E06300884CA4 /* ReportSuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuccessView.h; sourceTree = "<group>"; };
-		A154B9021CE1E06300884CA4 /* ReportSuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuccessView.m; sourceTree = "<group>"; };
 		A1602E721CED8D310053F850 /* CompleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompleteCell.h; sourceTree = "<group>"; };
 		A1602E731CED8D320053F850 /* CompleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompleteCell.m; sourceTree = "<group>"; };
 		A1602E751CEDA9F50053F850 /* CompletePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletePhotoView.h; sourceTree = "<group>"; };
@@ -774,6 +780,18 @@
 		A1E4AFB61CD0C674001A5E9E /* SingleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleButton.m; sourceTree = "<group>"; };
 		A1ECB66D1CED6CA70017EA10 /* PlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceHolderTextView.h; sourceTree = "<group>"; };
 		A1ECB66E1CED6CA70017EA10 /* PlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceHolderTextView.m; sourceTree = "<group>"; };
+		A1FB26551CF2B41B00B66608 /* ReportSuccessCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportSuccessCell.h; sourceTree = "<group>"; };
+		A1FB26561CF2B41B00B66608 /* ReportSuccessCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportSuccessCell.m; sourceTree = "<group>"; };
+		A1FB26581CF2CC8700B66608 /* nav_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_search@2x.png"; sourceTree = "<group>"; };
+		A1FB26591CF2CC8700B66608 /* nav_search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_search@3x.png"; sourceTree = "<group>"; };
+		A1FB265D1CF2CD8900B66608 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		A1FB265E1CF2CD8900B66608 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		A1FB26601CF2D47B00B66608 /* AllProductsChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllProductsChooseView.h; sourceTree = "<group>"; };
+		A1FB26611CF2D47B00B66608 /* AllProductsChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllProductsChooseView.m; sourceTree = "<group>"; };
+		A1FB26631CF2E51500B66608 /* select_oepn_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_oepn_s@2x.png"; sourceTree = "<group>"; };
+		A1FB26641CF2E51500B66608 /* select_oepn_s@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_oepn_s@3x.png"; sourceTree = "<group>"; };
+		A1FB26671CF2E52B00B66608 /* select_oepn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_oepn@2x.png"; sourceTree = "<group>"; };
+		A1FB26681CF2E52B00B66608 /* select_oepn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select_oepn@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -886,8 +904,8 @@
 		A154B9001CE1E03F00884CA4 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				A154B9011CE1E06300884CA4 /* ReportSuccessView.h */,
-				A154B9021CE1E06300884CA4 /* ReportSuccessView.m */,
+				A1FB26551CF2B41B00B66608 /* ReportSuccessCell.h */,
+				A1FB26561CF2B41B00B66608 /* ReportSuccessCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1212,6 +1230,12 @@
 		A192B4BC1CDB45EB0053FC4C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A1FB26671CF2E52B00B66608 /* select_oepn@2x.png */,
+				A1FB26681CF2E52B00B66608 /* select_oepn@3x.png */,
+				A1FB26631CF2E51500B66608 /* select_oepn_s@2x.png */,
+				A1FB26641CF2E51500B66608 /* select_oepn_s@3x.png */,
+				A1FB26581CF2CC8700B66608 /* nav_search@2x.png */,
+				A1FB26591CF2CC8700B66608 /* nav_search@3x.png */,
 				A145B2941CEEDB0D003A93B7 /* list_collection_nor@2x.png */,
 				A145B2951CEEDB0D003A93B7 /* list_collection_nor@3x.png */,
 				A145B2961CEEDB0D003A93B7 /* list_collection@2x.png */,
@@ -1457,6 +1481,7 @@
 		A19B8E401CCF52A000F8EBF2 /* 产品 */ = {
 			isa = PBXGroup;
 			children = (
+				A1FB265C1CF2CD7300B66608 /* 搜索 */,
 				A16856781CE992AD006A0887 /* 产品详情 */,
 				A19D294B1CD1DDD200DAAEA7 /* view */,
 				A19B8E471CCF52FA00F8EBF2 /* controller */,
@@ -1555,6 +1580,8 @@
 				A19D294D1CD1E04300DAAEA7 /* HomeCell.m */,
 				A16BA1521CEC757900A7010C /* AllProView.h */,
 				A16BA1531CEC757900A7010C /* AllProView.m */,
+				A1FB26601CF2D47B00B66608 /* AllProductsChooseView.h */,
+				A1FB26611CF2D47B00B66608 /* AllProductsChooseView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -2030,6 +2057,15 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		A1FB265C1CF2CD7300B66608 /* 搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				A1FB265D1CF2CD8900B66608 /* SearchViewController.h */,
+				A1FB265E1CF2CD8900B66608 /* SearchViewController.m */,
+			);
+			path = "搜索";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2142,6 +2178,7 @@
 				A1A34C2D1CE319C000AD454A /* bond_icon_warrants@2x.png in Resources */,
 				A1B3D5281CDDC4F300F08AE8 /* conserve_interest_icon@2x.png in Resources */,
 				A145B29F1CEEDB0D003A93B7 /* list_collection@3x.png in Resources */,
+				A1FB26651CF2E51500B66608 /* select_oepn_s@2x.png in Resources */,
 				A1A97E741CDCA2BF00EDE320 /* conserve_loan_icon@2x.png in Resources */,
 				A1A34C251CE319C000AD454A /* bond_icon_contract@2x.png in Resources */,
 				A192B4C81CDB492B0053FC4C /* list_icon_preservation@3x.png in Resources */,
@@ -2163,12 +2200,14 @@
 				A154B8E61CE1AFE600884CA4 /* save@3x.png in Resources */,
 				A199853C1CE07CFD0055A572 /* tab_recommend_s@2x.png in Resources */,
 				A192B4D41CDB52A40053FC4C /* list_icon_user@3x.png in Resources */,
+				A1FB26691CF2E52B00B66608 /* select_oepn@2x.png in Resources */,
 				A145B2A31CEEDB0D003A93B7 /* list_financing@3x.png in Resources */,
 				A1A97E261CDC430500EDE320 /* identification_label@2x.png in Resources */,
 				A192B4D31CDB52A40053FC4C /* list_icon_user@2x.png in Resources */,
 				A1A34C241CE319C000AD454A /* bond_icon_certificate@3x.png in Resources */,
 				A1A97E751CDCA2BF00EDE320 /* conserve_loan_icon@3x.png in Resources */,
 				A199853E1CE07CFD0055A572 /* tab_recommend@2x.png in Resources */,
+				A1FB265A1CF2CC8700B66608 /* nav_search@2x.png in Resources */,
 				A1A34BF61CE2DFB400AD454A /* tab_user_s@2x.png in Resources */,
 				A154B8E31CE1AFE600884CA4 /* publish@2x.png in Resources */,
 				A19985381CE07CFD0055A572 /* tab_product_s@2x.png in Resources */,
@@ -2188,6 +2227,7 @@
 				A1A34C271CE319C000AD454A /* bond_icon_receipt@2x.png in Resources */,
 				A1A97E311CDC5C3A00EDE320 /* list_icon_firm@3x.png in Resources */,
 				A1B3D52C1CDDC4FD00F08AE8 /* conserve_rebate_icon@2x.png in Resources */,
+				A1FB266A1CF2E52B00B66608 /* select_oepn@3x.png in Resources */,
 				A145B2A11CEEDB0D003A93B7 /* list_financing_nor@3x.png in Resources */,
 				A1A97E731CDCA2BF00EDE320 /* conserve_investment_icon@3x.png in Resources */,
 				A1A97E431CDC666400EDE320 /* news_order_icon@3x.png in Resources */,
@@ -2230,6 +2270,7 @@
 				A19985271CE071D40055A572 /* conserve_risk_icon@3x.png in Resources */,
 				A1A97E221CDC414600EDE320 /* information_nav_back@2x.png in Resources */,
 				A168568B1CE994C9006A0887 /* nav_collection@2x.png in Resources */,
+				A1FB265B1CF2CC8700B66608 /* nav_search@3x.png in Resources */,
 				A145B2A21CEEDB0D003A93B7 /* list_financing@2x.png in Resources */,
 				A1A97E7C1CDCA2CF00EDE320 /* conserve_rights_icon@2x.png in Resources */,
 				A1A97E171CDC26A200EDE320 /* publish_list_authentication@3x.png in Resources */,
@@ -2240,6 +2281,7 @@
 				A154B8DD1CE1913300884CA4 /* withdraw@2x.png in Resources */,
 				A16856891CE994C9006A0887 /* nav_collection_s@2x.png in Resources */,
 				A19985261CE071D40055A572 /* conserve_risk_icon@2x.png in Resources */,
+				A1FB26661CF2E51500B66608 /* select_oepn_s@3x.png in Resources */,
 				A1A97E2F1CDC5C3A00EDE320 /* list_icon_company@3x.png in Resources */,
 				A1A97E1F1CDC3F8000EDE320 /* nav_tip@3x.png in Resources */,
 				A1A97E7D1CDCA2CF00EDE320 /* conserve_rights_icon@3x.png in Resources */,
@@ -2354,6 +2396,7 @@
 				A10D7B781CEAF73C00422D7D /* MyAgentCell.m in Sources */,
 				A1A016A71C5A0C0300027134 /* AppDelegate.m in Sources */,
 				A10D7B7B1CEAFAFE00422D7D /* AddMyAgentViewController.m in Sources */,
+				A1FB26621CF2D47B00B66608 /* AllProductsChooseView.m in Sources */,
 				A1A017581C5B696A00027134 /* NSString+MJExtension.m in Sources */,
 				A17691261CD986BA004289DD /* LineLabel.m in Sources */,
 				A1A017301C5B607300027134 /* UIImage+Color.m in Sources */,
@@ -2371,6 +2414,7 @@
 				A17EE3911CD8796900ECC631 /* SuggestionViewController.m in Sources */,
 				A19D294E1CD1E04300DAAEA7 /* HomeCell.m in Sources */,
 				A17964D51CD2EAB100B6AD47 /* AuthenBaseView.m in Sources */,
+				A1FB26571CF2B41B00B66608 /* ReportSuccessCell.m in Sources */,
 				A176912A1CD9976D004289DD /* MyClosingViewController.m in Sources */,
 				A176911B1CD9822A004289DD /* MyProcessingViewController.m in Sources */,
 				A1A017941C5B8A2100027134 /* AFURLConnectionOperation.m in Sources */,
@@ -2393,9 +2437,9 @@
 				A19985191CE02BFC0055A572 /* ModifyView.m in Sources */,
 				A1A017571C5B696A00027134 /* NSObject+MJProperty.m in Sources */,
 				A1A34C341CE32C7100AD454A /* LoginViewController.m in Sources */,
+				A1FB265F1CF2CD8900B66608 /* SearchViewController.m in Sources */,
 				A16BA1461CEC2ECB00A7010C /* EditDebtAddressCell.m in Sources */,
 				A19985471CE0802A0055A572 /* ReportFinanceViewController.m in Sources */,
-				A154B9031CE1E06300884CA4 /* ReportSuccessView.m in Sources */,
 				A145B2AC1CEEF579003A93B7 /* EvaluateSendCell.m in Sources */,
 				A19985231CE069630055A572 /* AllProSegView.m in Sources */,
 				A1A0174E1C5B696A00027134 /* MJDictionaryCache.m in Sources */,

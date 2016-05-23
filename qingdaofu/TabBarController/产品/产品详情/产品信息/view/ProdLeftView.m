@@ -7,8 +7,8 @@
 //
 
 #import "ProdLeftView.h"
-#import "MyStoreCell.h"
-
+//#import "MyStoreCell.h"
+#import "MineUserCell.h"
 
 @implementation ProdLeftView
 
@@ -19,7 +19,7 @@
         self.dataSource = self;
         self.delegate = self;
         self.backgroundColor = kBackColor;
-        self.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+        self.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 12.5)];
         self.tableFooterView = [[UIView alloc] init];
     }
     return self;
@@ -45,17 +45,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"left";
-    MyStoreCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    MineUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[MyStoreCell alloc ] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[MineUserCell alloc ] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSArray *titleArr = @[@"还款方式",@"担保方式",@"担保物所在地",@"司法现状",@"债务人主体",@"委托事项",@"委托期限",@"代理费用",@"付款方式"];
-    [cell.sButton1 setTitle:titleArr[indexPath.row] forState:0];
-    [cell.sButton2 setTitle:@"服务器数据" forState:0];
-    [cell.sButton2 setTitleColor:kBlueColor forState:0];
+    [cell.userNameButton setTitle:titleArr[indexPath.row] forState:0];
+    [cell.userActionButton setTitle:@"服务器数据" forState:0];
+    [cell.userActionButton setTitleColor:kBlueColor forState:0];
     
     return cell;
 }

@@ -61,14 +61,14 @@
 {
     if (!self.didSetupConstraints) {
         
-        [self.productsDeTopView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeBottom];
+        [self.productsDeTopView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
         [self.productsDeTopView autoSetDimension:ALDimensionHeight toSize:40];
         
         [self.leftTableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.productsDeTopView];
-        [self.leftTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+        [self.leftTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
         
         [self.rightTableView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.productsDeTopView];
-        [self.rightTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+        [self.rightTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
         
         self.didSetupConstraints = YES;
     }
@@ -83,18 +83,29 @@
         _productsDeTopView.backgroundColor = kNavColor;
         
         [_productsDeTopView.getbutton setTitle:@"基本信息" forState:0];
+        _productsDeTopView.getbutton.titleLabel.font = kBigFont;
         [_productsDeTopView.sendButton setTitle:@"补充信息" forState:0];
+        _productsDeTopView.sendButton.titleLabel.font = kFirstFont;
         
         QDFWeakSelf;
         [_productsDeTopView setDidSelectedButton:^(NSInteger btnTag) {
             if (btnTag ==33) {//基本信息
                 
+                [weakself.productsDeTopView.getbutton setTitleColor:kBlueColor forState:0];
+                weakself.productsDeTopView.getbutton.titleLabel.font = kBigFont;
+                [weakself.productsDeTopView.sendButton setTitleColor:kBlackColor forState:0];
+                weakself.productsDeTopView.sendButton.titleLabel.font = kFirstFont;
+                
                 [weakself.leftTableView setHidden:NO];
                 [weakself.rightTableView setHidden:YES];
                 [weakself.view bringSubviewToFront:weakself.leftTableView];
                 
-                
             }else{//补充信息
+                
+                [weakself.productsDeTopView.sendButton setTitleColor:kBlueColor forState:0];
+                weakself.productsDeTopView.sendButton.titleLabel.font = kBigFont;
+                [weakself.productsDeTopView.getbutton setTitleColor:kBlackColor forState:0];
+                weakself.productsDeTopView.getbutton.titleLabel.font = kFirstFont;
                 
                 [weakself.leftTableView setHidden:YES];
                 [weakself.rightTableView setHidden:NO];

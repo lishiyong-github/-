@@ -33,14 +33,16 @@
 {
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:kNavColor,NSFontAttributeName:kNavFont}];
 
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:UIColorFromRGB(0x42566d)] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:kNavColor1] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //设置导航条的字体颜色
+    //去掉导航栏的边界黑线
+//    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
     self.navigationItem.title = @"RZ201605160001";
     
     self.navigationController.navigationBar.translucent = NO;
@@ -104,7 +106,7 @@
         _productsDetailsTableView.delegate = self;
         _productsDetailsTableView.dataSource = self;
         _productsDetailsTableView.tableFooterView = [[UIView alloc] init];
-        _productsDetailsTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 160)];
+        _productsDetailsTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 210)];
         [_productsDetailsTableView.tableHeaderView addSubview:self.proDetailHeaderView];
         _productsDetailsTableView.backgroundColor = kBackColor;
     }
@@ -114,8 +116,18 @@
 - (ProDetailHeadView *)proDetailHeaderView
 {
     if (!_proDetailHeaderView) {
-        _proDetailHeaderView = [[ProDetailHeadView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 160)];
-        _proDetailHeaderView.backgroundColor = kGrayColor;
+        _proDetailHeaderView = [[ProDetailHeadView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 210)];
+        _proDetailHeaderView.backgroundColor = kNavColor1;
+        
+        
+        NSString *str1 = @"5.6";
+        NSString *str2 = @"%";
+        NSString *str = [NSString stringWithFormat:@"%@%@",str1,str2];
+        NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:str];
+        [attributeStr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:50],NSForegroundColorAttributeName:kNavColor} range:NSMakeRange(0, str1.length)];
+        [attributeStr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:24],NSForegroundColorAttributeName:kNavColor} range:NSMakeRange(str1.length, str2.length)];
+        [_proDetailHeaderView.deRateLabel1 setAttributedText:attributeStr];
+        
     }
     return _proDetailHeaderView;
 }
@@ -156,8 +168,10 @@
     [cell.userActionButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
     
     if (indexPath.row == 1) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
         [cell.userActionButton setTitleColor:kYellowColor forState:0];
         [cell.userActionButton setTitle:@"已认证" forState:0];
+        cell.userActionButton.titleLabel.font = kFirstFont;
     }
     
     return cell;

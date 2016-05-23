@@ -10,13 +10,24 @@
 
 @interface SearchViewController ()
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
+
+@property (nonatomic,strong) UICollectionViewController *searchCollection;
+
 @end
 
 @implementation SearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"搜索";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(backController)];
+
+}
+
+- (void)backController
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

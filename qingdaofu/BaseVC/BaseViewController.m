@@ -44,17 +44,6 @@
     return _leftItem;
 }
 
-- (UIButton *)leftBackBtn
-{
-    if (!_leftBackBtn) {
-        _leftBackBtn = [UIButton buttonWithType:0];
-        _leftBackBtn.bounds = CGRectMake(0, 0, 24, 24);
-        [_leftBackBtn setImage:[UIImage imageNamed:@"information_nav_back"] forState:0];
-        [_leftBackBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _leftBackBtn;
-}
-
 - (void)back
 {
     [self.navigationController popViewControllerAnimated:YES];

@@ -10,4 +10,7 @@
 
 @interface ProductsViewController : BaseViewController
 
+@property (nonatomic,strong) NSLayoutConstraint *heightConstraints;
+@property (nonatomic,strong) NSLayoutConstraint *topConstraints;
+
 @end

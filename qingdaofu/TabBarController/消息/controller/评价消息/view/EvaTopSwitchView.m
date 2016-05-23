@@ -76,9 +76,12 @@
         QDFWeakSelf;
         [_getbutton addAction:^(UIButton *btn) {
             [UIView animateWithDuration:0.3 animations:^{
-
-                [btn setTitleColor:kBlueColor forState:0];
-                [weakself.sendButton setTitleColor:kBlackColor forState:0];
+                
+//                [btn setTitleColor:kBlueColor forState:0];
+//                btn.titleLabel.font = kBigFont;
+//                [weakself.sendButton setTitleColor:kBlackColor forState:0];
+//                weakself.sendButton.titleLabel.font = kFirstFont;
+                
                 weakself.blueLabel.frame = CGRectMake(_getbutton.left+kScreenWidth/8,37, kScreenWidth/4, 2);
                 
                 if (weakself.didSelectedButton) {
@@ -101,9 +104,12 @@
         QDFWeakSelf;
         [_sendButton addAction:^(UIButton *btn) {
             [UIView animateWithDuration:0.3 animations:^{
-                [btn setTitleColor:kBlueColor forState:0];
-                [weakself.getbutton setTitleColor:kBlackColor forState:0];
                 
+//                [btn setTitleColor:kBlueColor forState:0];
+//                btn.titleLabel.font = kBigFont;
+//                
+//                [weakself.getbutton setTitleColor:kBlackColor forState:0];
+//                weakself.getbutton.titleLabel.font = kFirstFont;
                 weakself.blueLabel.frame = CGRectMake(_sendButton.left+kScreenWidth/8,37, kScreenWidth/4, 2);
                 
                 if (weakself.didSelectedButton) {

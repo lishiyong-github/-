@@ -7,7 +7,7 @@
 //
 
 #import "ProdRightView.h"
-#import "MyStoreCell.h"
+#import "MineUserCell.h"
 
 
 @implementation ProdRightView
@@ -20,7 +20,7 @@
         self.dataSource = self;
         self.delegate = self;
         self.backgroundColor = kBackColor;
-        self.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kBigPadding)];
+        self.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 12.5)];
         self.tableFooterView = [[UIView alloc] init];
     }
     return self;
@@ -40,22 +40,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"proRight";
-    MyStoreCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    MineUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         
-        cell = [[MyStoreCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[MineUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSArray *tiArray = @[@"借款期限",@"还款方式",@"债务人主体",@"委托事项",@"委托代理期限",@"已付本金",@"已付利息",@"合同履行地",@"付款方式",@"债权文件",@"债权人信息",@"债务人信息"];
-    [cell.sButton1 setTitle:tiArray[indexPath.row] forState:0];
-    [cell.sButton2 setTitleColor:kBlueColor forState:0];
-    [cell.sButton2 setTitle:@"服务器数据" forState:0];
-    cell.sButton2.userInteractionEnabled = NO;
+    [cell.userNameButton setTitle:tiArray[indexPath.row] forState:0];
+    [cell.userActionButton setTitleColor:kBlueColor forState:0];
+    [cell.userActionButton setTitle:@"服务器数据" forState:0];
+    cell.userActionButton.userInteractionEnabled = NO;
     
     if (indexPath.row > 8) {
-        [cell.sButton2 setTitle:@"查看" forState:0];
+        [cell.userActionButton setTitle:@"查看" forState:0];
     }
     
     return cell;

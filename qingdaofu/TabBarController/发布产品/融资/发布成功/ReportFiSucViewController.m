@@ -9,16 +9,19 @@
 #import "ReportFiSucViewController.h"
 #import "MyReleaseViewController.h"   //我的发布
 
-#import "ReportSuccessView.h"
 #import "EvaTopSwitchView.h"
+
+#import "MineUserCell.h"
+#import "ReportSuccessCell.h"
 
 @interface ReportFiSucViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,assign) BOOL didSetupConstraints;
 @property (nonatomic,strong) UITableView *reportSucTableView;
-@property (nonatomic,strong) UIView *headerView;
-@property (nonatomic,strong) ReportSuccessView *sucSec0;
-
 @property (nonatomic,strong) EvaTopSwitchView *reportSucFootView;
+
+
+@property (nonatomic,strong) UIView *headerView;
 
 @end
 
@@ -29,11 +32,13 @@
     self.navigationController.navigationBarHidden = NO;
     self.navigationItem.title = @"发布成功";
     self.navigationItem.leftBarButtonItem = self.leftItem;
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(finishReport)];
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:kBigFont,NSForegroundColorAttributeName:kBlueColor} forState:0];
     
     [self.view addSubview:self.reportSucTableView];
     [self.view addSubview:self.reportSucFootView];
+    [self.view setNeedsUpdateConstraints];
 }
 
 - (void)finishReport
@@ -43,16 +48,46 @@
     [nav popViewControllerAnimated:NO];
 }
 
+- (void)updateViewConstraints
+{
+    if (!self.didSetupConstraints) {
+        
+        [self.reportSucTableView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+        [self.reportSucTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kTabBarHeight];
+        
+        [self.reportSucFootView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+        [self.reportSucFootView autoSetDimension:ALDimensionHeight toSize:kTabBarHeight];
+        
+        self.didSetupConstraints = YES;
+    }
+    [super updateViewConstraints];
+}
+
 - (UITableView *)reportSucTableView
 {
     if (!_reportSucTableView) {
-        _reportSucTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kTabBarHeight-kNavHeight) style:UITableViewStylePlain];
+        _reportSucTableView = [UITableView newAutoLayoutView];
         _reportSucTableView.backgroundColor = kBackColor;
         _reportSucTableView.delegate = self;
         _reportSucTableView.dataSource = self;
+        _reportSucTableView.separatorColor = kSeparateColor;
+        _reportSucTableView.separatorInset = UIEdgeInsetsZero;
         _reportSucTableView.tableFooterView = [[UIView alloc] init];
-        _reportSucTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 180)];
+        _reportSucTableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 187.5)];
         [_reportSucTableView.tableHeaderView addSubview:self.headerView];
+        
+        if ([_reportSucTableView respondsToSelector:@selector(setSeparatorInset:)]) {
+            
+            [_reportSucTableView setSeparatorInset:UIEdgeInsetsZero];
+        }
+        
+        if ([_reportSucTableView respondsToSelector:@selector(setLayoutMargins:)]) {
+            
+            [_reportSucTableView setLayoutMargins:UIEdgeInsetsZero];
+            
+        }
+        
+
     }
     return _reportSucTableView;
 }
@@ -60,29 +95,10 @@
 - (UIView *)headerView
 {
     if (!_headerView) {
-        _headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0, kScreenWidth, 165)];
+        _headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0, kScreenWidth, 187.5)];
         _headerView.backgroundColor = kBlueColor;
     }
     return _headerView;
-}
-
-- (ReportSuccessView *)sucSec0
-{
-    if (!_sucSec0) {
-        _sucSec0 = [[ReportSuccessView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 130)];
-        _sucSec0.tiLabel.text = @"发布时间：2016-05-10 17:40";
-        _sucSec0.tyLabel.text = @"产品类型：融资";
-        _sucSec0.stLabel.text = @"产品状态：已发布";
-        QDFWeakSelf;
-        [_sucSec0.toButton addAction:^(UIButton *btn) {
-            MyReleaseViewController *myReleaseVC = [[MyReleaseViewController alloc] init];
-            UINavigationController *nav = weakself.navigationController;
-            [nav popViewControllerAnimated:NO];
-            [nav popViewControllerAnimated:NO];
-            [nav pushViewController:myReleaseVC animated:NO];
-        }];
-    }
-    return _sucSec0;
 }
 
 - (EvaTopSwitchView *)reportSucFootView
@@ -105,33 +121,81 @@
     return _reportSucFootView;
 }
 
-#pragma mark -
-
+#pragma mark - tableView delegate and datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 130;
+    if (indexPath.row == 0) {
+        return 90;
+    }
+    return kCellHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"reportSuc";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    static NSString *identifier;
+    
+    if (indexPath.row == 0) {
+        ReportSuccessCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (!cell) {
+            cell = [[ReportSuccessCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+            [cell setSeparatorInset:UIEdgeInsetsZero];
+        }
+        
+        if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+            [cell setLayoutMargins:UIEdgeInsetsZero];
+        }
+        
+        cell.suTimeLabel.text = @"发布时间：2016-05-10 17:40";
+        cell.suTypeLabel.text = @"产品类型：融资";
+        cell.suStateLabel.text = @"产品状态：已发布";
+        
+        return cell;
+    }
+    
+    MineUserCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[MineUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell addSubview:self.sucSec0];
+    
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
+    [cell.userActionButton setTitle:@"点击查看我的发布" forState:0];
+    cell.userActionButton.titleLabel.font = kBigFont;
+    [cell.userActionButton setTitleColor:kBlueColor forState:0];
+    [cell.userActionButton setImage:[UIImage imageNamed:@"list_more"] forState:0];
     
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return kBigPadding;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = kBackColor;
+    return headerView;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

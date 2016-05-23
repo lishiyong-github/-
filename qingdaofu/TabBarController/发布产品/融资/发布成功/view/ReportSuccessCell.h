@@ -10,4 +10,10 @@
 
 @interface ReportSuccessCell : UITableViewCell
 
+@property (nonatomic,strong) UILabel *suTimeLabel;
+@property (nonatomic,strong) UILabel *suTypeLabel;
+@property (nonatomic,strong) UILabel *suStateLabel;
+
+@property (nonatomic,assign) BOOL didSetupConstraints;
+
 @end
