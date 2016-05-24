@@ -29,6 +29,7 @@
 #import "UIView+Fram.h"
 #import "UIButton+Block.h"
 #import "NSString+Fram.h"
+#import <ReactiveCocoa.h>
 
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width

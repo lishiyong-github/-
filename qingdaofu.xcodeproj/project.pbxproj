@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2902D9921F99EF82651ABE /* libPods-qingdaofu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85603BCA885599B6E0B5F71E /* libPods-qingdaofu.a */; };
 		9CEA216B1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
 		9CEA216C1CE2140C002C5BA7 /* UIButton+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */; };
 		9CF191401CEC445300CFEDA1 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF1913F1CEC445300CFEDA1 /* Reveal.framework */; };
@@ -325,6 +326,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F58D0855B44DFE63508E13F /* Pods-qingdaofu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qingdaofu.release.xcconfig"; path = "Pods/Target Support Files/Pods-qingdaofu/Pods-qingdaofu.release.xcconfig"; sourceTree = "<group>"; };
+		7245E2770B63600D801A3886 /* Pods-qingdaofu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qingdaofu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-qingdaofu/Pods-qingdaofu.debug.xcconfig"; sourceTree = "<group>"; };
+		85603BCA885599B6E0B5F71E /* libPods-qingdaofu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-qingdaofu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEA21691CE2140C002C5BA7 /* UIButton+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Addition.h"; sourceTree = "<group>"; };
 		9CEA216A1CE2140C002C5BA7 /* UIButton+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Addition.m"; sourceTree = "<group>"; };
 		9CF1913F1CEC445300CFEDA1 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
@@ -813,6 +817,7 @@
 				A1A017091C5B3B9400027134 /* CoreGraphics.framework in Frameworks */,
 				A1A017071C5B3B8C00027134 /* Foundation.framework in Frameworks */,
 				A1A017051C5B3B7500027134 /* UIKit.framework in Frameworks */,
+				3F2902D9921F99EF82651ABE /* libPods-qingdaofu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1709,6 +1714,8 @@
 				A1A016BB1C5A0C0300027134 /* qingdaofuTests */,
 				A1A016C61C5A0C0300027134 /* qingdaofuUITests */,
 				A1A016A01C5A0C0300027134 /* Products */,
+				FAE006376AF6EDD5ECED9739 /* Pods */,
+				E507BD6FFE7C07E0E6DEA84D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2057,6 +2064,7 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		A1FB265C1CF2CD7300B66608 /* 搜索 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2064,6 +2072,23 @@
 				A1FB265E1CF2CD8900B66608 /* SearchViewController.m */,
 			);
 			path = "搜索";
+=======
+		E507BD6FFE7C07E0E6DEA84D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85603BCA885599B6E0B5F71E /* libPods-qingdaofu.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAE006376AF6EDD5ECED9739 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7245E2770B63600D801A3886 /* Pods-qingdaofu.debug.xcconfig */,
+				1F58D0855B44DFE63508E13F /* Pods-qingdaofu.release.xcconfig */,
+			);
+			name = Pods;
+>>>>>>> 6ada14dacdd83bac47247fb0b5d898755aa5b5fa
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2073,9 +2098,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1A016CC1C5A0C0300027134 /* Build configuration list for PBXNativeTarget "qingdaofu" */;
 			buildPhases = (
+				690D399397BA33248591EB56 /* 📦 Check Pods Manifest.lock */,
 				A1A0169B1C5A0C0300027134 /* Sources */,
 				A1A0169C1C5A0C0300027134 /* Frameworks */,
 				A1A0169D1C5A0C0300027134 /* Resources */,
+				2C192770AE25DAD006ECC75E /* 📦 Embed Pods Frameworks */,
+				1FD331697832A4A6C24264D9 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2312,6 +2340,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FD331697832A4A6C24264D9 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-qingdaofu/Pods-qingdaofu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C192770AE25DAD006ECC75E /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-qingdaofu/Pods-qingdaofu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		690D399397BA33248591EB56 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A1A0169B1C5A0C0300027134 /* Sources */ = {
@@ -2612,6 +2688,7 @@
 		};
 		A1A016CD1C5A0C0300027134 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7245E2770B63600D801A3886 /* Pods-qingdaofu.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2638,6 +2715,7 @@
 		};
 		A1A016CE1C5A0C0300027134 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F58D0855B44DFE63508E13F /* Pods-qingdaofu.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
